@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.service.wear
+package com.svara.music.data.service.wear
 
 import android.graphics.Bitmap
 import android.graphics.Color as AndroidColor
@@ -7,7 +7,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.lerp
 import androidx.compose.ui.graphics.toArgb
 import androidx.core.graphics.ColorUtils
-import com.theveloper.playpix.shared.WearThemePalette
+import com.svara.music.shared.WearThemePalette
 import kotlin.math.max
 import kotlin.math.min
 

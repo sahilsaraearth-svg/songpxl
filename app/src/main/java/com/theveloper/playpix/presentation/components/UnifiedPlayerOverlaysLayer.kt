@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components
+package com.svara.music.presentation.components
 
 import android.util.Log
 import android.widget.Toast
@@ -26,13 +26,13 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.zIndex
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import com.theveloper.playpix.R
+import com.svara.music.R
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.media3.common.util.UnstableApi
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.presentation.viewmodel.PlayerViewModel
-import com.theveloper.playpix.presentation.viewmodel.PlaylistViewModel
-import com.theveloper.playpix.presentation.viewmodel.StablePlayerState
+import com.svara.music.data.model.Song
+import com.svara.music.presentation.viewmodel.PlayerViewModel
+import com.svara.music.presentation.viewmodel.PlaylistViewModel
+import com.svara.music.presentation.viewmodel.StablePlayerState
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.coroutines.flow.map
 

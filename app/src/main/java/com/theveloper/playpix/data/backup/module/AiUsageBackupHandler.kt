@@ -1,10 +1,10 @@
-package com.theveloper.playpix.data.backup.module
+package com.svara.music.data.backup.module
 
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.theveloper.playpix.data.backup.model.BackupSection
-import com.theveloper.playpix.data.database.AiUsageDao
-import com.theveloper.playpix.data.database.AiUsageEntity
+import com.svara.music.data.backup.model.BackupSection
+import com.svara.music.data.database.AiUsageDao
+import com.svara.music.data.database.AiUsageEntity
 import javax.inject.Inject
 import javax.inject.Singleton
 

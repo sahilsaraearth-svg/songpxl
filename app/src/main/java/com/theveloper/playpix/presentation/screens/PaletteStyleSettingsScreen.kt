@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.screens
+package com.svara.music.presentation.screens
 
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.foundation.BorderStroke
@@ -59,17 +59,17 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.res.stringResource
-import com.theveloper.playpix.R
+import com.svara.music.R
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.media3.common.util.UnstableApi
-import com.theveloper.playpix.data.preferences.AlbumArtColorAccuracy
-import com.theveloper.playpix.data.preferences.AlbumArtPaletteStyle
-import com.theveloper.playpix.presentation.components.MiniPlayerHeight
-import com.theveloper.playpix.presentation.viewmodel.ColorSchemePair
-import com.theveloper.playpix.presentation.viewmodel.PlayerViewModel
-import com.theveloper.playpix.presentation.viewmodel.SettingsViewModel
-import com.theveloper.playpix.ui.theme.LocalPlayPixDarkTheme
-import com.theveloper.playpix.ui.theme.generateColorSchemeFromSeed
+import com.svara.music.data.preferences.AlbumArtColorAccuracy
+import com.svara.music.data.preferences.AlbumArtPaletteStyle
+import com.svara.music.presentation.components.MiniPlayerHeight
+import com.svara.music.presentation.viewmodel.ColorSchemePair
+import com.svara.music.presentation.viewmodel.PlayerViewModel
+import com.svara.music.presentation.viewmodel.SettingsViewModel
+import com.svara.music.ui.theme.LocalSvaraDarkTheme
+import com.svara.music.ui.theme.generateColorSchemeFromSeed
 import kotlin.math.roundToInt
 
 @androidx.annotation.OptIn(UnstableApi::class)
@@ -82,7 +82,7 @@ fun PaletteStyleSettingsScreen(
 ) {
     val uiState by settingsViewModel.uiState.collectAsStateWithLifecycle()
     val stablePlayerState by playerViewModel.stablePlayerState.collectAsStateWithLifecycle()
-    val isDarkTheme = LocalPlayPixDarkTheme.current
+    val isDarkTheme = LocalSvaraDarkTheme.current
     val albumSchemePair by playerViewModel.currentAlbumArtColorSchemePair.collectAsStateWithLifecycle()
 
     val baseScheme = MaterialTheme.colorScheme

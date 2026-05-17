@@ -1,4 +1,4 @@
-package com.theveloper.playpix.benchmark
+package com.svara.music.benchmark
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import org.junit.Ignore

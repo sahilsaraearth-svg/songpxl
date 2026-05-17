@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components
+package com.svara.music.presentation.components
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibility
@@ -67,11 +67,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.backup.model.BackupSection
-import com.theveloper.playpix.data.backup.model.ModuleRestoreDetail
-import com.theveloper.playpix.data.backup.model.RestorePlan
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
+import com.svara.music.R
+import com.svara.music.data.backup.model.BackupSection
+import com.svara.music.data.backup.model.ModuleRestoreDetail
+import com.svara.music.data.backup.model.RestorePlan
+import com.svara.music.ui.theme.GoogleSansRounded
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale

@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components.scoped
+package com.svara.music.presentation.components.scoped
 
 import android.os.Build
 import androidx.activity.compose.BackHandler
@@ -11,8 +11,8 @@ import androidx.compose.runtime.key
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.util.lerp
 import androidx.media3.common.util.UnstableApi
-import com.theveloper.playpix.presentation.viewmodel.PlayerSheetState
-import com.theveloper.playpix.presentation.viewmodel.PlayerViewModel
+import com.svara.music.presentation.viewmodel.PlayerSheetState
+import com.svara.music.presentation.viewmodel.PlayerViewModel
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import kotlin.coroutines.cancellation.CancellationException

@@ -1,4 +1,4 @@
-package com.theveloper.playpix
+package com.svara.music
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.theveloper.playpix", appContext.packageName)
+        assertEquals("com.svara.music", appContext.packageName)
     }
 }

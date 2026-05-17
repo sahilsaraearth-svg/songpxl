@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components
+package com.svara.music.presentation.components
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -28,7 +28,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.theveloper.playpix.R
+import com.svara.music.R
 
 sealed class DrawerDestination(val route: String) {
     object Home : DrawerDestination("home")

@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components
+package com.svara.music.presentation.components
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
@@ -25,9 +25,9 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.worker.SyncProgress
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
+import com.svara.music.R
+import com.svara.music.data.worker.SyncProgress
+import com.svara.music.ui.theme.GoogleSansRounded
 import kotlin.math.roundToInt
 
 /**

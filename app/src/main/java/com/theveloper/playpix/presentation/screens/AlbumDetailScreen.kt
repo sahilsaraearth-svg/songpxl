@@ -1,9 +1,9 @@
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
 
-package com.theveloper.playpix.presentation.screens
+package com.svara.music.presentation.screens
 
-import com.theveloper.playpix.presentation.navigation.navigateSafely
-import com.theveloper.playpix.presentation.navigation.navigateSafelyReplacing
+import com.svara.music.presentation.navigation.navigateSafely
+import com.svara.music.presentation.navigation.navigateSafelyReplacing
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.Spring
@@ -73,9 +73,9 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.Velocity
 import androidx.compose.ui.unit.dp
-import com.theveloper.playpix.ui.theme.LocalPlayPixDarkTheme
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
-import com.theveloper.playpix.ui.theme.PlayPixStatusBarStyle
+import com.svara.music.ui.theme.LocalSvaraDarkTheme
+import com.svara.music.ui.theme.GoogleSansRounded
+import com.svara.music.ui.theme.SvaraStatusBarStyle
 import androidx.compose.ui.unit.lerp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.util.lerp
@@ -84,22 +84,22 @@ import androidx.media3.common.util.UnstableApi
 import androidx.navigation.NavController
 import coil.compose.AsyncImagePainter
 import coil.size.Size
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.model.Album
-import com.theveloper.playpix.presentation.components.CollapsibleCommonTopBar
-import com.theveloper.playpix.presentation.components.ExpressiveScrollBar
-import com.theveloper.playpix.presentation.components.MiniPlayerHeight
-import com.theveloper.playpix.presentation.components.PlaylistBottomSheet
-import com.theveloper.playpix.presentation.components.SmartImage
-import com.theveloper.playpix.presentation.components.SongInfoBottomSheet
-import com.theveloper.playpix.presentation.components.resolveNavBarOccupiedHeight
-import com.theveloper.playpix.presentation.components.subcomps.EnhancedSongListItem
-import com.theveloper.playpix.presentation.navigation.Screen
-import com.theveloper.playpix.presentation.viewmodel.AlbumDetailViewModel
-import com.theveloper.playpix.presentation.viewmodel.PlayerViewModel
-import com.theveloper.playpix.presentation.viewmodel.PlaylistViewModel
-import com.theveloper.playpix.utils.formatSongCount
-import com.theveloper.playpix.utils.shapes.RoundedStarShape
+import com.svara.music.R
+import com.svara.music.data.model.Album
+import com.svara.music.presentation.components.CollapsibleCommonTopBar
+import com.svara.music.presentation.components.ExpressiveScrollBar
+import com.svara.music.presentation.components.MiniPlayerHeight
+import com.svara.music.presentation.components.PlaylistBottomSheet
+import com.svara.music.presentation.components.SmartImage
+import com.svara.music.presentation.components.SongInfoBottomSheet
+import com.svara.music.presentation.components.resolveNavBarOccupiedHeight
+import com.svara.music.presentation.components.subcomps.EnhancedSongListItem
+import com.svara.music.presentation.navigation.Screen
+import com.svara.music.presentation.viewmodel.AlbumDetailViewModel
+import com.svara.music.presentation.viewmodel.PlayerViewModel
+import com.svara.music.presentation.viewmodel.PlaylistViewModel
+import com.svara.music.utils.formatSongCount
+import com.svara.music.utils.shapes.RoundedStarShape
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
 import androidx.compose.ui.res.stringResource
@@ -126,7 +126,7 @@ fun AlbumDetailScreen(
     val systemNavBarInset = WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding()
     val bottomBarHeightDp = resolveNavBarOccupiedHeight(systemNavBarInset, navBarCompactMode)
     var showPlaylistBottomSheet by remember { mutableStateOf(false) }
-    val isDarkTheme = LocalPlayPixDarkTheme.current
+    val isDarkTheme = LocalSvaraDarkTheme.current
     val baseColorScheme = MaterialTheme.colorScheme
     val albumArtUri = uiState.album?.albumArtUriString?.takeIf { it.isNotBlank() }
     val albumColorSchemeFlow = remember(albumArtUri) {
@@ -512,7 +512,7 @@ private fun SharedAlbumTopBarProbe(
 ) {
     val surfaceColor = MaterialTheme.colorScheme.surface
     val statusBarColor =
-        if (LocalPlayPixDarkTheme.current) Color.Black.copy(alpha = 0.6f)
+        if (LocalSvaraDarkTheme.current) Color.Black.copy(alpha = 0.6f)
         else Color.White.copy(alpha = 0.4f)
     val solidAlpha = (collapseFraction * 2f).coerceIn(0f, 1f)
     val expandedContentAlpha = 1f - solidAlpha
@@ -538,7 +538,7 @@ private fun SharedAlbumTopBarProbe(
     val titleVerticalBias = lerp(1f, -1f, collapseFraction)
     val shuffleAlignment = BiasAlignment(horizontalBias = 1f, verticalBias = titleVerticalBias)
 
-    PlayPixStatusBarStyle(color = fallbackStatusBarColor)
+    SvaraStatusBarStyle(color = fallbackStatusBarColor)
 
     Box(
         modifier = Modifier
@@ -633,7 +633,7 @@ private fun CollapsingAlbumTopBar(
 ) {
     val surfaceColor = MaterialTheme.colorScheme.surface
     val statusBarColor =
-        if (LocalPlayPixDarkTheme.current) Color.Black.copy(alpha = 0.6f) else Color.White.copy(
+        if (LocalSvaraDarkTheme.current) Color.Black.copy(alpha = 0.6f) else Color.White.copy(
             alpha = 0.4f
         )
 
@@ -684,7 +684,7 @@ private fun CollapsingAlbumTopBar(
             .height(headerHeight)
             .clipToBounds()
     ) {
-        PlayPixStatusBarStyle(color = fallbackStatusBarColor)
+        SvaraStatusBarStyle(color = fallbackStatusBarColor)
 
         Box(
             modifier = Modifier

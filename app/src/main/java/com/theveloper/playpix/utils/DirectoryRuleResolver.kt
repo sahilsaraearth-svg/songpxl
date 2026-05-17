@@ -1,4 +1,4 @@
-package com.theveloper.playpix.utils
+package com.svara.music.utils
 
 /**
  * Resolves directory allow/deny rules using the nearest ancestor match strategy.

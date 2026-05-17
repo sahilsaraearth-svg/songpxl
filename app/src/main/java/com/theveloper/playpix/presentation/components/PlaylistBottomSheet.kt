@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components
+package com.svara.music.presentation.components
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.layout.Arrangement
@@ -40,15 +40,15 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.theveloper.playpix.R
+import com.svara.music.R
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.media3.common.util.UnstableApi
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.presentation.components.subcomps.LibraryActionRow
-import com.theveloper.playpix.presentation.viewmodel.PlayerViewModel
-import com.theveloper.playpix.presentation.viewmodel.PlaylistUiState
-import com.theveloper.playpix.presentation.viewmodel.PlaylistViewModel
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
+import com.svara.music.data.model.Song
+import com.svara.music.presentation.components.subcomps.LibraryActionRow
+import com.svara.music.presentation.viewmodel.PlayerViewModel
+import com.svara.music.presentation.viewmodel.PlaylistUiState
+import com.svara.music.presentation.viewmodel.PlaylistViewModel
+import com.svara.music.ui.theme.GoogleSansRounded
 
 @androidx.annotation.OptIn(UnstableApi::class)
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)

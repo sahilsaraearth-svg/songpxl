@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
 import android.content.Context
 import android.os.PowerManager
@@ -7,8 +7,8 @@ import androidx.media3.session.MediaController
 import androidx.media3.common.Player
 import androidx.media3.common.C
 import androidx.media3.common.MediaItem
-import com.theveloper.playpix.data.service.player.DualPlayerEngine
-import com.theveloper.playpix.data.preferences.UserPreferencesRepository
+import com.svara.music.data.service.player.DualPlayerEngine
+import com.svara.music.data.preferences.UserPreferencesRepository
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -23,11 +23,11 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.withContext
-import com.theveloper.playpix.data.model.Song
+import com.svara.music.data.model.Song
 import com.google.android.gms.cast.MediaStatus
 import timber.log.Timber
-import com.theveloper.playpix.utils.QueueUtils
-import com.theveloper.playpix.utils.MediaItemBuilder
+import com.svara.music.utils.QueueUtils
+import com.svara.music.utils.MediaItemBuilder
 import kotlin.math.abs
 
 @Singleton

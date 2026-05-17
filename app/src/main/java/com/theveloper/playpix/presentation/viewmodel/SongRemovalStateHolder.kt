@@ -1,11 +1,11 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
 import android.app.Activity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.preferences.PlaylistPreferencesRepository
-import com.theveloper.playpix.data.repository.MusicRepository
+import com.svara.music.R
+import com.svara.music.data.model.Song
+import com.svara.music.data.preferences.PlaylistPreferencesRepository
+import com.svara.music.data.repository.MusicRepository
 import dagger.hilt.android.scopes.ViewModelScoped
 import javax.inject.Inject
 import kotlinx.coroutines.CompletableDeferred

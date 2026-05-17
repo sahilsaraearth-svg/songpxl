@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.screens
+package com.svara.music.presentation.screens
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.fillMaxSize
@@ -16,8 +16,8 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
-import com.theveloper.playpix.presentation.components.FileExplorerContent
-import com.theveloper.playpix.presentation.viewmodel.DirectoryEntry
+import com.svara.music.presentation.components.FileExplorerContent
+import com.svara.music.presentation.viewmodel.DirectoryEntry
 import java.io.File
 
 //@OptIn(ExperimentalMaterial3Api::class)

@@ -1,10 +1,10 @@
-package com.theveloper.playpix.data.telegram
+package com.svara.music.data.telegram
 
-import com.theveloper.playpix.data.database.TelegramDao
-import com.theveloper.playpix.data.database.TelegramSongEntity
-import com.theveloper.playpix.data.database.TelegramTopicEntity
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.preferences.PlaylistPreferencesRepository
+import com.svara.music.data.database.TelegramDao
+import com.svara.music.data.database.TelegramSongEntity
+import com.svara.music.data.database.TelegramTopicEntity
+import com.svara.music.data.model.Song
+import com.svara.music.data.preferences.PlaylistPreferencesRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.TimeoutCancellationException
 import kotlinx.coroutines.async

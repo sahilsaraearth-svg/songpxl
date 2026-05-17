@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components
+package com.svara.music.presentation.components
 
 import android.Manifest
 import androidx.compose.animation.AnimatedVisibility
@@ -117,7 +117,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.res.stringResource
-import com.theveloper.playpix.R
+import com.svara.music.R
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalHapticFeedback
@@ -132,10 +132,10 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.core.content.ContextCompat
 import androidx.media3.common.util.UnstableApi
 import androidx.mediarouter.media.MediaRouter
-import com.theveloper.playpix.presentation.screens.TabAnimation
-import com.theveloper.playpix.presentation.viewmodel.BluetoothAudioDeviceState
-import com.theveloper.playpix.presentation.viewmodel.PlayerViewModel
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
+import com.svara.music.presentation.screens.TabAnimation
+import com.svara.music.presentation.viewmodel.BluetoothAudioDeviceState
+import com.svara.music.presentation.viewmodel.PlayerViewModel
+import com.svara.music.ui.theme.GoogleSansRounded
 import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape
 import android.content.pm.PackageManager
 import androidx.compose.animation.animateColorAsState
@@ -151,7 +151,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Velocity
-import com.theveloper.playpix.utils.shapes.RoundedStarShape
+import com.svara.music.utils.shapes.RoundedStarShape
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch

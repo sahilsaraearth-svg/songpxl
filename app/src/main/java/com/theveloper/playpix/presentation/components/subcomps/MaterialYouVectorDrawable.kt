@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components.subcomps
+package com.svara.music.presentation.components.subcomps
 
 import android.content.Context
 import android.content.res.Configuration
@@ -12,8 +12,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.annotation.DrawableRes
 import androidx.appcompat.content.res.AppCompatResources
 import com.google.accompanist.drawablepainter.rememberDrawablePainter
-import com.theveloper.playpix.R
-import com.theveloper.playpix.ui.theme.LocalPlayPixDarkTheme
+import com.svara.music.R
+import com.svara.music.ui.theme.LocalSvaraDarkTheme
 
 /**
  * Infla un vector XML que depende de attrs del tema Android usando el modo
@@ -25,7 +25,7 @@ fun MaterialYouVectorDrawable(
     @DrawableRes drawableResId: Int
 ) {
     val context = LocalContext.current
-    val isDarkTheme = LocalPlayPixDarkTheme.current
+    val isDarkTheme = LocalSvaraDarkTheme.current
     val themedContext = remember(context, isDarkTheme) {
         context.createVectorThemedContext(isDarkTheme = isDarkTheme)
     }
@@ -49,5 +49,5 @@ private fun Context.createVectorThemedContext(isDarkTheme: Boolean): Context {
             if (isDarkTheme) Configuration.UI_MODE_NIGHT_YES else Configuration.UI_MODE_NIGHT_NO
     }
     val modeContext = createConfigurationContext(themedConfiguration)
-    return ContextThemeWrapper(modeContext, R.style.Theme_PlayPix)
+    return ContextThemeWrapper(modeContext, R.style.Theme_Svara)
 }

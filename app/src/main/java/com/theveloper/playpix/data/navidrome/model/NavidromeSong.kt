@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.navidrome.model
+package com.svara.music.data.navidrome.model
 
 import android.os.Parcelable
 import androidx.compose.runtime.Immutable

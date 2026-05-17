@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
 
-package com.theveloper.playpix.presentation.screens
+package com.svara.music.presentation.screens
 
 import android.content.Context
 import android.content.Intent
@@ -74,17 +74,17 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import com.theveloper.playpix.R
-import com.theveloper.playpix.presentation.components.CollapsibleCommonTopBar
-import com.theveloper.playpix.presentation.components.MiniPlayerHeight
-import com.theveloper.playpix.presentation.netease.auth.NeteaseLoginActivity
-import com.theveloper.playpix.presentation.jellyfin.auth.JellyfinLoginActivity
-import com.theveloper.playpix.presentation.navidrome.auth.NavidromeLoginActivity
-import com.theveloper.playpix.presentation.qqmusic.auth.QqMusicLoginActivity
-import com.theveloper.playpix.presentation.telegram.auth.TelegramLoginActivity
-import com.theveloper.playpix.presentation.viewmodel.AccountsViewModel
-import com.theveloper.playpix.presentation.viewmodel.ExternalAccountUiModel
-import com.theveloper.playpix.presentation.viewmodel.ExternalServiceAccount
+import com.svara.music.R
+import com.svara.music.presentation.components.CollapsibleCommonTopBar
+import com.svara.music.presentation.components.MiniPlayerHeight
+import com.svara.music.presentation.netease.auth.NeteaseLoginActivity
+import com.svara.music.presentation.jellyfin.auth.JellyfinLoginActivity
+import com.svara.music.presentation.navidrome.auth.NavidromeLoginActivity
+import com.svara.music.presentation.qqmusic.auth.QqMusicLoginActivity
+import com.svara.music.presentation.telegram.auth.TelegramLoginActivity
+import com.svara.music.presentation.viewmodel.AccountsViewModel
+import com.svara.music.presentation.viewmodel.ExternalAccountUiModel
+import com.svara.music.presentation.viewmodel.ExternalServiceAccount
 import kotlin.math.roundToInt
 import kotlinx.coroutines.launch
 import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape

@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.screens
+package com.svara.music.presentation.screens
 
 import android.widget.Toast
 import androidx.compose.animation.AnimatedVisibility
@@ -14,10 +14,10 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
-import com.theveloper.playpix.R
+import com.svara.music.R
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.theveloper.playpix.presentation.components.brickbreaker.BrickBreakerOverlay
-import com.theveloper.playpix.presentation.viewmodel.PlayerViewModel
+import com.svara.music.presentation.components.brickbreaker.BrickBreakerOverlay
+import com.svara.music.presentation.viewmodel.PlayerViewModel
 
 @Composable
 fun EasterEggScreen(

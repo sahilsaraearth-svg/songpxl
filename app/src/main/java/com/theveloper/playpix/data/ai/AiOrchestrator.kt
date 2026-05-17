@@ -1,14 +1,14 @@
-package com.theveloper.playpix.data.ai
+package com.svara.music.data.ai
 
 
-import com.theveloper.playpix.data.ai.provider.AiClientFactory
-import com.theveloper.playpix.data.ai.provider.AiProvider
-import com.theveloper.playpix.data.database.AiCacheDao
-import com.theveloper.playpix.data.database.AiCacheEntity
-import com.theveloper.playpix.data.preferences.AiPreferencesRepository
-import com.theveloper.playpix.data.database.AiUsageDao
-import com.theveloper.playpix.data.database.AiUsageEntity
-import com.theveloper.playpix.di.AppScope
+import com.svara.music.data.ai.provider.AiClientFactory
+import com.svara.music.data.ai.provider.AiProvider
+import com.svara.music.data.database.AiCacheDao
+import com.svara.music.data.database.AiCacheEntity
+import com.svara.music.data.preferences.AiPreferencesRepository
+import com.svara.music.data.database.AiUsageDao
+import com.svara.music.data.database.AiUsageEntity
+import com.svara.music.di.AppScope
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
@@ -81,7 +81,7 @@ class AiOrchestrator @Inject constructor(
                 )
             }
         } catch (e: kotlinx.coroutines.TimeoutCancellationException) {
-            throw com.theveloper.playpix.data.ai.provider.AiProviderSupport.createException(
+            throw com.svara.music.data.ai.provider.AiProviderSupport.createException(
                 providerName = provider.displayName,
                 statusCode = null,
                 transportMessage = "Request timed out after ${REQUEST_TIMEOUT_MS / 1000}s. The model may be overloaded.",
@@ -89,7 +89,7 @@ class AiOrchestrator @Inject constructor(
                 requestedModel = requestedModel
             )
         } catch (e: Exception) {
-            val failure = com.theveloper.playpix.data.ai.provider.AiProviderSupport.wrapThrowable(
+            val failure = com.svara.music.data.ai.provider.AiProviderSupport.wrapThrowable(
                 provider.displayName,
                 e,
                 requestedModel
@@ -119,13 +119,13 @@ class AiOrchestrator @Inject constructor(
         provider: AiProvider,
         apiKey: String,
         requestedModel: String,
-        client: com.theveloper.playpix.data.ai.provider.AiClient,
-        failure: com.theveloper.playpix.data.ai.provider.AiProviderException
+        client: com.svara.music.data.ai.provider.AiClient,
+        failure: com.svara.music.data.ai.provider.AiProviderException
     ): String? {
         if (!failure.isModelUnavailable()) return null
 
         val availableModels = runCatching { client.getAvailableModels(apiKey) }.getOrDefault(emptyList())
-        val recoveredModel = com.theveloper.playpix.data.ai.provider.AiProviderSupport.selectRecoveryModel(
+        val recoveredModel = com.svara.music.data.ai.provider.AiProviderSupport.selectRecoveryModel(
             currentModel = requestedModel,
             defaultModel = client.getDefaultModel(),
             availableModels = availableModels
@@ -177,7 +177,7 @@ class AiOrchestrator @Inject constructor(
             // Cache expired — proceed with fresh generation
         }
 
-        val providersToTry = com.theveloper.playpix.data.ai.provider.AiProviderSupport.buildProviderChain(userProvider)
+        val providersToTry = com.svara.music.data.ai.provider.AiProviderSupport.buildProviderChain(userProvider)
         val failedProviders = mutableListOf<String>()
         val now = System.currentTimeMillis()
         
@@ -243,7 +243,7 @@ class AiOrchestrator @Inject constructor(
                 return response
             } catch (e: Exception) {
                 // AI Optimization: Robust failover logic—if one provider fails, we log and try the next in the chain
-                val failure = com.theveloper.playpix.data.ai.provider.AiProviderSupport.wrapThrowable(provider.displayName, e)
+                val failure = com.svara.music.data.ai.provider.AiProviderSupport.wrapThrowable(provider.displayName, e)
                 Timber.tag("AiOrchestrator").w(e, "Provider ${provider.name} failed: ${failure.message}")
                 failedProviders.add("${provider.name}: ${failure.message ?: "Unknown error"}")
                 // Trigger cooldown only on provider-level outages and account problems.

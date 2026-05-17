@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components.scoped
+package com.svara.music.presentation.components.scoped
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.derivedStateOf
@@ -6,7 +6,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import com.theveloper.playpix.presentation.viewmodel.PlayerSheetState
+import com.svara.music.presentation.viewmodel.PlayerSheetState
 
 internal data class SheetBackAndDragState(
     val isDragging: Boolean,

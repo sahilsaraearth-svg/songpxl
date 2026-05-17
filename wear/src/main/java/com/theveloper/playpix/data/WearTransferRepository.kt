@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data
+package com.svara.music.data
 
 import android.app.Application
 import android.os.SystemClock
@@ -6,13 +6,13 @@ import android.webkit.MimeTypeMap
 import com.google.android.gms.wearable.ChannelClient
 import com.google.android.gms.wearable.MessageClient
 import com.google.android.gms.wearable.NodeClient
-import com.theveloper.playpix.data.local.LocalSongDao
-import com.theveloper.playpix.data.local.LocalSongEntity
-import com.theveloper.playpix.shared.WearDataPaths
-import com.theveloper.playpix.shared.WearLibraryState
-import com.theveloper.playpix.shared.WearTransferMetadata
-import com.theveloper.playpix.shared.WearTransferProgress
-import com.theveloper.playpix.shared.WearTransferRequest
+import com.svara.music.data.local.LocalSongDao
+import com.svara.music.data.local.LocalSongEntity
+import com.svara.music.shared.WearDataPaths
+import com.svara.music.shared.WearLibraryState
+import com.svara.music.shared.WearTransferMetadata
+import com.svara.music.shared.WearTransferProgress
+import com.svara.music.shared.WearTransferRequest
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

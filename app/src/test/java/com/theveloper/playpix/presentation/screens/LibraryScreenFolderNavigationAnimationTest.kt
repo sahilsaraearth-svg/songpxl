@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.screens
+package com.svara.music.presentation.screens
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test

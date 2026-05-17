@@ -1,4 +1,4 @@
-package com.theveloper.playpix.ui.glancewidget
+package com.svara.music.ui.glancewidget
 
 import androidx.glance.appwidget.GlanceAppWidget
 import androidx.glance.appwidget.GlanceAppWidgetReceiver

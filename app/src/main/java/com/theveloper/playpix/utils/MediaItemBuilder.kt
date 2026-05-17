@@ -1,4 +1,4 @@
-package com.theveloper.playpix.utils
+package com.svara.music.utils
 
 import android.content.Context
 import android.net.Uri
@@ -7,13 +7,13 @@ import androidx.core.content.FileProvider
 import androidx.core.net.toUri
 import androidx.media3.common.MediaItem
 import androidx.media3.common.MediaMetadata
-import com.theveloper.playpix.data.provider.SharedArtworkContentProvider
-import com.theveloper.playpix.data.model.Song
+import com.svara.music.data.provider.SharedArtworkContentProvider
+import com.svara.music.data.model.Song
 import java.io.File
 
 object MediaItemBuilder {
     private const val EXTERNAL_MEDIA_ID_PREFIX = "external:"
-    private const val EXTERNAL_EXTRA_PREFIX = "com.theveloper.playpix.external."
+    private const val EXTERNAL_EXTRA_PREFIX = "com.svara.music.external."
     private val DIRECT_FILE_URI_MIME_TYPES = setOf(
         "audio/mp4",
         "audio/m4a",

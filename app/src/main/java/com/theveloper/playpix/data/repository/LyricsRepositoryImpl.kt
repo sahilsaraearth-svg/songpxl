@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.repository
+package com.svara.music.data.repository
 
 import android.content.Context
 import android.net.Uri
@@ -10,19 +10,19 @@ import android.util.LruCache
 import androidx.core.net.toUri
 import com.google.gson.Gson
 import com.kyant.taglib.TagLib
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.database.MusicDao
-import com.theveloper.playpix.data.model.Lyrics
-import com.theveloper.playpix.data.model.SyncedLine
-import com.theveloper.playpix.data.model.LyricsSourcePreference
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.network.lyrics.LrcLibApiService
-import com.theveloper.playpix.data.network.lyrics.LrcLibResponse
-import com.theveloper.playpix.utils.LyricsImportSecurity
-import com.theveloper.playpix.utils.LyricsImportValidationResult
-import com.theveloper.playpix.utils.LogUtils
-import com.theveloper.playpix.utils.LyricsUtils
-import com.theveloper.playpix.utils.NetworkRetryUtils
+import com.svara.music.R
+import com.svara.music.data.database.MusicDao
+import com.svara.music.data.model.Lyrics
+import com.svara.music.data.model.SyncedLine
+import com.svara.music.data.model.LyricsSourcePreference
+import com.svara.music.data.model.Song
+import com.svara.music.data.network.lyrics.LrcLibApiService
+import com.svara.music.data.network.lyrics.LrcLibResponse
+import com.svara.music.utils.LyricsImportSecurity
+import com.svara.music.utils.LyricsImportValidationResult
+import com.svara.music.utils.LogUtils
+import com.svara.music.utils.LyricsUtils
+import com.svara.music.utils.NetworkRetryUtils
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -93,7 +93,7 @@ private data class RemoteLyricsMatch(
 class LyricsRepositoryImpl @Inject constructor(
     @ApplicationContext private val context: Context,
     private val lrcLibApiService: LrcLibApiService,
-    private val lyricsDao: com.theveloper.playpix.data.database.LyricsDao,
+    private val lyricsDao: com.svara.music.data.database.LyricsDao,
     private val okHttpClient: OkHttpClient
 ) : LyricsRepository {
 
@@ -516,7 +516,7 @@ class LyricsRepositoryImpl @Inject constructor(
                         // Save to database
                         try {
                             lyricsDao.insert(
-                                com.theveloper.playpix.data.database.LyricsEntity(
+                                com.svara.music.data.database.LyricsEntity(
                                     songId = song.id.toLong(),
                                     content = rawLyrics,
                                     isSynced = !bestMatch.syncedLyrics.isNullOrBlank(),
@@ -942,7 +942,7 @@ class LyricsRepositoryImpl @Inject constructor(
         return@withContext null
     }
 
-    private fun readValidatedLocalLyrics(file: File): com.theveloper.playpix.utils.ValidatedLyricsImport? {
+    private fun readValidatedLocalLyrics(file: File): com.svara.music.utils.ValidatedLyricsImport? {
         return when (val validation = LyricsImportSecurity.validateLocalLyricsFile(file)) {
             is LyricsImportValidationResult.Valid -> validation.value
             is LyricsImportValidationResult.Invalid -> null
@@ -1208,7 +1208,7 @@ class LyricsRepositoryImpl @Inject constructor(
 
                     try {
                         lyricsDao.insert(
-                             com.theveloper.playpix.data.database.LyricsEntity(
+                             com.svara.music.data.database.LyricsEntity(
                                  songId = song.id.toLong(),
                                  content = rawLyricsToSave,
                                  isSynced = !best.lyrics.synced.isNullOrEmpty(),
@@ -1251,7 +1251,7 @@ class LyricsRepositoryImpl @Inject constructor(
 
                 try {
                     lyricsDao.insert(
-                        com.theveloper.playpix.data.database.LyricsEntity(
+                        com.svara.music.data.database.LyricsEntity(
                             songId = song.id.toLong(),
                             content = rawLyricsToSave,
                             isSynced = !parsedLyrics.synced.isNullOrEmpty(),
@@ -1423,7 +1423,7 @@ class LyricsRepositoryImpl @Inject constructor(
         }
 
         lyricsDao.insert(
-             com.theveloper.playpix.data.database.LyricsEntity(
+             com.svara.music.data.database.LyricsEntity(
                  songId = songId,
                  content = lyricsContent,
                  isSynced = parsedLyrics.synced?.isNotEmpty() == true,
@@ -1543,7 +1543,7 @@ class LyricsRepositoryImpl @Inject constructor(
                                     if (validated != null) {
                                         try {
                                             lyricsDao.insert(
-                                                 com.theveloper.playpix.data.database.LyricsEntity(
+                                                 com.svara.music.data.database.LyricsEntity(
                                                      songId = song.id.toLong(),
                                                      content = validated.sanitizedContent,
                                                      isSynced = validated.parsedLyrics.synced?.isNotEmpty() == true,

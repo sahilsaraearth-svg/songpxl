@@ -1,10 +1,10 @@
-package com.theveloper.playpix.data.backup.validation
+package com.svara.music.data.backup.validation
 
-import com.theveloper.playpix.data.backup.model.BackupManifest
-import com.theveloper.playpix.data.backup.model.BackupSection
-import com.theveloper.playpix.data.backup.model.BackupValidationResult
-import com.theveloper.playpix.data.backup.model.Severity
-import com.theveloper.playpix.data.backup.model.ValidationError
+import com.svara.music.data.backup.model.BackupManifest
+import com.svara.music.data.backup.model.BackupSection
+import com.svara.music.data.backup.model.BackupValidationResult
+import com.svara.music.data.backup.model.Severity
+import com.svara.music.data.backup.model.ValidationError
 import java.security.MessageDigest
 import javax.inject.Inject
 import javax.inject.Singleton

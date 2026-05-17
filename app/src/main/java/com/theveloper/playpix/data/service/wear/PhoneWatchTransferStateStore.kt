@@ -1,6 +1,6 @@
-package com.theveloper.playpix.data.service.wear
+package com.svara.music.data.service.wear
 
-import com.theveloper.playpix.shared.WearTransferProgress
+import com.svara.music.shared.WearTransferProgress
 import javax.inject.Inject
 import javax.inject.Singleton
 import kotlinx.coroutines.CoroutineScope

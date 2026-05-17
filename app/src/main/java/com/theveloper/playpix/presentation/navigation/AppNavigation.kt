@@ -1,7 +1,7 @@
-package com.theveloper.playpix.presentation.navigation
+package com.svara.music.presentation.navigation
 
 import DelimiterConfigScreen
-import com.theveloper.playpix.presentation.screens.WordDelimiterConfigScreen
+import com.svara.music.presentation.screens.WordDelimiterConfigScreen
 import android.annotation.SuppressLint
 import androidx.annotation.OptIn
 import androidx.compose.animation.EnterTransition
@@ -22,7 +22,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import com.theveloper.playpix.R
+import com.svara.music.R
 import androidx.compose.ui.unit.IntOffset
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.media3.common.util.UnstableApi
@@ -31,35 +31,35 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import com.theveloper.playpix.data.preferences.LaunchTab
-import com.theveloper.playpix.data.preferences.UserPreferencesRepository
-import com.theveloper.playpix.presentation.screens.AlbumDetailScreen
-import com.theveloper.playpix.presentation.screens.AccountsScreen
-import com.theveloper.playpix.presentation.screens.ArtistDetailScreen
-import com.theveloper.playpix.presentation.screens.ArtistSettingsScreen
-import com.theveloper.playpix.presentation.screens.DailyMixScreen
-import com.theveloper.playpix.presentation.screens.EditTransitionScreen
-import com.theveloper.playpix.presentation.screens.EasterEggScreen
-import com.theveloper.playpix.presentation.screens.ExperimentalSettingsScreen
-import com.theveloper.playpix.presentation.screens.GenreDetailScreen
-import com.theveloper.playpix.presentation.screens.HomeScreen
-import com.theveloper.playpix.presentation.screens.LibraryScreen
-import com.theveloper.playpix.presentation.screens.MashupScreen
-import com.theveloper.playpix.presentation.screens.NavBarCornerRadiusScreen
-import com.theveloper.playpix.presentation.screens.PaletteStyleSettingsScreen
-import com.theveloper.playpix.presentation.screens.PlaylistDetailScreen
-import com.theveloper.playpix.presentation.screens.RecentlyPlayedScreen
+import com.svara.music.data.preferences.LaunchTab
+import com.svara.music.data.preferences.UserPreferencesRepository
+import com.svara.music.presentation.screens.AlbumDetailScreen
+import com.svara.music.presentation.screens.AccountsScreen
+import com.svara.music.presentation.screens.ArtistDetailScreen
+import com.svara.music.presentation.screens.ArtistSettingsScreen
+import com.svara.music.presentation.screens.DailyMixScreen
+import com.svara.music.presentation.screens.EditTransitionScreen
+import com.svara.music.presentation.screens.EasterEggScreen
+import com.svara.music.presentation.screens.ExperimentalSettingsScreen
+import com.svara.music.presentation.screens.GenreDetailScreen
+import com.svara.music.presentation.screens.HomeScreen
+import com.svara.music.presentation.screens.LibraryScreen
+import com.svara.music.presentation.screens.MashupScreen
+import com.svara.music.presentation.screens.NavBarCornerRadiusScreen
+import com.svara.music.presentation.screens.PaletteStyleSettingsScreen
+import com.svara.music.presentation.screens.PlaylistDetailScreen
+import com.svara.music.presentation.screens.RecentlyPlayedScreen
 
-import com.theveloper.playpix.presentation.screens.AboutScreen
-import com.theveloper.playpix.presentation.screens.SearchScreen
-import com.theveloper.playpix.presentation.screens.StatsScreen
-import com.theveloper.playpix.presentation.screens.SettingsScreen
-import com.theveloper.playpix.presentation.screens.SettingsCategoryScreen
-import com.theveloper.playpix.presentation.screens.EqualizerScreen
-import com.theveloper.playpix.presentation.viewmodel.PlayerViewModel
-import com.theveloper.playpix.presentation.viewmodel.PlaylistViewModel
+import com.svara.music.presentation.screens.AboutScreen
+import com.svara.music.presentation.screens.SearchScreen
+import com.svara.music.presentation.screens.StatsScreen
+import com.svara.music.presentation.screens.SettingsScreen
+import com.svara.music.presentation.screens.SettingsCategoryScreen
+import com.svara.music.presentation.screens.EqualizerScreen
+import com.svara.music.presentation.viewmodel.PlayerViewModel
+import com.svara.music.presentation.viewmodel.PlaylistViewModel
 import kotlinx.coroutines.flow.first
-import com.theveloper.playpix.presentation.components.ScreenWrapper
+import com.svara.music.presentation.components.ScreenWrapper
 
 @OptIn(UnstableApi::class)
 @SuppressLint("UnrememberedGetBackStackEntry")
@@ -536,7 +536,7 @@ fun AppNavigation(
                 popExitTransition = { popExitTransition() },
             ) {
                 ScreenWrapper(navController = navController, playerViewModel = playerViewModel) {
-                    com.theveloper.playpix.presentation.screens.DeviceCapabilitiesScreen(
+                    com.svara.music.presentation.screens.DeviceCapabilitiesScreen(
                         navController = navController,
                         playerViewModel = playerViewModel
                     )
@@ -550,7 +550,7 @@ fun AppNavigation(
                 popExitTransition = { popExitTransition() },
             ) {
                 ScreenWrapper(navController = navController, playerViewModel = playerViewModel) {
-                    com.theveloper.playpix.presentation.netease.dashboard.NeteaseDashboardScreen(
+                    com.svara.music.presentation.netease.dashboard.NeteaseDashboardScreen(
                         onBack = { navController.popBackStack() }
                     )
                 }
@@ -563,7 +563,7 @@ fun AppNavigation(
                 popExitTransition = { popExitTransition() },
             ) {
                 ScreenWrapper(navController = navController, playerViewModel = playerViewModel) {
-                    com.theveloper.playpix.presentation.qqmusic.dashboard.QqMusicDashboardScreen(
+                    com.svara.music.presentation.qqmusic.dashboard.QqMusicDashboardScreen(
                         onBack = { navController.popBackStack() }
                     )
                 }
@@ -576,7 +576,7 @@ fun AppNavigation(
                 popExitTransition = { popExitTransition() },
             ) {
                 ScreenWrapper(navController = navController, playerViewModel = playerViewModel) {
-                    com.theveloper.playpix.presentation.navidrome.dashboard.NavidromeDashboardScreen(
+                    com.svara.music.presentation.navidrome.dashboard.NavidromeDashboardScreen(
                         onBack = { navController.popBackStack() }
                     )
                 }
@@ -589,7 +589,7 @@ fun AppNavigation(
                 popExitTransition = { popExitTransition() },
             ) {
                 ScreenWrapper(navController = navController, playerViewModel = playerViewModel) {
-                    com.theveloper.playpix.presentation.jellyfin.dashboard.JellyfinDashboardScreen(
+                    com.svara.music.presentation.jellyfin.dashboard.JellyfinDashboardScreen(
                         onBack = { navController.popBackStack() }
                     )
                 }

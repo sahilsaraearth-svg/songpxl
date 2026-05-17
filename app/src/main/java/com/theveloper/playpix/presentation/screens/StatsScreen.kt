@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
 
-package com.theveloper.playpix.presentation.screens
+package com.svara.music.presentation.screens
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.Spring
@@ -105,17 +105,17 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.stats.PlaybackStatsRepository
-import com.theveloper.playpix.data.stats.StatsTimeRange
-import com.theveloper.playpix.presentation.components.CollapsibleCommonTopBar
-import com.theveloper.playpix.presentation.components.ExpressiveTopBarContent
-import com.theveloper.playpix.presentation.components.MiniPlayerHeight
-import com.theveloper.playpix.presentation.components.SmartImage
-import com.theveloper.playpix.presentation.screens.TabAnimation
-import com.theveloper.playpix.presentation.viewmodel.StatsViewModel
-import com.theveloper.playpix.utils.formatListeningDurationCompact
-import com.theveloper.playpix.utils.formatListeningDurationLong
+import com.svara.music.R
+import com.svara.music.data.stats.PlaybackStatsRepository
+import com.svara.music.data.stats.StatsTimeRange
+import com.svara.music.presentation.components.CollapsibleCommonTopBar
+import com.svara.music.presentation.components.ExpressiveTopBarContent
+import com.svara.music.presentation.components.MiniPlayerHeight
+import com.svara.music.presentation.components.SmartImage
+import com.svara.music.presentation.screens.TabAnimation
+import com.svara.music.presentation.viewmodel.StatsViewModel
+import com.svara.music.utils.formatListeningDurationCompact
+import com.svara.music.utils.formatListeningDurationLong
 import java.util.Locale
 import kotlin.math.roundToInt
 import kotlin.math.PI
@@ -125,12 +125,12 @@ import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape
 import androidx.compose.ui.unit.sp
 import androidx.annotation.StringRes
 import androidx.compose.ui.res.stringResource
-import com.theveloper.playpix.presentation.stats.displayNameRes
+import com.svara.music.presentation.stats.displayNameRes
 import androidx.compose.material.icons.outlined.Album
-import com.theveloper.playpix.utils.shapes.RoundedStarShape
+import com.svara.music.utils.shapes.RoundedStarShape
 import androidx.compose.material.icons.outlined.MusicNote
 import androidx.compose.material.icons.outlined.PlayCircleOutline
-import com.theveloper.playpix.ui.theme.ExpTitleTypography
+import com.svara.music.ui.theme.ExpTitleTypography
 
 private const val PULL_TO_REFRESH_MIN_DURATION_MS = 3500L
 

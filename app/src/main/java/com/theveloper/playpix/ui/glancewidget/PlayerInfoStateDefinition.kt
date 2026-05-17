@@ -1,4 +1,4 @@
-package com.theveloper.playpix.ui.glancewidget
+package com.svara.music.ui.glancewidget
 
 import android.content.Context
 import androidx.datastore.core.CorruptionException
@@ -9,7 +9,7 @@ import androidx.datastore.preferences.protobuf.InvalidProtocolBufferException
 import androidx.glance.state.GlanceStateDefinition
 import java.io.InputStream
 import java.io.OutputStream
-import com.theveloper.playpix.data.model.PlayerInfo
+import com.svara.music.data.model.PlayerInfo
 import kotlinx.serialization.SerializationException
 import kotlinx.serialization.json.Json
 import okio.IOException

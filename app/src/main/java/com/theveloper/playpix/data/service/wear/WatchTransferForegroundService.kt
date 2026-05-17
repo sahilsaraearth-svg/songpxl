@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.service.wear
+package com.svara.music.data.service.wear
 
 import android.app.Notification
 import android.app.NotificationChannel
@@ -13,9 +13,9 @@ import android.os.IBinder
 import android.text.format.Formatter
 import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
-import com.theveloper.playpix.MainActivity
-import com.theveloper.playpix.R
-import com.theveloper.playpix.shared.WearTransferProgress
+import com.svara.music.MainActivity
+import com.svara.music.R
+import com.svara.music.shared.WearTransferProgress
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import kotlinx.coroutines.CoroutineScope
@@ -263,7 +263,7 @@ class WatchTransferForegroundService : Service() {
 
     companion object {
         private const val TAG = "WatchTransferFgSvc"
-        private const val NOTIFICATION_CHANNEL_ID = "playpix_watch_transfers"
+        private const val NOTIFICATION_CHANNEL_ID = "svara_watch_transfers"
         private const val NOTIFICATION_ID = 1003
         private const val MAX_STYLE_LINES = 5
 

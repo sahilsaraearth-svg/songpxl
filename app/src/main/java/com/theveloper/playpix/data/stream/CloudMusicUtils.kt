@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.stream
+package com.svara.music.data.stream
 
 import org.json.JSONObject
 

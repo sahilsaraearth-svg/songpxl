@@ -1,9 +1,9 @@
-package com.theveloper.playpix.data.jiosaavn
+package com.svara.music.data.jiosaavn
 
-import com.theveloper.playpix.data.model.Album
-import com.theveloper.playpix.data.model.Artist
-import com.theveloper.playpix.data.model.ArtistRef
-import com.theveloper.playpix.data.model.Song
+import com.svara.music.data.model.Album
+import com.svara.music.data.model.Artist
+import com.svara.music.data.model.ArtistRef
+import com.svara.music.data.model.Song
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import timber.log.Timber

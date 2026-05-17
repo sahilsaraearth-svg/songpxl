@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.screens
+package com.svara.music.presentation.screens
 
 import androidx.annotation.OptIn
 import androidx.compose.animation.AnimatedVisibility
@@ -71,15 +71,15 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.media3.common.util.UnstableApi
 import androidx.navigation.NavController
-import com.theveloper.playpix.presentation.components.CollapsibleCommonTopBar
-import com.theveloper.playpix.presentation.components.MiniPlayerHeight
-import com.theveloper.playpix.presentation.viewmodel.PlayerViewModel
-import com.theveloper.playpix.presentation.viewmodel.SettingsViewModel
+import com.svara.music.presentation.components.CollapsibleCommonTopBar
+import com.svara.music.presentation.components.MiniPlayerHeight
+import com.svara.music.presentation.viewmodel.PlayerViewModel
+import com.svara.music.presentation.viewmodel.SettingsViewModel
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
 import androidx.compose.ui.res.stringResource
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.preferences.AlbumArtQuality
+import com.svara.music.R
+import com.svara.music.data.preferences.AlbumArtQuality
 
 @OptIn(UnstableApi::class)
 @Composable

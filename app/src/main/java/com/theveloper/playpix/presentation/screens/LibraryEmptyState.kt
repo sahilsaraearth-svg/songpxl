@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.screens
+package com.svara.music.presentation.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -22,11 +22,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.model.LibraryTabId
-import com.theveloper.playpix.data.model.StorageFilter
-import com.theveloper.playpix.presentation.components.MiniPlayerHeight
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
+import com.svara.music.R
+import com.svara.music.data.model.LibraryTabId
+import com.svara.music.data.model.StorageFilter
+import com.svara.music.presentation.components.MiniPlayerHeight
+import com.svara.music.ui.theme.GoogleSansRounded
 
 private data class LibraryEmptySpec(
     val iconRes: Int,

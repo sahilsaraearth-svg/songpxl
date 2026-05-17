@@ -1,6 +1,6 @@
-package com.theveloper.playpix
+package com.svara.music
 
-import com.theveloper.playpix.presentation.navigation.navigateSafely
+import com.svara.music.presentation.navigation.navigateSafely
 
 // import androidx.compose.ui.platform.LocalView // No longer needed for this
 // import androidx.core.view.WindowInsetsCompat // No longer needed for this
@@ -95,41 +95,41 @@ import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.permissions.rememberMultiplePermissionsState
 import com.google.common.util.concurrent.ListenableFuture
 import com.google.common.util.concurrent.MoreExecutors
-import com.theveloper.playpix.data.github.GitHubAnnouncementPropertiesService
-import com.theveloper.playpix.data.github.PlayStoreAnnouncementRemoteConfig
-import com.theveloper.playpix.data.preferences.AppThemeMode
-import com.theveloper.playpix.data.preferences.NavBarStyle
-import com.theveloper.playpix.data.preferences.sanitizeNavBarCornerRadius
-import com.theveloper.playpix.data.preferences.ThemePreferencesRepository
-import com.theveloper.playpix.data.preferences.UserPreferencesRepository
-import com.theveloper.playpix.data.service.MusicService
-import com.theveloper.playpix.data.worker.SyncManager
-import com.theveloper.playpix.data.worker.SyncProgress
-import com.theveloper.playpix.presentation.components.AllFilesAccessDialog
-import com.theveloper.playpix.presentation.components.AppSidebarDrawer
-import com.theveloper.playpix.presentation.components.CrashReportDialog
-import com.theveloper.playpix.presentation.components.DismissUndoBar
-import com.theveloper.playpix.presentation.components.DrawerDestination
-import com.theveloper.playpix.presentation.components.MiniPlayerBottomSpacer
-import com.theveloper.playpix.presentation.components.MiniPlayerHeight
-import com.theveloper.playpix.presentation.components.PlayerInternalNavigationBar
-import com.theveloper.playpix.presentation.components.PlayStoreAnnouncementDefaults
-import com.theveloper.playpix.presentation.components.PlayStoreAnnouncementDialog
-import com.theveloper.playpix.presentation.components.PlayStoreAnnouncementUiModel
-import com.theveloper.playpix.presentation.components.UnifiedPlayerSheetV2
-import com.theveloper.playpix.presentation.components.calculatePlayerSheetCollapsedTargetY
-import com.theveloper.playpix.presentation.components.resolveNavBarOccupiedHeight
-import com.theveloper.playpix.presentation.components.resolveNavBarSurfaceHeight
-import com.theveloper.playpix.presentation.components.sanitizeNavigationBarBottomInset
-import com.theveloper.playpix.presentation.navigation.AppNavigation
-import com.theveloper.playpix.presentation.navigation.Screen
-import com.theveloper.playpix.presentation.screens.SetupScreen
-import com.theveloper.playpix.presentation.viewmodel.MainViewModel
-import com.theveloper.playpix.presentation.viewmodel.PlayerViewModel
-import com.theveloper.playpix.ui.theme.PlayPixTheme
-import com.theveloper.playpix.utils.CrashHandler
-import com.theveloper.playpix.utils.AppLocaleManager
-import com.theveloper.playpix.utils.LogUtils
+import com.svara.music.data.github.GitHubAnnouncementPropertiesService
+import com.svara.music.data.github.PlayStoreAnnouncementRemoteConfig
+import com.svara.music.data.preferences.AppThemeMode
+import com.svara.music.data.preferences.NavBarStyle
+import com.svara.music.data.preferences.sanitizeNavBarCornerRadius
+import com.svara.music.data.preferences.ThemePreferencesRepository
+import com.svara.music.data.preferences.UserPreferencesRepository
+import com.svara.music.data.service.MusicService
+import com.svara.music.data.worker.SyncManager
+import com.svara.music.data.worker.SyncProgress
+import com.svara.music.presentation.components.AllFilesAccessDialog
+import com.svara.music.presentation.components.AppSidebarDrawer
+import com.svara.music.presentation.components.CrashReportDialog
+import com.svara.music.presentation.components.DismissUndoBar
+import com.svara.music.presentation.components.DrawerDestination
+import com.svara.music.presentation.components.MiniPlayerBottomSpacer
+import com.svara.music.presentation.components.MiniPlayerHeight
+import com.svara.music.presentation.components.PlayerInternalNavigationBar
+import com.svara.music.presentation.components.PlayStoreAnnouncementDefaults
+import com.svara.music.presentation.components.PlayStoreAnnouncementDialog
+import com.svara.music.presentation.components.PlayStoreAnnouncementUiModel
+import com.svara.music.presentation.components.UnifiedPlayerSheetV2
+import com.svara.music.presentation.components.calculatePlayerSheetCollapsedTargetY
+import com.svara.music.presentation.components.resolveNavBarOccupiedHeight
+import com.svara.music.presentation.components.resolveNavBarSurfaceHeight
+import com.svara.music.presentation.components.sanitizeNavigationBarBottomInset
+import com.svara.music.presentation.navigation.AppNavigation
+import com.svara.music.presentation.navigation.Screen
+import com.svara.music.presentation.screens.SetupScreen
+import com.svara.music.presentation.viewmodel.MainViewModel
+import com.svara.music.presentation.viewmodel.PlayerViewModel
+import com.svara.music.ui.theme.SvaraTheme
+import com.svara.music.utils.CrashHandler
+import com.svara.music.utils.AppLocaleManager
+import com.svara.music.utils.LogUtils
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.collections.immutable.persistentListOf
 import kotlinx.coroutines.delay
@@ -137,10 +137,10 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape
-import com.theveloper.playpix.presentation.utils.AppHapticsConfig
-import com.theveloper.playpix.presentation.utils.LocalAppHapticsConfig
-import com.theveloper.playpix.presentation.utils.NoOpHapticFeedback
-import com.theveloper.playpix.utils.CrashLogData
+import com.svara.music.presentation.utils.AppHapticsConfig
+import com.svara.music.presentation.utils.LocalAppHapticsConfig
+import com.svara.music.presentation.utils.NoOpHapticFeedback
+import com.svara.music.utils.CrashLogData
 import javax.annotation.concurrent.Immutable
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
@@ -214,13 +214,13 @@ class MainActivity : ComponentActivity() {
         val shouldBenchmarkRebuildDatabase =
             isBenchmarkMode && intent.getBooleanExtra("benchmark_rebuild_database", false)
         Log.i(
-            "PlayPixBenchmark",
+            "SvaraBenchmark",
             "onCreate benchmark=$isBenchmarkMode rebuildDatabase=$shouldBenchmarkRebuildDatabase"
         )
         if (shouldBenchmarkRebuildDatabase) {
             lifecycleScope.launch {
                 userPreferencesRepository.setInitialSetupDone(true)
-                Log.i("PlayPixBenchmark", "Enqueueing benchmark database rebuild")
+                Log.i("SvaraBenchmark", "Enqueueing benchmark database rebuild")
                 syncManager.rebuildDatabase()
                 delay(1_500L)
                 playerViewModel.prepareBenchmarkPlayerFromLibrary()
@@ -275,7 +275,7 @@ class MainActivity : ComponentActivity() {
                 }
             }
 
-            PlayPixTheme(
+            SvaraTheme(
                 darkTheme = useDarkTheme
             ) {
                 var contentVisible by remember { mutableStateOf(false) }
@@ -383,14 +383,14 @@ class MainActivity : ComponentActivity() {
                 clearExternalIntentPayload(intent)
             }
             
-            intent.action == "com.theveloper.playpix.ACTION_PLAY_SONG" -> {
+            intent.action == "com.svara.music.ACTION_PLAY_SONG" -> {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                     intent.getParcelableExtra("song", com.theveloper.playpix.data.model.Song::class.java)?.let { song ->
+                     intent.getParcelableExtra("song", com.svara.music.data.model.Song::class.java)?.let { song ->
                          playerViewModel.playSong(song)
                      }
                 } else {
                      @Suppress("DEPRECATION")
-                     intent.getParcelableExtra<com.theveloper.playpix.data.model.Song>("song")?.let { song ->
+                     intent.getParcelableExtra<com.svara.music.data.model.Song>("song")?.let { song ->
                          playerViewModel.playSong(song)
                      }
                 }
@@ -755,7 +755,7 @@ class MainActivity : ComponentActivity() {
                         DrawerDestination.Equalizer -> navController.navigateSafely(Screen.Equalizer.route)
                         DrawerDestination.Settings -> navController.navigateSafely(Screen.Settings.route)
                         DrawerDestination.Telegram -> {
-                            val intent = Intent(this@MainActivity, com.theveloper.playpix.presentation.telegram.auth.TelegramLoginActivity::class.java)
+                            val intent = Intent(this@MainActivity, com.svara.music.presentation.telegram.auth.TelegramLoginActivity::class.java)
                             startActivity(intent)
                         }
                     }

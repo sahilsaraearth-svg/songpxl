@@ -1,7 +1,7 @@
-package com.theveloper.playpix.data.gdrive
+package com.svara.music.data.gdrive
 
 import android.net.Uri
-import com.theveloper.playpix.data.stream.CloudStreamSecurity
+import com.svara.music.data.stream.CloudStreamSecurity
 import io.ktor.http.ContentType
 import io.ktor.http.HttpStatusCode
 import io.ktor.server.application.call

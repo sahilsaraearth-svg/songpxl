@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components
+package com.svara.music.presentation.components
 
 import android.content.Intent
 import androidx.compose.foundation.background
@@ -24,13 +24,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.res.stringResource
-import com.theveloper.playpix.R
-import com.theveloper.playpix.presentation.jellyfin.auth.JellyfinLoginActivity
-import com.theveloper.playpix.presentation.navidrome.auth.NavidromeLoginActivity
-import com.theveloper.playpix.presentation.netease.auth.NeteaseLoginActivity
-import com.theveloper.playpix.presentation.qqmusic.auth.QqMusicLoginActivity
-import com.theveloper.playpix.presentation.telegram.auth.TelegramLoginActivity
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
+import com.svara.music.R
+import com.svara.music.presentation.jellyfin.auth.JellyfinLoginActivity
+import com.svara.music.presentation.navidrome.auth.NavidromeLoginActivity
+import com.svara.music.presentation.netease.auth.NeteaseLoginActivity
+import com.svara.music.presentation.qqmusic.auth.QqMusicLoginActivity
+import com.svara.music.presentation.telegram.auth.TelegramLoginActivity
+import com.svara.music.ui.theme.GoogleSansRounded
 
 /**
  * Bottom sheet that lets the user choose between streaming providers.

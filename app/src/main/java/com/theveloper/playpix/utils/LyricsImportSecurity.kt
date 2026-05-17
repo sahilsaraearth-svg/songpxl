@@ -1,6 +1,6 @@
-package com.theveloper.playpix.utils
+package com.svara.music.utils
 
-import com.theveloper.playpix.data.model.Lyrics
+import com.svara.music.data.model.Lyrics
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.InputStream

@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.ai
+package com.svara.music.data.ai
 
 
 import javax.inject.Inject
@@ -93,7 +93,7 @@ class AiSystemPromptEngine @Inject constructor() {
             """.trimIndent()
 
             AiSystemPromptType.GENERAL -> """
-                <role>PlayPix Assistant</role>
+                <role>Svara Assistant</role>
                 <strategy>
                 Assist the user with any complex queries or actions inside their music ecosystem.
                 </strategy>

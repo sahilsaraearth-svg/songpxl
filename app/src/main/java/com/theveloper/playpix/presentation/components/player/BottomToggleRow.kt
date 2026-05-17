@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components.player
+package com.svara.music.presentation.components.player
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -10,9 +10,9 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.media3.common.Player
-import com.theveloper.playpix.R
-import com.theveloper.playpix.presentation.components.LocalMaterialTheme
-import com.theveloper.playpix.presentation.components.ToggleSegmentButton
+import com.svara.music.R
+import com.svara.music.presentation.components.LocalMaterialTheme
+import com.svara.music.presentation.components.ToggleSegmentButton
 import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape
 
 @Composable

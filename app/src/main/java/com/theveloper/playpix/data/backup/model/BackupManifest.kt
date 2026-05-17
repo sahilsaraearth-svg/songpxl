@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.backup.model
+package com.svara.music.data.backup.model
 
 data class BackupManifest(
     val schemaVersion: Int = CURRENT_SCHEMA_VERSION,

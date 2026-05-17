@@ -1,7 +1,7 @@
-package com.theveloper.playpix.presentation.screens
+package com.svara.music.presentation.screens
 
-import com.theveloper.playpix.presentation.navigation.navigateSafely
-import com.theveloper.playpix.presentation.navigation.navigateSafelyReplacing
+import com.svara.music.presentation.navigation.navigateSafely
+import com.svara.music.presentation.navigation.navigateSafelyReplacing
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 import androidx.compose.animation.*
@@ -51,31 +51,31 @@ import androidx.media3.common.util.UnstableApi
 import androidx.navigation.NavHostController
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.model.Artist
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.preferences.AlbumArtPaletteStyle
-import com.theveloper.playpix.presentation.components.AutoScrollingTextOnDemand
-import com.theveloper.playpix.presentation.components.ExpressiveTopBarContent
-import com.theveloper.playpix.presentation.components.ExpressiveScrollBar
-import com.theveloper.playpix.presentation.components.GenreSortBottomSheet
-import com.theveloper.playpix.presentation.components.MiniPlayerHeight
-import com.theveloper.playpix.presentation.components.SmartImageCompactListTargetSize
-import com.theveloper.playpix.presentation.components.SmartImage
-import com.theveloper.playpix.presentation.components.SongInfoBottomSheet
-import com.theveloper.playpix.presentation.components.extractFastScrollGlyph
-import com.theveloper.playpix.presentation.components.subcomps.EnhancedSongListItem
-import com.theveloper.playpix.presentation.screens.QuickFillDialog
-import com.theveloper.playpix.presentation.viewmodel.GenreDetailListItem
-import com.theveloper.playpix.presentation.viewmodel.GenreDetailViewModel
-import com.theveloper.playpix.presentation.viewmodel.SortOption
-import com.theveloper.playpix.presentation.viewmodel.SectionData
-import com.theveloper.playpix.presentation.viewmodel.AlbumData
-import com.theveloper.playpix.presentation.viewmodel.PlayerViewModel
-import com.theveloper.playpix.presentation.viewmodel.StablePlayerState
-import com.theveloper.playpix.ui.theme.LocalPlayPixDarkTheme
-import com.theveloper.playpix.utils.formatDuration
-import com.theveloper.playpix.utils.formatSongCount
+import com.svara.music.R
+import com.svara.music.data.model.Artist
+import com.svara.music.data.model.Song
+import com.svara.music.data.preferences.AlbumArtPaletteStyle
+import com.svara.music.presentation.components.AutoScrollingTextOnDemand
+import com.svara.music.presentation.components.ExpressiveTopBarContent
+import com.svara.music.presentation.components.ExpressiveScrollBar
+import com.svara.music.presentation.components.GenreSortBottomSheet
+import com.svara.music.presentation.components.MiniPlayerHeight
+import com.svara.music.presentation.components.SmartImageCompactListTargetSize
+import com.svara.music.presentation.components.SmartImage
+import com.svara.music.presentation.components.SongInfoBottomSheet
+import com.svara.music.presentation.components.extractFastScrollGlyph
+import com.svara.music.presentation.components.subcomps.EnhancedSongListItem
+import com.svara.music.presentation.screens.QuickFillDialog
+import com.svara.music.presentation.viewmodel.GenreDetailListItem
+import com.svara.music.presentation.viewmodel.GenreDetailViewModel
+import com.svara.music.presentation.viewmodel.SortOption
+import com.svara.music.presentation.viewmodel.SectionData
+import com.svara.music.presentation.viewmodel.AlbumData
+import com.svara.music.presentation.viewmodel.PlayerViewModel
+import com.svara.music.presentation.viewmodel.StablePlayerState
+import com.svara.music.ui.theme.LocalSvaraDarkTheme
+import com.svara.music.utils.formatDuration
+import com.svara.music.utils.formatSongCount
 import kotlinx.collections.immutable.persistentListOf
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
@@ -94,7 +94,7 @@ fun GenreDetailScreen(
     decodedGenreId: String = java.net.URLDecoder.decode(genreId, "UTF-8"),
     playerViewModel: PlayerViewModel,
     viewModel: GenreDetailViewModel = hiltViewModel(),
-    playlistViewModel: com.theveloper.playpix.presentation.viewmodel.PlaylistViewModel = hiltViewModel()
+    playlistViewModel: com.svara.music.presentation.viewmodel.PlaylistViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val stablePlayerState by playerViewModel.stablePlayerState.collectAsStateWithLifecycle()
@@ -110,7 +110,7 @@ fun GenreDetailScreen(
     }
 
     val density = LocalDensity.current
-    val darkMode = LocalPlayPixDarkTheme.current
+    val darkMode = LocalSvaraDarkTheme.current
 
     val coroutineScope = rememberCoroutineScope()
     val lazyListState = rememberLazyListState()
@@ -190,13 +190,13 @@ fun GenreDetailScreen(
     val themeGenre = uiState.genre
     val themeColor = remember(themeGenre, decodedGenreId, darkMode, defaultContainer, defaultOnContainer) {
         if (themeGenre != null) {
-            com.theveloper.playpix.ui.theme.GenreThemeUtils.getGenreThemeColor(
+            com.svara.music.ui.theme.GenreThemeUtils.getGenreThemeColor(
                 genre = themeGenre,
                 isDark = darkMode,
                 fallbackGenreId = decodedGenreId
             )
         } else {
-            com.theveloper.playpix.ui.theme.GenreThemeColor(
+            com.svara.music.ui.theme.GenreThemeColor(
                 defaultContainer,
                 defaultOnContainer
             )
@@ -257,7 +257,7 @@ fun GenreDetailScreen(
 
     // Dynamic Theme
     val genreColorScheme = remember(themeGenre, decodedGenreId, darkMode, genrePaletteStyle) {
-        com.theveloper.playpix.ui.theme.GenreThemeUtils.getGenreDetailColorScheme(
+        com.svara.music.ui.theme.GenreThemeUtils.getGenreDetailColorScheme(
             genre = themeGenre,
             fallbackGenreId = decodedGenreId,
             isDark = darkMode,
@@ -500,30 +500,30 @@ fun GenreDetailScreen(
                         onDeleteFromDevice = playerViewModel::deleteFromDevice,
                         onNavigateToAlbum = {
                             navController.navigateSafelyReplacing(
-                                route = com.theveloper.playpix.presentation.navigation.Screen.AlbumDetail.createRoute(song.albumId),
-                                patternToPop = com.theveloper.playpix.presentation.navigation.Screen.AlbumDetail.route
+                                route = com.svara.music.presentation.navigation.Screen.AlbumDetail.createRoute(song.albumId),
+                                patternToPop = com.svara.music.presentation.navigation.Screen.AlbumDetail.route
                             )
                             showSongOptionsSheet = null
                         },
                         onNavigateToArtist = {
                             navController.navigateSafelyReplacing(
-                                route = com.theveloper.playpix.presentation.navigation.Screen.ArtistDetail.createRoute(song.artistId),
-                                patternToPop = com.theveloper.playpix.presentation.navigation.Screen.ArtistDetail.route
+                                route = com.svara.music.presentation.navigation.Screen.ArtistDetail.createRoute(song.artistId),
+                                patternToPop = com.svara.music.presentation.navigation.Screen.ArtistDetail.route
                             )
                             showSongOptionsSheet = null
                         },
                         onNavigateToArtistById = { artistId ->
                             navController.navigateSafelyReplacing(
-                                route = com.theveloper.playpix.presentation.navigation.Screen.ArtistDetail.createRoute(artistId),
-                                patternToPop = com.theveloper.playpix.presentation.navigation.Screen.ArtistDetail.route
+                                route = com.svara.music.presentation.navigation.Screen.ArtistDetail.createRoute(artistId),
+                                patternToPop = com.svara.music.presentation.navigation.Screen.ArtistDetail.route
                             )
                             showSongOptionsSheet = null
                         },
                         onNavigateToGenre = {
                             song.genre?.let {
                                 navController.navigateSafelyReplacing(
-                                    route = com.theveloper.playpix.presentation.navigation.Screen.GenreDetail.createRoute(java.net.URLEncoder.encode(it, "UTF-8")),
-                                    patternToPop = com.theveloper.playpix.presentation.navigation.Screen.GenreDetail.route
+                                    route = com.svara.music.presentation.navigation.Screen.GenreDetail.createRoute(java.net.URLEncoder.encode(it, "UTF-8")),
+                                    patternToPop = com.svara.music.presentation.navigation.Screen.GenreDetail.route
                                 )
                             }
                             showSongOptionsSheet = null
@@ -551,7 +551,7 @@ fun GenreDetailScreen(
                 }
 
                 if (showPlaylistBottomSheet) {
-                    com.theveloper.playpix.presentation.components.PlaylistBottomSheet(
+                    com.svara.music.presentation.components.PlaylistBottomSheet(
                         playlistUiState = playlistUiState,
                         songs = listOf(song),
                         onDismiss = { showPlaylistBottomSheet = false },
@@ -855,7 +855,7 @@ fun GenreAlbumHeader(
 
 @Composable
 fun GenreSongItemWrapper(
-    item: com.theveloper.playpix.presentation.viewmodel.GenreDetailListItem.SongItem,
+    item: com.svara.music.presentation.viewmodel.GenreDetailListItem.SongItem,
     stablePlayerState: StablePlayerState,
     onSongClick: (Song) -> Unit,
     onMoreOptionsClick: (Song) -> Unit

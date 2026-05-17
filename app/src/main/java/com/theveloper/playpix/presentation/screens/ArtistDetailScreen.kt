@@ -1,9 +1,9 @@
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
 
-package com.theveloper.playpix.presentation.screens
+package com.svara.music.presentation.screens
 
-import com.theveloper.playpix.presentation.navigation.navigateSafely
-import com.theveloper.playpix.presentation.navigation.navigateSafelyReplacing
+import com.svara.music.presentation.navigation.navigateSafely
+import com.svara.music.presentation.navigation.navigateSafelyReplacing
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -59,33 +59,33 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.Velocity
 import androidx.compose.ui.unit.dp
-import com.theveloper.playpix.ui.theme.LocalPlayPixDarkTheme
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
-import com.theveloper.playpix.ui.theme.PlayPixStatusBarStyle
+import com.svara.music.ui.theme.LocalSvaraDarkTheme
+import com.svara.music.ui.theme.GoogleSansRounded
+import com.svara.music.ui.theme.SvaraStatusBarStyle
 import androidx.compose.ui.unit.lerp
 import androidx.compose.ui.util.lerp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.media3.common.util.UnstableApi
 import androidx.navigation.NavController
-import com.theveloper.playpix.data.model.Artist
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.presentation.components.CollapsibleCommonTopBar
-import com.theveloper.playpix.presentation.components.ExpressiveScrollBar
-import com.theveloper.playpix.presentation.components.MiniPlayerHeight
-import com.theveloper.playpix.presentation.components.PlaylistBottomSheet
-import com.theveloper.playpix.presentation.components.SmartImageCompactListTargetSize
-import com.theveloper.playpix.presentation.components.SmartImage
-import com.theveloper.playpix.presentation.components.SongInfoBottomSheet
-import com.theveloper.playpix.presentation.components.resolveNavBarOccupiedHeight
-import com.theveloper.playpix.presentation.navigation.Screen
-import com.theveloper.playpix.presentation.viewmodel.ArtistDetailViewModel
-import com.theveloper.playpix.presentation.viewmodel.ArtistAlbumSection
-import com.theveloper.playpix.presentation.viewmodel.PlayerViewModel
-import com.theveloper.playpix.presentation.viewmodel.PlaylistViewModel
-import com.theveloper.playpix.utils.formatSongCount
-import com.theveloper.playpix.utils.shapes.RoundedStarShape
+import com.svara.music.data.model.Artist
+import com.svara.music.data.model.Song
+import com.svara.music.presentation.components.CollapsibleCommonTopBar
+import com.svara.music.presentation.components.ExpressiveScrollBar
+import com.svara.music.presentation.components.MiniPlayerHeight
+import com.svara.music.presentation.components.PlaylistBottomSheet
+import com.svara.music.presentation.components.SmartImageCompactListTargetSize
+import com.svara.music.presentation.components.SmartImage
+import com.svara.music.presentation.components.SongInfoBottomSheet
+import com.svara.music.presentation.components.resolveNavBarOccupiedHeight
+import com.svara.music.presentation.navigation.Screen
+import com.svara.music.presentation.viewmodel.ArtistDetailViewModel
+import com.svara.music.presentation.viewmodel.ArtistAlbumSection
+import com.svara.music.presentation.viewmodel.PlayerViewModel
+import com.svara.music.presentation.viewmodel.PlaylistViewModel
+import com.svara.music.utils.formatSongCount
+import com.svara.music.utils.shapes.RoundedStarShape
 import kotlinx.coroutines.launch
-import com.theveloper.playpix.presentation.components.subcomps.EnhancedSongListItem
+import com.svara.music.presentation.components.subcomps.EnhancedSongListItem
 import kotlin.math.roundToInt
 import androidx.compose.ui.unit.IntOffset
 import kotlinx.coroutines.delay
@@ -98,7 +98,7 @@ import coil.request.ImageRequest
 import coil.size.Size
 import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape
 import androidx.compose.ui.res.stringResource
-import com.theveloper.playpix.R
+import com.svara.music.R
 
 private const val UseSharedCollapsibleTopBarProbe = true
 
@@ -133,7 +133,7 @@ fun ArtistDetailScreen(
     val configuration = LocalConfiguration.current
     val density = LocalDensity.current
     val coroutineScope = rememberCoroutineScope()
-    val isDarkTheme = LocalPlayPixDarkTheme.current
+    val isDarkTheme = LocalSvaraDarkTheme.current
     val baseColorScheme = MaterialTheme.colorScheme
 
     // --- Dynamic color palette from pre-warmed ViewModel state ---
@@ -743,7 +743,7 @@ private fun SharedArtistTopBarProbe(
     var showImageMenu by remember { mutableStateOf(false) }
     val surfaceColor = MaterialTheme.colorScheme.surface
     val statusBarColor =
-        if (LocalPlayPixDarkTheme.current) Color.Black.copy(alpha = 0.6f)
+        if (LocalSvaraDarkTheme.current) Color.Black.copy(alpha = 0.6f)
         else Color.White.copy(alpha = 0.4f)
     val solidAlpha = (collapseFraction * 2f).coerceIn(0f, 1f)
     val expandedContentAlpha = 1f - solidAlpha
@@ -770,7 +770,7 @@ private fun SharedArtistTopBarProbe(
     val titleVerticalBias = lerp(1f, -1f, collapseFraction)
     val shuffleAlignment = BiasAlignment(horizontalBias = 1f, verticalBias = titleVerticalBias)
 
-    PlayPixStatusBarStyle(color = fallbackStatusBarColor)
+    SvaraStatusBarStyle(color = fallbackStatusBarColor)
 
     Box(
         modifier = Modifier
@@ -920,7 +920,7 @@ private fun CustomCollapsingTopBar(
     onClearCustomImage: () -> Unit
 ) {
     val surfaceColor = MaterialTheme.colorScheme.surface
-    val statusBarColor = if (LocalPlayPixDarkTheme.current) Color.Black.copy(alpha = 0.6f) else Color.White.copy(alpha = 0.4f)
+    val statusBarColor = if (LocalSvaraDarkTheme.current) Color.Black.copy(alpha = 0.6f) else Color.White.copy(alpha = 0.4f)
 
     // --- Animation Values ---
     val fabScale = 1f - collapseFraction
@@ -969,7 +969,7 @@ private fun CustomCollapsingTopBar(
             .height(headerHeight)
             .clipToBounds()
     ) {
-        PlayPixStatusBarStyle(color = fallbackStatusBarColor)
+        SvaraStatusBarStyle(color = fallbackStatusBarColor)
 
         Box(
             modifier = Modifier

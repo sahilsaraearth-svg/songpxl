@@ -1,10 +1,10 @@
-package com.theveloper.playpix.data.preferences
+package com.svara.music.data.preferences
 
-import com.theveloper.playpix.data.database.LocalPlaylistDao
-import com.theveloper.playpix.data.model.Playlist
-import com.theveloper.playpix.data.database.toEntity
-import com.theveloper.playpix.data.database.toPlaylist
-import com.theveloper.playpix.data.model.SortOption
+import com.svara.music.data.database.LocalPlaylistDao
+import com.svara.music.data.model.Playlist
+import com.svara.music.data.database.toEntity
+import com.svara.music.data.database.toPlaylist
+import com.svara.music.data.model.SortOption
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map

@@ -1,2 +1,2 @@
-package com.theveloper.playpix.presentation.components.scoped
+package com.svara.music.presentation.components.scoped
 

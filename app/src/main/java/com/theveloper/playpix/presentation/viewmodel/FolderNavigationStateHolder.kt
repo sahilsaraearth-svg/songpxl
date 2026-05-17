@@ -1,8 +1,8 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
 import android.os.Environment
-import com.theveloper.playpix.data.model.MusicFolder
-import com.theveloper.playpix.data.model.Song
+import com.svara.music.data.model.MusicFolder
+import com.svara.music.data.model.Song
 import dagger.hilt.android.scopes.ViewModelScoped
 import java.io.File
 import java.util.ArrayDeque

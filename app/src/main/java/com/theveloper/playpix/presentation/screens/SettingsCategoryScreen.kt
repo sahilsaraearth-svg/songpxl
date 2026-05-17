@@ -1,8 +1,8 @@
-package com.theveloper.playpix.presentation.screens
+package com.svara.music.presentation.screens
 
-import com.theveloper.playpix.presentation.navigation.navigateSafely
-import com.theveloper.playpix.presentation.components.BackupModuleSelectionDialog
-import com.theveloper.playpix.data.preferences.AiPreferencesRepository
+import com.svara.music.presentation.navigation.navigateSafely
+import com.svara.music.presentation.components.BackupModuleSelectionDialog
+import com.svara.music.data.preferences.AiPreferencesRepository
 import java.text.SimpleDateFormat
 import java.util.Locale
 import java.util.Date
@@ -148,33 +148,33 @@ import kotlin.math.roundToInt
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.backup.model.BackupHistoryEntry
-import com.theveloper.playpix.data.backup.model.BackupOperationType
-import com.theveloper.playpix.data.backup.model.BackupSection
-import com.theveloper.playpix.data.backup.model.BackupTransferProgressUpdate
-import com.theveloper.playpix.data.backup.model.ModuleRestoreDetail
-import com.theveloper.playpix.data.backup.model.RestorePlan
-import com.theveloper.playpix.data.preferences.AppLanguage
-import com.theveloper.playpix.data.preferences.AppThemeMode
-import com.theveloper.playpix.data.preferences.CollagePattern
-import com.theveloper.playpix.data.preferences.CarouselStyle
-import com.theveloper.playpix.data.preferences.LaunchTab
-import com.theveloper.playpix.data.preferences.LibraryNavigationMode
-import com.theveloper.playpix.data.preferences.NavBarStyle
-import com.theveloper.playpix.data.preferences.ThemePreference
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.model.LyricsSourcePreference
-import com.theveloper.playpix.presentation.components.CollapsibleCommonTopBar
-import com.theveloper.playpix.presentation.components.ExpressiveTopBarContent
-import com.theveloper.playpix.presentation.components.FileExplorerDialog
-import com.theveloper.playpix.presentation.components.MiniPlayerHeight
-import com.theveloper.playpix.presentation.model.SettingsCategory
-import com.theveloper.playpix.presentation.navigation.Screen
-import com.theveloper.playpix.presentation.viewmodel.LyricsRefreshProgress
-import com.theveloper.playpix.presentation.viewmodel.PlayerViewModel
-import com.theveloper.playpix.presentation.viewmodel.SettingsViewModel
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
+import com.svara.music.R
+import com.svara.music.data.backup.model.BackupHistoryEntry
+import com.svara.music.data.backup.model.BackupOperationType
+import com.svara.music.data.backup.model.BackupSection
+import com.svara.music.data.backup.model.BackupTransferProgressUpdate
+import com.svara.music.data.backup.model.ModuleRestoreDetail
+import com.svara.music.data.backup.model.RestorePlan
+import com.svara.music.data.preferences.AppLanguage
+import com.svara.music.data.preferences.AppThemeMode
+import com.svara.music.data.preferences.CollagePattern
+import com.svara.music.data.preferences.CarouselStyle
+import com.svara.music.data.preferences.LaunchTab
+import com.svara.music.data.preferences.LibraryNavigationMode
+import com.svara.music.data.preferences.NavBarStyle
+import com.svara.music.data.preferences.ThemePreference
+import com.svara.music.data.model.Song
+import com.svara.music.data.model.LyricsSourcePreference
+import com.svara.music.presentation.components.CollapsibleCommonTopBar
+import com.svara.music.presentation.components.ExpressiveTopBarContent
+import com.svara.music.presentation.components.FileExplorerDialog
+import com.svara.music.presentation.components.MiniPlayerHeight
+import com.svara.music.presentation.model.SettingsCategory
+import com.svara.music.presentation.navigation.Screen
+import com.svara.music.presentation.viewmodel.LyricsRefreshProgress
+import com.svara.music.presentation.viewmodel.PlayerViewModel
+import com.svara.music.presentation.viewmodel.SettingsViewModel
+import com.svara.music.ui.theme.GoogleSansRounded
 
 @androidx.annotation.OptIn(UnstableApi::class)
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
@@ -184,7 +184,7 @@ fun SettingsCategoryScreen(
     navController: NavController,
     playerViewModel: PlayerViewModel,
     settingsViewModel: SettingsViewModel = hiltViewModel(),
-    statsViewModel: com.theveloper.playpix.presentation.viewmodel.StatsViewModel = hiltViewModel(),
+    statsViewModel: com.svara.music.presentation.viewmodel.StatsViewModel = hiltViewModel(),
     onBackClick: () -> Unit
 ) {
     val category = SettingsCategory.fromId(categoryId) ?: return
@@ -879,7 +879,7 @@ fun SettingsCategoryScreen(
                                 ThemeSelectorItem(
                                     label = stringResource(R.string.setcat_ai_provider_label),
                                     description = stringResource(R.string.setcat_ai_provider_desc),
-                                    options = com.theveloper.playpix.data.ai.provider.AiProvider.entries.associate { it.name to it.displayName },
+                                    options = com.svara.music.data.ai.provider.AiProvider.entries.associate { it.name to it.displayName },
                                     selectedKey = aiProvider,
                                     onSelectionChanged = { settingsViewModel.onAiProviderChange(it) },
                                     leadingIcon = { Icon(Icons.Rounded.Science, null, tint = MaterialTheme.colorScheme.secondary) }
@@ -907,17 +907,17 @@ fun SettingsCategoryScreen(
                             
                             // Consolidated API Key Section
                             SettingsSubsection(title = stringResource(R.string.setcat_credentials)) {
-                                val provider = com.theveloper.playpix.data.ai.provider.AiProvider.fromString(aiProvider)
+                                val provider = com.svara.music.data.ai.provider.AiProvider.fromString(aiProvider)
                                 val sourceLabel = when(provider) {
-                                    com.theveloper.playpix.data.ai.provider.AiProvider.GEMINI -> stringResource(R.string.setcat_ai_source_gemini)
-                                    com.theveloper.playpix.data.ai.provider.AiProvider.DEEPSEEK -> stringResource(R.string.setcat_ai_source_deepseek)
-                                    com.theveloper.playpix.data.ai.provider.AiProvider.GROQ -> stringResource(R.string.setcat_ai_source_groq)
-                                    com.theveloper.playpix.data.ai.provider.AiProvider.MISTRAL -> stringResource(R.string.setcat_ai_source_mistral)
-                                    com.theveloper.playpix.data.ai.provider.AiProvider.NVIDIA -> stringResource(R.string.setcat_ai_source_nvidia)
-                                    com.theveloper.playpix.data.ai.provider.AiProvider.KIMI -> stringResource(R.string.setcat_ai_source_kimi)
-                                    com.theveloper.playpix.data.ai.provider.AiProvider.GLM -> stringResource(R.string.setcat_ai_source_glm)
-                                    com.theveloper.playpix.data.ai.provider.AiProvider.OPENAI -> stringResource(R.string.setcat_ai_source_openai)
-                                    com.theveloper.playpix.data.ai.provider.AiProvider.OPENROUTER -> "OpenRouter (openrouter.ai)"
+                                    com.svara.music.data.ai.provider.AiProvider.GEMINI -> stringResource(R.string.setcat_ai_source_gemini)
+                                    com.svara.music.data.ai.provider.AiProvider.DEEPSEEK -> stringResource(R.string.setcat_ai_source_deepseek)
+                                    com.svara.music.data.ai.provider.AiProvider.GROQ -> stringResource(R.string.setcat_ai_source_groq)
+                                    com.svara.music.data.ai.provider.AiProvider.MISTRAL -> stringResource(R.string.setcat_ai_source_mistral)
+                                    com.svara.music.data.ai.provider.AiProvider.NVIDIA -> stringResource(R.string.setcat_ai_source_nvidia)
+                                    com.svara.music.data.ai.provider.AiProvider.KIMI -> stringResource(R.string.setcat_ai_source_kimi)
+                                    com.svara.music.data.ai.provider.AiProvider.GLM -> stringResource(R.string.setcat_ai_source_glm)
+                                    com.svara.music.data.ai.provider.AiProvider.OPENAI -> stringResource(R.string.setcat_ai_source_openai)
+                                    com.svara.music.data.ai.provider.AiProvider.OPENROUTER -> "OpenRouter (openrouter.ai)"
                                 }
                                 
                                 AiApiKeyItem(
@@ -986,7 +986,7 @@ fun SettingsCategoryScreen(
                             ) {
                                 AiSystemPromptItem(
                                     systemPrompt = currentAiSystemPrompt,
-                                    defaultPrompt = com.theveloper.playpix.data.preferences.AiPreferencesRepository.DEFAULT_SYSTEM_PROMPT,
+                                    defaultPrompt = com.svara.music.data.preferences.AiPreferencesRepository.DEFAULT_SYSTEM_PROMPT,
                                     onSystemPromptSave = { settingsViewModel.onAiSystemPromptChange(it) },
                                     onReset = { settingsViewModel.resetAiSystemPrompt() },
                                     title = stringResource(R.string.setcat_system_prompt_title),
@@ -1210,8 +1210,8 @@ fun SettingsCategoryScreen(
                                 addBottomSpace = false
                             ) {
                                 SettingsItem(
-                                    title = stringResource(R.string.setcat_about_playpix_title),
-                                    subtitle = stringResource(R.string.setcat_about_playpix_subtitle),
+                                    title = stringResource(R.string.setcat_about_svara_title),
+                                    subtitle = stringResource(R.string.setcat_about_svara_subtitle),
                                     leadingIcon = { Icon(Icons.Outlined.Info, null, tint = MaterialTheme.colorScheme.secondary) },
                                     trailingIcon = { Icon(Icons.Rounded.ChevronRight, null, tint = MaterialTheme.colorScheme.onSurfaceVariant) },
                                     onClick = { navController.navigateSafely("about") }
@@ -1247,7 +1247,7 @@ fun SettingsCategoryScreen(
         // Block interaction during transition
         var isTransitioning by remember { mutableStateOf(true) }
         LaunchedEffect(Unit) {
-            kotlinx.coroutines.delay(com.theveloper.playpix.presentation.navigation.TRANSITION_DURATION.toLong())
+            kotlinx.coroutines.delay(com.svara.music.presentation.navigation.TRANSITION_DURATION.toLong())
             isTransitioning = false
         }
         

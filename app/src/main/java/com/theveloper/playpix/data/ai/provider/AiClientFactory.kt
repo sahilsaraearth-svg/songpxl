@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.ai.provider
+package com.svara.music.data.ai.provider
 
 import javax.inject.Inject
 import javax.inject.Singleton

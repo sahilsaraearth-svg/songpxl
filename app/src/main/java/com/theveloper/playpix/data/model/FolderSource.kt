@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.model
+package com.svara.music.data.model
 
 enum class FolderSource(val storageKey: String, val displayName: String) {
     INTERNAL("internal", "Internal Storage"),

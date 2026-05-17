@@ -1,4 +1,4 @@
-package com.theveloper.playpix.ui.theme
+package com.svara.music.ui.theme
 
 import android.graphics.Bitmap
 import android.util.LruCache
@@ -6,7 +6,7 @@ import androidx.compose.material3.ColorScheme
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.core.graphics.ColorUtils
-import com.theveloper.playpix.presentation.viewmodel.ColorSchemePair
+import com.svara.music.presentation.viewmodel.ColorSchemePair
 import com.google.android.material.color.utilities.DynamicScheme
 import com.google.android.material.color.utilities.Hct
 import com.google.android.material.color.utilities.MathUtils
@@ -16,8 +16,8 @@ import com.google.android.material.color.utilities.SchemeFruitSalad
 import com.google.android.material.color.utilities.SchemeMonochrome
 import com.google.android.material.color.utilities.SchemeTonalSpot
 import com.google.android.material.color.utilities.SchemeVibrant
-import com.theveloper.playpix.data.preferences.AlbumArtColorAccuracy
-import com.theveloper.playpix.data.preferences.AlbumArtPaletteStyle
+import com.svara.music.data.preferences.AlbumArtColorAccuracy
+import com.svara.music.data.preferences.AlbumArtPaletteStyle
 import androidx.core.graphics.scale
 import kotlin.math.abs
 import kotlin.math.floor

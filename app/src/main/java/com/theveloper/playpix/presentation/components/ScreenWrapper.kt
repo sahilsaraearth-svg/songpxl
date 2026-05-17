@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components
+package com.svara.music.presentation.components
 
 import androidx.annotation.OptIn
 import androidx.compose.animation.core.animateFloatAsState
@@ -26,9 +26,9 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.media3.common.util.UnstableApi
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.theveloper.playpix.presentation.viewmodel.PlayerViewModel
+import com.svara.music.presentation.viewmodel.PlayerViewModel
 import androidx.lifecycle.compose.currentStateAsState
-import com.theveloper.playpix.presentation.navigation.isMainRootRoute
+import com.svara.music.presentation.navigation.isMainRootRoute
 
 
 @OptIn(UnstableApi::class)

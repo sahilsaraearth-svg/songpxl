@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.stream
+package com.svara.music.data.stream
 
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertTrue

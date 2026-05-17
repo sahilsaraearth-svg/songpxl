@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.service.http
+package com.svara.music.data.service.http
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertFalse

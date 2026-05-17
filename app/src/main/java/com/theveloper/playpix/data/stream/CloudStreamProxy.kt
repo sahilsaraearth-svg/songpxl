@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.stream
+package com.svara.music.data.stream
 
 import android.net.Uri
 import io.ktor.http.ContentType

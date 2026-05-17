@@ -1,5 +1,5 @@
 @file:Suppress("DEPRECATION")
-package com.theveloper.playpix.data.service
+package com.svara.music.data.service
 
 import android.content.Context
 import android.content.Intent
@@ -9,7 +9,7 @@ import androidx.media3.common.util.UnstableApi
 import timber.log.Timber
 
 @Suppress("DEPRECATION")
-class PlayPixMediaButtonReceiver : MediaButtonReceiver() {
+class SvaraMediaButtonReceiver : MediaButtonReceiver() {
 
     @OptIn(UnstableApi::class)
     override fun onReceive(context: Context, intent: Intent) {

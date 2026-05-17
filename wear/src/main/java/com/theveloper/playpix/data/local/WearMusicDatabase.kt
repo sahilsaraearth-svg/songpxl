@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.local
+package com.svara.music.data.local
 
 import androidx.room.Database
 import androidx.room.RoomDatabase

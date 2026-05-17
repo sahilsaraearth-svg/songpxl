@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.jiosaavn
+package com.svara.music.data.jiosaavn
 
 import retrofit2.http.GET
 import retrofit2.http.Path

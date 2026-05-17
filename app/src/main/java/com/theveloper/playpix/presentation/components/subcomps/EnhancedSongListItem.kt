@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components.subcomps
+package com.svara.music.presentation.components.subcomps
 
 import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.Spring
@@ -50,12 +50,12 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.lerp as lerpDp
 import coil.size.Size
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.presentation.components.AutoScrollingTextOnDemand
-import com.theveloper.playpix.presentation.components.ShimmerBox
+import com.svara.music.data.model.Song
+import com.svara.music.presentation.components.AutoScrollingTextOnDemand
+import com.svara.music.presentation.components.ShimmerBox
 import androidx.compose.ui.res.stringResource
-import com.theveloper.playpix.R
-import com.theveloper.playpix.presentation.components.SmartImage
+import com.svara.music.R
+import com.svara.music.presentation.components.SmartImage
 
 @Immutable
 private data class EnhancedSongAnimationTarget(

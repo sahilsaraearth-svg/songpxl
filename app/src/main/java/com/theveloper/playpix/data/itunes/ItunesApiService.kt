@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.itunes
+package com.svara.music.data.itunes
 
 import retrofit2.http.GET
 import retrofit2.http.Query

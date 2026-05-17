@@ -1,8 +1,8 @@
-package com.theveloper.playpix.presentation.components
+package com.svara.music.presentation.components
 
 import androidx.compose.ui.unit.dp
-import com.theveloper.playpix.data.model.SyncedLine
-import com.theveloper.playpix.data.model.SyncedWord
+import com.svara.music.data.model.SyncedLine
+import com.svara.music.data.model.SyncedWord
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test

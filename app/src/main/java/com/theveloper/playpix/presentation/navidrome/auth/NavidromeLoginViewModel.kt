@@ -1,8 +1,8 @@
-package com.theveloper.playpix.presentation.navidrome.auth
+package com.svara.music.presentation.navidrome.auth
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.theveloper.playpix.data.navidrome.NavidromeRepository
+import com.svara.music.data.navidrome.NavidromeRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

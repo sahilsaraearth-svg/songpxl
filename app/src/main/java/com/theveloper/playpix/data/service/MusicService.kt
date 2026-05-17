@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.service
+package com.svara.music.data.service
 
 import android.app.AlarmManager
 import android.app.BackgroundServiceStartNotAllowedException
@@ -46,23 +46,23 @@ import com.google.android.gms.cast.framework.media.RemoteMediaClient
 import com.google.common.util.concurrent.Futures
 import com.google.common.util.concurrent.ListenableFuture
 import com.google.common.util.concurrent.SettableFuture
-import com.theveloper.playpix.PlayPixApplication
-import com.theveloper.playpix.MainActivity
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.model.PlayerInfo
-import com.theveloper.playpix.data.model.PlaybackQueueItemSnapshot
-import com.theveloper.playpix.data.model.PlaybackQueueSnapshot
-import com.theveloper.playpix.data.preferences.EqualizerPreferencesRepository
-import com.theveloper.playpix.data.preferences.ThemePreferencesRepository
-import com.theveloper.playpix.data.preferences.UserPreferencesRepository
-import com.theveloper.playpix.data.repository.MusicRepository
-import com.theveloper.playpix.data.service.player.DualPlayerEngine
-import com.theveloper.playpix.data.service.player.TransitionController
-import com.theveloper.playpix.ui.glancewidget.ControlWidget4x2
-import com.theveloper.playpix.ui.glancewidget.PlayPixGlanceWidget
-import com.theveloper.playpix.ui.glancewidget.PlayerActions
-import com.theveloper.playpix.ui.glancewidget.PlayerInfoStateDefinition
-import com.theveloper.playpix.utils.AlbumArtUtils
+import com.svara.music.SvaraApplication
+import com.svara.music.MainActivity
+import com.svara.music.R
+import com.svara.music.data.model.PlayerInfo
+import com.svara.music.data.model.PlaybackQueueItemSnapshot
+import com.svara.music.data.model.PlaybackQueueSnapshot
+import com.svara.music.data.preferences.EqualizerPreferencesRepository
+import com.svara.music.data.preferences.ThemePreferencesRepository
+import com.svara.music.data.preferences.UserPreferencesRepository
+import com.svara.music.data.repository.MusicRepository
+import com.svara.music.data.service.player.DualPlayerEngine
+import com.svara.music.data.service.player.TransitionController
+import com.svara.music.ui.glancewidget.ControlWidget4x2
+import com.svara.music.ui.glancewidget.SvaraGlanceWidget
+import com.svara.music.ui.glancewidget.PlayerActions
+import com.svara.music.ui.glancewidget.PlayerInfoStateDefinition
+import com.svara.music.utils.AlbumArtUtils
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -75,27 +75,27 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
 import timber.log.Timber
-import com.theveloper.playpix.data.equalizer.EqualizerManager
-import com.theveloper.playpix.data.model.WidgetThemeColors
-import com.theveloper.playpix.data.preferences.AlbumArtColorAccuracy
-import com.theveloper.playpix.data.preferences.AlbumArtPaletteStyle
-import com.theveloper.playpix.presentation.viewmodel.ColorSchemeProcessor
+import com.svara.music.data.equalizer.EqualizerManager
+import com.svara.music.data.model.WidgetThemeColors
+import com.svara.music.data.preferences.AlbumArtColorAccuracy
+import com.svara.music.data.preferences.AlbumArtPaletteStyle
+import com.svara.music.presentation.viewmodel.ColorSchemeProcessor
 import androidx.compose.ui.graphics.toArgb
-import com.theveloper.playpix.ui.glancewidget.BarWidget4x1
-import com.theveloper.playpix.ui.glancewidget.GridWidget2x2
+import com.svara.music.ui.glancewidget.BarWidget4x1
+import com.svara.music.ui.glancewidget.GridWidget2x2
 import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
-import com.theveloper.playpix.data.preferences.ThemePreference
-import com.theveloper.playpix.data.service.auto.AutoMediaBrowseTree
-import com.theveloper.playpix.data.service.wear.buildWearThemePalette
-import com.theveloper.playpix.data.service.wear.WearStatePublisher
-import com.theveloper.playpix.presentation.viewmodel.ColorSchemePair
-import com.theveloper.playpix.shared.WearIntents
-import com.theveloper.playpix.utils.ArtworkTransportSanitizer
-import com.theveloper.playpix.utils.MediaItemBuilder
-import com.theveloper.playpix.data.navidrome.NavidromeRepository
-import com.theveloper.playpix.di.AppScope
-import com.theveloper.playpix.presentation.viewmodel.ListeningStatsTracker
+import com.svara.music.data.preferences.ThemePreference
+import com.svara.music.data.service.auto.AutoMediaBrowseTree
+import com.svara.music.data.service.wear.buildWearThemePalette
+import com.svara.music.data.service.wear.WearStatePublisher
+import com.svara.music.presentation.viewmodel.ColorSchemePair
+import com.svara.music.shared.WearIntents
+import com.svara.music.utils.ArtworkTransportSanitizer
+import com.svara.music.utils.MediaItemBuilder
+import com.svara.music.data.navidrome.NavidromeRepository
+import com.svara.music.di.AppScope
+import com.svara.music.presentation.viewmodel.ListeningStatsTracker
 import kotlin.math.abs
 import java.io.ByteArrayOutputStream
 import java.net.HttpURLConnection
@@ -137,7 +137,7 @@ class MusicService : MediaLibraryService() {
     @Inject
     lateinit var wearStatePublisher: WearStatePublisher
     @Inject
-    lateinit var replayGainManager: com.theveloper.playpix.data.media.ReplayGainManager
+    lateinit var replayGainManager: com.svara.music.data.media.ReplayGainManager
     @Inject
     lateinit var navidromeRepository: NavidromeRepository
     @Inject
@@ -145,6 +145,9 @@ class MusicService : MediaLibraryService() {
     @Inject
     @AppScope
     lateinit var appScope: CoroutineScope
+
+    @Inject
+    lateinit var mediaMapper: com.svara.music.data.media.MediaMapper
 
     private var replayGainEnabled = false
     private var replayGainUseAlbumGain = false
@@ -196,11 +199,11 @@ class MusicService : MediaLibraryService() {
     private var temporaryForegroundStartedInOnCreate = false
 
     companion object {
-        private const val TAG = "MusicService_PlayPix"
+        private const val TAG = "MusicService_Svara"
         const val NOTIFICATION_ID = 101
-        const val ACTION_SLEEP_TIMER_EXPIRED = "com.theveloper.playpix.ACTION_SLEEP_TIMER_EXPIRED"
+        const val ACTION_SLEEP_TIMER_EXPIRED = "com.svara.music.ACTION_SLEEP_TIMER_EXPIRED"
         const val EXTRA_FORCE_FOREGROUND_ON_START =
-            "com.theveloper.playpix.extra.FORCE_FOREGROUND_ON_START"
+            "com.svara.music.extra.FORCE_FOREGROUND_ON_START"
         // Queue/index/flags snapshot is only used for restore on process death. A full-queue
         // JSON+DataStore rewrite on every Media3 event (track transition fires 3-4 listeners
         // within ~200ms) is unnecessary work. 1500ms coalesces those without harming restore.
@@ -209,7 +212,7 @@ class MusicService : MediaLibraryService() {
         private const val MEDIA_SESSION_BUTTON_DEBOUNCE_MS = 250L
         private val pendingMediaButtonForegroundStarts = AtomicInteger(0)
 
-        private const val APP_PACKAGE_PREFIX = "com.theveloper.playpix"
+        private const val APP_PACKAGE_PREFIX = "com.svara.music"
         private val BLOCKED_WEAR_CONTROLLER_PREFIXES = listOf(
             "com.google.android.wearable",
             "com.google.android.clockwork",
@@ -663,7 +666,7 @@ class MusicService : MediaLibraryService() {
                     .setMediaId(AutoMediaBrowseTree.ROOT_ID)
                     .setMediaMetadata(
                         androidx.media3.common.MediaMetadata.Builder()
-                            .setTitle("PlayPix")
+                            .setTitle("Svara")
                             .setIsBrowsable(true)
                             .setIsPlayable(false)
                             .setMediaType(androidx.media3.common.MediaMetadata.MEDIA_TYPE_FOLDER_MIXED)
@@ -955,7 +958,7 @@ class MusicService : MediaLibraryService() {
     private fun startTemporaryForegroundForCommand() {
         val notification = NotificationCompat.Builder(
             this,
-            PlayPixApplication.NOTIFICATION_CHANNEL_ID
+            SvaraApplication.NOTIFICATION_CHANNEL_ID
         )
             .setSmallIcon(R.drawable.monochrome_player)
             .setContentTitle(getString(R.string.app_name))
@@ -1199,7 +1202,7 @@ class MusicService : MediaLibraryService() {
             if (isPlaying && !engine.isTransitionRunning()) {
                 lastAppliedReplayGainVolume?.let { setPlayerVolume(player, it) }
             }
-            // Push state immediately so the watch can foreground PlayPix before
+            // Push state immediately so the watch can foreground Svara before
             // system media surfaces take over.
             requestWidgetFullUpdate(force = true)
             mediaSession?.let { refreshMediaSessionUi(it) }
@@ -2408,7 +2411,7 @@ class MusicService : MediaLibraryService() {
             currentMediaId = mediaId,
         )
 
-        val queueItems = mutableListOf<com.theveloper.playpix.data.model.QueueItem>()
+        val queueItems = mutableListOf<com.svara.music.data.model.QueueItem>()
         // Reuse snapshotTimeline / snapshotWindowIndex captured at the top — no extra main-thread hop
         if (!snapshotTimeline.isEmpty) {
             val window = Timeline.Window()
@@ -2433,7 +2436,7 @@ class MusicService : MediaLibraryService() {
                         else -> initialQueueArtworkUri
                     }
                     queueItems.add(
-                        com.theveloper.playpix.data.model.QueueItem(
+                        com.svara.music.data.model.QueueItem(
                             id = songId,
                             albumArtUri = queueArtworkUri?.toString()
                         )
@@ -2653,7 +2656,7 @@ class MusicService : MediaLibraryService() {
     private suspend fun loadArtworkBytesForWidget(uri: Uri): ByteArray? {
         val uriString = uri.toString()
         val scheme = uri.scheme?.lowercase()
-        val isLocalArtworkUri = com.theveloper.playpix.utils.LocalArtworkUri.isLocalArtworkUri(uriString)
+        val isLocalArtworkUri = com.svara.music.utils.LocalArtworkUri.isLocalArtworkUri(uriString)
         return when {
             isLocalArtworkUri || scheme == "content" || scheme == "file" || scheme == "android.resource" -> {
                 runCatching {
@@ -2754,10 +2757,10 @@ class MusicService : MediaLibraryService() {
             val glanceManager = GlanceAppWidgetManager(applicationContext)
             val widgetPlayerInfo = playerInfo.toWidgetTransportState()
 
-            val glanceIds = glanceManager.getGlanceIds(PlayPixGlanceWidget::class.java)
+            val glanceIds = glanceManager.getGlanceIds(SvaraGlanceWidget::class.java)
             glanceIds.forEach { id ->
                 updateAppWidgetState(applicationContext, PlayerInfoStateDefinition, id) { widgetPlayerInfo }
-                PlayPixGlanceWidget().update(applicationContext, id)
+                SvaraGlanceWidget().update(applicationContext, id)
             }
 
             val barGlanceIds = glanceManager.getGlanceIds(BarWidget4x1::class.java)
@@ -3022,7 +3025,16 @@ class MusicService : MediaLibraryService() {
         serviceScope.launch {
             Timber.tag("MusicService")
                 .d("Applying favorite=$targetFavoriteState for songId: $songId")
-            musicRepository.setFavoriteStatus(songId, targetFavoriteState)
+            // Try to get full Song object so streaming songs get upserted into DB (fixes Liked tab)
+            val currentMediaItem = session.player.currentMediaItem
+            val song = if (currentMediaItem?.mediaId == songId) {
+                mediaMapper.resolveSongFromMediaItem(currentMediaItem)
+            } else null
+            if (song != null) {
+                musicRepository.setFavoriteStatusWithSong(song, targetFavoriteState)
+            } else {
+                musicRepository.setFavoriteStatus(songId, targetFavoriteState)
+            }
             refreshMediaSessionUi(session)
             requestWidgetFullUpdate(force = true)
         }

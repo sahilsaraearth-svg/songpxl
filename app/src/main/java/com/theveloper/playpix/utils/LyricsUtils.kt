@@ -1,4 +1,4 @@
-package com.theveloper.playpix.utils
+package com.svara.music.utils
 
 import android.os.Build
 import androidx.compose.animation.core.LinearEasing
@@ -43,9 +43,9 @@ import net.sourceforge.pinyin4j.PinyinHelper
 import net.sourceforge.pinyin4j.format.HanyuPinyinCaseType
 import net.sourceforge.pinyin4j.format.HanyuPinyinOutputFormat
 import net.sourceforge.pinyin4j.format.HanyuPinyinToneType
-import com.theveloper.playpix.data.model.Lyrics
-import com.theveloper.playpix.data.model.SyncedLine
-import com.theveloper.playpix.data.model.SyncedWord
+import com.svara.music.data.model.Lyrics
+import com.svara.music.data.model.SyncedLine
+import com.svara.music.data.model.SyncedWord
 import kotlinx.coroutines.flow.Flow
 
 import java.util.Locale

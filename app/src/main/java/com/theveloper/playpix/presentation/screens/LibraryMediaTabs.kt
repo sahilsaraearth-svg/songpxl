@@ -4,7 +4,7 @@
     kotlinx.coroutines.FlowPreview::class
 )
 
-package com.theveloper.playpix.presentation.screens
+package com.svara.music.presentation.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -52,21 +52,21 @@ import androidx.paging.compose.LazyPagingItems
 import coil.imageLoader
 import coil.request.ImageRequest
 import coil.size.Size
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.model.Album
-import com.theveloper.playpix.data.model.Artist
-import com.theveloper.playpix.data.model.LibraryTabId
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.model.SortOption
-import com.theveloper.playpix.data.model.StorageFilter
-import com.theveloper.playpix.presentation.components.ExpressiveScrollBar
-import com.theveloper.playpix.presentation.components.MiniPlayerHeight
-import com.theveloper.playpix.presentation.components.PlaylistContainer
-import com.theveloper.playpix.presentation.components.albumFastScrollLabel
-import com.theveloper.playpix.presentation.components.artistFastScrollLabel
-import com.theveloper.playpix.presentation.viewmodel.ColorSchemePair
-import com.theveloper.playpix.presentation.viewmodel.PlayerViewModel
-import com.theveloper.playpix.presentation.viewmodel.PlaylistUiState
+import com.svara.music.R
+import com.svara.music.data.model.Album
+import com.svara.music.data.model.Artist
+import com.svara.music.data.model.LibraryTabId
+import com.svara.music.data.model.Song
+import com.svara.music.data.model.SortOption
+import com.svara.music.data.model.StorageFilter
+import com.svara.music.presentation.components.ExpressiveScrollBar
+import com.svara.music.presentation.components.MiniPlayerHeight
+import com.svara.music.presentation.components.PlaylistContainer
+import com.svara.music.presentation.components.albumFastScrollLabel
+import com.svara.music.presentation.components.artistFastScrollLabel
+import com.svara.music.presentation.viewmodel.ColorSchemePair
+import com.svara.music.presentation.viewmodel.PlayerViewModel
+import com.svara.music.presentation.viewmodel.PlaylistUiState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.debounce
@@ -661,7 +661,7 @@ fun LibraryArtistsTab(
 @Composable
 fun LibraryPlaylistsTab(
     playlistUiState: PlaylistUiState,
-    filteredPlaylists: List<com.theveloper.playpix.data.model.Playlist> = playlistUiState.playlists,
+    filteredPlaylists: List<com.svara.music.data.model.Playlist> = playlistUiState.playlists,
     navController: NavController,
     playerViewModel: PlayerViewModel,
     bottomBarHeight: Dp,
@@ -669,8 +669,8 @@ fun LibraryPlaylistsTab(
     onRefresh: () -> Unit,
     isSelectionMode: Boolean = false,
     selectedPlaylistIds: Set<String> = emptySet(),
-    onPlaylistLongPress: (com.theveloper.playpix.data.model.Playlist) -> Unit = {},
-    onPlaylistSelectionToggle: (com.theveloper.playpix.data.model.Playlist) -> Unit = {},
+    onPlaylistLongPress: (com.svara.music.data.model.Playlist) -> Unit = {},
+    onPlaylistSelectionToggle: (com.svara.music.data.model.Playlist) -> Unit = {},
     onPlaylistOptionsClick: () -> Unit = {}
 ) {
     PlaylistContainer(

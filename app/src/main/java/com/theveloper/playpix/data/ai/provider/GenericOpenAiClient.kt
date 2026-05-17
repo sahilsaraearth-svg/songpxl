@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.ai.provider
+package com.svara.music.data.ai.provider
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -82,8 +82,8 @@ class GenericOpenAiClient(
                 .addHeader("Content-Type", "application/json")
             
             if (providerName.equals("OpenRouter", ignoreCase = true)) {
-                requestBuilder.addHeader("HTTP-Referer", "https://github.com/theovilardo/PlayPix")
-                requestBuilder.addHeader("X-Title", "PlayPix")
+                requestBuilder.addHeader("HTTP-Referer", "https://github.com/theovilardo/Svara")
+                requestBuilder.addHeader("X-Title", "Svara")
             }
 
             val request = requestBuilder.post(body).build()

@@ -1,6 +1,6 @@
-package com.theveloper.playpix.presentation.components
+package com.svara.music.presentation.components
 
-import com.theveloper.playpix.presentation.navigation.navigateToTopLevelSafely
+import com.svara.music.presentation.navigation.navigateToTopLevelSafely
 
 import android.os.SystemClock
 import androidx.compose.foundation.layout.Arrangement
@@ -26,10 +26,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import com.theveloper.playpix.BottomNavItem
-import com.theveloper.playpix.data.preferences.NavBarStyle
-import com.theveloper.playpix.presentation.components.scoped.CustomNavigationBarItem
-import com.theveloper.playpix.presentation.navigation.Screen
+import com.svara.music.BottomNavItem
+import com.svara.music.data.preferences.NavBarStyle
+import com.svara.music.presentation.components.scoped.CustomNavigationBarItem
+import com.svara.music.presentation.navigation.Screen
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch

@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.github
+package com.svara.music.data.github
 
 import java.io.StringReader
 import java.net.HttpURLConnection
@@ -37,7 +37,7 @@ class GitHubAnnouncementPropertiesService @Inject constructor() {
      */
     suspend fun fetchPlayStoreAnnouncement(
         owner: String = "theovilardo",
-        repo: String = "PlayPix",
+        repo: String = "Svara",
         branch: String = "master",
         configPath: String = "remote-config/app-announcements.properties",
     ): Result<PlayStoreAnnouncementRemoteConfig> {

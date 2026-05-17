@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.preferences
+package com.svara.music.data.preferences
 
 enum class CollagePattern(
     val storageKey: String,

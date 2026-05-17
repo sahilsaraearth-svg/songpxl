@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.screens
+package com.svara.music.presentation.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -30,17 +30,17 @@ import androidx.wear.compose.material.MaterialTheme
 import androidx.wear.compose.material.Text
 import com.google.android.horologist.compose.layout.ScalingLazyColumn
 import com.google.android.horologist.compose.layout.rememberResponsiveColumnState
-import com.theveloper.playpix.R
-import com.theveloper.playpix.presentation.components.AlwaysOnScalingPositionIndicator
-import com.theveloper.playpix.presentation.components.WearTopTimeText
-import com.theveloper.playpix.presentation.viewmodel.BrowseUiState
-import com.theveloper.playpix.presentation.viewmodel.WearBrowseViewModel
-import com.theveloper.playpix.presentation.theme.LocalWearPalette
-import com.theveloper.playpix.presentation.theme.rememberBrowseSubscreenTitleFont
-import com.theveloper.playpix.presentation.theme.screenBackgroundColor
-import com.theveloper.playpix.presentation.theme.surfaceContainerColor
-import com.theveloper.playpix.shared.WearBrowseRequest
-import com.theveloper.playpix.shared.WearLibraryItem
+import com.svara.music.R
+import com.svara.music.presentation.components.AlwaysOnScalingPositionIndicator
+import com.svara.music.presentation.components.WearTopTimeText
+import com.svara.music.presentation.viewmodel.BrowseUiState
+import com.svara.music.presentation.viewmodel.WearBrowseViewModel
+import com.svara.music.presentation.theme.LocalWearPalette
+import com.svara.music.presentation.theme.rememberBrowseSubscreenTitleFont
+import com.svara.music.presentation.theme.screenBackgroundColor
+import com.svara.music.presentation.theme.surfaceContainerColor
+import com.svara.music.shared.WearBrowseRequest
+import com.svara.music.shared.WearLibraryItem
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.QueueMusic
 import androidx.compose.material.icons.rounded.Album

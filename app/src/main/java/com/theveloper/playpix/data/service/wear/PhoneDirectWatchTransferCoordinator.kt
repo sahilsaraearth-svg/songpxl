@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.service.wear
+package com.svara.music.data.service.wear
 
 import android.app.Application
 import android.graphics.Bitmap
@@ -9,26 +9,26 @@ import android.os.Build
 import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.core.graphics.get
 import androidx.core.net.toUri
-import com.theveloper.playpix.data.gdrive.GDriveStreamProxy
+import com.svara.music.data.gdrive.GDriveStreamProxy
 import com.google.android.gms.wearable.Wearable
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.navidrome.NavidromeStreamProxy
-import com.theveloper.playpix.data.netease.NeteaseStreamProxy
-import com.theveloper.playpix.data.preferences.AlbumArtPaletteStyle
-import com.theveloper.playpix.data.preferences.AlbumArtColorAccuracy
-import com.theveloper.playpix.data.preferences.ThemePreferencesRepository
-import com.theveloper.playpix.data.preferences.ThemePreference
-import com.theveloper.playpix.data.qqmusic.QqMusicStreamProxy
-import com.theveloper.playpix.data.repository.MusicRepository
-import com.theveloper.playpix.data.telegram.TelegramRepository
-import com.theveloper.playpix.data.telegram.TelegramStreamProxy
-import com.theveloper.playpix.presentation.viewmodel.ColorSchemeProcessor
-import com.theveloper.playpix.shared.WearDataPaths
-import com.theveloper.playpix.shared.WearThemePalette
-import com.theveloper.playpix.shared.WearTransferMetadata
-import com.theveloper.playpix.shared.WearTransferProgress
-import com.theveloper.playpix.shared.WearTransferRequest
-import com.theveloper.playpix.utils.AlbumArtUtils
+import com.svara.music.data.model.Song
+import com.svara.music.data.navidrome.NavidromeStreamProxy
+import com.svara.music.data.netease.NeteaseStreamProxy
+import com.svara.music.data.preferences.AlbumArtPaletteStyle
+import com.svara.music.data.preferences.AlbumArtColorAccuracy
+import com.svara.music.data.preferences.ThemePreferencesRepository
+import com.svara.music.data.preferences.ThemePreference
+import com.svara.music.data.qqmusic.QqMusicStreamProxy
+import com.svara.music.data.repository.MusicRepository
+import com.svara.music.data.telegram.TelegramRepository
+import com.svara.music.data.telegram.TelegramStreamProxy
+import com.svara.music.presentation.viewmodel.ColorSchemeProcessor
+import com.svara.music.shared.WearDataPaths
+import com.svara.music.shared.WearThemePalette
+import com.svara.music.shared.WearTransferMetadata
+import com.svara.music.shared.WearTransferProgress
+import com.svara.music.shared.WearTransferRequest
+import com.svara.music.utils.AlbumArtUtils
 import javax.inject.Singleton
 import java.io.ByteArrayOutputStream
 import java.io.Closeable
@@ -65,7 +65,7 @@ class PhoneDirectWatchTransferCoordinator @Inject constructor(
     private val neteaseStreamProxy: NeteaseStreamProxy,
     private val qqMusicStreamProxy: QqMusicStreamProxy,
     private val navidromeStreamProxy: NavidromeStreamProxy,
-    private val jellyfinStreamProxy: com.theveloper.playpix.data.jellyfin.JellyfinStreamProxy,
+    private val jellyfinStreamProxy: com.svara.music.data.jellyfin.JellyfinStreamProxy,
     private val gDriveStreamProxy: GDriveStreamProxy,
     private val okHttpClient: OkHttpClient,
 ) {
@@ -452,7 +452,7 @@ class PhoneDirectWatchTransferCoordinator @Inject constructor(
             is NeteaseStreamProxy -> proxy.ensureReady(5_000L)
             is QqMusicStreamProxy -> proxy.ensureReady(5_000L)
             is NavidromeStreamProxy -> proxy.ensureReady(5_000L)
-            is com.theveloper.playpix.data.jellyfin.JellyfinStreamProxy -> proxy.ensureReady(5_000L)
+            is com.svara.music.data.jellyfin.JellyfinStreamProxy -> proxy.ensureReady(5_000L)
             else -> false
         }
     }

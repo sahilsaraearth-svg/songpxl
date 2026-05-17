@@ -1,6 +1,6 @@
-package com.theveloper.playpix.presentation.components.scoped
+package com.svara.music.presentation.components.scoped
 
-import com.theveloper.playpix.presentation.navigation.navigateSafely
+import com.svara.music.presentation.navigation.navigateSafely
 
 import androidx.annotation.OptIn
 import androidx.compose.runtime.Composable
@@ -8,10 +8,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberUpdatedState
 import androidx.media3.common.util.UnstableApi
 import androidx.navigation.NavHostController
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.presentation.navigation.Screen
-import com.theveloper.playpix.presentation.navigation.navigateSafelyReplacing
-import com.theveloper.playpix.presentation.viewmodel.PlayerViewModel
+import com.svara.music.data.model.Song
+import com.svara.music.presentation.navigation.Screen
+import com.svara.music.presentation.navigation.navigateSafelyReplacing
+import com.svara.music.presentation.viewmodel.PlayerViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 

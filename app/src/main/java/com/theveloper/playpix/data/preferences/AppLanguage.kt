@@ -1,8 +1,8 @@
-package com.theveloper.playpix.data.preferences
+package com.svara.music.data.preferences
 
 import android.content.Context
 import androidx.annotation.StringRes
-import com.theveloper.playpix.R
+import com.svara.music.R
 
 enum class AppLanguage(val tag: String, @StringRes val labelRes: Int) {
     SYSTEM("", R.string.setcat_language_system),

@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.remote.qqmusic
+package com.svara.music.data.remote.qqmusic
 
 import okhttp3.*
 import okhttp3.MediaType.Companion.toMediaType

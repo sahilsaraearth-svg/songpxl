@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.screens
+package com.svara.music.presentation.screens
 
 import android.content.ActivityNotFoundException
 import android.content.Context
@@ -96,14 +96,14 @@ import androidx.navigation.NavController
 import coil.compose.AsyncImagePainter
 import coil.request.ImageRequest
 import coil.size.Size
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.github.GitHubContributorService
-import com.theveloper.playpix.presentation.components.CollapsibleCommonTopBar
-import com.theveloper.playpix.presentation.components.MiniPlayerHeight
-import com.theveloper.playpix.presentation.components.SmartImage
-import com.theveloper.playpix.presentation.navigation.Screen
-import com.theveloper.playpix.presentation.navigation.navigateSafely
-import com.theveloper.playpix.presentation.viewmodel.PlayerViewModel
+import com.svara.music.R
+import com.svara.music.data.github.GitHubContributorService
+import com.svara.music.presentation.components.CollapsibleCommonTopBar
+import com.svara.music.presentation.components.MiniPlayerHeight
+import com.svara.music.presentation.components.SmartImage
+import com.svara.music.presentation.navigation.Screen
+import com.svara.music.presentation.navigation.navigateSafely
+import com.svara.music.presentation.viewmodel.PlayerViewModel
 import kotlinx.coroutines.launch
 import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape
 import timber.log.Timber
@@ -126,11 +126,11 @@ private val CoreMaintainer = Contributor(
     id = "theovilardo",
     displayName = "Theo Vilardo",
     role = "Creator and maintainer",
-    detail = "Building PlayPix with direct community feedback.",
+    detail = "Building Svara with direct community feedback.",
     avatarUrl = "https://avatars.githubusercontent.com/u/26845343?v=4",
     iconRes = R.drawable.round_developer_board_24,
     githubUrl = "https://github.com/theovilardo",
-    telegramUrl = "https://t.me/thevelopersupport",
+    telegramUrl = "https://t.me/svarasupport",
 )
 
 private val PinnedCommunityMembers = listOf(
@@ -156,7 +156,7 @@ private val PinnedCommunityMembers = listOf(
         id = "colbycabrera",
         displayName = "@ColbyCabrera",
         role = "Early contributor",
-        detail = "Helped shape PlayPix in the first stages of the app.",
+        detail = "Helped shape Svara in the first stages of the app.",
         badge = "Early Support",
         iconRes = R.drawable.round_newspaper_24,
         githubUrl = "https://github.com/ColbyCabrera",
@@ -521,7 +521,7 @@ private fun AboutHeroCard(
                         color = MaterialTheme.colorScheme.primaryContainer,
                     ) {
                         Icon(
-                            painter = painterResource(R.drawable.playpix_base_monochrome),
+                            painter = painterResource(R.drawable.svara_base_monochrome),
                             contentDescription = null,
                             tint = MaterialTheme.colorScheme.onPrimaryContainer,
                             modifier = Modifier.padding(10.dp).size(28.dp),

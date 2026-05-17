@@ -1,9 +1,9 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
 import android.util.Log
 import android.os.Trace
-import com.theveloper.playpix.data.model.LibraryTabId
-import com.theveloper.playpix.data.model.toLibraryTabIdOrNull
+import com.svara.music.data.model.LibraryTabId
+import com.svara.music.data.model.toLibraryTabIdOrNull
 import dagger.hilt.android.scopes.ViewModelScoped
 import javax.inject.Inject
 import kotlinx.coroutines.CoroutineScope

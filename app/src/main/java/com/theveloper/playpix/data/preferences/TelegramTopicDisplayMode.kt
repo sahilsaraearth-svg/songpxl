@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.preferences
+package com.svara.music.data.preferences
 
 enum class TelegramTopicDisplayMode(val storageKey: String) {
     /** One combined playlist per channel; individual topic playlists are hidden. */

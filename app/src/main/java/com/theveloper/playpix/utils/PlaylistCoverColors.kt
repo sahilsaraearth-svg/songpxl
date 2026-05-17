@@ -1,4 +1,4 @@
-package com.theveloper.playpix.utils
+package com.svara.music.utils
 
 import androidx.compose.material3.ColorScheme
 import androidx.compose.ui.graphics.Color

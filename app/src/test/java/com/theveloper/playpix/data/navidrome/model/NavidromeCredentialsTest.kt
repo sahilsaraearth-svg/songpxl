@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.navidrome.model
+package com.svara.music.data.navidrome.model
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertNull

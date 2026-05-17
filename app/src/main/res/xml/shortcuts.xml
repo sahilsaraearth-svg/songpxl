@@ -8,9 +8,9 @@
         android:shortcutShortLabel="@string/shortcut_shuffle_short"
         android:shortcutLongLabel="@string/shortcut_shuffle_long">
         <intent
-            android:action="com.theveloper.playpix.ACTION_SHUFFLE_ALL"
-            android:targetPackage="com.theveloper.playpix"
-            android:targetClass="com.theveloper.playpix.MainActivity" />
+            android:action="com.svara.music.ACTION_SHUFFLE_ALL"
+            android:targetPackage="com.svara.music"
+            android:targetClass="com.svara.music.MainActivity" />
         <categories android:name="android.shortcut.conversation" />
     </shortcut>
 </shortcuts>

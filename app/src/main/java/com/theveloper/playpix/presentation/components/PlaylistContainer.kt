@@ -1,6 +1,6 @@
-package com.theveloper.playpix.presentation.components
+package com.svara.music.presentation.components
 
-import com.theveloper.playpix.presentation.navigation.navigateSafely
+import com.svara.music.presentation.navigation.navigateSafely
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.animateDpAsState
@@ -76,18 +76,18 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.media3.common.util.UnstableApi
 import androidx.navigation.NavController
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.model.Playlist
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.model.SortOption
-import com.theveloper.playpix.presentation.components.subcomps.SineWaveLine
-import com.theveloper.playpix.presentation.navigation.Screen
-import com.theveloper.playpix.presentation.screens.PlayerSheetCollapsedCornerRadius
-import com.theveloper.playpix.presentation.viewmodel.PlayerViewModel
-import com.theveloper.playpix.presentation.viewmodel.PlaylistUiState
-import com.theveloper.playpix.presentation.viewmodel.PlaylistSelectionStateHolder
-import com.theveloper.playpix.utils.formatSongCount
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
+import com.svara.music.R
+import com.svara.music.data.model.Playlist
+import com.svara.music.data.model.Song
+import com.svara.music.data.model.SortOption
+import com.svara.music.presentation.components.subcomps.SineWaveLine
+import com.svara.music.presentation.navigation.Screen
+import com.svara.music.presentation.screens.PlayerSheetCollapsedCornerRadius
+import com.svara.music.presentation.viewmodel.PlayerViewModel
+import com.svara.music.presentation.viewmodel.PlaylistUiState
+import com.svara.music.presentation.viewmodel.PlaylistSelectionStateHolder
+import com.svara.music.utils.formatSongCount
+import com.svara.music.ui.theme.GoogleSansRounded
 import androidx.compose.foundation.combinedClickable
 import kotlinx.coroutines.flow.map
 

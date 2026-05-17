@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.viewmodel.exts
+package com.svara.music.presentation.viewmodel.exts
 
 import android.content.Context
 import android.net.Uri
@@ -13,8 +13,8 @@ import androidx.media3.exoplayer.DefaultRenderersFactory
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.exoplayer.audio.AudioSink
 import androidx.media3.exoplayer.audio.DefaultAudioSink
-import com.theveloper.playpix.data.service.player.HiResSampleRateCapAudioProcessor
-import com.theveloper.playpix.data.service.player.SurroundDownmixProcessor
+import com.svara.music.data.service.player.HiResSampleRateCapAudioProcessor
+import com.svara.music.data.service.player.SurroundDownmixProcessor
 
 @OptIn(UnstableApi::class)
 class DeckController(

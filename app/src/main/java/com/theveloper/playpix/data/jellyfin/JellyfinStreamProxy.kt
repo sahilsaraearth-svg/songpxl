@@ -1,8 +1,8 @@
-package com.theveloper.playpix.data.jellyfin
+package com.svara.music.data.jellyfin
 
 import android.net.Uri
-import com.theveloper.playpix.data.stream.CloudStreamProxy
-import com.theveloper.playpix.data.stream.CloudStreamSecurity
+import com.svara.music.data.stream.CloudStreamProxy
+import com.svara.music.data.stream.CloudStreamSecurity
 import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
 import okhttp3.OkHttpClient
 import timber.log.Timber

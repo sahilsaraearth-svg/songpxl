@@ -1,15 +1,15 @@
-package com.theveloper.playpix.data.soundcloud
+package com.svara.music.data.soundcloud
 
-import com.theveloper.playpix.data.database.AlbumEntity
-import com.theveloper.playpix.data.database.ArtistEntity
-import com.theveloper.playpix.data.database.MusicDao
-import com.theveloper.playpix.data.database.SongArtistCrossRef
-import com.theveloper.playpix.data.database.SongEntity
-import com.theveloper.playpix.data.database.SourceType
-import com.theveloper.playpix.data.database.serializeArtistRefs
-import com.theveloper.playpix.data.database.toSong
-import com.theveloper.playpix.data.model.ArtistRef
-import com.theveloper.playpix.data.model.Song
+import com.svara.music.data.database.AlbumEntity
+import com.svara.music.data.database.ArtistEntity
+import com.svara.music.data.database.MusicDao
+import com.svara.music.data.database.SongArtistCrossRef
+import com.svara.music.data.database.SongEntity
+import com.svara.music.data.database.SourceType
+import com.svara.music.data.database.serializeArtistRefs
+import com.svara.music.data.database.toSong
+import com.svara.music.data.model.ArtistRef
+import com.svara.music.data.model.Song
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient

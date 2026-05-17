@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.media
+package com.svara.music.data.media
 
 import android.content.Context
 import androidx.media3.session.MediaController

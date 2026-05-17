@@ -1,17 +1,17 @@
-package com.theveloper.playpix.presentation.components
+package com.svara.music.presentation.components
 
 import android.widget.Toast
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.model.Lyrics
-import com.theveloper.playpix.R
+import com.svara.music.data.model.Song
+import com.svara.music.data.model.Lyrics
+import com.svara.music.R
 import androidx.activity.compose.BackHandler
-import com.theveloper.playpix.presentation.components.scoped.LyricsPredictiveBackHandler
+import com.svara.music.presentation.components.scoped.LyricsPredictiveBackHandler
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.ui.zIndex
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.ui.layout.ContentScale
-import com.theveloper.playpix.presentation.components.SmartImage
-import com.theveloper.playpix.presentation.components.AutoScrollingText
+import com.svara.music.presentation.components.SmartImage
+import com.svara.music.presentation.components.AutoScrollingText
 import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape
 import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.animation.core.animateFloat
@@ -99,29 +99,29 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-import com.theveloper.playpix.data.model.SyncedLine
-import com.theveloper.playpix.data.model.SyncedWord
-import com.theveloper.playpix.data.repository.LyricsSearchResult
-import com.theveloper.playpix.presentation.screens.TabAnimation
-import com.theveloper.playpix.presentation.components.subcomps.FetchLyricsDialog
-import com.theveloper.playpix.presentation.components.subcomps.PlayerSeekBar
-import com.theveloper.playpix.presentation.viewmodel.LyricsSearchUiState
-import com.theveloper.playpix.presentation.viewmodel.StablePlayerState
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
-import com.theveloper.playpix.utils.BubblesLine
-import com.theveloper.playpix.utils.ProviderText
-import com.theveloper.playpix.presentation.components.snapping.ExperimentalSnapperApi
-import com.theveloper.playpix.presentation.components.snapping.SnapperLayoutInfo
-import com.theveloper.playpix.presentation.components.snapping.rememberLazyListSnapperLayoutInfo
-import com.theveloper.playpix.presentation.components.snapping.rememberSnapperFlingBehavior
-import com.theveloper.playpix.utils.LyricsUtils
-import com.theveloper.playpix.presentation.components.subcomps.LyricsMoreBottomSheet
+import com.svara.music.data.model.SyncedLine
+import com.svara.music.data.model.SyncedWord
+import com.svara.music.data.repository.LyricsSearchResult
+import com.svara.music.presentation.screens.TabAnimation
+import com.svara.music.presentation.components.subcomps.FetchLyricsDialog
+import com.svara.music.presentation.components.subcomps.PlayerSeekBar
+import com.svara.music.presentation.viewmodel.LyricsSearchUiState
+import com.svara.music.presentation.viewmodel.StablePlayerState
+import com.svara.music.ui.theme.GoogleSansRounded
+import com.svara.music.utils.BubblesLine
+import com.svara.music.utils.ProviderText
+import com.svara.music.presentation.components.snapping.ExperimentalSnapperApi
+import com.svara.music.presentation.components.snapping.SnapperLayoutInfo
+import com.svara.music.presentation.components.snapping.rememberLazyListSnapperLayoutInfo
+import com.svara.music.presentation.components.snapping.rememberSnapperFlingBehavior
+import com.svara.music.utils.LyricsUtils
+import com.svara.music.presentation.components.subcomps.LyricsMoreBottomSheet
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.map
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
-import com.theveloper.playpix.data.preferences.dataStore
+import com.svara.music.data.preferences.dataStore
 
 import kotlin.math.abs
 import kotlin.math.pow
@@ -132,8 +132,8 @@ import androidx.compose.material3.FilledTonalIconButton
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.ui.text.style.TextGeometricTransform
 import androidx.compose.ui.text.style.TextOverflow
-import com.theveloper.playpix.presentation.components.subcomps.PlayingEqIcon
-import com.theveloper.playpix.utils.MultiLangRomanizer
+import com.svara.music.presentation.components.subcomps.PlayingEqIcon
+import com.svara.music.utils.MultiLangRomanizer
 
 internal data class LyricsSheetColors(
     val container: Color,

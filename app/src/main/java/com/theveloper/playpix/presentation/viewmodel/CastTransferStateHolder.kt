@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
 import android.content.Context
 import android.content.Intent
@@ -17,13 +17,13 @@ import com.google.android.gms.cast.framework.CastSession
 import com.google.android.gms.cast.framework.SessionManager
 import com.google.android.gms.cast.framework.SessionManagerListener
 import com.google.android.gms.cast.framework.media.RemoteMediaClient
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.service.http.CastSessionSecurity
-import com.theveloper.playpix.data.service.http.MediaFileHttpServerService
-import com.theveloper.playpix.data.service.player.CastPlayer
-import com.theveloper.playpix.data.service.player.DualPlayerEngine
+import com.svara.music.data.model.Song
+import com.svara.music.data.service.http.CastSessionSecurity
+import com.svara.music.data.service.http.MediaFileHttpServerService
+import com.svara.music.data.service.player.CastPlayer
+import com.svara.music.data.service.player.DualPlayerEngine
 
-import com.theveloper.playpix.utils.MediaItemBuilder
+import com.svara.music.utils.MediaItemBuilder
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.collections.immutable.toImmutableList
 import kotlinx.coroutines.CoroutineScope

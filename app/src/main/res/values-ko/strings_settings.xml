@@ -222,8 +222,8 @@
     <string name="setcat_trigger_crash_title">테스트 크래시 발생</string>
     <string name="setcat_trigger_crash_subtitle">크래시 보고 시스템을 테스트하기 위해 크래시를 시뮬레이션합니다.</string>
     <string name="setcat_application">애플리케이션</string>
-    <string name="setcat_about_playpix_title">PlayPix 정보</string>
-    <string name="setcat_about_playpix_subtitle">앱 버전, 제작진 등.</string>
+    <string name="setcat_about_svara_title">Svara 정보</string>
+    <string name="setcat_about_svara_subtitle">앱 버전, 제작진 등.</string>
 
     <string name="backup_summary_none">선택된 섹션이 없습니다.</string>
     <string name="backup_summary_all">모든 섹션이 선택되었습니다.</string>
@@ -267,7 +267,7 @@
     <string name="dialog_regenerate_stats_title">통계를 재생성하시겠습니까?</string>
     <string name="dialog_regenerate_stats_body">통계 캐시를 지우고 데이터베이스 기록에서 다시 계산하도록 합니다.</string>
     <string name="toast_stats_regeneration_started">통계 재생성 시작됨</string>
-    <string name="backup_file_name_format">PlayPix_Backup_%1$d.pxpl</string>
+    <string name="backup_file_name_format">Svara_Backup_%1$d.pxpl</string>
 
     <string name="setcat_regenerate_daily_mix_action">데일리 믹스 재생성</string>
     <string name="setcat_regenerate_stats_action">통계 재생성</string>

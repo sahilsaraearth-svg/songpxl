@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components
+package com.svara.music.presentation.components
 
 import android.graphics.Bitmap
 import androidx.annotation.DrawableRes
@@ -36,7 +36,7 @@ import coil.request.ImageRequest
 import coil.size.Size // Import Coil's Size
 import coil.compose.SubcomposeAsyncImage
 import coil.compose.SubcomposeAsyncImageContent
-import com.theveloper.playpix.R
+import com.svara.music.R
 
 val SmartImageCompactListTargetSize = Size(96, 96)
 val SmartImageListTargetSize = Size(128, 128)

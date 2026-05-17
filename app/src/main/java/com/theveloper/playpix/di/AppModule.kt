@@ -1,4 +1,4 @@
-package com.theveloper.playpix.di
+package com.svara.music.di
 
 import android.content.Context
 import androidx.annotation.OptIn
@@ -15,37 +15,37 @@ import androidx.work.WorkManager
 import coil.ImageLoader
 import coil.disk.DiskCache
 import coil.memory.MemoryCache
-import com.theveloper.playpix.BuildConfig
-import com.theveloper.playpix.PlayPixApplication
-import com.theveloper.playpix.data.database.AlbumArtThemeDao
-import com.theveloper.playpix.data.database.EngagementDao
-import com.theveloper.playpix.data.database.FavoritesDao
-import com.theveloper.playpix.data.database.GDriveDao
-import com.theveloper.playpix.data.database.LyricsDao
-import com.theveloper.playpix.data.database.AiCacheDao
-import com.theveloper.playpix.data.database.AiUsageDao
-import com.theveloper.playpix.data.database.LocalPlaylistDao
-import com.theveloper.playpix.data.database.MusicDao
-import com.theveloper.playpix.data.database.PlayPixDatabase
-import com.theveloper.playpix.data.database.SearchHistoryDao
-import com.theveloper.playpix.data.database.TransitionDao
-import com.theveloper.playpix.data.preferences.UserPreferencesRepository
-import com.theveloper.playpix.data.preferences.PlaylistPreferencesRepository
-import com.theveloper.playpix.data.preferences.dataStore
-import com.theveloper.playpix.data.media.SongMetadataEditor
-import com.theveloper.playpix.data.network.deezer.DeezerApiService
-import com.theveloper.playpix.data.network.netease.NeteaseApiService
-import com.theveloper.playpix.data.network.lyrics.LrcLibApiService
-import com.theveloper.playpix.data.repository.ArtistImageRepository
-import com.theveloper.playpix.data.repository.LyricsRepository
-import com.theveloper.playpix.data.repository.LyricsRepositoryImpl
-import com.theveloper.playpix.data.repository.MediaStoreSongRepository
-import com.theveloper.playpix.data.repository.MusicRepository
-import com.theveloper.playpix.data.repository.MusicRepositoryImpl
-import com.theveloper.playpix.data.repository.SongRepository
-import com.theveloper.playpix.data.repository.TransitionRepository
-import com.theveloper.playpix.data.repository.TransitionRepositoryImpl
-import com.theveloper.playpix.data.repository.FolderTreeBuilder
+import com.svara.music.BuildConfig
+import com.svara.music.SvaraApplication
+import com.svara.music.data.database.AlbumArtThemeDao
+import com.svara.music.data.database.EngagementDao
+import com.svara.music.data.database.FavoritesDao
+import com.svara.music.data.database.GDriveDao
+import com.svara.music.data.database.LyricsDao
+import com.svara.music.data.database.AiCacheDao
+import com.svara.music.data.database.AiUsageDao
+import com.svara.music.data.database.LocalPlaylistDao
+import com.svara.music.data.database.MusicDao
+import com.svara.music.data.database.SvaraDatabase
+import com.svara.music.data.database.SearchHistoryDao
+import com.svara.music.data.database.TransitionDao
+import com.svara.music.data.preferences.UserPreferencesRepository
+import com.svara.music.data.preferences.PlaylistPreferencesRepository
+import com.svara.music.data.preferences.dataStore
+import com.svara.music.data.media.SongMetadataEditor
+import com.svara.music.data.network.deezer.DeezerApiService
+import com.svara.music.data.network.netease.NeteaseApiService
+import com.svara.music.data.network.lyrics.LrcLibApiService
+import com.svara.music.data.repository.ArtistImageRepository
+import com.svara.music.data.repository.LyricsRepository
+import com.svara.music.data.repository.LyricsRepositoryImpl
+import com.svara.music.data.repository.MediaStoreSongRepository
+import com.svara.music.data.repository.MusicRepository
+import com.svara.music.data.repository.MusicRepositoryImpl
+import com.svara.music.data.repository.SongRepository
+import com.svara.music.data.repository.TransitionRepository
+import com.svara.music.data.repository.TransitionRepositoryImpl
+import com.svara.music.data.repository.FolderTreeBuilder
 import dagger.Module
 import dagger.Provides
 import dagger.Lazy
@@ -70,8 +70,8 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideApplication(@ApplicationContext app: Context): PlayPixApplication {
-        return app as PlayPixApplication
+    fun provideApplication(@ApplicationContext app: Context): SvaraApplication {
+        return app as SvaraApplication
     }
 
     @Singleton
@@ -86,7 +86,7 @@ object AppModule {
     fun provideSessionToken(@ApplicationContext context: Context): androidx.media3.session.SessionToken {
         return androidx.media3.session.SessionToken(
             context,
-            android.content.ComponentName(context, com.theveloper.playpix.data.service.MusicService::class.java)
+            android.content.ComponentName(context, com.svara.music.data.service.MusicService::class.java)
         )
     }
 
@@ -121,52 +121,52 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun providePlayPixDatabase(@ApplicationContext context: Context): PlayPixDatabase {
+    fun provideSvaraDatabase(@ApplicationContext context: Context): SvaraDatabase {
         val builder = Room.databaseBuilder(
             context.applicationContext,
-            PlayPixDatabase::class.java,
-            "playpix_database"
+            SvaraDatabase::class.java,
+            "svara_database"
         ).addMigrations(
-            PlayPixDatabase.MIGRATION_3_4,
-            PlayPixDatabase.MIGRATION_4_5,
-            PlayPixDatabase.MIGRATION_5_6,
-            PlayPixDatabase.MIGRATION_6_7,
-            PlayPixDatabase.MIGRATION_7_8,
-            PlayPixDatabase.MIGRATION_8_9,
-            PlayPixDatabase.MIGRATION_9_10,
-            PlayPixDatabase.MIGRATION_10_11,
-            PlayPixDatabase.MIGRATION_11_12,
-            PlayPixDatabase.MIGRATION_12_13,
-            PlayPixDatabase.MIGRATION_13_14,
-            PlayPixDatabase.MIGRATION_14_15,
-            PlayPixDatabase.MIGRATION_15_16,
-            PlayPixDatabase.MIGRATION_16_17,
-            PlayPixDatabase.MIGRATION_17_18,
-            PlayPixDatabase.MIGRATION_18_19,
-            PlayPixDatabase.MIGRATION_19_20,
-            PlayPixDatabase.MIGRATION_20_21,
-            PlayPixDatabase.MIGRATION_21_22,
-            PlayPixDatabase.MIGRATION_22_23,
-            PlayPixDatabase.MIGRATION_23_24,
-            PlayPixDatabase.MIGRATION_24_25,
-            PlayPixDatabase.MIGRATION_25_26,
-            PlayPixDatabase.MIGRATION_26_27,
-            PlayPixDatabase.MIGRATION_27_28,
-            PlayPixDatabase.MIGRATION_28_29,
-            PlayPixDatabase.MIGRATION_29_30,
-            PlayPixDatabase.MIGRATION_30_31,
-            PlayPixDatabase.MIGRATION_31_32,
-            PlayPixDatabase.MIGRATION_32_33,
-            PlayPixDatabase.MIGRATION_33_34,
-            PlayPixDatabase.MIGRATION_34_35,
-            PlayPixDatabase.MIGRATION_35_36,
-            PlayPixDatabase.MIGRATION_36_37,
-            PlayPixDatabase.MIGRATION_37_38,
-            PlayPixDatabase.MIGRATION_38_39,
-            PlayPixDatabase.MIGRATION_39_40,
-            PlayPixDatabase.MIGRATION_40_41
+            SvaraDatabase.MIGRATION_3_4,
+            SvaraDatabase.MIGRATION_4_5,
+            SvaraDatabase.MIGRATION_5_6,
+            SvaraDatabase.MIGRATION_6_7,
+            SvaraDatabase.MIGRATION_7_8,
+            SvaraDatabase.MIGRATION_8_9,
+            SvaraDatabase.MIGRATION_9_10,
+            SvaraDatabase.MIGRATION_10_11,
+            SvaraDatabase.MIGRATION_11_12,
+            SvaraDatabase.MIGRATION_12_13,
+            SvaraDatabase.MIGRATION_13_14,
+            SvaraDatabase.MIGRATION_14_15,
+            SvaraDatabase.MIGRATION_15_16,
+            SvaraDatabase.MIGRATION_16_17,
+            SvaraDatabase.MIGRATION_17_18,
+            SvaraDatabase.MIGRATION_18_19,
+            SvaraDatabase.MIGRATION_19_20,
+            SvaraDatabase.MIGRATION_20_21,
+            SvaraDatabase.MIGRATION_21_22,
+            SvaraDatabase.MIGRATION_22_23,
+            SvaraDatabase.MIGRATION_23_24,
+            SvaraDatabase.MIGRATION_24_25,
+            SvaraDatabase.MIGRATION_25_26,
+            SvaraDatabase.MIGRATION_26_27,
+            SvaraDatabase.MIGRATION_27_28,
+            SvaraDatabase.MIGRATION_28_29,
+            SvaraDatabase.MIGRATION_29_30,
+            SvaraDatabase.MIGRATION_30_31,
+            SvaraDatabase.MIGRATION_31_32,
+            SvaraDatabase.MIGRATION_32_33,
+            SvaraDatabase.MIGRATION_33_34,
+            SvaraDatabase.MIGRATION_34_35,
+            SvaraDatabase.MIGRATION_35_36,
+            SvaraDatabase.MIGRATION_36_37,
+            SvaraDatabase.MIGRATION_37_38,
+            SvaraDatabase.MIGRATION_38_39,
+            SvaraDatabase.MIGRATION_39_40,
+            SvaraDatabase.MIGRATION_40_41
         )
-            .addCallback(PlayPixDatabase.createRuntimeArtifactsCallback())
+            .addCallback(SvaraDatabase.createRuntimeArtifactsCallback())
             .setJournalMode(RoomDatabase.JournalMode.WRITE_AHEAD_LOGGING)
 
         // Allow destructive migration in all builds.
@@ -180,84 +180,84 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideAlbumArtThemeDao(database: PlayPixDatabase): AlbumArtThemeDao {
+    fun provideAlbumArtThemeDao(database: SvaraDatabase): AlbumArtThemeDao {
         return database.albumArtThemeDao()
     }
 
     @Singleton
     @Provides
-    fun provideSearchHistoryDao(database: PlayPixDatabase): SearchHistoryDao { // NUEVO MÉTODO
+    fun provideSearchHistoryDao(database: SvaraDatabase): SearchHistoryDao { // NUEVO MÉTODO
         return database.searchHistoryDao()
     }
 
     @Singleton
     @Provides
-    fun provideMusicDao(database: PlayPixDatabase): MusicDao { // Proveer MusicDao
+    fun provideMusicDao(database: SvaraDatabase): MusicDao { // Proveer MusicDao
         return database.musicDao()
     }
 
     @Singleton
     @Provides
-    fun provideTransitionDao(database: PlayPixDatabase): TransitionDao {
+    fun provideTransitionDao(database: SvaraDatabase): TransitionDao {
         return database.transitionDao()
     }
 
     @Singleton
     @Provides
-    fun provideEngagementDao(database: PlayPixDatabase): EngagementDao {
+    fun provideEngagementDao(database: SvaraDatabase): EngagementDao {
         return database.engagementDao()
     }
 
     @Singleton
     @Provides
-    fun provideFavoritesDao(database: PlayPixDatabase): FavoritesDao {
+    fun provideFavoritesDao(database: SvaraDatabase): FavoritesDao {
         return database.favoritesDao()
     }
 
     @Singleton
     @Provides
-    fun provideLyricsDao(database: PlayPixDatabase): LyricsDao {
+    fun provideLyricsDao(database: SvaraDatabase): LyricsDao {
         return database.lyricsDao()
     }
 
     @Singleton
     @Provides
-    fun provideGDriveDao(database: PlayPixDatabase): GDriveDao {
+    fun provideGDriveDao(database: SvaraDatabase): GDriveDao {
         return database.gdriveDao()
     }
 
     @Singleton
     @Provides
-    fun provideLocalPlaylistDao(database: PlayPixDatabase): LocalPlaylistDao {
+    fun provideLocalPlaylistDao(database: SvaraDatabase): LocalPlaylistDao {
         return database.localPlaylistDao()
     }
 
     @Singleton
     @Provides
-    fun provideQqMusicDao(database: PlayPixDatabase): com.theveloper.playpix.data.database.QqMusicDao {
+    fun provideQqMusicDao(database: SvaraDatabase): com.svara.music.data.database.QqMusicDao {
         return database.qqmusicDao()
     }
 
     @Singleton
     @Provides
-    fun provideNavidromeDao(database: PlayPixDatabase): com.theveloper.playpix.data.database.NavidromeDao {
+    fun provideNavidromeDao(database: SvaraDatabase): com.svara.music.data.database.NavidromeDao {
         return database.navidromeDao()
     }
     
     @Singleton
     @Provides
-    fun provideAiCacheDao(database: PlayPixDatabase): AiCacheDao {
+    fun provideAiCacheDao(database: SvaraDatabase): AiCacheDao {
         return database.aiCacheDao()
     }
 
     @Provides
-    fun provideAiUsageDao(database: PlayPixDatabase): AiUsageDao {
+    fun provideAiUsageDao(database: SvaraDatabase): AiUsageDao {
         return database.aiUsageDao()
     }
 
     @Singleton
     @Provides
-    fun provideJellyfinDao(database: PlayPixDatabase): com.theveloper.playpix.data.database.JellyfinDao {
+    fun provideJellyfinDao(database: SvaraDatabase): com.svara.music.data.database.JellyfinDao {
         return database.jellyfinDao()
     }
 
@@ -324,7 +324,7 @@ object AppModule {
     @Singleton
     fun provideSongRepository(
         @ApplicationContext context: Context,
-        mediaStoreObserver: com.theveloper.playpix.data.observer.MediaStoreObserver,
+        mediaStoreObserver: com.svara.music.data.observer.MediaStoreObserver,
         favoritesDao: FavoritesDao,
         userPreferencesRepository: UserPreferencesRepository,
         musicDao: MusicDao
@@ -340,13 +340,13 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideTelegramDao(database: PlayPixDatabase): com.theveloper.playpix.data.database.TelegramDao {
+    fun provideTelegramDao(database: SvaraDatabase): com.svara.music.data.database.TelegramDao {
         return database.telegramDao()
     }
 
     @Singleton
     @Provides
-    fun provideNeteaseDao(database: PlayPixDatabase): com.theveloper.playpix.data.database.NeteaseDao {
+    fun provideNeteaseDao(database: SvaraDatabase): com.svara.music.data.database.NeteaseDao {
         return database.neteaseDao()
     }
 
@@ -365,14 +365,14 @@ object AppModule {
         searchHistoryDao: SearchHistoryDao,
         musicDao: MusicDao,
         lyricsRepository: LyricsRepository,
-        telegramDao: com.theveloper.playpix.data.database.TelegramDao,
-        telegramCacheManager: Lazy<com.theveloper.playpix.data.telegram.TelegramCacheManager>,
-        telegramRepository: Lazy<com.theveloper.playpix.data.telegram.TelegramRepository>,
+        telegramDao: com.svara.music.data.database.TelegramDao,
+        telegramCacheManager: Lazy<com.svara.music.data.telegram.TelegramCacheManager>,
+        telegramRepository: Lazy<com.svara.music.data.telegram.TelegramRepository>,
         songRepository: SongRepository,
         favoritesDao: FavoritesDao,
         artistImageRepository: ArtistImageRepository,
         folderTreeBuilder: FolderTreeBuilder,
-        streamingRepository: com.theveloper.playpix.data.streaming.StreamingRepository
+        streamingRepository: com.svara.music.data.streaming.StreamingRepository
     ): MusicRepository {
         return MusicRepositoryImpl(
             context = context,
@@ -405,7 +405,7 @@ object AppModule {
     fun provideSongMetadataEditor(
         @ApplicationContext context: Context,
         musicDao: MusicDao,
-        telegramDao: com.theveloper.playpix.data.database.TelegramDao,
+        telegramDao: com.svara.music.data.database.TelegramDao,
         userPreferencesRepository: UserPreferencesRepository
     ): SongMetadataEditor {
         return SongMetadataEditor(context, musicDao, telegramDao, userPreferencesRepository)
@@ -444,7 +444,7 @@ object AppModule {
             .addInterceptor { chain ->
                 val originalRequest = chain.request()
                 val requestWithUserAgent = originalRequest.newBuilder()
-                    .header("User-Agent", "PlayPix/1.0 (Android; Music Player)")
+                    .header("User-Agent", "Svara/1.0 (Android; Music Player)")
                     .build()
                 chain.proceed(requestWithUserAgent)
             }
@@ -500,7 +500,7 @@ object AppModule {
             .addInterceptor { chain ->
                 val originalRequest = chain.request()
                 val requestWithHeaders = originalRequest.newBuilder()
-                    .header("User-Agent", "PlayPix/1.0 (Android; Music Player)")
+                    .header("User-Agent", "Svara/1.0 (Android; Music Player)")
                     .header("Accept", "application/json")
                     .build()
                 chain.proceed(requestWithHeaders)

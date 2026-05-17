@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.network.deezer
+package com.svara.music.data.network.deezer
 
 import com.google.gson.annotations.SerializedName
 

@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components.player
+package com.svara.music.presentation.components.player
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -37,11 +37,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil.size.Size
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.model.Artist
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.presentation.components.SmartImage
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
+import com.svara.music.R
+import com.svara.music.data.model.Artist
+import com.svara.music.data.model.Song
+import com.svara.music.presentation.components.SmartImage
+import com.svara.music.ui.theme.GoogleSansRounded
 import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape
 
 private data class PlayerArtistShortcutItem(

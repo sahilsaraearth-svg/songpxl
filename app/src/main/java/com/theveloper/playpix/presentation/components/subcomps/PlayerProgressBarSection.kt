@@ -1,2 +1,2 @@
-package com.theveloper.playpix.presentation.components.subcomps
+package com.svara.music.presentation.components.subcomps
 

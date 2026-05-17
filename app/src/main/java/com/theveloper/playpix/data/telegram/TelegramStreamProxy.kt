@@ -1,7 +1,7 @@
-package com.theveloper.playpix.data.telegram
+package com.svara.music.data.telegram
 
-import com.theveloper.playpix.utils.LogUtils
-import com.theveloper.playpix.data.stream.CloudStreamSecurity
+import com.svara.music.utils.LogUtils
+import com.svara.music.data.stream.CloudStreamSecurity
 import io.ktor.http.ContentType
 import io.ktor.http.HttpStatusCode
 import io.ktor.server.engine.embeddedServer

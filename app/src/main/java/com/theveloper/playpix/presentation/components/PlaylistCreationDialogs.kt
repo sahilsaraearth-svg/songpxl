@@ -4,7 +4,7 @@
     ExperimentalMaterial3ExpressiveApi::class
 )
 
-package com.theveloper.playpix.presentation.components
+package com.svara.music.presentation.components
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateContentSize
@@ -94,14 +94,14 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
+import com.svara.music.ui.theme.GoogleSansRounded
 import android.content.res.Resources
 import kotlin.math.max
 import kotlin.math.min
 import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape
 import androidx.compose.ui.res.stringArrayResource
 import androidx.compose.ui.res.stringResource
-import com.theveloper.playpix.R
+import com.svara.music.R
 import androidx.compose.ui.text.style.TextOverflow
 
 @Composable

@@ -1,13 +1,13 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.theveloper.playpix.data.model.Curve
-import com.theveloper.playpix.data.model.TransitionMode
-import com.theveloper.playpix.data.model.TransitionRule
-import com.theveloper.playpix.data.model.TransitionSettings
-import com.theveloper.playpix.data.repository.TransitionRepository
+import com.svara.music.data.model.Curve
+import com.svara.music.data.model.TransitionMode
+import com.svara.music.data.model.TransitionRule
+import com.svara.music.data.model.TransitionSettings
+import com.svara.music.data.repository.TransitionRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

@@ -1,8 +1,8 @@
-package com.theveloper.playpix.di
+package com.svara.music.di
 
-import com.theveloper.playpix.data.itunes.ItunesApiService
-import com.theveloper.playpix.data.jiosaavn.JioSaavnApiService
-import com.theveloper.playpix.data.soundcloud.SoundCloudApiService
+import com.svara.music.data.itunes.ItunesApiService
+import com.svara.music.data.jiosaavn.JioSaavnApiService
+import com.svara.music.data.soundcloud.SoundCloudApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

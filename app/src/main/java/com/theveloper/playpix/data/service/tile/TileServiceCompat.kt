@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.service.tile
+package com.svara.music.data.service.tile
 
 import android.annotation.SuppressLint
 import android.app.PendingIntent

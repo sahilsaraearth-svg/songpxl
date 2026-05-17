@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components.scoped
+package com.svara.music.presentation.components.scoped
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.AnimationVector1D

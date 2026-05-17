@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components.brickbreaker
+package com.svara.music.presentation.components.brickbreaker
 
 import android.content.Context
 import androidx.compose.foundation.Canvas
@@ -71,10 +71,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.theveloper.playpix.R
-import com.theveloper.playpix.presentation.components.MiniPlayerHeight
-import com.theveloper.playpix.presentation.utils.LocalAppHapticsConfig
-import com.theveloper.playpix.presentation.utils.performAppHapticFeedback
+import com.svara.music.R
+import com.svara.music.presentation.components.MiniPlayerHeight
+import com.svara.music.presentation.utils.LocalAppHapticsConfig
+import com.svara.music.presentation.utils.performAppHapticFeedback
 import kotlinx.coroutines.isActive
 import kotlin.math.abs
 import kotlin.math.ceil
@@ -109,7 +109,7 @@ private data class Particle(
     val life: Float = 1.0f // 1.0 to 0.0
 )
 
-private const val EasterEggPrefsName = "playpix_easter_egg"
+private const val EasterEggPrefsName = "svara_easter_egg"
 private const val EasterEggHighScoreKey = "brick_breaker_high_score"
 private const val FixedPhysicsStepSeconds = 1f / 180f
 private const val MaxPhysicsStepsPerFrame = 8

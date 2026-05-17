@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
 import android.net.Uri
 import android.util.Log
@@ -6,14 +6,14 @@ import android.content.Intent
 import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.theveloper.playpix.data.DailyMixManager
-import com.theveloper.playpix.data.model.Playlist
-import com.theveloper.playpix.data.model.SmartPlaylistRule
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.model.SortOption
-import com.theveloper.playpix.data.playlist.M3uManager
-import com.theveloper.playpix.data.preferences.PlaylistPreferencesRepository
-import com.theveloper.playpix.data.repository.MusicRepository
+import com.svara.music.data.DailyMixManager
+import com.svara.music.data.model.Playlist
+import com.svara.music.data.model.SmartPlaylistRule
+import com.svara.music.data.model.Song
+import com.svara.music.data.model.SortOption
+import com.svara.music.data.playlist.M3uManager
+import com.svara.music.data.preferences.PlaylistPreferencesRepository
+import com.svara.music.data.repository.MusicRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -32,9 +32,9 @@ import android.graphics.Bitmap
 import android.graphics.ImageDecoder
 import android.os.Build
 import android.provider.MediaStore
-import com.theveloper.playpix.data.preferences.TelegramTopicDisplayMode
-import com.theveloper.playpix.data.ai.AiPlaylistGenerator
-import com.theveloper.playpix.R
+import com.svara.music.data.preferences.TelegramTopicDisplayMode
+import com.svara.music.data.ai.AiPlaylistGenerator
+import com.svara.music.R
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.io.File
 import java.io.FileOutputStream
@@ -804,9 +804,9 @@ class PlaylistViewModel @Inject constructor(
 
     private fun findFolder(
         targetPath: String,
-        folders: List<com.theveloper.playpix.data.model.MusicFolder>
-    ): com.theveloper.playpix.data.model.MusicFolder? {
-        val queue: ArrayDeque<com.theveloper.playpix.data.model.MusicFolder> = ArrayDeque(folders)
+        folders: List<com.svara.music.data.model.MusicFolder>
+    ): com.svara.music.data.model.MusicFolder? {
+        val queue: ArrayDeque<com.svara.music.data.model.MusicFolder> = ArrayDeque(folders)
         while (queue.isNotEmpty()) {
             val folder = queue.removeFirst()
             if (folder.path == targetPath) {
@@ -817,7 +817,7 @@ class PlaylistViewModel @Inject constructor(
         return null
     }
 
-    private fun com.theveloper.playpix.data.model.MusicFolder.collectAllSongs(): List<Song> {
+    private fun com.svara.music.data.model.MusicFolder.collectAllSongs(): List<Song> {
         return songs + subFolders.flatMap { it.collectAllSongs() }
     }
 
@@ -826,32 +826,32 @@ class PlaylistViewModel @Inject constructor(
     }
 
     private fun sortPlaylistsList(
-        playlists: List<com.theveloper.playpix.data.model.Playlist>,
+        playlists: List<com.svara.music.data.model.Playlist>,
         sortOption: SortOption
-    ): List<com.theveloper.playpix.data.model.Playlist> {
+    ): List<com.svara.music.data.model.Playlist> {
         return when (sortOption) {
             SortOption.PlaylistNameAZ -> playlists.sortedWith(
-                compareBy<com.theveloper.playpix.data.model.Playlist> { it.name.lowercase() }
+                compareBy<com.svara.music.data.model.Playlist> { it.name.lowercase() }
                     .thenByDescending { it.lastModified }
                     .thenBy { it.id }
             )
             SortOption.PlaylistNameZA -> playlists.sortedWith(
-                compareByDescending<com.theveloper.playpix.data.model.Playlist> { it.name.lowercase() }
+                compareByDescending<com.svara.music.data.model.Playlist> { it.name.lowercase() }
                     .thenByDescending { it.lastModified }
                     .thenBy { it.id }
             )
             SortOption.PlaylistDateCreated -> playlists.sortedWith(
-                compareByDescending<com.theveloper.playpix.data.model.Playlist> { it.lastModified }
+                compareByDescending<com.svara.music.data.model.Playlist> { it.lastModified }
                     .thenBy { it.name.lowercase() }
                     .thenBy { it.id }
             )
             SortOption.PlaylistDateCreatedAsc -> playlists.sortedWith(
-                compareBy<com.theveloper.playpix.data.model.Playlist> { it.lastModified }
+                compareBy<com.svara.music.data.model.Playlist> { it.lastModified }
                     .thenBy { it.name.lowercase() }
                     .thenBy { it.id }
             )
             else -> playlists.sortedWith(
-                compareBy<com.theveloper.playpix.data.model.Playlist> { it.name.lowercase() }
+                compareBy<com.svara.music.data.model.Playlist> { it.name.lowercase() }
                     .thenByDescending { it.lastModified }
                     .thenBy { it.id }
             )
@@ -1174,7 +1174,7 @@ class PlaylistViewModel @Inject constructor(
                     musicDir.mkdirs()
                 }
 
-                val exportDir = File(musicDir, "PlayPix Exports")
+                val exportDir = File(musicDir, "Svara Exports")
                 if (!exportDir.exists()) {
                     exportDir.mkdirs()
                 }

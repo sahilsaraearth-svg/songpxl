@@ -1,22 +1,22 @@
-package com.theveloper.playpix.data.backup
+package com.svara.music.data.backup
 
 import android.content.Context
 import android.net.Uri
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.theveloper.playpix.data.database.EngagementDao
-import com.theveloper.playpix.data.database.FavoritesDao
-import com.theveloper.playpix.data.database.FavoritesEntity
-import com.theveloper.playpix.data.database.LyricsDao
-import com.theveloper.playpix.data.database.LyricsEntity
-import com.theveloper.playpix.data.database.SearchHistoryDao
-import com.theveloper.playpix.data.database.SearchHistoryEntity
-import com.theveloper.playpix.data.database.SongEngagementEntity
-import com.theveloper.playpix.data.database.TransitionDao
-import com.theveloper.playpix.data.database.TransitionRuleEntity
-import com.theveloper.playpix.data.preferences.PreferenceBackupEntry
-import com.theveloper.playpix.data.preferences.UserPreferencesRepository
-import com.theveloper.playpix.data.stats.PlaybackStatsRepository
+import com.svara.music.data.database.EngagementDao
+import com.svara.music.data.database.FavoritesDao
+import com.svara.music.data.database.FavoritesEntity
+import com.svara.music.data.database.LyricsDao
+import com.svara.music.data.database.LyricsEntity
+import com.svara.music.data.database.SearchHistoryDao
+import com.svara.music.data.database.SearchHistoryEntity
+import com.svara.music.data.database.SongEngagementEntity
+import com.svara.music.data.database.TransitionDao
+import com.svara.music.data.database.TransitionRuleEntity
+import com.svara.music.data.preferences.PreferenceBackupEntry
+import com.svara.music.data.preferences.UserPreferencesRepository
+import com.svara.music.data.stats.PlaybackStatsRepository
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.io.ByteArrayInputStream
 import java.io.ByteArrayOutputStream
@@ -255,7 +255,7 @@ class AppDataBackupManager @Inject constructor(
                 step = ++step,
                 totalSteps = totalSteps,
                 title = "Backup complete",
-                detail = "Your PlayPix backup was created successfully."
+                detail = "Your Svara backup was created successfully."
             )
         }
     }

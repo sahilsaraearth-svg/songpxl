@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
 enum class PlayerSheetState {
     COLLAPSED,

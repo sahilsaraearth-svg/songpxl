@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.provider
+package com.svara.music.data.provider
 
 import android.content.ContentProvider
 import android.content.ContentValues
@@ -7,7 +7,7 @@ import android.content.res.AssetFileDescriptor
 import android.database.Cursor
 import android.net.Uri
 import android.os.ParcelFileDescriptor
-import com.theveloper.playpix.utils.AlbumArtUtils
+import com.svara.music.utils.AlbumArtUtils
 import java.io.File
 import java.io.FileNotFoundException
 

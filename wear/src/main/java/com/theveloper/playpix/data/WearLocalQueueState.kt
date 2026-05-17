@@ -1,6 +1,6 @@
-package com.theveloper.playpix.data
+package com.svara.music.data
 
-import com.theveloper.playpix.shared.WearLibraryItem
+import com.svara.music.shared.WearLibraryItem
 
 data class WearLocalQueueState(
     val items: List<WearLibraryItem> = emptyList(),

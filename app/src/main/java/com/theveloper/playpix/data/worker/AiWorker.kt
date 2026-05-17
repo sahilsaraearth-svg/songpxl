@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.worker
+package com.svara.music.data.worker
 
 
 import android.content.Context
@@ -6,12 +6,12 @@ import androidx.hilt.work.HiltWorker
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
 import androidx.work.workDataOf
-import com.theveloper.playpix.data.ai.AiNotificationManager
-import com.theveloper.playpix.data.ai.AiOrchestrator
-import com.theveloper.playpix.data.ai.AiSystemPromptType
-import com.theveloper.playpix.data.ai.UserProfileDigestGenerator
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.repository.MusicRepository
+import com.svara.music.data.ai.AiNotificationManager
+import com.svara.music.data.ai.AiOrchestrator
+import com.svara.music.data.ai.AiSystemPromptType
+import com.svara.music.data.ai.UserProfileDigestGenerator
+import com.svara.music.data.model.Song
+import com.svara.music.data.repository.MusicRepository
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
 import kotlinx.coroutines.Dispatchers
@@ -27,7 +27,7 @@ class AiWorker @AssistedInject constructor(
     private val notificationManager: AiNotificationManager,
     private val musicRepository: MusicRepository,
     private val digestGenerator: UserProfileDigestGenerator,
-    private val preferencesRepo: com.theveloper.playpix.data.preferences.AiPreferencesRepository
+    private val preferencesRepo: com.svara.music.data.preferences.AiPreferencesRepository
 ) : CoroutineWorker(appContext, workerParams) {
 
     companion object {

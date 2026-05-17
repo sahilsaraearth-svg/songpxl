@@ -1,6 +1,6 @@
 @file:kotlin.OptIn(androidx.compose.material3.ExperimentalMaterial3ExpressiveApi::class)
 
-package com.theveloper.playpix.presentation.components
+package com.svara.music.presentation.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -44,8 +44,8 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.size.Size
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
+import com.svara.music.data.model.Song
+import com.svara.music.ui.theme.GoogleSansRounded
 
 internal val LocalMaterialTheme = staticCompositionLocalOf<ColorScheme> { error("No ColorScheme provided") }
 

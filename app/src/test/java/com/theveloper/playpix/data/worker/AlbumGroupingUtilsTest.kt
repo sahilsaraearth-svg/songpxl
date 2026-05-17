@@ -1,7 +1,7 @@
-package com.theveloper.playpix.data.worker
+package com.svara.music.data.worker
 
 import com.google.common.truth.Truth.assertThat
-import com.theveloper.playpix.data.database.SongEntity
+import com.svara.music.data.database.SongEntity
 import org.junit.Test
 
 class AlbumGroupingUtilsTest {
@@ -57,7 +57,7 @@ class AlbumGroupingUtilsTest {
         val firstAlbum = testSong(
             artistName = "Artist A",
             albumArtist = null,
-            albumArtUriString = "playpix_local_art://song/10",
+            albumArtUriString = "svara_local_art://song/10",
             parentDirectoryPath = "/music/Artist A/Feels",
             albumName = "Unknown Album",
             albumId = 10L
@@ -65,7 +65,7 @@ class AlbumGroupingUtilsTest {
         val secondAlbum = testSong(
             artistName = "Artist B",
             albumArtist = null,
-            albumArtUriString = "playpix_local_art://song/10",
+            albumArtUriString = "svara_local_art://song/10",
             parentDirectoryPath = "/music/Artist B/Feels",
             albumName = "Unknown Album",
             albumId = 11L
@@ -76,12 +76,12 @@ class AlbumGroupingUtilsTest {
 
     @Test
     fun `buildAlbumGroupingKeys keeps media fallback even when artwork exists`() {
-        val album = com.theveloper.playpix.data.database.AlbumEntity(
+        val album = com.svara.music.data.database.AlbumEntity(
             id = 77L,
             title = "Unknown Album",
             artistName = "",
             artistId = 0L,
-            albumArtUriString = "playpix_local_art://song/10",
+            albumArtUriString = "svara_local_art://song/10",
             songCount = 1,
             dateAdded = 0L,
             year = 0

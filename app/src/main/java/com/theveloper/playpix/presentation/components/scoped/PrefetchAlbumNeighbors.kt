@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components.scoped
+package com.svara.music.presentation.components.scoped
 
 import androidx.compose.foundation.pager.PagerState
 import androidx.compose.runtime.Composable
@@ -9,10 +9,10 @@ import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.platform.LocalContext
 import coil.request.CachePolicy
 import coil.size.Size
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.presentation.components.albumArtMemoryCacheKey
-import com.theveloper.playpix.presentation.components.safeAlbumArtTargetSize
-import com.theveloper.playpix.utils.LocalArtworkUri
+import com.svara.music.data.model.Song
+import com.svara.music.presentation.components.albumArtMemoryCacheKey
+import com.svara.music.presentation.components.safeAlbumArtTargetSize
+import com.svara.music.utils.LocalArtworkUri
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.coroutines.flow.distinctUntilChanged
 

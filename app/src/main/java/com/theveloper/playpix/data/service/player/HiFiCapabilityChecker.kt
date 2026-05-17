@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.service.player
+package com.svara.music.data.service.player
 
 import android.media.AudioFormat
 import android.media.AudioTrack

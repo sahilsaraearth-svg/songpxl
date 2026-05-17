@@ -222,8 +222,8 @@
     <string name="setcat_trigger_crash_title">触发测试崩溃</string>
     <string name="setcat_trigger_crash_subtitle">模拟一次崩溃，以测试崩溃报告系统。</string>
     <string name="setcat_application">应用</string>
-    <string name="setcat_about_playpix_title">关于 PlayPix</string>
-    <string name="setcat_about_playpix_subtitle">应用版本、鸣谢等信息。</string>
+    <string name="setcat_about_svara_title">关于 Svara</string>
+    <string name="setcat_about_svara_subtitle">应用版本、鸣谢等信息。</string>
 
     <string name="backup_summary_none">未选择任何部分。</string>
     <string name="backup_summary_all">已选择全部部分。</string>
@@ -267,7 +267,7 @@
     <string name="dialog_regenerate_stats_title">重新生成统计？</string>
     <string name="dialog_regenerate_stats_body">这将清除统计缓存，并根据数据库历史强制重新计算。</string>
     <string name="toast_stats_regeneration_started">统计重新生成已开始</string>
-    <string name="backup_file_name_format">PlayPix_Backup_%1$d.pxpl</string>
+    <string name="backup_file_name_format">Svara_Backup_%1$d.pxpl</string>
 
     <string name="setcat_regenerate_daily_mix_action">重新生成每日合辑</string>
     <string name="setcat_regenerate_stats_action">重新生成统计</string>

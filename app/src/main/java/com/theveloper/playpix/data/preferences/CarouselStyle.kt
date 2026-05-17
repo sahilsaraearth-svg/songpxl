@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.preferences
+package com.svara.music.data.preferences
 
 object CarouselStyle {
     const val NO_PEEK = "no_peek"

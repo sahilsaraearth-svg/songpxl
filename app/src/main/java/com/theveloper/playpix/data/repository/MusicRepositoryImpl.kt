@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.repository
+package com.svara.music.data.repository
 
 // import kotlinx.coroutines.withContext // May not be needed for Flow transformations
 
@@ -9,8 +9,8 @@ import android.net.Uri
 import android.os.Environment
 import android.util.Log
 
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.repository.ArtistImageRepository
+import com.svara.music.data.model.Song
+import com.svara.music.data.repository.ArtistImageRepository
 import dagger.Lazy
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
@@ -21,40 +21,41 @@ import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 import javax.inject.Singleton
 import androidx.core.net.toUri
-import com.theveloper.playpix.data.database.FavoritesDao
-import com.theveloper.playpix.data.database.MusicDao
-import com.theveloper.playpix.data.database.SearchHistoryDao
-import com.theveloper.playpix.data.database.SearchHistoryEntity
-import com.theveloper.playpix.data.database.TelegramChannelEntity
-import com.theveloper.playpix.data.database.TelegramDao
-import com.theveloper.playpix.data.database.toAlbum
-import com.theveloper.playpix.data.database.toArtist
-import com.theveloper.playpix.data.database.toSearchHistoryItem
-import com.theveloper.playpix.data.database.toSong
-import com.theveloper.playpix.data.database.toTelegramEntity
-import com.theveloper.playpix.data.database.toTelegramEntityWithThread
-import com.theveloper.playpix.data.database.TelegramTopicEntity
-import com.theveloper.playpix.data.model.Album
-import com.theveloper.playpix.data.model.Artist
-import com.theveloper.playpix.data.model.Genre
-import com.theveloper.playpix.data.model.Lyrics
-import com.theveloper.playpix.data.model.LyricsSourcePreference
-import com.theveloper.playpix.data.model.MusicFolder
-import com.theveloper.playpix.data.model.Playlist
-import com.theveloper.playpix.data.model.SearchFilterType
-import com.theveloper.playpix.data.model.SearchHistoryItem
-import com.theveloper.playpix.data.model.SearchResultItem
-import com.theveloper.playpix.data.model.SortOption
-import com.theveloper.playpix.data.model.FolderSource
-import com.theveloper.playpix.data.model.StorageFilter
-import com.theveloper.playpix.data.preferences.PlaylistPreferencesRepository
-import com.theveloper.playpix.data.preferences.UserPreferencesRepository
-import com.theveloper.playpix.ui.theme.GenreThemeUtils
-import com.theveloper.playpix.utils.DirectoryFilterUtils
-import com.theveloper.playpix.utils.LogUtils
-import com.theveloper.playpix.utils.StorageType
-import com.theveloper.playpix.utils.StorageUtils
-import com.theveloper.playpix.utils.toHexString
+import com.svara.music.data.database.FavoritesDao
+import com.svara.music.data.database.MusicDao
+import com.svara.music.data.database.SearchHistoryDao
+import com.svara.music.data.database.SearchHistoryEntity
+import com.svara.music.data.database.TelegramChannelEntity
+import com.svara.music.data.database.TelegramDao
+import com.svara.music.data.database.toAlbum
+import com.svara.music.data.database.toArtist
+import com.svara.music.data.database.toSearchHistoryItem
+import com.svara.music.data.database.toSong
+import com.svara.music.data.database.toEntityWithoutPaths
+import com.svara.music.data.database.toTelegramEntity
+import com.svara.music.data.database.toTelegramEntityWithThread
+import com.svara.music.data.database.TelegramTopicEntity
+import com.svara.music.data.model.Album
+import com.svara.music.data.model.Artist
+import com.svara.music.data.model.Genre
+import com.svara.music.data.model.Lyrics
+import com.svara.music.data.model.LyricsSourcePreference
+import com.svara.music.data.model.MusicFolder
+import com.svara.music.data.model.Playlist
+import com.svara.music.data.model.SearchFilterType
+import com.svara.music.data.model.SearchHistoryItem
+import com.svara.music.data.model.SearchResultItem
+import com.svara.music.data.model.SortOption
+import com.svara.music.data.model.FolderSource
+import com.svara.music.data.model.StorageFilter
+import com.svara.music.data.preferences.PlaylistPreferencesRepository
+import com.svara.music.data.preferences.UserPreferencesRepository
+import com.svara.music.ui.theme.GenreThemeUtils
+import com.svara.music.utils.DirectoryFilterUtils
+import com.svara.music.utils.LogUtils
+import com.svara.music.utils.StorageType
+import com.svara.music.utils.StorageUtils
+import com.svara.music.utils.toHexString
 import kotlinx.collections.immutable.toImmutableList
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.delay
@@ -96,13 +97,13 @@ class MusicRepositoryImpl @Inject constructor(
     private val musicDao: MusicDao,
     private val lyricsRepository: LyricsRepository,
     private val telegramDao: TelegramDao,
-    private val telegramCacheManagerProvider: Lazy<com.theveloper.playpix.data.telegram.TelegramCacheManager>,
-    private val telegramRepositoryProvider: Lazy<com.theveloper.playpix.data.telegram.TelegramRepository>,
+    private val telegramCacheManagerProvider: Lazy<com.svara.music.data.telegram.TelegramCacheManager>,
+    private val telegramRepositoryProvider: Lazy<com.svara.music.data.telegram.TelegramRepository>,
     private val songRepository: SongRepository,
     private val favoritesDao: FavoritesDao,
     private val artistImageRepository: ArtistImageRepository,
     private val folderTreeBuilder: FolderTreeBuilder,
-    private val streamingRepository: com.theveloper.playpix.data.streaming.StreamingRepository
+    private val streamingRepository: com.svara.music.data.streaming.StreamingRepository
 ) : MusicRepository {
 
     companion object {
@@ -124,9 +125,9 @@ class MusicRepositoryImpl @Inject constructor(
     @Volatile private var currentSongArtistPrefetchJob: Job? = null
     @Volatile private var currentSongArtistPrefetchSongId: Long? = null
     @Volatile private var telegramDownloadSyncObserverStarted = false
-    private val telegramCacheManager: com.theveloper.playpix.data.telegram.TelegramCacheManager
+    private val telegramCacheManager: com.svara.music.data.telegram.TelegramCacheManager
         get() = telegramCacheManagerProvider.get()
-    override val telegramRepository: com.theveloper.playpix.data.telegram.TelegramRepository
+    override val telegramRepository: com.svara.music.data.telegram.TelegramRepository
         get() = telegramRepositoryProvider.get()
 
     private fun normalizePath(path: String): String =
@@ -155,7 +156,7 @@ class MusicRepositoryImpl @Inject constructor(
         repositoryScope.launch {
             telegramRepository.songFileUpdated.collect {
                 androidx.work.WorkManager.getInstance(context).enqueue(
-                    com.theveloper.playpix.data.worker.SyncWorker.incrementalSyncWork()
+                    com.svara.music.data.worker.SyncWorker.incrementalSyncWork()
                 )
             }
         }
@@ -192,7 +193,7 @@ class MusicRepositoryImpl @Inject constructor(
     }.flowOn(Dispatchers.IO)
 
     @OptIn(ExperimentalCoroutinesApi::class)
-    override fun getPaginatedSongs(sortOption: SortOption, storageFilter: com.theveloper.playpix.data.model.StorageFilter): Flow<PagingData<Song>> {
+    override fun getPaginatedSongs(sortOption: SortOption, storageFilter: com.svara.music.data.model.StorageFilter): Flow<PagingData<Song>> {
         // Retry up to 5 times with 5s gap — handles Vercel cold start
         return flow<PagingData<Song>> {
             var attempt = 0
@@ -399,7 +400,7 @@ class MusicRepositoryImpl @Inject constructor(
             telegramRepository.warmUpArtworkForSongs(entities)
             // Trigger sync to update main DB
             androidx.work.WorkManager.getInstance(context).enqueue(
-                com.theveloper.playpix.data.worker.SyncWorker.incrementalSyncWork()
+                com.svara.music.data.worker.SyncWorker.incrementalSyncWork()
             )
         }
     }
@@ -778,7 +779,28 @@ class MusicRepositoryImpl @Inject constructor(
         val id = songId.toLongOrNull() ?: return@withContext
         if (isFavorite) {
             favoritesDao.setFavorite(
-                com.theveloper.playpix.data.database.FavoritesEntity(
+                com.svara.music.data.database.FavoritesEntity(
+                    songId = id,
+                    isFavorite = true
+                )
+            )
+        } else {
+            favoritesDao.removeFavorite(id)
+        }
+    }
+
+    override suspend fun setFavoriteStatusWithSong(song: com.svara.music.data.model.Song, isFavorite: Boolean) = withContext(Dispatchers.IO) {
+        val id = song.id.toLongOrNull() ?: return@withContext
+        if (isFavorite) {
+            // Upsert the song into the songs table so the INNER JOIN in getFavoriteSongs* works.
+            // This is required for streaming songs that are not stored locally.
+            try {
+                musicDao.insertSongsIgnoreConflicts(listOf(song.toEntityWithoutPaths()))
+            } catch (e: Exception) {
+                Log.w("MusicRepository", "Could not upsert song ${song.id} before favoriting: ${e.message}")
+            }
+            favoritesDao.setFavorite(
+                com.svara.music.data.database.FavoritesEntity(
                     songId = id,
                     isFavorite = true
                 )
@@ -1130,7 +1152,7 @@ class MusicRepositoryImpl @Inject constructor(
 
     override suspend fun getSongIdsSorted(
         sortOption: SortOption,
-        storageFilter: com.theveloper.playpix.data.model.StorageFilter
+        storageFilter: com.svara.music.data.model.StorageFilter
     ): List<Long> = withContext(Dispatchers.IO) {
         val filter = cachedDirFilter.value
         musicDao.getSongIdsSorted(
@@ -1143,7 +1165,7 @@ class MusicRepositoryImpl @Inject constructor(
 
     override suspend fun getFavoriteSongIdsSorted(
         sortOption: SortOption,
-        storageFilter: com.theveloper.playpix.data.model.StorageFilter
+        storageFilter: com.svara.music.data.model.StorageFilter
     ): List<Long> = withContext(Dispatchers.IO) {
         val filter = cachedDirFilter.value
         musicDao.getFavoriteSongIdsSorted(
@@ -1165,9 +1187,9 @@ class MusicRepositoryImpl @Inject constructor(
         // If one is already in flight, we let it complete; its Telegram phase reads
         // telegram_songs at run time and will pick up rows committed before then.
         androidx.work.WorkManager.getInstance(context).enqueueUniqueWork(
-            com.theveloper.playpix.data.worker.SyncWorker.WORK_NAME,
+            com.svara.music.data.worker.SyncWorker.WORK_NAME,
             androidx.work.ExistingWorkPolicy.KEEP,
-            com.theveloper.playpix.data.worker.SyncWorker.incrementalSyncWork()
+            com.svara.music.data.worker.SyncWorker.incrementalSyncWork()
         )
     }
 }

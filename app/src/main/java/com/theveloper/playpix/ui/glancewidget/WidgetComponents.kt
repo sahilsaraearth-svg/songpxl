@@ -1,4 +1,4 @@
-package com.theveloper.playpix.ui.glancewidget
+package com.svara.music.ui.glancewidget
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -24,7 +24,7 @@ import androidx.glance.layout.ContentScale
 import androidx.glance.layout.fillMaxSize
 import androidx.glance.layout.size
 import androidx.glance.unit.ColorProvider
-import com.theveloper.playpix.R
+import com.svara.music.R
 import timber.log.Timber
 
 @Composable

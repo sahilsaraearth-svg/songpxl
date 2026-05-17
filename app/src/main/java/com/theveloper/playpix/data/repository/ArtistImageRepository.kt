@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.repository
+package com.svara.music.data.repository
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -6,10 +6,10 @@ import android.graphics.BitmapFactory
 import android.net.Uri
 import android.util.Log
 import android.util.LruCache
-import com.theveloper.playpix.data.database.MusicDao
-import com.theveloper.playpix.data.network.deezer.DeezerApiService
-import com.theveloper.playpix.utils.NetworkRetryUtils
-import com.theveloper.playpix.utils.isRetryableNetworkError
+import com.svara.music.data.database.MusicDao
+import com.svara.music.data.network.deezer.DeezerApiService
+import com.svara.music.utils.NetworkRetryUtils
+import com.svara.music.utils.isRetryableNetworkError
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.async

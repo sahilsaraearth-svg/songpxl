@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.qqmusic.auth
+package com.svara.music.presentation.qqmusic.auth
 
 import android.annotation.SuppressLint
 import android.os.Build
@@ -74,9 +74,9 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.theveloper.playpix.R
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
-import com.theveloper.playpix.ui.theme.PlayPixTheme
+import com.svara.music.R
+import com.svara.music.ui.theme.GoogleSansRounded
+import com.svara.music.ui.theme.SvaraTheme
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import org.json.JSONObject
@@ -98,7 +98,7 @@ class QqMusicLoginActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            PlayPixTheme {
+            SvaraTheme {
                 QqMusicLoginScreen(onClose = { finish() })
             }
         }

@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components.external
+package com.svara.music.presentation.components.external
 
 import androidx.activity.compose.BackHandler
 import androidx.annotation.OptIn
@@ -54,13 +54,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.media3.common.util.UnstableApi
 import coil.size.Size
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.preferences.sanitizeNavBarCornerRadius
-import com.theveloper.playpix.presentation.components.OptimizedAlbumArt
-import com.theveloper.playpix.presentation.components.WavyMusicSlider
-import com.theveloper.playpix.presentation.components.player.AnimatedPlaybackControls
-import com.theveloper.playpix.presentation.viewmodel.PlayerViewModel
-import com.theveloper.playpix.utils.formatDuration
+import com.svara.music.R
+import com.svara.music.data.preferences.sanitizeNavBarCornerRadius
+import com.svara.music.presentation.components.OptimizedAlbumArt
+import com.svara.music.presentation.components.WavyMusicSlider
+import com.svara.music.presentation.components.player.AnimatedPlaybackControls
+import com.svara.music.presentation.viewmodel.PlayerViewModel
+import com.svara.music.utils.formatDuration
 import kotlin.math.roundToLong
 import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape
 

@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.database
+package com.svara.music.data.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
@@ -39,7 +39,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase
     version = 41,
     exportSchema = true
 )
-abstract class PlayPixDatabase : RoomDatabase() {
+abstract class SvaraDatabase : RoomDatabase() {
     abstract fun albumArtThemeDao(): AlbumArtThemeDao
     abstract fun searchHistoryDao(): SearchHistoryDao
     abstract fun musicDao(): MusicDao

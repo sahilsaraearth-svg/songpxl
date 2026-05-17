@@ -1,7 +1,7 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.utils.QueueUtils
+import com.svara.music.data.model.Song
+import com.svara.music.utils.QueueUtils
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject

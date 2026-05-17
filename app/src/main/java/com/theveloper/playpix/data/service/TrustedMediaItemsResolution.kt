@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.service
+package com.svara.music.data.service
 
 import androidx.media3.common.MediaItem
 

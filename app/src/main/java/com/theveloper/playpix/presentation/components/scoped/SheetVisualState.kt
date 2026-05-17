@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components.scoped
+package com.svara.music.presentation.components.scoped
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.AnimationVector1D
@@ -11,8 +11,8 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.lerp
-import com.theveloper.playpix.data.preferences.NavBarStyle
-import com.theveloper.playpix.presentation.viewmodel.PlayerSheetState
+import com.svara.music.data.preferences.NavBarStyle
+import com.svara.music.presentation.viewmodel.PlayerSheetState
 
 private const val PREDICTIVE_BACK_SWIPE_EDGE_LEFT = 0
 private const val PREDICTIVE_BACK_SWIPE_EDGE_RIGHT = 1
@@ -68,7 +68,7 @@ internal fun rememberSheetVisualState(
 
     // Compute in px to be read inside graphicsLayer (draw phase) — zero relayout per drag frame.
     val density = LocalDensity.current
-    val miniHeightPx = remember(density) { with(density) { com.theveloper.playpix.presentation.components.MiniPlayerHeight.toPx() } }
+    val miniHeightPx = remember(density) { with(density) { com.svara.music.presentation.components.MiniPlayerHeight.toPx() } }
     val containerHeightPx = remember(containerHeight, density) { with(density) { containerHeight.toPx() } }
     val playerContentAreaHeightPxProvider: () -> Float = remember(
         showPlayerContentArea,

@@ -1,12 +1,12 @@
-package com.theveloper.playpix.data.service.tile
+package com.svara.music.data.service.tile
 
 import android.content.Intent
 import android.os.Build
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
 import androidx.annotation.RequiresApi
-import com.theveloper.playpix.MainActivity
-import com.theveloper.playpix.MainActivityIntentContract
+import com.svara.music.MainActivity
+import com.svara.music.MainActivityIntentContract
 
 /**
  * Quick Settings tile that shuffles and plays all songs.

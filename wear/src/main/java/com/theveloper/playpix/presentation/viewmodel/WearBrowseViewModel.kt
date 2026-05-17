@@ -1,13 +1,13 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.theveloper.playpix.data.WearLibraryRepository
-import com.theveloper.playpix.data.WearLocalPlayerRepository
-import com.theveloper.playpix.data.WearOutputTarget
-import com.theveloper.playpix.data.WearPlaybackController
-import com.theveloper.playpix.data.WearStateRepository
-import com.theveloper.playpix.shared.WearLibraryItem
+import com.svara.music.data.WearLibraryRepository
+import com.svara.music.data.WearLocalPlayerRepository
+import com.svara.music.data.WearOutputTarget
+import com.svara.music.data.WearPlaybackController
+import com.svara.music.data.WearStateRepository
+import com.svara.music.shared.WearLibraryItem
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

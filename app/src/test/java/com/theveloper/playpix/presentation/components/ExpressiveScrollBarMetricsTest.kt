@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components
+package com.svara.music.presentation.components
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

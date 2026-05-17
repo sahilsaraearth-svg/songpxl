@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.screens
+package com.svara.music.presentation.screens
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
@@ -51,11 +51,11 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.media3.common.util.UnstableApi
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.presentation.components.SmartImage
-import com.theveloper.playpix.presentation.viewmodel.DeckState
-import com.theveloper.playpix.presentation.viewmodel.MashupViewModel
+import com.svara.music.R
+import com.svara.music.data.model.Song
+import com.svara.music.presentation.components.SmartImage
+import com.svara.music.presentation.viewmodel.DeckState
+import com.svara.music.presentation.viewmodel.MashupViewModel
 import kotlinx.coroutines.launch
 import androidx.compose.ui.res.stringResource
 

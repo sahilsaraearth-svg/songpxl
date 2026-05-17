@@ -1,5 +1,5 @@
 @file:Suppress("DEPRECATION")
-package com.theveloper.playpix.data.service.http
+package com.svara.music.data.service.http
 
 import android.app.Service
 import android.content.ContentUris
@@ -28,10 +28,10 @@ import androidx.media3.decoder.Decoder
 import androidx.media3.decoder.DecoderInputBuffer
 import androidx.media3.decoder.SimpleDecoderOutputBuffer
 import androidx.media3.decoder.ffmpeg.FfmpegLibrary
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.repository.MusicRepository
-import com.theveloper.playpix.utils.AlbumArtUtils
+import com.svara.music.R
+import com.svara.music.data.model.Song
+import com.svara.music.data.repository.MusicRepository
+import com.svara.music.utils.AlbumArtUtils
 import dagger.hilt.android.AndroidEntryPoint
 import io.ktor.http.ContentType
 import io.ktor.http.HttpHeaders
@@ -284,7 +284,7 @@ class MediaFileHttpServerService : Service() {
 
     private fun startForegroundService() {
         runCatching {
-            val channelId = "playpix_cast_server"
+            val channelId = "svara_cast_server"
             val channelName = getString(R.string.cast_server_channel_name)
             
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {

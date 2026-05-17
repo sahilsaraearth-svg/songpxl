@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data
+package com.svara.music.data
 
 import android.app.Application
 import android.content.Context
@@ -11,7 +11,7 @@ import androidx.mediarouter.media.MediaRouteSelector
 import androidx.mediarouter.media.MediaRouter
 import com.google.android.horologist.audio.BluetoothSettings.launchBluetoothSettings
 import com.google.android.horologist.audio.OutputSwitcher.launchSystemMediaOutputSwitcherUi
-import com.theveloper.playpix.shared.WearVolumeState
+import com.svara.music.shared.WearVolumeState
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob

@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components
+package com.svara.music.presentation.components
 
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.PickVisualMediaRequest
@@ -60,11 +60,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.theveloper.playpix.R
+import com.svara.music.R
 import java.net.URLEncoder
 import timber.log.Timber
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
+import com.svara.music.data.model.Song
+import com.svara.music.ui.theme.GoogleSansRounded
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -82,8 +82,8 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import androidx.media3.common.Player
-import com.theveloper.playpix.data.media.AudioMetadataReader
-import com.theveloper.playpix.data.media.CoverArtUpdate
+import com.svara.music.data.media.AudioMetadataReader
+import com.svara.music.data.media.CoverArtUpdate
 import dev.shreyaspatil.capturable.controller.rememberCaptureController
 import java.io.ByteArrayOutputStream
 import java.util.Locale

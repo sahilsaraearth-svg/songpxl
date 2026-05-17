@@ -1,7 +1,7 @@
-package com.theveloper.playpix.data
+package com.svara.music.data
 
 import androidx.mediarouter.media.MediaRouter
-import com.theveloper.playpix.shared.WearVolumeState
+import com.svara.music.shared.WearVolumeState
 
 data class WearAudioOutputRoute(
     val id: String,

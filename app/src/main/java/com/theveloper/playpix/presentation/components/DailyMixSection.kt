@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components
+package com.svara.music.presentation.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -50,13 +50,13 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.media3.common.util.UnstableApi
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.presentation.components.resolveNavBarOccupiedHeight
-import com.theveloper.playpix.presentation.components.subcomps.EnhancedSongListItem
-import com.theveloper.playpix.presentation.viewmodel.PlayerViewModel
-import com.theveloper.playpix.presentation.viewmodel.PlaylistViewModel
-import com.theveloper.playpix.utils.shapes.RoundedStarShape
+import com.svara.music.R
+import com.svara.music.data.model.Song
+import com.svara.music.presentation.components.resolveNavBarOccupiedHeight
+import com.svara.music.presentation.components.subcomps.EnhancedSongListItem
+import com.svara.music.presentation.viewmodel.PlayerViewModel
+import com.svara.music.presentation.viewmodel.PlaylistViewModel
+import com.svara.music.utils.shapes.RoundedStarShape
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.toImmutableList
 import androidx.compose.ui.res.stringResource

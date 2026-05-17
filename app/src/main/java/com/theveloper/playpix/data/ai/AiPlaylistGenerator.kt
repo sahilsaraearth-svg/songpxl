@@ -1,9 +1,9 @@
-package com.theveloper.playpix.data.ai
+package com.svara.music.data.ai
 
 
-import com.theveloper.playpix.data.DailyMixManager
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.preferences.AiPreferencesRepository
+import com.svara.music.data.DailyMixManager
+import com.svara.music.data.model.Song
+import com.svara.music.data.preferences.AiPreferencesRepository
 import kotlinx.coroutines.flow.first
 import kotlinx.serialization.json.Json
 import javax.inject.Inject

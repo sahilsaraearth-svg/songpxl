@@ -1,17 +1,17 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
 
 import android.content.Context
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.DailyMixManager
-import com.theveloper.playpix.data.ai.AiMetadataGenerator
-import com.theveloper.playpix.data.ai.AiNotificationManager
-import com.theveloper.playpix.data.ai.AiPlaylistGenerator
-import com.theveloper.playpix.data.ai.SongMetadata
-import com.theveloper.playpix.data.ai.AiSystemPromptType
-import com.theveloper.playpix.data.ai.provider.AiProviderException
-import com.theveloper.playpix.data.preferences.PlaylistPreferencesRepository
-import com.theveloper.playpix.data.model.Song
+import com.svara.music.R
+import com.svara.music.data.DailyMixManager
+import com.svara.music.data.ai.AiMetadataGenerator
+import com.svara.music.data.ai.AiNotificationManager
+import com.svara.music.data.ai.AiPlaylistGenerator
+import com.svara.music.data.ai.SongMetadata
+import com.svara.music.data.ai.AiSystemPromptType
+import com.svara.music.data.ai.provider.AiProviderException
+import com.svara.music.data.preferences.PlaylistPreferencesRepository
+import com.svara.music.data.model.Song
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow

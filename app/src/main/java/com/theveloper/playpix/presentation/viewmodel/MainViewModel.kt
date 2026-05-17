@@ -1,12 +1,12 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.theveloper.playpix.data.preferences.UserPreferencesRepository
-import com.theveloper.playpix.data.repository.MusicRepository
-import com.theveloper.playpix.data.worker.SyncManager
-import com.theveloper.playpix.data.worker.SyncProgress
-import com.theveloper.playpix.utils.LogUtils
+import com.svara.music.data.preferences.UserPreferencesRepository
+import com.svara.music.data.repository.MusicRepository
+import com.svara.music.data.worker.SyncManager
+import com.svara.music.data.worker.SyncProgress
+import com.svara.music.utils.LogUtils
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow

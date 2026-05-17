@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.screens.search.components
+package com.svara.music.presentation.screens.search.components
 
 import androidx.annotation.OptIn
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -42,16 +42,16 @@ import androidx.compose.ui.text.ExperimentalTextApi
 import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.unit.dp
 import androidx.media3.common.util.UnstableApi
-import com.theveloper.playpix.data.model.Genre
-import com.theveloper.playpix.presentation.components.MiniPlayerHeight
-import com.theveloper.playpix.presentation.components.SmartImage
-import com.theveloper.playpix.presentation.components.getNavigationBarHeight
-import com.theveloper.playpix.presentation.components.resolveNavBarOccupiedHeight
-import com.theveloper.playpix.presentation.utils.GenreIconProvider
-import com.theveloper.playpix.presentation.viewmodel.PlayerViewModel
-import com.theveloper.playpix.ui.theme.LocalPlayPixDarkTheme
+import com.svara.music.data.model.Genre
+import com.svara.music.presentation.components.MiniPlayerHeight
+import com.svara.music.presentation.components.SmartImage
+import com.svara.music.presentation.components.getNavigationBarHeight
+import com.svara.music.presentation.components.resolveNavBarOccupiedHeight
+import com.svara.music.presentation.utils.GenreIconProvider
+import com.svara.music.presentation.viewmodel.PlayerViewModel
+import com.svara.music.ui.theme.LocalSvaraDarkTheme
 import androidx.compose.ui.res.stringResource
-import com.theveloper.playpix.R
+import com.svara.music.R
 import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape
 
 @OptIn(UnstableApi::class)
@@ -158,9 +158,9 @@ private fun GenreCard(
     onClick: () -> Unit,
     isGridView: Boolean
 ) {
-    val isDark = LocalPlayPixDarkTheme.current
+    val isDark = LocalSvaraDarkTheme.current
     val themeColor = remember(genre, isDark) {
-        com.theveloper.playpix.ui.theme.GenreThemeUtils.getGenreThemeColor(
+        com.svara.music.ui.theme.GenreThemeUtils.getGenreThemeColor(
             genre = genre,
             isDark = isDark,
             fallbackGenreId = genre.id

@@ -1,6 +1,6 @@
-package com.theveloper.playpix.utils
+package com.svara.music.utils
 
-import com.theveloper.playpix.data.model.Song
+import com.svara.music.data.model.Song
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.cancelAndJoin
 import kotlinx.coroutines.launch
@@ -104,7 +104,7 @@ class QueueUtilsTest {
             album = "Album",
             albumId = 1L,
             path = "/tmp/song-$index.mp3",
-            contentUriString = "content://playpix/song/$index",
+            contentUriString = "content://svara/song/$index",
             albumArtUriString = null,
             duration = 180_000L,
             mimeType = "audio/mpeg",

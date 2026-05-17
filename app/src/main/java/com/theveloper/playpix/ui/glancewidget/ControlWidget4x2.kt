@@ -1,4 +1,4 @@
-package com.theveloper.playpix.ui.glancewidget
+package com.svara.music.ui.glancewidget
 
 import android.content.Context
 import androidx.compose.runtime.Composable
@@ -30,9 +30,9 @@ import androidx.glance.text.FontWeight
 import androidx.glance.text.Text
 import androidx.glance.text.TextStyle
 import androidx.media3.common.Player
-import com.theveloper.playpix.MainActivity
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.model.PlayerInfo
+import com.svara.music.MainActivity
+import com.svara.music.R
+import com.svara.music.data.model.PlayerInfo
 import kotlin.text.ifEmpty
 
 class ControlWidget4x2 : GlanceAppWidget() {
@@ -54,7 +54,7 @@ class ControlWidget4x2 : GlanceAppWidget() {
         playerInfo: PlayerInfo,
         context: Context
     ) {
-        val title = playerInfo.songTitle.ifEmpty { "PlayPix" }
+        val title = playerInfo.songTitle.ifEmpty { "Svara" }
         val artist = playerInfo.artistName.ifEmpty { "Tap to open" }
         val isPlaying = playerInfo.isPlaying
         val isShuffleEnabled = playerInfo.isShuffleEnabled

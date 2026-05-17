@@ -1,4 +1,4 @@
-package com.theveloper.playpix.utils
+package com.svara.music.utils
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

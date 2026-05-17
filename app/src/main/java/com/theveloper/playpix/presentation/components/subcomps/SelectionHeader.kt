@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components.subcomps
+package com.svara.music.presentation.components.subcomps
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.core.Spring
@@ -48,11 +48,11 @@ import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import coil.size.Size
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.presentation.components.SmartImage
+import com.svara.music.data.model.Song
+import com.svara.music.presentation.components.SmartImage
 import androidx.compose.ui.res.stringResource
-import com.theveloper.playpix.R
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
+import com.svara.music.R
+import com.svara.music.ui.theme.GoogleSansRounded
 
 /**
  * Header component displayed during multi-selection mode.

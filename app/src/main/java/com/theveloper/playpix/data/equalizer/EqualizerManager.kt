@@ -1,5 +1,5 @@
 @file:Suppress("DEPRECATION")
-package com.theveloper.playpix.data.equalizer
+package com.svara.music.data.equalizer
 
 import android.media.audiofx.Equalizer
 import android.media.audiofx.BassBoost

@@ -1,5 +1,5 @@
 @file:Suppress("DEPRECATION")
-package com.theveloper.playpix.data.service.player
+package com.svara.music.data.service.player
 
 import androidx.media3.common.C
 import androidx.media3.common.audio.AudioProcessor

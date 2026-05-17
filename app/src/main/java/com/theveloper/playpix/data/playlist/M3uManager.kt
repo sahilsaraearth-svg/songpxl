@@ -1,10 +1,10 @@
-package com.theveloper.playpix.data.playlist
+package com.svara.music.data.playlist
 
 import android.content.Context
 import android.net.Uri
-import com.theveloper.playpix.data.model.Playlist
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.repository.MusicRepository
+import com.svara.music.data.model.Playlist
+import com.svara.music.data.model.Song
+import com.svara.music.data.repository.MusicRepository
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.io.BufferedReader
 import java.io.InputStreamReader

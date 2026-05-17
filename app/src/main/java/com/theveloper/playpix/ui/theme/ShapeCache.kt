@@ -1,4 +1,4 @@
-package com.theveloper.playpix.ui.theme
+package com.svara.music.ui.theme
 
 import androidx.compose.ui.unit.dp
 import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape

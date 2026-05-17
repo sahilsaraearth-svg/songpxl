@@ -1,12 +1,12 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.repository.MusicRepository
-import com.theveloper.playpix.data.stats.PlaybackStatsRepository
-import com.theveloper.playpix.data.stats.PlaybackStatsRepository.PlaybackStatsSummary
-import com.theveloper.playpix.data.stats.StatsTimeRange
+import com.svara.music.data.model.Song
+import com.svara.music.data.repository.MusicRepository
+import com.svara.music.data.stats.PlaybackStatsRepository
+import com.svara.music.data.stats.PlaybackStatsRepository.PlaybackStatsSummary
+import com.svara.music.data.stats.StatsTimeRange
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers

@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -13,16 +13,16 @@ import coil.imageLoader
 import coil.request.CachePolicy
 import coil.request.ImageRequest
 import coil.size.Size
-import com.theveloper.playpix.data.preferences.AlbumArtColorAccuracy
-import com.theveloper.playpix.data.preferences.AlbumArtPaletteStyle
-import com.theveloper.playpix.data.database.AlbumArtThemeDao
-import com.theveloper.playpix.data.database.AlbumArtThemeEntity
-import com.theveloper.playpix.data.database.StoredColorSchemeValues
-import com.theveloper.playpix.data.database.toComposeColor
-import com.theveloper.playpix.utils.LocalArtworkUri
-import com.theveloper.playpix.ui.theme.clearExtractedColorCache
-import com.theveloper.playpix.ui.theme.extractSeedColor
-import com.theveloper.playpix.ui.theme.generateColorSchemeFromSeed
+import com.svara.music.data.preferences.AlbumArtColorAccuracy
+import com.svara.music.data.preferences.AlbumArtPaletteStyle
+import com.svara.music.data.database.AlbumArtThemeDao
+import com.svara.music.data.database.AlbumArtThemeEntity
+import com.svara.music.data.database.StoredColorSchemeValues
+import com.svara.music.data.database.toComposeColor
+import com.svara.music.utils.LocalArtworkUri
+import com.svara.music.ui.theme.clearExtractedColorCache
+import com.svara.music.ui.theme.extractSeedColor
+import com.svara.music.ui.theme.generateColorSchemeFromSeed
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.Channel
@@ -145,7 +145,7 @@ class ColorSchemeProcessor @Inject constructor(
             val schemePair = withContext(Dispatchers.Default) {
                 val seed = extractSeedColor(
                     bitmap = bitmap,
-                    config = com.theveloper.playpix.ui.theme.ColorExtractionConfig(
+                    config = com.svara.music.ui.theme.ColorExtractionConfig(
                         accuracyLevel = colorAccuracyLevel
                     )
                 )

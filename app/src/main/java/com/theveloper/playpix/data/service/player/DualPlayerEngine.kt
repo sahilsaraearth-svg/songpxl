@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.service.player
+package com.svara.music.data.service.player
 
 import android.content.Context
 import android.media.AudioAttributes
@@ -32,9 +32,9 @@ import androidx.media3.exoplayer.mediacodec.MediaCodecSelector
 import androidx.media3.exoplayer.source.DefaultMediaSourceFactory
 import androidx.media3.extractor.DefaultExtractorsFactory
 import androidx.media3.extractor.mp4.Mp4Extractor
-import com.theveloper.playpix.data.model.TransitionSettings
-import com.theveloper.playpix.data.telegram.TelegramRepository
-import com.theveloper.playpix.utils.envelope
+import com.svara.music.data.model.TransitionSettings
+import com.svara.music.data.telegram.TelegramRepository
+import com.svara.music.utils.envelope
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -54,9 +54,9 @@ import javax.inject.Inject
 import javax.inject.Singleton
 import kotlin.coroutines.resume
 
-import com.theveloper.playpix.data.netease.NeteaseStreamProxy
-import com.theveloper.playpix.data.navidrome.NavidromeStreamProxy
-import com.theveloper.playpix.data.qqmusic.QqMusicStreamProxy
+import com.svara.music.data.netease.NeteaseStreamProxy
+import com.svara.music.data.navidrome.NavidromeStreamProxy
+import com.svara.music.data.qqmusic.QqMusicStreamProxy
 
 data class ActiveDecoderInfo(
     val name: String,
@@ -76,14 +76,14 @@ data class ActiveDecoderInfo(
 class DualPlayerEngine @Inject constructor(
     @param:ApplicationContext private val context: Context,
     private val telegramRepository: TelegramRepository,
-    private val telegramStreamProxy: com.theveloper.playpix.data.telegram.TelegramStreamProxy,
+    private val telegramStreamProxy: com.svara.music.data.telegram.TelegramStreamProxy,
     private val neteaseStreamProxy: NeteaseStreamProxy,
     private val qqMusicStreamProxy: QqMusicStreamProxy,
     private val navidromeStreamProxy: NavidromeStreamProxy,
-    private val jellyfinStreamProxy: com.theveloper.playpix.data.jellyfin.JellyfinStreamProxy,
-    private val gdriveStreamProxy: com.theveloper.playpix.data.gdrive.GDriveStreamProxy,
-    private val telegramCacheManager: com.theveloper.playpix.data.telegram.TelegramCacheManager,
-    private val connectivityStateHolder: com.theveloper.playpix.presentation.viewmodel.ConnectivityStateHolder
+    private val jellyfinStreamProxy: com.svara.music.data.jellyfin.JellyfinStreamProxy,
+    private val gdriveStreamProxy: com.svara.music.data.gdrive.GDriveStreamProxy,
+    private val telegramCacheManager: com.svara.music.data.telegram.TelegramCacheManager,
+    private val connectivityStateHolder: com.svara.music.presentation.viewmodel.ConnectivityStateHolder
 ) {
     private companion object {
         private const val AUDIO_OFFLOAD_BUFFERING_FALLBACK_MS = 4_000L
@@ -471,7 +471,7 @@ class DualPlayerEngine @Inject constructor(
         }
     }
 
-    private var currentWakeMode: Int = C.WAKE_MODE_LOCAL
+    private var currentWakeMode: Int = C.WAKE_MODE_NETWORK
 
     private fun applyWakeModeForCurrentItem() {
         if (!::playerA.isInitialized) return
@@ -648,7 +648,7 @@ class DualPlayerEngine @Inject constructor(
             .setMp4ExtractorFlags(Mp4Extractor.FLAG_WORKAROUND_IGNORE_EDIT_LISTS)
 
         val loadControl = DefaultLoadControl.Builder()
-            .setBufferDurationsMs(30_000, 60_000, 5_000, 5_000)
+            .setBufferDurationsMs(60_000, 120_000, 2_500, 5_000)
             .build()
 
         return ExoPlayer.Builder(context, renderersFactory)
@@ -669,7 +669,7 @@ class DualPlayerEngine @Inject constructor(
                 .setAudioOffloadPreferences(offloadPreferences)
                 .build()
             setHandleAudioBecomingNoisy(true)
-            setWakeMode(C.WAKE_MODE_LOCAL)
+            setWakeMode(C.WAKE_MODE_NETWORK)
             playWhenReady = false
         }
     }

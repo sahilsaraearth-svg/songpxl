@@ -1,4 +1,4 @@
-package com.theveloper.playpix.utils.shapes
+package com.svara.music.utils.shapes
 
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Rect

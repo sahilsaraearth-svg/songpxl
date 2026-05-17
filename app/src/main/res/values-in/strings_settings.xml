@@ -222,8 +222,8 @@
     <string name="setcat_trigger_crash_title">Picu Crash Uji Coba</string>
     <string name="setcat_trigger_crash_subtitle">Simulasikan crash untuk menguji sistem pelaporan crash.</string>
     <string name="setcat_application">Aplikasi</string>
-    <string name="setcat_about_playpix_title">Tentang PlayPix</string>
-    <string name="setcat_about_playpix_subtitle">Versi aplikasi, kredit, dan lainnya.</string>
+    <string name="setcat_about_svara_title">Tentang Svara</string>
+    <string name="setcat_about_svara_subtitle">Versi aplikasi, kredit, dan lainnya.</string>
 
     <string name="backup_summary_none">Tidak ada bagian yang dipilih.</string>
     <string name="backup_summary_all">Semua bagian dipilih.</string>
@@ -267,7 +267,7 @@
     <string name="dialog_regenerate_stats_title">Regenerasi Statistik?</string>
     <string name="dialog_regenerate_stats_body">Ini akan menghapus cache statistik dan memaksa perhitungan ulang dari riwayat database.</string>
     <string name="toast_stats_regeneration_started">Regenerasi statistik dimulai</string>
-    <string name="backup_file_name_format">PlayPix_Cadangan_%1$d.pxpl</string>
+    <string name="backup_file_name_format">Svara_Cadangan_%1$d.pxpl</string>
 
     <string name="setcat_regenerate_daily_mix_action">Regenerasi Daily Mix</string>
     <string name="setcat_regenerate_stats_action">Regenerasi Statistik</string>

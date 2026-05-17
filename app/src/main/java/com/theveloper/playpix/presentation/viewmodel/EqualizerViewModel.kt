@@ -1,12 +1,12 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.theveloper.playpix.data.equalizer.EqualizerManager
-import com.theveloper.playpix.data.equalizer.EqualizerPreset
-import com.theveloper.playpix.data.preferences.EqualizerPreferencesRepository
-import com.theveloper.playpix.data.preferences.UserPreferencesRepository
-import com.theveloper.playpix.data.service.player.DualPlayerEngine
+import com.svara.music.data.equalizer.EqualizerManager
+import com.svara.music.data.equalizer.EqualizerPreset
+import com.svara.music.data.preferences.EqualizerPreferencesRepository
+import com.svara.music.data.preferences.UserPreferencesRepository
+import com.svara.music.data.service.player.DualPlayerEngine
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted

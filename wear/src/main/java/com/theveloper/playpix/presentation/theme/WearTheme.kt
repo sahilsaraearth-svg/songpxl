@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.theme
+package com.svara.music.presentation.theme
 
 import android.graphics.Bitmap
 import android.graphics.Color as AndroidColor
@@ -14,7 +14,7 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.core.graphics.ColorUtils
 import androidx.wear.compose.material.MaterialTheme
 import androidx.wear.compose.material.Colors
-import com.theveloper.playpix.shared.WearThemePalette
+import com.svara.music.shared.WearThemePalette
 import kotlin.math.max
 import kotlin.math.min
 
@@ -89,7 +89,7 @@ fun WearPalette.surfaceContainerHighColor(): Color = surfaceContainerHigh
 fun WearPalette.surfaceContainerHighestColor(): Color = surfaceContainerHighest
 
 @Composable
-fun WearPlayPixTheme(
+fun WearSvaraTheme(
     albumArt: Bitmap? = null,
     seedColorArgb: Int? = null,
     themePalette: WearThemePalette? = null,

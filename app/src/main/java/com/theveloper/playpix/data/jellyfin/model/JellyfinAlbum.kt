@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.jellyfin.model
+package com.svara.music.data.jellyfin.model
 
 import android.os.Parcelable
 import androidx.compose.runtime.Immutable

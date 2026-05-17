@@ -1,14 +1,14 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.theveloper.playpix.data.gdrive.GDriveRepository
-import com.theveloper.playpix.data.jellyfin.JellyfinRepository
-import com.theveloper.playpix.data.navidrome.NavidromeRepository
-import com.theveloper.playpix.data.netease.NeteaseRepository
-import com.theveloper.playpix.data.qqmusic.QqMusicRepository
-import com.theveloper.playpix.data.repository.MusicRepository
-import com.theveloper.playpix.data.telegram.TelegramRepository
+import com.svara.music.data.gdrive.GDriveRepository
+import com.svara.music.data.jellyfin.JellyfinRepository
+import com.svara.music.data.navidrome.NavidromeRepository
+import com.svara.music.data.netease.NeteaseRepository
+import com.svara.music.data.qqmusic.QqMusicRepository
+import com.svara.music.data.repository.MusicRepository
+import com.svara.music.data.telegram.TelegramRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow

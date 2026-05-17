@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data
+package com.svara.music.data
 
 import android.app.Application
 import android.graphics.Bitmap
@@ -13,10 +13,10 @@ import androidx.media3.common.MediaMetadata
 import androidx.media3.common.Player
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.session.MediaSession
-import com.theveloper.playpix.data.local.LocalSongDao
-import com.theveloper.playpix.data.local.LocalSongEntity
-import com.theveloper.playpix.shared.WearLibraryItem
-import com.theveloper.playpix.shared.WearThemePalette
+import com.svara.music.data.local.LocalSongDao
+import com.svara.music.data.local.LocalSongEntity
+import com.svara.music.shared.WearLibraryItem
+import com.svara.music.shared.WearThemePalette
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.screens
+package com.svara.music.presentation.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -14,9 +14,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.database.AiUsageEntity
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
+import com.svara.music.R
+import com.svara.music.data.database.AiUsageEntity
+import com.svara.music.ui.theme.GoogleSansRounded
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Schedule
 import java.text.SimpleDateFormat

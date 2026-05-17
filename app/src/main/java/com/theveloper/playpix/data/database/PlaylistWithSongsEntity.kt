@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.database
+package com.svara.music.data.database
 
 import androidx.room.Embedded
 import androidx.room.Relation

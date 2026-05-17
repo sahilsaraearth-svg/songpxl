@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.qqmusic.dashboard
+package com.svara.music.presentation.qqmusic.dashboard
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.Spring
@@ -31,12 +31,12 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.theveloper.playpix.data.database.QqMusicPlaylistEntity
-import com.theveloper.playpix.presentation.components.SmartImage
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
+import com.svara.music.data.database.QqMusicPlaylistEntity
+import com.svara.music.presentation.components.SmartImage
+import com.svara.music.ui.theme.GoogleSansRounded
 import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape
 import androidx.compose.ui.res.stringResource
-import com.theveloper.playpix.R
+import com.svara.music.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -345,7 +345,7 @@ fun QqMusicDashboardScreen(
                     Card(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .clickable { viewModel.syncAll(com.theveloper.playpix.data.qqmusic.QqMusicRepository.PlaylistSyncType.ALL) },
+                            .clickable { viewModel.syncAll(com.svara.music.data.qqmusic.QqMusicRepository.PlaylistSyncType.ALL) },
                         shape = RoundedCornerShape(12.dp),
                         colors = CardDefaults.cardColors(
                             containerColor = MaterialTheme.colorScheme.primaryContainer
@@ -385,7 +385,7 @@ fun QqMusicDashboardScreen(
                     Card(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .clickable { viewModel.syncAll(com.theveloper.playpix.data.qqmusic.QqMusicRepository.PlaylistSyncType.CREATED) },
+                            .clickable { viewModel.syncAll(com.svara.music.data.qqmusic.QqMusicRepository.PlaylistSyncType.CREATED) },
                         shape = RoundedCornerShape(12.dp),
                         colors = CardDefaults.cardColors(
                             containerColor = MaterialTheme.colorScheme.surfaceContainerHigh
@@ -417,7 +417,7 @@ fun QqMusicDashboardScreen(
                     Card(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .clickable { viewModel.syncAll(com.theveloper.playpix.data.qqmusic.QqMusicRepository.PlaylistSyncType.COLLECTED) },
+                            .clickable { viewModel.syncAll(com.svara.music.data.qqmusic.QqMusicRepository.PlaylistSyncType.COLLECTED) },
                         shape = RoundedCornerShape(12.dp),
                         colors = CardDefaults.cardColors(
                             containerColor = MaterialTheme.colorScheme.surfaceContainerHigh

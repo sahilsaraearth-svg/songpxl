@@ -1,10 +1,10 @@
-package com.theveloper.playpix.data.ai
+package com.svara.music.data.ai
 
 
-import com.theveloper.playpix.data.database.LocalPlaylistDao
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.stats.PlaybackStatsRepository
-import com.theveloper.playpix.data.stats.StatsTimeRange
+import com.svara.music.data.database.LocalPlaylistDao
+import com.svara.music.data.model.Song
+import com.svara.music.data.stats.PlaybackStatsRepository
+import com.svara.music.data.stats.StatsTimeRange
 import kotlinx.coroutines.flow.first
 import javax.inject.Inject
 import javax.inject.Singleton

@@ -1,15 +1,15 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
 import android.content.ContentUris
 import android.content.Context
 import android.net.Uri
 import android.provider.MediaStore
 import android.provider.OpenableColumns
-import com.theveloper.playpix.data.media.AudioMetadataReader
-import com.theveloper.playpix.data.media.guessImageMimeType
-import com.theveloper.playpix.data.media.imageExtensionFromMimeType
-import com.theveloper.playpix.data.media.isValidImageData
-import com.theveloper.playpix.data.model.Song
+import com.svara.music.data.media.AudioMetadataReader
+import com.svara.music.data.media.guessImageMimeType
+import com.svara.music.data.media.imageExtensionFromMimeType
+import com.svara.music.data.media.isValidImageData
+import com.svara.music.data.model.Song
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

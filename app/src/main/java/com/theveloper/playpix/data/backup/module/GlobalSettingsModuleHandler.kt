@@ -1,11 +1,11 @@
-package com.theveloper.playpix.data.backup.module
+package com.svara.music.data.backup.module
 
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.theveloper.playpix.data.backup.model.BackupSection
-import com.theveloper.playpix.data.preferences.PreferenceBackupEntry
-import com.theveloper.playpix.data.preferences.UserPreferencesRepository
-import com.theveloper.playpix.di.BackupGson
+import com.svara.music.data.backup.model.BackupSection
+import com.svara.music.data.preferences.PreferenceBackupEntry
+import com.svara.music.data.preferences.UserPreferencesRepository
+import com.svara.music.di.BackupGson
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject

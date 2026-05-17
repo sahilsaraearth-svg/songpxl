@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.worker
+package com.svara.music.data.worker
 
 import android.content.Context
 import androidx.hilt.work.HiltWorker
@@ -6,7 +6,7 @@ import androidx.work.CoroutineWorker
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkerParameters
 import androidx.work.workDataOf
-import com.theveloper.playpix.data.navidrome.NavidromeRepository
+import com.svara.music.data.navidrome.NavidromeRepository
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
 import timber.log.Timber

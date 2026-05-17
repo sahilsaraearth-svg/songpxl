@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.ai.provider
+package com.svara.music.data.ai.provider
 
 import com.google.ai.client.generativeai.GenerativeModel
 import com.google.ai.client.generativeai.type.generationConfig

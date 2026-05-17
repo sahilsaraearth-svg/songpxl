@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
 import android.content.Context
 import android.net.Uri
@@ -7,11 +7,11 @@ import androidx.compose.runtime.Immutable
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.model.Artist
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.repository.ArtistImageRepository
-import com.theveloper.playpix.data.repository.MusicRepository
+import com.svara.music.R
+import com.svara.music.data.model.Artist
+import com.svara.music.data.model.Song
+import com.svara.music.data.repository.ArtistImageRepository
+import com.svara.music.data.repository.MusicRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Job

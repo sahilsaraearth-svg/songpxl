@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.theme
+package com.svara.music.presentation.theme
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -6,7 +6,7 @@ import androidx.compose.ui.text.ExperimentalTextApi
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontVariation
-import com.theveloper.playpix.R
+import com.svara.music.R
 
 @OptIn(ExperimentalTextApi::class)
 @Composable

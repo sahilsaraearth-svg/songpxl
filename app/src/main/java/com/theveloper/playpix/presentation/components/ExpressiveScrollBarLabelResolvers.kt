@@ -1,10 +1,10 @@
-package com.theveloper.playpix.presentation.components
+package com.svara.music.presentation.components
 
-import com.theveloper.playpix.data.model.Album
-import com.theveloper.playpix.data.model.Artist
-import com.theveloper.playpix.data.model.Playlist
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.model.SortOption
+import com.svara.music.data.model.Album
+import com.svara.music.data.model.Artist
+import com.svara.music.data.model.Playlist
+import com.svara.music.data.model.Song
+import com.svara.music.data.model.SortOption
 
 internal fun songFastScrollLabel(song: Song?, sortOption: SortOption): String? =
     when (sortOption) {

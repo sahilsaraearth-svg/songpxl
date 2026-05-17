@@ -1,13 +1,13 @@
-package com.theveloper.playpix.data.repository
+package com.svara.music.data.repository
 
 import android.content.Context
 import com.google.common.truth.Truth.assertThat
-import com.theveloper.playpix.data.database.LyricsEntity
-import com.theveloper.playpix.data.database.LyricsDao
-import com.theveloper.playpix.data.model.LyricsSourcePreference
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.network.lyrics.LrcLibApiService
-import com.theveloper.playpix.data.network.lyrics.LrcLibResponse
+import com.svara.music.data.database.LyricsEntity
+import com.svara.music.data.database.LyricsDao
+import com.svara.music.data.model.LyricsSourcePreference
+import com.svara.music.data.model.Song
+import com.svara.music.data.network.lyrics.LrcLibApiService
+import com.svara.music.data.network.lyrics.LrcLibResponse
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.every
@@ -263,7 +263,7 @@ class LyricsRepositoryImplTest {
         coVerify(exactly = 1) { lyricsDao.insert(any()) }
     }
 
-    private fun testContext(filesDir: File = Files.createTempDirectory("playpix-lyrics-test").toFile()): Context {
+    private fun testContext(filesDir: File = Files.createTempDirectory("svara-lyrics-test").toFile()): Context {
         return mockk<Context>(relaxed = true) {
             every { this@mockk.filesDir } returns filesDir
         }

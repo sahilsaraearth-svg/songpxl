@@ -1,16 +1,16 @@
-package com.theveloper.playpix.data.repository
+package com.svara.music.data.repository
 
 import android.content.Context
-import com.theveloper.playpix.data.database.MusicDao
-import com.theveloper.playpix.data.database.SearchHistoryDao
-import com.theveloper.playpix.data.database.SongEntity // Necesario para datos de prueba
-import com.theveloper.playpix.data.database.AlbumEntity
-import com.theveloper.playpix.data.database.ArtistEntity
-import com.theveloper.playpix.data.model.Song // Para verificar el mapeo
-import com.theveloper.playpix.data.preferences.PlaylistPreferencesRepository
-import com.theveloper.playpix.data.preferences.UserPreferencesRepository
-import com.theveloper.playpix.data.database.FavoritesDao
-import com.theveloper.playpix.data.database.TelegramDao
+import com.svara.music.data.database.MusicDao
+import com.svara.music.data.database.SearchHistoryDao
+import com.svara.music.data.database.SongEntity // Necesario para datos de prueba
+import com.svara.music.data.database.AlbumEntity
+import com.svara.music.data.database.ArtistEntity
+import com.svara.music.data.model.Song // Para verificar el mapeo
+import com.svara.music.data.preferences.PlaylistPreferencesRepository
+import com.svara.music.data.preferences.UserPreferencesRepository
+import com.svara.music.data.database.FavoritesDao
+import com.svara.music.data.database.TelegramDao
 import dagger.Lazy
 import io.mockk.*
 import kotlinx.coroutines.Dispatchers
@@ -39,10 +39,10 @@ class MusicRepositoryImplTest {
     private val mockPlaylistPreferencesRepository: PlaylistPreferencesRepository = mockk(relaxed = true)
     private val mockLyricsRepository: LyricsRepository = mockk(relaxed = true)
     private val mockTelegramDao: TelegramDao = mockk(relaxed = true)
-    private val mockTelegramCacheManager: com.theveloper.playpix.data.telegram.TelegramCacheManager = mockk(relaxed = true)
-    private val mockTelegramRepository: com.theveloper.playpix.data.telegram.TelegramRepository = mockk(relaxed = true)
-    private val mockTelegramCacheManagerProvider: Lazy<com.theveloper.playpix.data.telegram.TelegramCacheManager> = mockk()
-    private val mockTelegramRepositoryProvider: Lazy<com.theveloper.playpix.data.telegram.TelegramRepository> = mockk()
+    private val mockTelegramCacheManager: com.svara.music.data.telegram.TelegramCacheManager = mockk(relaxed = true)
+    private val mockTelegramRepository: com.svara.music.data.telegram.TelegramRepository = mockk(relaxed = true)
+    private val mockTelegramCacheManagerProvider: Lazy<com.svara.music.data.telegram.TelegramCacheManager> = mockk()
+    private val mockTelegramRepositoryProvider: Lazy<com.svara.music.data.telegram.TelegramRepository> = mockk()
     private val mockSongRepository: SongRepository = mockk(relaxed = true)
     private val mockFavoritesDao: FavoritesDao = mockk(relaxed = true)
     private val mockArtistImageRepository: ArtistImageRepository = mockk(relaxed = true)

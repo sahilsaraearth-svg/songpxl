@@ -1,17 +1,17 @@
-package com.theveloper.playpix.data.repository
+package com.svara.music.data.repository
 
 import android.content.Context
 import androidx.paging.PagingData
 import androidx.paging.map
-import com.theveloper.playpix.data.database.FavoritesDao
-import com.theveloper.playpix.data.database.MusicDao
-import com.theveloper.playpix.data.database.toSong
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.model.SortOption
-import com.theveloper.playpix.data.model.StorageFilter
-import com.theveloper.playpix.data.observer.MediaStoreObserver
-import com.theveloper.playpix.data.preferences.UserPreferencesRepository
-import com.theveloper.playpix.utils.DirectoryFilterUtils
+import com.svara.music.data.database.FavoritesDao
+import com.svara.music.data.database.MusicDao
+import com.svara.music.data.database.toSong
+import com.svara.music.data.model.Song
+import com.svara.music.data.model.SortOption
+import com.svara.music.data.model.StorageFilter
+import com.svara.music.data.observer.MediaStoreObserver
+import com.svara.music.data.preferences.UserPreferencesRepository
+import com.svara.music.utils.DirectoryFilterUtils
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi

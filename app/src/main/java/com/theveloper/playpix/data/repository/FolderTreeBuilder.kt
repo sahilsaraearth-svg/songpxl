@@ -1,15 +1,15 @@
-package com.theveloper.playpix.data.repository
+package com.svara.music.data.repository
 
 import android.content.Context
 import android.os.Environment
-import com.theveloper.playpix.data.database.FolderSongRow
-import com.theveloper.playpix.data.model.FolderSource
-import com.theveloper.playpix.data.model.MusicFolder
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.utils.DirectoryRuleResolver
-import com.theveloper.playpix.utils.LocalArtworkUri
-import com.theveloper.playpix.utils.StorageType
-import com.theveloper.playpix.utils.StorageUtils
+import com.svara.music.data.database.FolderSongRow
+import com.svara.music.data.model.FolderSource
+import com.svara.music.data.model.MusicFolder
+import com.svara.music.data.model.Song
+import com.svara.music.utils.DirectoryRuleResolver
+import com.svara.music.utils.LocalArtworkUri
+import com.svara.music.utils.StorageType
+import com.svara.music.utils.StorageUtils
 import kotlinx.collections.immutable.toImmutableList
 import javax.inject.Inject
 import javax.inject.Singleton

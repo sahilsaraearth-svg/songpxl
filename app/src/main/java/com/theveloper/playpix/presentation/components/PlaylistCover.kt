@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components
+package com.svara.music.presentation.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -26,11 +26,11 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import com.theveloper.playpix.data.model.Playlist
-import com.theveloper.playpix.data.model.PlaylistShapeType
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.utils.resolvePlaylistCoverContentColor
-import com.theveloper.playpix.utils.shapes.RoundedStarShape
+import com.svara.music.data.model.Playlist
+import com.svara.music.data.model.PlaylistShapeType
+import com.svara.music.data.model.Song
+import com.svara.music.utils.resolvePlaylistCoverContentColor
+import com.svara.music.utils.shapes.RoundedStarShape
 import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape
 
 @Composable

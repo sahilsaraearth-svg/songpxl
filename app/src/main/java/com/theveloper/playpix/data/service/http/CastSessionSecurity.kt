@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.service.http
+package com.svara.music.data.service.http
 
 import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
 import java.net.InetAddress

@@ -1,8 +1,8 @@
-package com.theveloper.playpix.presentation.jellyfin.auth
+package com.svara.music.presentation.jellyfin.auth
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.theveloper.playpix.data.jellyfin.JellyfinRepository
+import com.svara.music.data.jellyfin.JellyfinRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

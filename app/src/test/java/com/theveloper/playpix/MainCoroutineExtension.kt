@@ -1,4 +1,4 @@
-package com.theveloper.playpix
+package com.svara.music
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi

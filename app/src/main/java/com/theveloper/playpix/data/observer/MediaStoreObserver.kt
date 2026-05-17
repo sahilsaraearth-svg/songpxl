@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.observer
+package com.svara.music.data.observer
 
 import android.content.Context
 import android.database.ContentObserver

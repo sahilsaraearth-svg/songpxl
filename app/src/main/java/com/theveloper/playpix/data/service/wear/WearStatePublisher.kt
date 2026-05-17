@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.service.wear
+package com.svara.music.data.service.wear
 
 import android.app.Application
 import android.content.Context
@@ -9,12 +9,12 @@ import androidx.core.graphics.ColorUtils
 import com.google.android.gms.wearable.Asset
 import com.google.android.gms.wearable.PutDataMapRequest
 import com.google.android.gms.wearable.Wearable
-import com.theveloper.playpix.data.model.PlayerInfo
-import com.theveloper.playpix.shared.WearDataPaths
-import com.theveloper.playpix.shared.WearPlayerState
-import com.theveloper.playpix.shared.WearThemePalette
-import com.theveloper.playpix.utils.AlbumArtUtils
-import com.theveloper.playpix.utils.ArtworkTransportSanitizer
+import com.svara.music.data.model.PlayerInfo
+import com.svara.music.shared.WearDataPaths
+import com.svara.music.shared.WearPlayerState
+import com.svara.music.shared.WearThemePalette
+import com.svara.music.utils.AlbumArtUtils
+import com.svara.music.utils.ArtworkTransportSanitizer
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -130,7 +130,7 @@ class WearStatePublisher @Inject constructor(
             val uri = Uri.parse(uriString)
             val scheme = uri.scheme?.lowercase()
             when {
-                com.theveloper.playpix.utils.LocalArtworkUri.isLocalArtworkUri(uriString) ||
+                com.svara.music.utils.LocalArtworkUri.isLocalArtworkUri(uriString) ||
                     scheme == "content" ||
                     scheme == "file" ||
                     scheme == "android.resource" -> {

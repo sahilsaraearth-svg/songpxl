@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components
+package com.svara.music.presentation.components
 
 import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.background
@@ -35,12 +35,12 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.res.stringResource
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.stats.PlaybackStatsRepository
-import com.theveloper.playpix.data.stats.StatsTimeRange
-import com.theveloper.playpix.presentation.stats.displayNameRes
-import com.theveloper.playpix.utils.formatListeningDurationCompact
-import com.theveloper.playpix.utils.formatListeningDurationLong
+import com.svara.music.R
+import com.svara.music.data.stats.PlaybackStatsRepository
+import com.svara.music.data.stats.StatsTimeRange
+import com.svara.music.presentation.stats.displayNameRes
+import com.svara.music.utils.formatListeningDurationCompact
+import com.svara.music.utils.formatListeningDurationLong
 import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape
 
 @OptIn(ExperimentalMaterial3Api::class)

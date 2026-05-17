@@ -1,4 +1,4 @@
-package com.theveloper.playpix.shared
+package com.svara.music.shared
 
 /**
  * Shared constants for Wear Data Layer API paths.

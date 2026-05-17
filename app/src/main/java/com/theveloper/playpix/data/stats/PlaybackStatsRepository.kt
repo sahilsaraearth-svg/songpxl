@@ -1,11 +1,11 @@
-package com.theveloper.playpix.data.stats
+package com.svara.music.data.stats
 
 import android.content.Context
 import android.util.AtomicFile
 import com.google.gson.Gson
 import com.google.gson.JsonElement
 import com.google.gson.reflect.TypeToken
-import com.theveloper.playpix.data.model.Song
+import com.svara.music.data.model.Song
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.io.File
 import java.io.FileNotFoundException

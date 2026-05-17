@@ -1,4 +1,4 @@
-package com.theveloper.playpix.utils
+package com.svara.music.utils
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test
@@ -8,7 +8,7 @@ class LocalArtworkUriTest {
     @Test
     fun resolveSongArtworkUri_convertsLegacyLocalCacheUriToStableUri() {
         val resolved = LocalArtworkUri.resolveSongArtworkUri(
-            storedUri = "content://com.theveloper.playpix.provider/cache/song_art_42.jpg",
+            storedUri = "content://com.svara.music.provider/cache/song_art_42.jpg",
             songId = 42L,
             contentUriString = "content://media/external/audio/media/42"
         )
@@ -19,7 +19,7 @@ class LocalArtworkUriTest {
     @Test
     fun resolveSongArtworkUri_convertsSharedArtworkUriToStableUri() {
         val resolved = LocalArtworkUri.resolveSongArtworkUri(
-            storedUri = "content://com.theveloper.playpix.artwork/song/42?t=1234",
+            storedUri = "content://com.svara.music.artwork/song/42?t=1234",
             songId = 42L,
             contentUriString = "content://media/external/audio/media/42"
         )
@@ -59,7 +59,7 @@ class LocalArtworkUriTest {
     @Test
     fun parseSongIdFromVolatileArtworkUri_readsLegacyCacheFileName() {
         val songId = LocalArtworkUri.parseSongIdFromVolatileArtworkUri(
-            "content://com.theveloper.playpix.provider/cache/song_art_77_v2.jpg"
+            "content://com.svara.music.provider/cache/song_art_77_v2.jpg"
         )
 
         assertThat(songId).isEqualTo(77L)
@@ -68,7 +68,7 @@ class LocalArtworkUriTest {
     @Test
     fun extractCacheBustToken_readsTimestampQuery() {
         val cacheBustToken = LocalArtworkUri.extractCacheBustToken(
-            "playpix_local_art://song/99?t=456"
+            "svara_local_art://song/99?t=456"
         )
 
         assertThat(cacheBustToken).isEqualTo("456")

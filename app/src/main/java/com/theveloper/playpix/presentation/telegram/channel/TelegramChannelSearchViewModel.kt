@@ -1,10 +1,10 @@
-package com.theveloper.playpix.presentation.telegram.channel
+package com.svara.music.presentation.telegram.channel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.repository.MusicRepository
-import com.theveloper.playpix.data.telegram.TelegramRepository
+import com.svara.music.data.model.Song
+import com.svara.music.data.repository.MusicRepository
+import com.svara.music.data.telegram.TelegramRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -13,9 +13,9 @@ import kotlinx.coroutines.launch
 import org.drinkless.tdlib.TdApi
 import javax.inject.Inject
 
-import com.theveloper.playpix.presentation.viewmodel.ConnectivityStateHolder
-import com.theveloper.playpix.data.database.TelegramChannelEntity
-import com.theveloper.playpix.data.database.TelegramTopicEntity
+import com.svara.music.presentation.viewmodel.ConnectivityStateHolder
+import com.svara.music.data.database.TelegramChannelEntity
+import com.svara.music.data.database.TelegramTopicEntity
 
 @HiltViewModel
 class TelegramChannelSearchViewModel @Inject constructor(

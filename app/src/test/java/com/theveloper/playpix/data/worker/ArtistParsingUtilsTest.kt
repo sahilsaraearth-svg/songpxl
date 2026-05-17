@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.worker
+package com.svara.music.data.worker
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test

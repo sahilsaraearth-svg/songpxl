@@ -1,6 +1,6 @@
-package com.theveloper.playpix.utils
+package com.svara.music.utils
 
-import com.theveloper.playpix.data.model.Curve
+import com.svara.music.data.model.Curve
 import kotlin.math.PI
 import kotlin.math.cos
 import kotlin.math.sqrt

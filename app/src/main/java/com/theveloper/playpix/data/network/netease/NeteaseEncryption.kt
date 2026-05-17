@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.network.netease
+package com.svara.music.data.network.netease
 
 import android.annotation.SuppressLint
 import android.util.Base64

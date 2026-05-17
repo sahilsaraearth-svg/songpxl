@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.screens
+package com.svara.music.presentation.screens
 
 import android.graphics.Bitmap
 import android.os.SystemClock
@@ -110,19 +110,19 @@ import com.google.android.horologist.audio.ui.VolumeUiState
 import com.google.android.horologist.audio.ui.volumeRotaryBehavior
 import com.google.android.horologist.compose.layout.ScalingLazyColumn
 import com.google.android.horologist.compose.layout.rememberResponsiveColumnState
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.WearLifecycleState
-import com.theveloper.playpix.presentation.components.AlwaysOnScalingPositionIndicator
-import com.theveloper.playpix.presentation.components.CurvedVolumeIndicator
-import com.theveloper.playpix.presentation.components.outputRouteIcon
-import com.theveloper.playpix.presentation.components.WearTopTimeText
-import com.theveloper.playpix.presentation.shapes.RoundedStarShape
-import com.theveloper.playpix.presentation.theme.LocalWearPalette
-import com.theveloper.playpix.presentation.theme.radialBackgroundBrush
-import com.theveloper.playpix.presentation.theme.surfaceContainerColor
-import com.theveloper.playpix.presentation.viewmodel.WearPlayerViewModel
-import com.theveloper.playpix.shared.WearPlayerState
-import com.theveloper.playpix.shared.WearVolumeState
+import com.svara.music.R
+import com.svara.music.data.WearLifecycleState
+import com.svara.music.presentation.components.AlwaysOnScalingPositionIndicator
+import com.svara.music.presentation.components.CurvedVolumeIndicator
+import com.svara.music.presentation.components.outputRouteIcon
+import com.svara.music.presentation.components.WearTopTimeText
+import com.svara.music.presentation.shapes.RoundedStarShape
+import com.svara.music.presentation.theme.LocalWearPalette
+import com.svara.music.presentation.theme.radialBackgroundBrush
+import com.svara.music.presentation.theme.surfaceContainerColor
+import com.svara.music.presentation.viewmodel.WearPlayerViewModel
+import com.svara.music.shared.WearPlayerState
+import com.svara.music.shared.WearVolumeState
 import androidx.core.graphics.ColorUtils
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -1150,7 +1150,7 @@ private fun MainPlayerPage(
                     volumeEnabled = volumeEnabled,
                     deviceEnabled = volumeEnabled,
                     deviceRouteType = if (isWatchOutputSelected) {
-                        com.theveloper.playpix.shared.WearVolumeState.ROUTE_TYPE_WATCH
+                        com.svara.music.shared.WearVolumeState.ROUTE_TYPE_WATCH
                     } else {
                         activeOutputRouteType
                     },
@@ -1620,7 +1620,7 @@ private fun SecondaryControlsRow(
             SecondaryActionButton(
                 icon = outputRouteIcon(deviceRouteType),
                 enabled = deviceEnabled,
-                active = deviceRouteType == com.theveloper.playpix.shared.WearVolumeState.ROUTE_TYPE_WATCH,
+                active = deviceRouteType == com.svara.music.shared.WearVolumeState.ROUTE_TYPE_WATCH,
                 activeColor = deviceActiveColor,
                 raisedInactiveStyle = true,
                 onClick = onOutputClick,

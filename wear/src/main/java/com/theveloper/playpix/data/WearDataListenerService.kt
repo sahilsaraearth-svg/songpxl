@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data
+package com.svara.music.data
 
 import android.content.Intent
 import android.graphics.BitmapFactory
@@ -11,16 +11,16 @@ import com.google.android.gms.wearable.DataMapItem
 import com.google.android.gms.wearable.MessageEvent
 import com.google.android.gms.wearable.Wearable
 import com.google.android.gms.wearable.WearableListenerService
-import com.theveloper.playpix.presentation.WearMainActivity
-import com.theveloper.playpix.shared.WearBrowseResponse
-import com.theveloper.playpix.shared.WearDataPaths
-import com.theveloper.playpix.shared.WearFavoriteSyncResponse
-import com.theveloper.playpix.shared.WearPlaybackResult
-import com.theveloper.playpix.shared.WearPlayerState
-import com.theveloper.playpix.shared.WearTransferMetadata
-import com.theveloper.playpix.shared.WearTransferProgress
-import com.theveloper.playpix.shared.WearTransferRequest
-import com.theveloper.playpix.shared.WearVolumeState
+import com.svara.music.presentation.WearMainActivity
+import com.svara.music.shared.WearBrowseResponse
+import com.svara.music.shared.WearDataPaths
+import com.svara.music.shared.WearFavoriteSyncResponse
+import com.svara.music.shared.WearPlaybackResult
+import com.svara.music.shared.WearPlayerState
+import com.svara.music.shared.WearTransferMetadata
+import com.svara.music.shared.WearTransferProgress
+import com.svara.music.shared.WearTransferRequest
+import com.svara.music.shared.WearVolumeState
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class, ExperimentalLayoutApi::class)
 
-package com.theveloper.playpix.presentation.screens
+package com.svara.music.presentation.screens
 
 import android.net.Uri
 import androidx.activity.compose.BackHandler
@@ -106,18 +106,18 @@ import androidx.compose.ui.window.DialogProperties
 import coil.ImageLoader
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.presentation.components.ImageCropView
-import com.theveloper.playpix.data.model.PlaylistShapeType
-import com.theveloper.playpix.data.model.SmartPlaylistRule
-// import com.theveloper.playpix.presentation.screens.ShapeType // Removed local enum
-import com.theveloper.playpix.presentation.components.SongPickerSelectionPane
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
+import com.svara.music.data.model.Song
+import com.svara.music.presentation.components.ImageCropView
+import com.svara.music.data.model.PlaylistShapeType
+import com.svara.music.data.model.SmartPlaylistRule
+// import com.svara.music.presentation.screens.ShapeType // Removed local enum
+import com.svara.music.presentation.components.SongPickerSelectionPane
+import com.svara.music.ui.theme.GoogleSansRounded
 import androidx.compose.material3.Slider
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.FilterChipDefaults
-import com.theveloper.playpix.utils.shapes.RoundedStarShape
-import com.theveloper.playpix.utils.resolvePlaylistCoverContentColor
+import com.svara.music.utils.shapes.RoundedStarShape
+import com.svara.music.utils.resolvePlaylistCoverContentColor
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Outline
@@ -142,8 +142,8 @@ import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.material3.PrimaryTabRow
 import androidx.compose.material3.Surface
 import androidx.compose.ui.graphics.TransformOrigin
-import com.theveloper.playpix.data.model.StorageFilter
-import com.theveloper.playpix.presentation.viewmodel.PlayerViewModel
+import com.svara.music.data.model.StorageFilter
+import com.svara.music.presentation.viewmodel.PlayerViewModel
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.media3.common.util.UnstableApi
 import androidx.compose.material3.MediumExtendedFloatingActionButton
@@ -159,8 +159,8 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.theveloper.playpix.R
-import com.theveloper.playpix.presentation.screens.TabAnimation
+import com.svara.music.R
+import com.svara.music.presentation.screens.TabAnimation
 
 data class Quadruple<A, B, C, D>(val first: A, val second: B, val third: C, val fourth: D)
 
@@ -225,7 +225,7 @@ fun CreatePlaylistDialog(
     }
 }
 
-// Enum removed, using com.theveloper.playpix.data.model.PlaylistShapeType
+// Enum removed, using com.svara.music.data.model.PlaylistShapeType
 
 @Composable
 fun EditPlaylistDialog(

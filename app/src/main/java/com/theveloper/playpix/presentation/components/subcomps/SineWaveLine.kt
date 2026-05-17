@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components.subcomps
+package com.svara.music.presentation.components.subcomps
 
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.Canvas

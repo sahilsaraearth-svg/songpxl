@@ -1,37 +1,37 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
 import android.content.Context
 import android.net.Uri
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.theveloper.playpix.data.backup.BackupManager
-import com.theveloper.playpix.data.backup.model.BackupSection
-import com.theveloper.playpix.data.backup.model.BackupOperationType
-import com.theveloper.playpix.data.backup.model.BackupTransferProgressUpdate
-import com.theveloper.playpix.data.backup.model.BackupHistoryEntry
-import com.theveloper.playpix.data.backup.model.RestorePlan
-import com.theveloper.playpix.data.backup.model.RestoreResult
-import com.theveloper.playpix.data.backup.model.ValidationError
-import com.theveloper.playpix.data.preferences.AppThemeMode
-import com.theveloper.playpix.data.preferences.CarouselStyle
-import com.theveloper.playpix.data.preferences.LibraryNavigationMode
-import com.theveloper.playpix.data.preferences.ThemePreference
-import com.theveloper.playpix.data.preferences.UserPreferencesRepository
-import com.theveloper.playpix.data.database.AiUsageDao
-import com.theveloper.playpix.data.database.AiUsageEntity
-import com.theveloper.playpix.data.preferences.AiPreferencesRepository
-import com.theveloper.playpix.data.preferences.AlbumArtQuality
-import com.theveloper.playpix.data.preferences.AlbumArtColorAccuracy
-import com.theveloper.playpix.data.preferences.AlbumArtPaletteStyle
-import com.theveloper.playpix.data.preferences.AppLanguage
-import com.theveloper.playpix.data.preferences.CollagePattern
-import com.theveloper.playpix.data.preferences.FullPlayerLoadingTweaks
-import com.theveloper.playpix.data.preferences.ThemePreferencesRepository
-import com.theveloper.playpix.data.repository.LyricsRepository
-import com.theveloper.playpix.data.repository.MusicRepository
-import com.theveloper.playpix.data.model.LyricsSourcePreference
-import com.theveloper.playpix.data.worker.SyncManager
-import com.theveloper.playpix.data.worker.SyncProgress
+import com.svara.music.data.backup.BackupManager
+import com.svara.music.data.backup.model.BackupSection
+import com.svara.music.data.backup.model.BackupOperationType
+import com.svara.music.data.backup.model.BackupTransferProgressUpdate
+import com.svara.music.data.backup.model.BackupHistoryEntry
+import com.svara.music.data.backup.model.RestorePlan
+import com.svara.music.data.backup.model.RestoreResult
+import com.svara.music.data.backup.model.ValidationError
+import com.svara.music.data.preferences.AppThemeMode
+import com.svara.music.data.preferences.CarouselStyle
+import com.svara.music.data.preferences.LibraryNavigationMode
+import com.svara.music.data.preferences.ThemePreference
+import com.svara.music.data.preferences.UserPreferencesRepository
+import com.svara.music.data.database.AiUsageDao
+import com.svara.music.data.database.AiUsageEntity
+import com.svara.music.data.preferences.AiPreferencesRepository
+import com.svara.music.data.preferences.AlbumArtQuality
+import com.svara.music.data.preferences.AlbumArtColorAccuracy
+import com.svara.music.data.preferences.AlbumArtPaletteStyle
+import com.svara.music.data.preferences.AppLanguage
+import com.svara.music.data.preferences.CollagePattern
+import com.svara.music.data.preferences.FullPlayerLoadingTweaks
+import com.svara.music.data.preferences.ThemePreferencesRepository
+import com.svara.music.data.repository.LyricsRepository
+import com.svara.music.data.repository.MusicRepository
+import com.svara.music.data.model.LyricsSourcePreference
+import com.svara.music.data.worker.SyncManager
+import com.svara.music.data.worker.SyncProgress
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.delay
@@ -41,15 +41,15 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.preferences.NavBarStyle
-import com.theveloper.playpix.data.ai.GeminiModel
-import com.theveloper.playpix.data.ai.provider.AiClientFactory
-import com.theveloper.playpix.data.ai.provider.AiProvider
-import com.theveloper.playpix.data.preferences.LaunchTab
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.service.player.HiFiCapabilityChecker
-import com.theveloper.playpix.utils.AppLocaleManager
+import com.svara.music.R
+import com.svara.music.data.preferences.NavBarStyle
+import com.svara.music.data.ai.GeminiModel
+import com.svara.music.data.ai.provider.AiClientFactory
+import com.svara.music.data.ai.provider.AiProvider
+import com.svara.music.data.preferences.LaunchTab
+import com.svara.music.data.model.Song
+import com.svara.music.data.service.player.HiFiCapabilityChecker
+import com.svara.music.utils.AppLocaleManager
 import java.io.File
 
 data class SettingsUiState(
@@ -1131,7 +1131,7 @@ class SettingsViewModel @Inject constructor(
                     .map { it.trim() }
                     .filter { it.isNotBlank() }
                     .distinct()
-                    .map { com.theveloper.playpix.data.ai.GeminiModel(it, formatModelDisplayName(it)) }
+                    .map { com.svara.music.data.ai.GeminiModel(it, formatModelDisplayName(it)) }
                 
                 _uiState.update { 
                     it.copy(
@@ -1209,7 +1209,7 @@ class SettingsViewModel @Inject constructor(
     fun setAlbumArtCacheLimitMb(limitMb: Int) {
         viewModelScope.launch {
             userPreferencesRepository.setAlbumArtCacheLimitMb(limitMb)
-            com.theveloper.playpix.utils.AlbumArtCacheManager.configuredCacheLimitMb = limitMb.toLong()
+            com.svara.music.utils.AlbumArtCacheManager.configuredCacheLimitMb = limitMb.toLong()
         }
     }
 

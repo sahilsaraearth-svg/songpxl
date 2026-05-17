@@ -1,11 +1,11 @@
 <resources>
-    <string name="app_name">PlayPix</string>
+    <string name="app_name">Svara</string>
     <string name="app_name_change_title">Changement de nom de l\'application</string>
-    <string name="app_name_change_message">Nous avons changé le nom de notre application de PlayPix à PlayPix en raison d\'un problème de marque déposée. Bonne écoute !</string>
+    <string name="app_name_change_message">Nous avons changé le nom de notre application de Svara à Svara en raison d\'un problème de marque déposée. Bonne écoute !</string>
     <string name="do_not_show_again">Ne plus afficher</string>
     <string name="dismiss">Ignorer</string>
     <string name="all_files_access_title">Autorisation spéciale requise</string>
-    <string name="all_files_access_description">Pour modifier les métadonnées des chansons (fichiers .mp3), PlayPix a besoin d\'un accès spécial à tous les fichiers. Cela nous permet de modifier directement les étiquettes des pistes. Veuillez accorder cette autorisation sur l\'écran suivant pour activer l\'édition des métadonnées.</string>
+    <string name="all_files_access_description">Pour modifier les métadonnées des chansons (fichiers .mp3), Svara a besoin d\'un accès spécial à tous les fichiers. Cela nous permet de modifier directement les étiquettes des pistes. Veuillez accorder cette autorisation sur l\'écran suivant pour activer l\'édition des métadonnées.</string>
     <string name="grant_permission_button">Accorder l\'autorisation</string>
     <string name="all_files_access_setting">Accès à tous les fichiers</string>
     <string name="error">Erreur</string>
@@ -82,7 +82,7 @@
     <string name="ai_error_api_key">Veuillez configurer une clé API valide pour le fournisseur d\'IA sélectionné dans les Paramètres.</string>
     <string name="ai_error_generic">Erreur IA : %s</string>
     <string name="ai_error_quota">Le fournisseur d\'IA sélectionné a rejeté la demande car le compte n\'a plus de crédits ou a dépassé son quota.</string>
-    <string name="ai_error_model_unavailable">Le modèle d\'IA sélectionné n\'est plus disponible. PlayPix a essayé de passer automatiquement à un modèle pris en charge.</string>
+    <string name="ai_error_model_unavailable">Le modèle d\'IA sélectionné n\'est plus disponible. Svara a essayé de passer automatiquement à un modèle pris en charge.</string>
     <string name="ai_no_songs_found">L\'IA n\'a trouvé aucune chanson pour votre demande.</string>
     <string name="ai_prompt_empty">Écrivez une idée pour votre Daily Mix</string>
     <string name="ai_daily_mix_updated">Daily Mix mis à jour avec l\'IA</string>
@@ -120,7 +120,7 @@
     <string name="playlist_share_failed">Échec du partage : %1$s</string>
     <string name="playlist_none_to_export">Aucune liste de lecture à exporter</string>
     <string name="playlist_export_failed">Échec de l\'exportation : %1$s</string>
-    <string name="playlist_export_folder_display">Musique/Exportations PlayPix</string>
+    <string name="playlist_export_folder_display">Musique/Exportations Svara</string>
     <string name="ai_playlist_gemini_key_required">Veuillez configurer votre clé API Gemini dans les Paramètres.</string>
     <string name="error_unknown">Erreur inconnue</string>
 

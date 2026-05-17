@@ -1,8 +1,8 @@
-package com.theveloper.playpix.data.backup.module
+package com.svara.music.data.backup.module
 
 import com.google.gson.GsonBuilder
-import com.theveloper.playpix.data.database.FavoritesDao
-import com.theveloper.playpix.data.database.FavoritesEntity
+import com.svara.music.data.database.FavoritesDao
+import com.svara.music.data.database.FavoritesEntity
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk

@@ -1,10 +1,10 @@
-package com.theveloper.playpix.data.network.navidrome
+package com.svara.music.data.network.navidrome
 
-import com.theveloper.playpix.data.navidrome.model.NavidromeAlbum
-import com.theveloper.playpix.data.navidrome.model.NavidromeArtist
-import com.theveloper.playpix.data.navidrome.model.NavidromeMusicFolder
-import com.theveloper.playpix.data.navidrome.model.NavidromePlaylist
-import com.theveloper.playpix.data.navidrome.model.NavidromeSong
+import com.svara.music.data.navidrome.model.NavidromeAlbum
+import com.svara.music.data.navidrome.model.NavidromeArtist
+import com.svara.music.data.navidrome.model.NavidromeMusicFolder
+import com.svara.music.data.navidrome.model.NavidromePlaylist
+import com.svara.music.data.navidrome.model.NavidromeSong
 import org.json.JSONObject
 import timber.log.Timber
 

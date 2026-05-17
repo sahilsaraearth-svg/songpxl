@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation
+package com.svara.music.presentation
 
 import android.os.Bundle
 import androidx.activity.compose.setContent
@@ -7,9 +7,9 @@ import androidx.compose.runtime.collectAsState
 import androidx.fragment.app.FragmentActivity
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.wear.ambient.AmbientLifecycleObserver
-import com.theveloper.playpix.data.WearLifecycleState
-import com.theveloper.playpix.presentation.theme.WearPlayPixTheme
-import com.theveloper.playpix.presentation.viewmodel.WearPlayerViewModel
+import com.svara.music.data.WearLifecycleState
+import com.svara.music.presentation.theme.WearSvaraTheme
+import com.svara.music.presentation.viewmodel.WearPlayerViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -43,7 +43,7 @@ class WearMainActivity : FragmentActivity() {
             val paletteSeedArgb by playerViewModel.paletteSeedArgb.collectAsState()
             val themePalette by playerViewModel.themePalette.collectAsState()
 
-            WearPlayPixTheme(
+            WearSvaraTheme(
                 albumArt = albumArt,
                 seedColorArgb = paletteSeedArgb,
                 themePalette = themePalette,

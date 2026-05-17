@@ -1,8 +1,8 @@
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
 
-package com.theveloper.playpix.presentation.telegram.channel
+package com.svara.music.presentation.telegram.channel
 
-import com.theveloper.playpix.presentation.components.ExpressiveOfflineState
+import com.svara.music.presentation.components.ExpressiveOfflineState
 
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateFloatAsState
@@ -55,10 +55,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.res.stringResource
-import com.theveloper.playpix.R
+import com.svara.music.R
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
+import com.svara.music.data.model.Song
+import com.svara.music.ui.theme.GoogleSansRounded
 import kotlinx.coroutines.delay
 import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape
 

@@ -2,7 +2,7 @@
 <resources>
     <!-- Navigation / misc -->
     <string name="nav_error_genre_id_missing">Erreur : ID de genre manquant</string>
-    <string name="easter_egg_thank_you">Merci d\'utiliser PlayPix !</string>
+    <string name="easter_egg_thank_you">Merci d\'utiliser Svara !</string>
 
     <!-- Word delimiter config -->
     <string name="word_delimiter_section_title">Délimiteurs de mots actuels</string>
@@ -96,22 +96,22 @@
     <string name="setup_excluded_folders_description">Tous les dossiers sont analysés par défaut. Choisissez les emplacements que vous souhaitez ignorer lors de la construction de votre bibliothèque.</string>
     <string name="setup_choose_folders_ignore">Choisir les dossiers à ignorer</string>
     <string name="setup_permission_media_title">Autorisation média</string>
-    <string name="setup_permission_media_description">PlayPix a besoin d\'accéder à vos fichiers audio pour construire votre bibliothèque musicale.</string>
+    <string name="setup_permission_media_description">Svara a besoin d\'accéder à vos fichiers audio pour construire votre bibliothèque musicale.</string>
     <string name="setup_permission_granted">Autorisation accordée</string>
     <string name="setup_grant_media_permission">Accorder l\'autorisation média</string>
     <string name="setup_permission_notifications_title">Notifications</string>
     <string name="setup_permission_notifications_description">Activez les notifications pour contrôler votre musique depuis l\'écran de verrouillage et le volet de notification.</string>
     <string name="setup_enable_notifications">Activer les notifications</string>
     <string name="setup_permission_alarms_title">Alarmes et rappels</string>
-    <string name="setup_permission_alarms_description">Facultatif, mais recommandé si vous utilisez le Minuteur de veille et que vous voulez que PlayPix arrête la lecture exactement à l\'heure.</string>
+    <string name="setup_permission_alarms_description">Facultatif, mais recommandé si vous utilisez le Minuteur de veille et que vous voulez que Svara arrête la lecture exactement à l\'heure.</string>
     <string name="setup_grant_permission_generic">Accorder l\'autorisation</string>
     <string name="setup_backup_have_title">Avez-vous une sauvegarde ?</string>
-    <string name="setup_backup_have_description">Si vous avez déjà une sauvegarde PlayPix, restaurez-la maintenant pour passer la majeure partie de la configuration restante.</string>
+    <string name="setup_backup_have_description">Si vous avez déjà une sauvegarde Svara, restaurez-la maintenant pour passer la majeure partie de la configuration restante.</string>
     <string name="setup_inspecting_backup">Inspection de la sauvegarde</string>
     <string name="setup_restoring_backup">Restauration de la sauvegarde</string>
     <string name="setup_import_backup">Importer une sauvegarde</string>
     <string name="setup_theme_dark_title">Sombre</string>
-    <string name="setup_theme_dark_description">L\'apparence sombre par défaut de Material 3 pour PlayPix.</string>
+    <string name="setup_theme_dark_description">L\'apparence sombre par défaut de Material 3 pour Svara.</string>
     <string name="setup_theme_light_title">Clair</string>
     <string name="setup_theme_light_description">Une apparence Material 3 plus lumineuse dans toute l\'application.</string>
     <string name="setup_theme_follow_title">Suivre le système</string>
@@ -120,7 +120,7 @@
     <string name="setup_compact_mode_tab_hint">Utilisation de la barre d\'onglets standard</string>
     <string name="setup_preview_songs_label">Chansons</string>
     <string name="setup_battery_optimization_title">Optimisation de la batterie</string>
-    <string name="setup_battery_optimization_description">Certains appareils Android ferment agressivement les applications en arrière-plan. Désactivez l\'optimisation de la batterie pour PlayPix afin d\'éviter les interruptions de lecture inattendues.</string>
+    <string name="setup_battery_optimization_description">Certains appareils Android ferment agressivement les applications en arrière-plan. Désactivez l\'optimisation de la batterie pour Svara afin d\'éviter les interruptions de lecture inattendues.</string>
     <string name="setup_disable_battery_optimization">Désactiver l\'optimisation</string>
     <string name="setup_nav_floating_pill_description">Pastille flottante avec angles arrondis</string>
     <string name="setup_nav_full_width_description">Barre standard pleine largeur</string>
@@ -151,7 +151,7 @@
     <string name="crash_report_stack_preview_label">Trace de la pile (aperçu) :</string>
     <string name="crash_report_clipboard_label">Journal d\'erreur</string>
     <string name="toast_crash_log_copied">Journal d\'erreur copié dans le presse-papiers</string>
-    <string name="crash_report_share_subject">Rapport d\'erreur PlayPix</string>
+    <string name="crash_report_share_subject">Rapport d\'erreur Svara</string>
     <string name="crash_report_share_chooser">Partager le rapport d\'erreur</string>
     <string name="action_copy">Copier</string>
     <string name="action_share">Partager</string>
@@ -176,13 +176,13 @@
 
     <!-- About -->
     <string name="about_no_contributors">Aucun contributeur trouvé pour le moment. Veuillez réessayer plus tard.</string>
-    <string name="about_app_name">PlayPix</string>
+    <string name="about_app_name">Svara</string>
     <string name="about_tagline">Lecteur de musique open source construit avec sa communauté.</string>
     <string name="about_version_format">Version v%1$s</string>
     <string name="about_contributions_format">%1$d contrib.</string>
     <string name="screen_about">À propos</string>
     <string name="about_maintainer_title">Mainteneur</string>
-    <string name="about_maintainer_subtitle">La personne derrière PlayPix.</string>
+    <string name="about_maintainer_subtitle">La personne derrière Svara.</string>
     <string name="about_spotlight_title">Coup de projecteur sur la communauté</string>
     <string name="about_spotlight_subtitle">Reconnaissance des collaborateurs ayant un impact majeur.</string>
     <string name="about_contributors_section_title">Contributeurs open source</string>

@@ -1,7 +1,7 @@
-package com.theveloper.playpix.presentation.screens
+package com.svara.music.presentation.screens
 
-import com.theveloper.playpix.presentation.navigation.navigateSafely
-import com.theveloper.playpix.presentation.navigation.navigateSafelyReplacing
+import com.svara.music.presentation.navigation.navigateSafely
+import com.svara.music.presentation.navigation.navigateSafelyReplacing
 
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -103,32 +103,32 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.media3.common.util.UnstableApi
 import androidx.navigation.NavController
 import coil.size.Size
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.presentation.components.MiniPlayerHeight
-import com.theveloper.playpix.presentation.components.PlaylistBottomSheet
-import com.theveloper.playpix.presentation.components.QueuePlaylistSongItem
-import com.theveloper.playpix.presentation.components.SongPickerBottomSheet
-import com.theveloper.playpix.presentation.components.ExpressiveScrollBar
-import com.theveloper.playpix.presentation.components.SmartImage
-import com.theveloper.playpix.presentation.components.SongInfoBottomSheet
-import com.theveloper.playpix.presentation.components.resolveNavBarOccupiedHeight
-import com.theveloper.playpix.presentation.navigation.Screen
-import com.theveloper.playpix.presentation.viewmodel.PlayerViewModel
-import com.theveloper.playpix.presentation.viewmodel.PlaylistViewModel
-import com.theveloper.playpix.presentation.viewmodel.PlaylistViewModel.Companion.FOLDER_PLAYLIST_PREFIX
-import com.theveloper.playpix.presentation.utils.LocalAppHapticsConfig
-import com.theveloper.playpix.presentation.utils.performAppCompatHapticFeedback
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
-import com.theveloper.playpix.presentation.viewmodel.PlaylistSongsOrderMode
-import com.theveloper.playpix.utils.formatSongCount
-import com.theveloper.playpix.utils.formatTotalDuration
+import com.svara.music.R
+import com.svara.music.data.model.Song
+import com.svara.music.presentation.components.MiniPlayerHeight
+import com.svara.music.presentation.components.PlaylistBottomSheet
+import com.svara.music.presentation.components.QueuePlaylistSongItem
+import com.svara.music.presentation.components.SongPickerBottomSheet
+import com.svara.music.presentation.components.ExpressiveScrollBar
+import com.svara.music.presentation.components.SmartImage
+import com.svara.music.presentation.components.SongInfoBottomSheet
+import com.svara.music.presentation.components.resolveNavBarOccupiedHeight
+import com.svara.music.presentation.navigation.Screen
+import com.svara.music.presentation.viewmodel.PlayerViewModel
+import com.svara.music.presentation.viewmodel.PlaylistViewModel
+import com.svara.music.presentation.viewmodel.PlaylistViewModel.Companion.FOLDER_PLAYLIST_PREFIX
+import com.svara.music.presentation.utils.LocalAppHapticsConfig
+import com.svara.music.presentation.utils.performAppCompatHapticFeedback
+import com.svara.music.ui.theme.GoogleSansRounded
+import com.svara.music.presentation.viewmodel.PlaylistSongsOrderMode
+import com.svara.music.utils.formatSongCount
+import com.svara.music.utils.formatTotalDuration
 import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape
 import sh.calvin.reorderable.ReorderableItem
 import sh.calvin.reorderable.rememberReorderableLazyListState
-import com.theveloper.playpix.presentation.components.LibrarySortBottomSheet
-import com.theveloper.playpix.data.model.SortOption
-import com.theveloper.playpix.data.model.PlaylistShapeType
+import com.svara.music.presentation.components.LibrarySortBottomSheet
+import com.svara.music.data.model.SortOption
+import com.svara.music.data.model.PlaylistShapeType
 import kotlinx.coroutines.launch
 
 @androidx.annotation.OptIn(UnstableApi::class)
@@ -1039,7 +1039,7 @@ private fun PlaylistActionItem(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-// SongPickerBottomSheet moved to com.theveloper.playpix.presentation.components
+// SongPickerBottomSheet moved to com.svara.music.presentation.components
 fun RenamePlaylistDialog(currentName: String, onDismiss: () -> Unit, onRename: (String) -> Unit) {
     var newName by remember { mutableStateOf(TextFieldValue(currentName)) }
     val renameTitle = stringResource(R.string.presentation_batch_b_rename_playlist_dialog_title)

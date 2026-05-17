@@ -1,5 +1,5 @@
 
-package com.theveloper.playpix.presentation.screens
+package com.svara.music.presentation.screens
 
 import android.Manifest
 import android.content.Context
@@ -132,23 +132,23 @@ import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.permissions.rememberMultiplePermissionsState
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.backup.model.BackupSection
-import com.theveloper.playpix.data.backup.model.BackupTransferProgressUpdate
-import com.theveloper.playpix.data.backup.model.RestorePlan
-import com.theveloper.playpix.data.preferences.AppThemeMode
-import com.theveloper.playpix.presentation.components.PermissionIconCollage
-import com.theveloper.playpix.presentation.components.BackupModuleSelectionDialog
-import com.theveloper.playpix.presentation.components.subcomps.MaterialYouVectorDrawable
-import com.theveloper.playpix.presentation.components.subcomps.SineWaveLine
-import com.theveloper.playpix.presentation.components.FileExplorerDialog
-import com.theveloper.playpix.presentation.viewmodel.DirectoryEntry
-import com.theveloper.playpix.presentation.viewmodel.SetupEvent
-import com.theveloper.playpix.presentation.viewmodel.SetupUiState
-import com.theveloper.playpix.presentation.viewmodel.SetupViewModel
-import com.theveloper.playpix.ui.theme.ExpTitleTypography
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
-import com.theveloper.playpix.utils.StorageInfo
+import com.svara.music.R
+import com.svara.music.data.backup.model.BackupSection
+import com.svara.music.data.backup.model.BackupTransferProgressUpdate
+import com.svara.music.data.backup.model.RestorePlan
+import com.svara.music.data.preferences.AppThemeMode
+import com.svara.music.presentation.components.PermissionIconCollage
+import com.svara.music.presentation.components.BackupModuleSelectionDialog
+import com.svara.music.presentation.components.subcomps.MaterialYouVectorDrawable
+import com.svara.music.presentation.components.subcomps.SineWaveLine
+import com.svara.music.presentation.components.FileExplorerDialog
+import com.svara.music.presentation.viewmodel.DirectoryEntry
+import com.svara.music.presentation.viewmodel.SetupEvent
+import com.svara.music.presentation.viewmodel.SetupUiState
+import com.svara.music.presentation.viewmodel.SetupViewModel
+import com.svara.music.ui.theme.ExpTitleTypography
+import com.svara.music.ui.theme.GoogleSansRounded
+import com.svara.music.utils.StorageInfo
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
 import kotlinx.coroutines.launch
@@ -1820,7 +1820,7 @@ private fun SetupRestoreDialog(
 @Composable
 private fun SetupRestoreSectionRow(
     section: BackupSection,
-    detail: com.theveloper.playpix.data.backup.model.ModuleRestoreDetail?,
+    detail: com.svara.music.data.backup.model.ModuleRestoreDetail?,
     selected: Boolean,
     enabled: Boolean,
     onClick: () -> Unit

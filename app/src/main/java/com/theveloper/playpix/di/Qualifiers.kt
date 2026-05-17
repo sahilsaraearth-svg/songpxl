@@ -1,4 +1,4 @@
-package com.theveloper.playpix.di
+package com.svara.music.di
 
 import javax.inject.Qualifier
 

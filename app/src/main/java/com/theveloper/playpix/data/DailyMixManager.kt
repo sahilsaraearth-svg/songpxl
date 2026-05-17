@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data
+package com.svara.music.data
 
 import android.content.Context
 import android.util.Log
@@ -6,9 +6,9 @@ import com.google.gson.Gson
 import com.google.gson.JsonElement
 import com.google.gson.JsonObject
 import com.google.gson.reflect.TypeToken
-import com.theveloper.playpix.data.database.EngagementDao
-import com.theveloper.playpix.data.database.SongEngagementEntity
-import com.theveloper.playpix.data.model.Song
+import com.svara.music.data.database.EngagementDao
+import com.svara.music.data.database.SongEngagementEntity
+import com.svara.music.data.model.Song
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Deferred

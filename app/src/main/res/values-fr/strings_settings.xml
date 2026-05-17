@@ -219,8 +219,8 @@
     <string name="setcat_trigger_crash_title">Déclencher un crash de test</string>
     <string name="setcat_trigger_crash_subtitle">Simuler un crash pour tester le système de rapport.</string>
     <string name="setcat_application">Application</string>
-    <string name="setcat_about_playpix_title">À propos de PlayPix</string>
-    <string name="setcat_about_playpix_subtitle">Version de l\'application, crédits, etc.</string>
+    <string name="setcat_about_svara_title">À propos de Svara</string>
+    <string name="setcat_about_svara_subtitle">Version de l\'application, crédits, etc.</string>
 
     <string name="backup_summary_none">Aucune section sélectionnée.</string>
     <string name="backup_summary_all">Toutes les sections sélectionnées.</string>
@@ -264,7 +264,7 @@
     <string name="dialog_regenerate_stats_title">Régénérer les statistiques ?</string>
     <string name="dialog_regenerate_stats_body">Cela effacera le cache des statistiques et forcera un recalcul à partir de l\'historique de la base de données.</string>
     <string name="toast_stats_regeneration_started">Régénération des statistiques démarrée</string>
-    <string name="backup_file_name_format">PlayPix_Backup_%1$d.pxpl</string>
+    <string name="backup_file_name_format">Svara_Backup_%1$d.pxpl</string>
 
     <string name="setcat_regenerate_daily_mix_action">Régénérer le Daily Mix</string>
     <string name="setcat_regenerate_stats_action">Régénérer les statistiques</string>

@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components
+package com.svara.music.presentation.components
 
 import androidx.annotation.OptIn
 import androidx.compose.animation.core.Animatable
@@ -30,14 +30,14 @@ import androidx.compose.ui.util.lerp
 import androidx.compose.ui.zIndex
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.media3.common.util.UnstableApi
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.preferences.FullPlayerLoadingTweaks
-import com.theveloper.playpix.presentation.components.player.FullPlayerContent
-import com.theveloper.playpix.presentation.components.scoped.FullPlayerVisualState
-import com.theveloper.playpix.presentation.components.scoped.rememberFullPlayerRuntimePolicy
-import com.theveloper.playpix.presentation.viewmodel.PlayerSheetState
-import com.theveloper.playpix.presentation.viewmodel.PlayerViewModel
-import com.theveloper.playpix.presentation.viewmodel.StablePlayerState
+import com.svara.music.data.model.Song
+import com.svara.music.data.preferences.FullPlayerLoadingTweaks
+import com.svara.music.presentation.components.player.FullPlayerContent
+import com.svara.music.presentation.components.scoped.FullPlayerVisualState
+import com.svara.music.presentation.components.scoped.rememberFullPlayerRuntimePolicy
+import com.svara.music.presentation.viewmodel.PlayerSheetState
+import com.svara.music.presentation.viewmodel.PlayerViewModel
+import com.svara.music.presentation.viewmodel.StablePlayerState
 
 @OptIn(UnstableApi::class)
 @Composable

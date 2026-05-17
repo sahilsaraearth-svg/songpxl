@@ -1,13 +1,13 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
 import android.content.Context
 import android.os.Environment
 import android.provider.MediaStore
-import com.theveloper.playpix.data.preferences.UserPreferencesRepository
-import com.theveloper.playpix.utils.DirectoryRuleResolver
-import com.theveloper.playpix.utils.StorageInfo
-import com.theveloper.playpix.utils.StorageUtils
-import com.theveloper.playpix.utils.buildLocalAudioSelection
+import com.svara.music.data.preferences.UserPreferencesRepository
+import com.svara.music.utils.DirectoryRuleResolver
+import com.svara.music.utils.StorageInfo
+import com.svara.music.utils.StorageUtils
+import com.svara.music.utils.buildLocalAudioSelection
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi

@@ -1,10 +1,10 @@
-package com.theveloper.playpix.data
+package com.svara.music.data
 
 import android.app.Application
 import com.google.android.gms.wearable.Wearable
-import com.theveloper.playpix.shared.WearDataPaths
-import com.theveloper.playpix.shared.WearPlaybackCommand
-import com.theveloper.playpix.shared.WearVolumeCommand
+import com.svara.music.shared.WearDataPaths
+import com.svara.music.shared.WearPlaybackCommand
+import com.svara.music.shared.WearVolumeCommand
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob

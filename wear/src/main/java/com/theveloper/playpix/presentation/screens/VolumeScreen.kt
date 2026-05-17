@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalWearFoundationApi::class)
 
-package com.theveloper.playpix.presentation.screens
+package com.svara.music.presentation.screens
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.animateFloatAsState
@@ -50,14 +50,14 @@ import androidx.wear.compose.material.MaterialTheme
 import androidx.wear.compose.material.Text
 import com.google.android.horologist.audio.ui.VolumeUiState
 import com.google.android.horologist.audio.ui.volumeRotaryBehavior
-import com.theveloper.playpix.data.WearLifecycleState
-import com.theveloper.playpix.presentation.components.CurvedVolumeIndicator
-import com.theveloper.playpix.presentation.components.WearTopTimeText
-import com.theveloper.playpix.presentation.theme.LocalWearPalette
-import com.theveloper.playpix.presentation.theme.screenBackgroundColor
-import com.theveloper.playpix.presentation.theme.surfaceContainerColor
-import com.theveloper.playpix.presentation.theme.surfaceContainerHighColor
-import com.theveloper.playpix.presentation.viewmodel.WearPlayerViewModel
+import com.svara.music.data.WearLifecycleState
+import com.svara.music.presentation.components.CurvedVolumeIndicator
+import com.svara.music.presentation.components.WearTopTimeText
+import com.svara.music.presentation.theme.LocalWearPalette
+import com.svara.music.presentation.theme.screenBackgroundColor
+import com.svara.music.presentation.theme.surfaceContainerColor
+import com.svara.music.presentation.theme.surfaceContainerHighColor
+import com.svara.music.presentation.viewmodel.WearPlayerViewModel
 import kotlinx.coroutines.delay
 
 @Composable

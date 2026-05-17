@@ -1,18 +1,18 @@
-package com.theveloper.playpix.data.repository
+package com.svara.music.data.repository
 
 import android.net.Uri
 import androidx.paging.PagingData
-import com.theveloper.playpix.data.model.Album
-import com.theveloper.playpix.data.model.Artist
-import com.theveloper.playpix.data.model.Lyrics
-import com.theveloper.playpix.data.model.LyricsSourcePreference
-import com.theveloper.playpix.data.model.Playlist
-import com.theveloper.playpix.data.model.SearchFilterType
-import com.theveloper.playpix.data.model.SearchHistoryItem
-import com.theveloper.playpix.data.model.SearchResultItem
-import com.theveloper.playpix.data.model.Song
+import com.svara.music.data.model.Album
+import com.svara.music.data.model.Artist
+import com.svara.music.data.model.Lyrics
+import com.svara.music.data.model.LyricsSourcePreference
+import com.svara.music.data.model.Playlist
+import com.svara.music.data.model.SearchFilterType
+import com.svara.music.data.model.SearchHistoryItem
+import com.svara.music.data.model.SearchResultItem
+import com.svara.music.data.model.Song
 import kotlinx.coroutines.flow.Flow
-import com.theveloper.playpix.data.database.TelegramChannelEntity
+import com.svara.music.data.database.TelegramChannelEntity
 
 interface MusicRepository {
     /**
@@ -25,14 +25,14 @@ interface MusicRepository {
      * Returns paginated songs for efficient display of large libraries.
      * @return Flow of PagingData<Song> for use with LazyPagingItems.
      */
-    fun getPaginatedSongs(sortOption: com.theveloper.playpix.data.model.SortOption, storageFilter: com.theveloper.playpix.data.model.StorageFilter): Flow<PagingData<Song>>
+    fun getPaginatedSongs(sortOption: com.svara.music.data.model.SortOption, storageFilter: com.svara.music.data.model.StorageFilter): Flow<PagingData<Song>>
 
     /**
      * Returns paginated albums for efficient display in library tabs.
      */
     fun getPaginatedAlbums(
-        sortOption: com.theveloper.playpix.data.model.SortOption,
-        storageFilter: com.theveloper.playpix.data.model.StorageFilter = com.theveloper.playpix.data.model.StorageFilter.ALL,
+        sortOption: com.svara.music.data.model.SortOption,
+        storageFilter: com.svara.music.data.model.StorageFilter = com.svara.music.data.model.StorageFilter.ALL,
         minTracks: Int = 1
     ): Flow<PagingData<Album>>
 
@@ -40,8 +40,8 @@ interface MusicRepository {
      * Returns paginated artists for efficient display in library tabs.
      */
     fun getPaginatedArtists(
-        sortOption: com.theveloper.playpix.data.model.SortOption,
-        storageFilter: com.theveloper.playpix.data.model.StorageFilter = com.theveloper.playpix.data.model.StorageFilter.ALL
+        sortOption: com.svara.music.data.model.SortOption,
+        storageFilter: com.svara.music.data.model.StorageFilter = com.svara.music.data.model.StorageFilter.ALL
     ): Flow<PagingData<Artist>>
 
     /**
@@ -49,15 +49,15 @@ interface MusicRepository {
      * @return Flow of PagingData<Song> for use with LazyPagingItems.
      */
     fun getPaginatedFavoriteSongs(
-        sortOption: com.theveloper.playpix.data.model.SortOption,
-        storageFilter: com.theveloper.playpix.data.model.StorageFilter = com.theveloper.playpix.data.model.StorageFilter.ALL
+        sortOption: com.svara.music.data.model.SortOption,
+        storageFilter: com.svara.music.data.model.StorageFilter = com.svara.music.data.model.StorageFilter.ALL
     ): Flow<PagingData<Song>>
 
     /**
      * Returns all favorite songs as a list (for playback queue on shuffle).
      */
     suspend fun getFavoriteSongsOnce(
-        storageFilter: com.theveloper.playpix.data.model.StorageFilter = com.theveloper.playpix.data.model.StorageFilter.ALL
+        storageFilter: com.svara.music.data.model.StorageFilter = com.svara.music.data.model.StorageFilter.ALL
     ): List<Song>
 
     /**
@@ -66,15 +66,15 @@ interface MusicRepository {
     suspend fun getFavoriteSongsPage(
         limit: Int,
         offset: Int,
-        sortOption: com.theveloper.playpix.data.model.SortOption = com.theveloper.playpix.data.model.SortOption.LikedSongTitleAZ,
-        storageFilter: com.theveloper.playpix.data.model.StorageFilter = com.theveloper.playpix.data.model.StorageFilter.ALL
+        sortOption: com.svara.music.data.model.SortOption = com.svara.music.data.model.SortOption.LikedSongTitleAZ,
+        storageFilter: com.svara.music.data.model.StorageFilter = com.svara.music.data.model.StorageFilter.ALL
     ): List<Song>
 
     /**
      * Returns the count of favorite songs (reactive).
      */
     fun getFavoriteSongCountFlow(
-        storageFilter: com.theveloper.playpix.data.model.StorageFilter = com.theveloper.playpix.data.model.StorageFilter.ALL
+        storageFilter: com.svara.music.data.model.StorageFilter = com.svara.music.data.model.StorageFilter.ALL
     ): Flow<Int>
 
     /**
@@ -102,8 +102,8 @@ interface MusicRepository {
     suspend fun getSongsPage(
         limit: Int,
         offset: Int,
-        sortOption: com.theveloper.playpix.data.model.SortOption = com.theveloper.playpix.data.model.SortOption.SongDefaultOrder,
-        storageFilter: com.theveloper.playpix.data.model.StorageFilter = com.theveloper.playpix.data.model.StorageFilter.ALL
+        sortOption: com.svara.music.data.model.SortOption = com.svara.music.data.model.SortOption.SongDefaultOrder,
+        storageFilter: com.svara.music.data.model.StorageFilter = com.svara.music.data.model.StorageFilter.ALL
     ): List<Song>
 
     /**
@@ -112,8 +112,8 @@ interface MusicRepository {
     suspend fun getAlbumsPage(
         limit: Int,
         offset: Int,
-        sortOption: com.theveloper.playpix.data.model.SortOption = com.theveloper.playpix.data.model.SortOption.AlbumTitleAZ,
-        storageFilter: com.theveloper.playpix.data.model.StorageFilter = com.theveloper.playpix.data.model.StorageFilter.ALL,
+        sortOption: com.svara.music.data.model.SortOption = com.svara.music.data.model.SortOption.AlbumTitleAZ,
+        storageFilter: com.svara.music.data.model.StorageFilter = com.svara.music.data.model.StorageFilter.ALL,
         minTracks: Int = 1
     ): List<Album>
 
@@ -123,8 +123,8 @@ interface MusicRepository {
     suspend fun getArtistsPage(
         limit: Int,
         offset: Int,
-        sortOption: com.theveloper.playpix.data.model.SortOption = com.theveloper.playpix.data.model.SortOption.ArtistNameAZ,
-        storageFilter: com.theveloper.playpix.data.model.StorageFilter = com.theveloper.playpix.data.model.StorageFilter.ALL
+        sortOption: com.svara.music.data.model.SortOption = com.svara.music.data.model.SortOption.ArtistNameAZ,
+        storageFilter: com.svara.music.data.model.StorageFilter = com.svara.music.data.model.StorageFilter.ALL
     ): List<Artist>
 
     /**
@@ -138,7 +138,7 @@ interface MusicRepository {
      * @return Flow que emite una lista completa de objetos Album.
      */
     fun getAlbums(
-        storageFilter: com.theveloper.playpix.data.model.StorageFilter = com.theveloper.playpix.data.model.StorageFilter.ALL,
+        storageFilter: com.svara.music.data.model.StorageFilter = com.svara.music.data.model.StorageFilter.ALL,
         minTracks: Int = 1
     ): Flow<List<Album>> // Existing Flow for reactive updates
 
@@ -147,7 +147,7 @@ interface MusicRepository {
      * @return Flow que emite una lista completa de objetos Artist.
      */
     fun getArtists(
-        storageFilter: com.theveloper.playpix.data.model.StorageFilter = com.theveloper.playpix.data.model.StorageFilter.ALL
+        storageFilter: com.svara.music.data.model.StorageFilter = com.svara.music.data.model.StorageFilter.ALL
     ): Flow<List<Artist>> // Existing Flow for reactive updates
 
     /**
@@ -172,7 +172,7 @@ interface MusicRepository {
      * @return Lista de objetos Album.
      */
     suspend fun getAllAlbumsOnce(
-        storageFilter: com.theveloper.playpix.data.model.StorageFilter = com.theveloper.playpix.data.model.StorageFilter.ALL,
+        storageFilter: com.svara.music.data.model.StorageFilter = com.svara.music.data.model.StorageFilter.ALL,
         minTracks: Int = 1
     ): List<Album>
 
@@ -269,6 +269,15 @@ interface MusicRepository {
     suspend fun setFavoriteStatus(songId: String, isFavorite: Boolean)
 
     /**
+     * Setea el estado favorito de una canción y, si es necesario, la inserta en la tabla songs
+     * para que aparezca en la lista de favoritos (necesario para canciones de streaming que no
+     * están almacenadas localmente).
+     * @param song El objeto Song completo.
+     * @param isFavorite Estado objetivo.
+     */
+    suspend fun setFavoriteStatusWithSong(song: com.svara.music.data.model.Song, isFavorite: Boolean)
+
+    /**
      * Obtiene IDs de canciones favoritas directamente desde Room (tabla favorites).
      */
     suspend fun getFavoriteSongIdsOnce(): Set<String>
@@ -292,7 +301,7 @@ interface MusicRepository {
      * Obtiene la lista de géneros, ya sea mockeados o leídos de los metadatos.
      * @return Flow que emite una lista de objetos Genre.
      */
-    fun getGenres(): Flow<List<com.theveloper.playpix.data.model.Genre>>
+    fun getGenres(): Flow<List<com.svara.music.data.model.Genre>>
 
     suspend fun getLyrics(
         song: Song,
@@ -325,8 +334,8 @@ interface MusicRepository {
     suspend fun resetAllLyrics()
 
     fun getMusicFolders(
-        storageFilter: com.theveloper.playpix.data.model.StorageFilter = com.theveloper.playpix.data.model.StorageFilter.ALL
-    ): Flow<List<com.theveloper.playpix.data.model.MusicFolder>>
+        storageFilter: com.svara.music.data.model.StorageFilter = com.svara.music.data.model.StorageFilter.ALL
+    ): Flow<List<com.svara.music.data.model.MusicFolder>>
 
     suspend fun deleteById(id: Long)
     suspend fun saveTelegramSongs(songs: List<Song>)
@@ -338,23 +347,23 @@ interface MusicRepository {
     suspend fun saveTelegramChannel(channel: TelegramChannelEntity)
     fun getAllTelegramChannels(): Flow<List<TelegramChannelEntity>>
     suspend fun deleteTelegramChannel(chatId: Long)
-    suspend fun saveTelegramTopics(chatId: Long, topics: List<com.theveloper.playpix.data.database.TelegramTopicEntity>)
+    suspend fun saveTelegramTopics(chatId: Long, topics: List<com.svara.music.data.database.TelegramTopicEntity>)
     /** Replaces the full topic list for a channel, deleting any topics that no longer exist. */
-    suspend fun replaceTopicsForChannel(chatId: Long, freshTopics: List<com.theveloper.playpix.data.database.TelegramTopicEntity>)
-    suspend fun getTopicsForChannel(chatId: Long): List<com.theveloper.playpix.data.database.TelegramTopicEntity>
-    fun getAllTelegramTopics(): Flow<List<com.theveloper.playpix.data.database.TelegramTopicEntity>>
+    suspend fun replaceTopicsForChannel(chatId: Long, freshTopics: List<com.svara.music.data.database.TelegramTopicEntity>)
+    suspend fun getTopicsForChannel(chatId: Long): List<com.svara.music.data.database.TelegramTopicEntity>
+    fun getAllTelegramTopics(): Flow<List<com.svara.music.data.database.TelegramTopicEntity>>
     suspend fun replaceTelegramSongsForTopic(chatId: Long, threadId: Long, topicName: String, songs: List<Song>)
 
-    val telegramRepository: com.theveloper.playpix.data.telegram.TelegramRepository
+    val telegramRepository: com.svara.music.data.telegram.TelegramRepository
 
     suspend fun getSongIdsSorted(
-        sortOption: com.theveloper.playpix.data.model.SortOption,
-        storageFilter: com.theveloper.playpix.data.model.StorageFilter
+        sortOption: com.svara.music.data.model.SortOption,
+        storageFilter: com.svara.music.data.model.StorageFilter
     ): List<Long>
 
     suspend fun getFavoriteSongIdsSorted(
-        sortOption: com.theveloper.playpix.data.model.SortOption,
-        storageFilter: com.theveloper.playpix.data.model.StorageFilter
+        sortOption: com.svara.music.data.model.SortOption,
+        storageFilter: com.svara.music.data.model.StorageFilter
     ): List<Long>
 
     /**

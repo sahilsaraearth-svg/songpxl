@@ -1,8 +1,8 @@
-package com.theveloper.playpix.data.backup.validation
+package com.svara.music.data.backup.validation
 
-import com.theveloper.playpix.data.backup.model.BackupSection
-import com.theveloper.playpix.data.backup.model.BackupValidationResult
-import com.theveloper.playpix.data.backup.model.Severity
+import com.svara.music.data.backup.model.BackupSection
+import com.svara.music.data.backup.model.BackupValidationResult
+import com.svara.music.data.backup.model.Severity
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 

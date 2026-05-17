@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.media
+package com.svara.music.data.media
 
 import android.content.ContentUris
 import android.content.ContentValues
@@ -13,17 +13,17 @@ import androidx.annotation.RequiresApi
 import androidx.core.net.toUri
 import com.kyant.taglib.Picture
 import com.kyant.taglib.TagLib
-import com.theveloper.playpix.data.database.ArtistEntity
-import com.theveloper.playpix.data.database.MusicDao
-import com.theveloper.playpix.data.database.SongArtistCrossRef
-import com.theveloper.playpix.data.database.TelegramDao // Added
-import com.theveloper.playpix.data.database.TelegramSongEntity // Added
-import com.theveloper.playpix.data.database.serializeArtistRefs
-import com.theveloper.playpix.data.model.ArtistRef
-import com.theveloper.playpix.data.preferences.UserPreferencesRepository
-import com.theveloper.playpix.data.worker.collectArtistNames
-import com.theveloper.playpix.utils.AlbumArtUtils
-import com.theveloper.playpix.utils.LocalArtworkUri
+import com.svara.music.data.database.ArtistEntity
+import com.svara.music.data.database.MusicDao
+import com.svara.music.data.database.SongArtistCrossRef
+import com.svara.music.data.database.TelegramDao // Added
+import com.svara.music.data.database.TelegramSongEntity // Added
+import com.svara.music.data.database.serializeArtistRefs
+import com.svara.music.data.model.ArtistRef
+import com.svara.music.data.preferences.UserPreferencesRepository
+import com.svara.music.data.worker.collectArtistNames
+import com.svara.music.utils.AlbumArtUtils
+import com.svara.music.utils.LocalArtworkUri
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first // Added
 import kotlinx.coroutines.withContext

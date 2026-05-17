@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.service.tile
+package com.svara.music.data.service.tile
 
 import android.content.Intent
 import android.net.Uri
@@ -7,13 +7,13 @@ import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
 import android.widget.Toast
 import androidx.annotation.RequiresApi
-import com.theveloper.playpix.MainActivity
-import com.theveloper.playpix.MainActivityIntentContract
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.model.MusicFolder
-import com.theveloper.playpix.data.preferences.PlaylistPreferencesRepository
-import com.theveloper.playpix.data.preferences.UserPreferencesRepository
-import com.theveloper.playpix.data.repository.MusicRepository
+import com.svara.music.MainActivity
+import com.svara.music.MainActivityIntentContract
+import com.svara.music.R
+import com.svara.music.data.model.MusicFolder
+import com.svara.music.data.preferences.PlaylistPreferencesRepository
+import com.svara.music.data.preferences.UserPreferencesRepository
+import com.svara.music.data.repository.MusicRepository
 import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
 import dagger.hilt.android.EntryPointAccessors

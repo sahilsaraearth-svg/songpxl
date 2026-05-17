@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.service.cast
+package com.svara.music.data.service.cast
 
 import android.content.Context
 import com.google.android.gms.cast.CastMediaControlIntent

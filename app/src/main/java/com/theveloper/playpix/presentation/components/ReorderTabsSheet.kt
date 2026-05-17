@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
 
-package com.theveloper.playpix.presentation.components
+package com.svara.music.presentation.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -52,11 +52,11 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.core.view.ViewCompat
 import android.view.HapticFeedbackConstants
-import com.theveloper.playpix.R
-import com.theveloper.playpix.presentation.library.LibraryTabId
-import com.theveloper.playpix.presentation.utils.LocalAppHapticsConfig
-import com.theveloper.playpix.presentation.utils.performAppCompatHapticFeedback
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
+import com.svara.music.R
+import com.svara.music.presentation.library.LibraryTabId
+import com.svara.music.presentation.utils.LocalAppHapticsConfig
+import com.svara.music.presentation.utils.performAppCompatHapticFeedback
+import com.svara.music.ui.theme.GoogleSansRounded
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape

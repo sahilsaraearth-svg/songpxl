@@ -1,14 +1,14 @@
-package com.theveloper.playpix.data.backup.module
+package com.svara.music.data.backup.module
 
 import android.content.Context
 import android.util.Base64
 import android.util.Log
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.theveloper.playpix.data.backup.model.ArtistImageBackupEntry
-import com.theveloper.playpix.data.backup.model.BackupSection
-import com.theveloper.playpix.data.database.MusicDao
-import com.theveloper.playpix.di.BackupGson
+import com.svara.music.data.backup.model.ArtistImageBackupEntry
+import com.svara.music.data.backup.model.BackupSection
+import com.svara.music.data.database.MusicDao
+import com.svara.music.di.BackupGson
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

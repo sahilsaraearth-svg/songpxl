@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.preferences
+package com.svara.music.data.preferences
 
 data class FullPlayerLoadingTweaks(
     val delayAll: Boolean = true,

@@ -1,9 +1,9 @@
-package com.theveloper.playpix.data.repository
+package com.svara.music.data.repository
 
-import com.theveloper.playpix.data.database.MusicDao
-import com.theveloper.playpix.data.network.deezer.DeezerApiService
-import com.theveloper.playpix.data.network.deezer.DeezerArtist
-import com.theveloper.playpix.data.network.deezer.DeezerSearchResponse
+import com.svara.music.data.database.MusicDao
+import com.svara.music.data.network.deezer.DeezerApiService
+import com.svara.music.data.network.deezer.DeezerArtist
+import com.svara.music.data.network.deezer.DeezerSearchResponse
 import io.mockk.coEvery
 import io.mockk.coJustRun
 import io.mockk.coVerify

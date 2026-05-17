@@ -1,12 +1,12 @@
-package com.theveloper.playpix.data.repository
+package com.svara.music.data.repository
 
-import com.theveloper.playpix.data.database.TransitionDao
-import com.theveloper.playpix.data.database.TransitionRuleEntity
-import com.theveloper.playpix.data.model.TransitionResolution
-import com.theveloper.playpix.data.model.TransitionRule
-import com.theveloper.playpix.data.model.TransitionSettings
-import com.theveloper.playpix.data.model.TransitionSource
-import com.theveloper.playpix.data.preferences.UserPreferencesRepository
+import com.svara.music.data.database.TransitionDao
+import com.svara.music.data.database.TransitionRuleEntity
+import com.svara.music.data.model.TransitionResolution
+import com.svara.music.data.model.TransitionRule
+import com.svara.music.data.model.TransitionSettings
+import com.svara.music.data.model.TransitionSource
+import com.svara.music.data.preferences.UserPreferencesRepository
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flatMapLatest

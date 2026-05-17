@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.database
+package com.svara.music.data.database
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

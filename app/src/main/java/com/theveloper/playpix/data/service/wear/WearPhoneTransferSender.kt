@@ -1,13 +1,13 @@
-package com.theveloper.playpix.data.service.wear
+package com.svara.music.data.service.wear
 
 import android.app.Application
 import com.google.android.gms.wearable.CapabilityClient
 import com.google.android.gms.wearable.MessageClient
 import com.google.android.gms.wearable.Wearable
-import com.theveloper.playpix.shared.WearCapabilities
-import com.theveloper.playpix.shared.WearDataPaths
-import com.theveloper.playpix.shared.WearTransferProgress
-import com.theveloper.playpix.shared.WearTransferRequest
+import com.svara.music.shared.WearCapabilities
+import com.svara.music.shared.WearDataPaths
+import com.svara.music.shared.WearTransferProgress
+import com.svara.music.shared.WearTransferRequest
 import kotlinx.coroutines.tasks.await
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -27,17 +27,17 @@ class WearPhoneTransferSender @Inject constructor(
     private val messageClient: MessageClient by lazy { Wearable.getMessageClient(application) }
     private val json = Json { ignoreUnknownKeys = true }
 
-    suspend fun isPlayPixWatchAvailable(): Boolean {
+    suspend fun isSvaraWatchAvailable(): Boolean {
         return runCatching {
             val capability = capabilityClient.getCapability(
-                WearCapabilities.PIXELPLAY_WEAR_APP,
+                WearCapabilities.SVARA_WEAR_APP,
                 CapabilityClient.FILTER_REACHABLE,
             ).await()
             transferStateStore.retainReachableWatchNodes(capability.nodes.map { it.id }.toSet())
             capability.nodes.isNotEmpty()
         }.getOrElse { error ->
             transferStateStore.retainReachableWatchNodes(emptySet())
-            Timber.tag(TAG).w(error, "Failed checking PlayPix Wear availability")
+            Timber.tag(TAG).w(error, "Failed checking Svara Wear availability")
             false
         }
     }
@@ -45,7 +45,7 @@ class WearPhoneTransferSender @Inject constructor(
     suspend fun refreshWatchLibraryState(): Result<Unit> {
         return runCatching {
             val capability = capabilityClient.getCapability(
-                WearCapabilities.PIXELPLAY_WEAR_APP,
+                WearCapabilities.SVARA_WEAR_APP,
                 CapabilityClient.FILTER_REACHABLE,
             ).await()
             val nodes = capability.nodes
@@ -68,14 +68,14 @@ class WearPhoneTransferSender @Inject constructor(
         var requestId: String? = null
         return runCatching {
             val capability = capabilityClient.getCapability(
-                WearCapabilities.PIXELPLAY_WEAR_APP,
+                WearCapabilities.SVARA_WEAR_APP,
                 CapabilityClient.FILTER_REACHABLE,
             ).await()
 
             val nodes = capability.nodes
             transferStateStore.retainReachableWatchNodes(nodes.map { it.id }.toSet())
             if (nodes.isEmpty()) {
-                error("No reachable watch with PlayPix")
+                error("No reachable watch with Svara")
             }
 
             val request = WearTransferRequest(
@@ -125,7 +125,7 @@ class WearPhoneTransferSender @Inject constructor(
 
         runCatching {
             val capability = capabilityClient.getCapability(
-                WearCapabilities.PIXELPLAY_WEAR_APP,
+                WearCapabilities.SVARA_WEAR_APP,
                 CapabilityClient.FILTER_REACHABLE,
             ).await()
 

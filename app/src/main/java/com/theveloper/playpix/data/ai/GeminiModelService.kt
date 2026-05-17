@@ -1,7 +1,7 @@
-package com.theveloper.playpix.data.ai
+package com.svara.music.data.ai
 
-import com.theveloper.playpix.data.repository.MusicRepository
-import com.theveloper.playpix.data.worker.AiWorkerManager
+import com.svara.music.data.repository.MusicRepository
+import com.svara.music.data.worker.AiWorkerManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import timber.log.Timber

@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.screens.search.components
+package com.svara.music.presentation.screens.search.components
 
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.ExperimentalTextApi
@@ -12,7 +12,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.sp
-import com.theveloper.playpix.R
+import com.svara.music.R
 import kotlin.math.absoluteValue
 import kotlin.math.roundToInt
 

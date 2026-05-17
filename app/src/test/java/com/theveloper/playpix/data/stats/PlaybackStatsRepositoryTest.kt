@@ -1,8 +1,8 @@
-package com.theveloper.playpix.data.stats
+package com.svara.music.data.stats
 
 import com.google.common.truth.Truth.assertThat
-import com.theveloper.playpix.data.model.ArtistRef
-import com.theveloper.playpix.data.model.Song
+import com.svara.music.data.model.ArtistRef
+import com.svara.music.data.model.Song
 import java.time.Instant
 import java.time.LocalDate
 import java.time.ZoneId

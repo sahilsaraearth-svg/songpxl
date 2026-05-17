@@ -1,7 +1,7 @@
-package com.theveloper.playpix.data.ai
+package com.svara.music.data.ai
 
 
-import com.theveloper.playpix.data.model.Song
+import com.svara.music.data.model.Song
 import kotlinx.serialization.SerializationException
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json

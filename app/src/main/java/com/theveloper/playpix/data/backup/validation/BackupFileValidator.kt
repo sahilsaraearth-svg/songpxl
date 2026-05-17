@@ -1,14 +1,14 @@
-package com.theveloper.playpix.data.backup.validation
+package com.svara.music.data.backup.validation
 
 import android.content.Context
 import android.net.Uri
 import androidx.documentfile.provider.DocumentFile
-import com.theveloper.playpix.data.backup.format.BackupReader
-import com.theveloper.playpix.data.backup.format.BackupFormatDetector
-import com.theveloper.playpix.data.backup.model.BackupManifest
-import com.theveloper.playpix.data.backup.model.BackupValidationResult
-import com.theveloper.playpix.data.backup.model.Severity
-import com.theveloper.playpix.data.backup.model.ValidationError
+import com.svara.music.data.backup.format.BackupReader
+import com.svara.music.data.backup.format.BackupFormatDetector
+import com.svara.music.data.backup.model.BackupManifest
+import com.svara.music.data.backup.model.BackupValidationResult
+import com.svara.music.data.backup.model.Severity
+import com.svara.music.data.backup.model.ValidationError
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.io.InputStream
 import java.util.zip.ZipInputStream
@@ -65,7 +65,7 @@ class BackupFileValidator @Inject constructor(
         }
 
         if (format == BackupFormatDetector.Format.UNKNOWN) {
-            errors.add(ValidationError("FORMAT_UNKNOWN", "File is not a recognized PlayPix backup format."))
+            errors.add(ValidationError("FORMAT_UNKNOWN", "File is not a recognized Svara backup format."))
             return BackupValidationResult.Invalid(errors)
         }
 

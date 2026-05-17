@@ -1,4 +1,4 @@
-package com.theveloper.playpix.utils
+package com.svara.music.utils
 
 import java.io.StringReader
 import javax.xml.XMLConstants

@@ -1,11 +1,11 @@
-package com.theveloper.playpix.presentation.telegram.auth
+package com.svara.music.presentation.telegram.auth
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.repository.MusicRepository
-import com.theveloper.playpix.data.telegram.TdlibRequestException
-import com.theveloper.playpix.data.telegram.TelegramRepository
+import com.svara.music.data.model.Song
+import com.svara.music.data.repository.MusicRepository
+import com.svara.music.data.telegram.TdlibRequestException
+import com.svara.music.data.telegram.TelegramRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.flow.MutableSharedFlow

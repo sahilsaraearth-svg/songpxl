@@ -1,6 +1,6 @@
-package com.theveloper.playpix.data.jellyfin.model
+package com.svara.music.data.jellyfin.model
 
-import com.theveloper.playpix.data.stream.CloudStreamSecurity
+import com.svara.music.data.stream.CloudStreamSecurity
 import okhttp3.HttpUrl
 import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
 

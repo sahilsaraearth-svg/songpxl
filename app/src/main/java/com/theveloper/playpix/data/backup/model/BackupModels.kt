@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.backup.model
+package com.svara.music.data.backup.model
 
 enum class BackupOperationType {
     EXPORT,

@@ -1,17 +1,17 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.theveloper.playpix.data.database.MusicDao
-import com.theveloper.playpix.data.database.toArtist
-import com.theveloper.playpix.data.model.Artist
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.service.wear.PhoneWatchTransferState
-import com.theveloper.playpix.data.service.wear.PhoneWatchTransferStateStore
-import com.theveloper.playpix.data.service.wear.WearPhoneTransferSender
-import com.theveloper.playpix.shared.WearTransferProgress
-import com.theveloper.playpix.utils.AudioMeta
-import com.theveloper.playpix.utils.AudioMetaUtils
+import com.svara.music.data.database.MusicDao
+import com.svara.music.data.database.toArtist
+import com.svara.music.data.model.Artist
+import com.svara.music.data.model.Song
+import com.svara.music.data.service.wear.PhoneWatchTransferState
+import com.svara.music.data.service.wear.PhoneWatchTransferStateStore
+import com.svara.music.data.service.wear.WearPhoneTransferSender
+import com.svara.music.shared.WearTransferProgress
+import com.svara.music.utils.AudioMeta
+import com.svara.music.utils.AudioMetaUtils
 import dagger.hilt.android.lifecycle.HiltViewModel
 import java.io.File
 import javax.inject.Inject
@@ -42,8 +42,8 @@ class SongInfoBottomSheetViewModel @Inject constructor(
     private val _audioMeta = MutableStateFlow<AudioMeta?>(null)
     private val _resolvedArtists = MutableStateFlow<List<Artist>>(emptyList())
     val resolvedArtists: StateFlow<List<Artist>> = _resolvedArtists.asStateFlow()
-    private val _isPlayPixWatchAvailable = MutableStateFlow(false)
-    val isPlayPixWatchAvailable: StateFlow<Boolean> = _isPlayPixWatchAvailable.asStateFlow()
+    private val _isSvaraWatchAvailable = MutableStateFlow(false)
+    val isSvaraWatchAvailable: StateFlow<Boolean> = _isSvaraWatchAvailable.asStateFlow()
     private val _isWatchAvailabilityResolved = MutableStateFlow(false)
     val isWatchAvailabilityResolved: StateFlow<Boolean> = _isWatchAvailabilityResolved.asStateFlow()
     private val _isRefreshingWatchAvailability = MutableStateFlow(false)
@@ -134,8 +134,8 @@ class SongInfoBottomSheetViewModel @Inject constructor(
 
         viewModelScope.launch {
             _isRefreshingWatchAvailability.value = true
-            val available = wearPhoneTransferSender.isPlayPixWatchAvailable()
-            _isPlayPixWatchAvailable.value = available
+            val available = wearPhoneTransferSender.isSvaraWatchAvailable()
+            _isSvaraWatchAvailable.value = available
             _isWatchAvailabilityResolved.value = true
             _isRefreshingWatchAvailability.value = false
             if (available) {
@@ -165,8 +165,8 @@ class SongInfoBottomSheetViewModel @Inject constructor(
                 onComplete("Only local songs can be sent to watch")
                 return@launch
             }
-            if (!_isPlayPixWatchAvailable.value) {
-                onComplete("No reachable watch with PlayPix")
+            if (!_isSvaraWatchAvailable.value) {
+                onComplete("No reachable watch with Svara")
                 refreshWatchAvailability()
                 return@launch
             }

@@ -1,7 +1,7 @@
-package com.theveloper.playpix.data.netease
+package com.svara.music.data.netease
 
-import com.theveloper.playpix.data.stream.CloudStreamProxy
-import com.theveloper.playpix.data.stream.CloudStreamSecurity
+import com.svara.music.data.stream.CloudStreamProxy
+import com.svara.music.data.stream.CloudStreamSecurity
 import okhttp3.OkHttpClient
 import javax.inject.Inject
 import javax.inject.Singleton

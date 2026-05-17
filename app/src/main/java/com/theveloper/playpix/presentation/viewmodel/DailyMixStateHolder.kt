@@ -1,9 +1,9 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
-import com.theveloper.playpix.data.DailyMixManager
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.preferences.UserPreferencesRepository
-import com.theveloper.playpix.data.streaming.StreamingRepository
+import com.svara.music.data.DailyMixManager
+import com.svara.music.data.model.Song
+import com.svara.music.data.preferences.UserPreferencesRepository
+import com.svara.music.data.streaming.StreamingRepository
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
 import kotlinx.collections.immutable.toImmutableList

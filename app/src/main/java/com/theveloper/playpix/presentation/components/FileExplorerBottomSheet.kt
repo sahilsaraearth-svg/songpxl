@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
 
-package com.theveloper.playpix.presentation.components
+package com.svara.music.presentation.components
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibility
@@ -83,14 +83,14 @@ import androidx.compose.ui.text.style.TextGeometricTransform
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.res.stringResource
-import com.theveloper.playpix.R
+import com.svara.music.R
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
-import com.theveloper.playpix.presentation.screens.TabAnimation
-import com.theveloper.playpix.presentation.viewmodel.DirectoryEntry
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
-import com.theveloper.playpix.utils.StorageInfo
+import com.svara.music.presentation.screens.TabAnimation
+import com.svara.music.presentation.viewmodel.DirectoryEntry
+import com.svara.music.ui.theme.GoogleSansRounded
+import com.svara.music.utils.StorageInfo
 import java.io.File
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
@@ -223,7 +223,7 @@ fun FileExplorerContent(
     }
     val loadingHint = remember(isPriming, isReady) {
         if (isPriming || !isReady) {
-            "This can take a moment while PlayPix scans the available subfolders."
+            "This can take a moment while Svara scans the available subfolders."
         } else {
             null
         }

@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.preferences
+package com.svara.music.data.preferences
 
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
@@ -7,7 +7,7 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
-import com.theveloper.playpix.data.ai.provider.AiProvider
+import com.svara.music.data.ai.provider.AiProvider
 import javax.inject.Inject
 import javax.inject.Singleton
 

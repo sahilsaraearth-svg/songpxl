@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.service.player
+package com.svara.music.data.service.player
 
 import androidx.annotation.OptIn
 import androidx.media3.common.C
@@ -6,11 +6,11 @@ import androidx.media3.common.MediaItem
 import androidx.media3.common.Player
 import androidx.media3.common.Timeline
 import androidx.media3.common.util.UnstableApi
-import com.theveloper.playpix.data.model.TransitionMode
-import com.theveloper.playpix.data.model.TransitionResolution
-import com.theveloper.playpix.data.model.TransitionSource
-import com.theveloper.playpix.data.preferences.UserPreferencesRepository
-import com.theveloper.playpix.data.repository.TransitionRepository
+import com.svara.music.data.model.TransitionMode
+import com.svara.music.data.model.TransitionResolution
+import com.svara.music.data.model.TransitionSource
+import com.svara.music.data.preferences.UserPreferencesRepository
+import com.svara.music.data.repository.TransitionRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

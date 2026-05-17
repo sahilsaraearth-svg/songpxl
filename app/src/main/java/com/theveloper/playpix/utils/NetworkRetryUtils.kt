@@ -1,4 +1,4 @@
-package com.theveloper.playpix.utils
+package com.svara.music.utils
 
 import kotlinx.coroutines.delay
 import retrofit2.HttpException

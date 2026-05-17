@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components.subcomps
+package com.svara.music.presentation.components.subcomps
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -33,8 +33,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.theveloper.playpix.presentation.components.WavySliderExpressive
-import com.theveloper.playpix.utils.formatDuration
+import com.svara.music.presentation.components.WavySliderExpressive
+import com.svara.music.utils.formatDuration
 import kotlin.math.roundToLong
 
 @Composable

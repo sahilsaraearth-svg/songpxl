@@ -1,4 +1,4 @@
-package com.theveloper.playpix.utils
+package com.svara.music.utils
 
 import android.provider.MediaStore
 import org.junit.jupiter.api.Assertions.assertArrayEquals

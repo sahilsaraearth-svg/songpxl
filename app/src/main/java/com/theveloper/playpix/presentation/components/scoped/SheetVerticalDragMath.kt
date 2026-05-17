@@ -1,8 +1,8 @@
-package com.theveloper.playpix.presentation.components.scoped
+package com.svara.music.presentation.components.scoped
 
 import androidx.compose.animation.core.Spring
 import androidx.compose.ui.util.lerp
-import com.theveloper.playpix.presentation.viewmodel.PlayerSheetState
+import com.svara.music.presentation.viewmodel.PlayerSheetState
 import kotlin.math.abs
 
 internal data class SheetVerticalDragFrame(

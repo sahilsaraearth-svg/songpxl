@@ -1,8 +1,8 @@
-package com.theveloper.playpix.presentation.model
+package com.svara.music.presentation.model
 
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.stats.PlaybackStatsRepository
-import com.theveloper.playpix.data.stats.StatsTimeRange
+import com.svara.music.data.model.Song
+import com.svara.music.data.stats.PlaybackStatsRepository
+import com.svara.music.data.stats.StatsTimeRange
 import java.time.ZoneId
 import java.time.temporal.TemporalAdjusters
 

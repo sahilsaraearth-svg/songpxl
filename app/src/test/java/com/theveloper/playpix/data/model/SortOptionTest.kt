@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.model
+package com.svara.music.data.model
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test

@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.netease.dashboard
+package com.svara.music.presentation.netease.dashboard
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.Spring
@@ -30,13 +30,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import com.theveloper.playpix.data.database.NeteasePlaylistEntity
-import com.theveloper.playpix.presentation.components.SmartImage
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
+import com.svara.music.data.database.NeteasePlaylistEntity
+import com.svara.music.presentation.components.SmartImage
+import com.svara.music.ui.theme.GoogleSansRounded
 import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.compose.ui.res.stringResource
-import com.theveloper.playpix.R
+import com.svara.music.R
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
 @Composable

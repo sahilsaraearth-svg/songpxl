@@ -1,9 +1,9 @@
-package com.theveloper.playpix.utils
+package com.svara.music.utils
 
 import android.net.Uri
 
 object LocalArtworkUri {
-    const val SCHEME = "playpix_local_art"
+    const val SCHEME = "svara_local_art"
     private const val HOST_SONG = "song"
     private const val CACHE_BUST_QUERY = "t"
 

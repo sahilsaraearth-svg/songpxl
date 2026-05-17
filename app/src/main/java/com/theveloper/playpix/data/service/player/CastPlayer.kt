@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.service.player
+package com.svara.music.data.service.player
 
 import android.content.ContentResolver
 import android.media.MediaCodecList
@@ -21,8 +21,8 @@ import com.google.android.gms.cast.framework.CastSession
 import com.google.android.gms.cast.framework.media.RemoteMediaClient
 import com.google.android.gms.common.api.PendingResult
 import com.google.android.gms.common.images.WebImage
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.service.http.CastSessionSecurity
+import com.svara.music.data.model.Song
+import com.svara.music.data.service.http.CastSessionSecurity
 import org.json.JSONObject
 import timber.log.Timber
 import java.util.Locale

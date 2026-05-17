@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.media
+package com.svara.music.data.media
 
 import android.os.ParcelFileDescriptor
 import com.kyant.taglib.TagLib

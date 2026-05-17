@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.screens
+package com.svara.music.presentation.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -39,21 +39,21 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.media3.common.util.UnstableApi
-import com.theveloper.playpix.data.model.LibraryTabId
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.model.StorageFilter
-import com.theveloper.playpix.data.model.SortOption
-import com.theveloper.playpix.presentation.components.MiniPlayerHeight
-import com.theveloper.playpix.presentation.viewmodel.PlayerViewModel
-import com.theveloper.playpix.presentation.components.subcomps.EnhancedSongListItem
+import com.svara.music.data.model.LibraryTabId
+import com.svara.music.data.model.Song
+import com.svara.music.data.model.StorageFilter
+import com.svara.music.data.model.SortOption
+import com.svara.music.presentation.components.MiniPlayerHeight
+import com.svara.music.presentation.viewmodel.PlayerViewModel
+import com.svara.music.presentation.components.subcomps.EnhancedSongListItem
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.LoadState
-import com.theveloper.playpix.R
-import com.theveloper.playpix.presentation.components.ExpressiveScrollBar
-import com.theveloper.playpix.presentation.components.songFastScrollLabel
+import com.svara.music.R
+import com.svara.music.presentation.components.ExpressiveScrollBar
+import com.svara.music.presentation.components.songFastScrollLabel
 import androidx.compose.ui.text.style.TextOverflow
 
 

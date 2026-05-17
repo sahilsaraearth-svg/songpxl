@@ -1,10 +1,10 @@
-package com.theveloper.playpix.utils
+package com.svara.music.utils
 
 import android.media.MediaExtractor
 import android.media.MediaFormat
 import android.media.MediaMetadataRetriever
 import android.util.Log
-import com.theveloper.playpix.data.database.MusicDao
+import com.svara.music.data.database.MusicDao
 import java.io.File
 import java.util.Locale
 

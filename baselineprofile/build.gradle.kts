@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.theveloper.playpix.baselineprofile"
+    namespace = "com.svara.music.baselineprofile"
     compileSdk = 37
 
     compileOptions {

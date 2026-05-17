@@ -1,15 +1,15 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
 import androidx.compose.runtime.Immutable
-import com.theveloper.playpix.data.model.Album
-import com.theveloper.playpix.data.model.Artist
-import com.theveloper.playpix.data.model.FolderSource
-import com.theveloper.playpix.data.model.MusicFolder
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.model.SearchResultItem
-import com.theveloper.playpix.data.model.SortOption
-import com.theveloper.playpix.data.model.SearchFilterType
-import com.theveloper.playpix.data.model.SearchHistoryItem
+import com.svara.music.data.model.Album
+import com.svara.music.data.model.Artist
+import com.svara.music.data.model.FolderSource
+import com.svara.music.data.model.MusicFolder
+import com.svara.music.data.model.Song
+import com.svara.music.data.model.SearchResultItem
+import com.svara.music.data.model.SortOption
+import com.svara.music.data.model.SearchFilterType
+import com.svara.music.data.model.SearchHistoryItem
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
 
@@ -56,7 +56,7 @@ data class PlayerUiState(
     val searchQuery: String = "",
     val isSyncingLibrary: Boolean = false,
     val selectedSearchFilter: SearchFilterType = SearchFilterType.ALL,
-    val currentStorageFilter: com.theveloper.playpix.data.model.StorageFilter = com.theveloper.playpix.data.model.StorageFilter.ALL,
+    val currentStorageFilter: com.svara.music.data.model.StorageFilter = com.svara.music.data.model.StorageFilter.ALL,
     val hideLocalMedia: Boolean = false,
     val showQueueItemUndoBar: Boolean = false,
     val lastRemovedQueueSong: Song? = null,

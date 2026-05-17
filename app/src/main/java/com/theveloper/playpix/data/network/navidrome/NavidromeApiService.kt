@@ -1,6 +1,6 @@
-package com.theveloper.playpix.data.network.navidrome
+package com.svara.music.data.network.navidrome
 
-import com.theveloper.playpix.data.navidrome.model.NavidromeCredentials
+import com.svara.music.data.navidrome.model.NavidromeCredentials
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.HttpUrl.Companion.toHttpUrl
@@ -33,7 +33,7 @@ class NavidromeApiService @Inject constructor(
     companion object {
         private const val TAG = "NavidromeApi"
         private const val API_VERSION = "1.16.1"
-        private const val DEFAULT_CLIENT_ID = "PlayPix"
+        private const val DEFAULT_CLIENT_ID = "Svara"
         private const val DEFAULT_FORMAT = "json"
     }
 
@@ -140,7 +140,7 @@ class NavidromeApiService @Inject constructor(
                 val request = Request.Builder()
                     .url(url)
                     .header("Accept", "application/json")
-                    .header("User-Agent", "PlayPix/${API_VERSION}")
+                    .header("User-Agent", "Svara/${API_VERSION}")
                     .get()
                     .build()
 

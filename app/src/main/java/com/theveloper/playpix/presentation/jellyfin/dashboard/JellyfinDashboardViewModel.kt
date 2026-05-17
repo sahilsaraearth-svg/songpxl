@@ -1,10 +1,10 @@
-package com.theveloper.playpix.presentation.jellyfin.dashboard
+package com.svara.music.presentation.jellyfin.dashboard
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.theveloper.playpix.data.database.JellyfinPlaylistEntity
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.jellyfin.JellyfinRepository
+import com.svara.music.data.database.JellyfinPlaylistEntity
+import com.svara.music.data.model.Song
+import com.svara.music.data.jellyfin.JellyfinRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted

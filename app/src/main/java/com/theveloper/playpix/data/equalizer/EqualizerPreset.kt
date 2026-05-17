@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.equalizer
+package com.svara.music.data.equalizer
 
 import androidx.compose.runtime.Immutable
 import kotlinx.serialization.Serializable

@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.worker
+package com.svara.music.data.worker
 
 import android.content.Context
 import android.util.Log
@@ -6,7 +6,7 @@ import androidx.work.ExistingWorkPolicy
 import androidx.work.WorkInfo
 import androidx.work.WorkManager
 import androidx.work.OneTimeWorkRequest
-import com.theveloper.playpix.data.preferences.UserPreferencesRepository
+import com.svara.music.data.preferences.UserPreferencesRepository
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -17,7 +17,7 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.shareIn
 import kotlinx.coroutines.launch
-import com.theveloper.playpix.data.observer.MediaStoreObserver
+import com.svara.music.data.observer.MediaStoreObserver
 import javax.inject.Inject
 import javax.inject.Singleton
 

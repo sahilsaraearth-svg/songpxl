@@ -1,24 +1,24 @@
-package com.theveloper.playpix.data.backup
+package com.svara.music.data.backup
 
 import android.content.Context
 import android.net.Uri
 import android.os.Build
-import com.theveloper.playpix.data.backup.format.BackupReader
-import com.theveloper.playpix.data.backup.format.BackupWriter
-import com.theveloper.playpix.data.backup.history.BackupHistoryRepository
-import com.theveloper.playpix.data.backup.model.BackupHistoryEntry
-import com.theveloper.playpix.data.backup.model.BackupManifest
-import com.theveloper.playpix.data.backup.model.BackupOperationType
-import com.theveloper.playpix.data.backup.model.BackupSection
-import com.theveloper.playpix.data.backup.model.BackupTransferProgressUpdate
-import com.theveloper.playpix.data.backup.model.BackupValidationResult
-import com.theveloper.playpix.data.backup.model.DeviceInfo
-import com.theveloper.playpix.data.backup.model.RestorePlan
-import com.theveloper.playpix.data.backup.model.RestoreResult
-import com.theveloper.playpix.data.backup.module.BackupModuleHandler
-import com.theveloper.playpix.data.backup.restore.RestoreExecutor
-import com.theveloper.playpix.data.backup.restore.RestorePlanner
-import com.theveloper.playpix.data.backup.validation.ValidationPipeline
+import com.svara.music.data.backup.format.BackupReader
+import com.svara.music.data.backup.format.BackupWriter
+import com.svara.music.data.backup.history.BackupHistoryRepository
+import com.svara.music.data.backup.model.BackupHistoryEntry
+import com.svara.music.data.backup.model.BackupManifest
+import com.svara.music.data.backup.model.BackupOperationType
+import com.svara.music.data.backup.model.BackupSection
+import com.svara.music.data.backup.model.BackupTransferProgressUpdate
+import com.svara.music.data.backup.model.BackupValidationResult
+import com.svara.music.data.backup.model.DeviceInfo
+import com.svara.music.data.backup.model.RestorePlan
+import com.svara.music.data.backup.model.RestoreResult
+import com.svara.music.data.backup.module.BackupModuleHandler
+import com.svara.music.data.backup.restore.RestoreExecutor
+import com.svara.music.data.backup.restore.RestorePlanner
+import com.svara.music.data.backup.validation.ValidationPipeline
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -91,7 +91,7 @@ class BackupManager @Inject constructor(
             backupWriter.write(uri, manifest, modulePayloads).getOrThrow()
 
             reportProgress(onProgress, BackupOperationType.EXPORT, ++step, totalSteps,
-                "Backup complete", "Your PlayPix backup was created successfully.")
+                "Backup complete", "Your Svara backup was created successfully.")
         }
     }
 

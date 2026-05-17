@@ -1,4 +1,4 @@
-package com.theveloper.playpix.baselineprofile
+package com.svara.music.baselineprofile
 
 import android.content.Intent
 import android.view.KeyEvent
@@ -378,12 +378,12 @@ class PlayerSheetAnimationBenchmarks {
         private var libraryRebuiltForThisRun = false
         private const val BENCHMARK_REBUILD_DATABASE_EXTRA = "benchmark_rebuild_database"
 
-        private val SHEET_COLLAPSED_PATTERN = pattern("PlayPix player sheet collapsed")
+        private val SHEET_COLLAPSED_PATTERN = pattern("Svara player sheet collapsed")
         private val SHEET_EXPANDED_PATTERN = pattern(
-            "PlayPix player sheet expanded|Collapse player|Contraer reproductor|Now Playing|Reproduciendo"
+            "Svara player sheet expanded|Collapse player|Contraer reproductor|Now Playing|Reproduciendo"
         )
         private val COLLAPSED_PLAYER_ANCHOR_PATTERN = pattern(
-            "PlayPix player sheet collapsed|Album art of|Car[aá]tula de|Anterior|Pausar|Reproducir|Siguiente"
+            "Svara player sheet collapsed|Album art of|Car[aá]tula de|Anterior|Pausar|Reproducir|Siguiente"
         )
         private val HOME_TAB_PATTERN = pattern("Home|Inicio")
         private val BACK_PATTERN = exactPattern("Back|Atr[aá]s")

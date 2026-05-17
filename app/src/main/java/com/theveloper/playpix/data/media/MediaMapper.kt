@@ -1,10 +1,10 @@
-package com.theveloper.playpix.data.media
+package com.svara.music.data.media
 
 import android.content.Context
 import androidx.media3.common.MediaItem
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.utils.MediaItemBuilder
+import com.svara.music.R
+import com.svara.music.data.model.Song
+import com.svara.music.utils.MediaItemBuilder
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 import javax.inject.Singleton

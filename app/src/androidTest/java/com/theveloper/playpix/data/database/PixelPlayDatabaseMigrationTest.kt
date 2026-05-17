@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.database
+package com.svara.music.data.database
 
 import androidx.room.testing.MigrationTestHelper
 import androidx.sqlite.db.SupportSQLiteDatabase
@@ -14,12 +14,12 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
-class PlayPixDatabaseMigrationTest {
+class SvaraDatabaseMigrationTest {
 
     @get:Rule
     val helper = MigrationTestHelper(
         InstrumentationRegistry.getInstrumentation(),
-        PlayPixDatabase::class.java,
+        SvaraDatabase::class.java,
         emptyList(),
         FrameworkSQLiteOpenHelperFactory()
     )
@@ -43,7 +43,7 @@ class PlayPixDatabaseMigrationTest {
 
             helper.runMigrationsAndValidate(
                 databaseNameFor(startVersion),
-                PlayPixDatabaseVersion.LATEST,
+                SvaraDatabaseVersion.LATEST,
                 true,
                 *ALL_MIGRATIONS
             ).close()
@@ -58,7 +58,7 @@ class PlayPixDatabaseMigrationTest {
             DB_NAME_33_TO_34,
             34,
             true,
-            PlayPixDatabase.MIGRATION_33_34
+            SvaraDatabase.MIGRATION_33_34
         ).let { db ->
             val cursor = db.query("PRAGMA table_info(`songs`)")
             try {
@@ -90,7 +90,7 @@ class PlayPixDatabaseMigrationTest {
         val db = openHelper.writableDatabase
 
         try {
-            PlayPixDatabase.MIGRATION_23_24.migrate(db)
+            SvaraDatabase.MIGRATION_23_24.migrate(db)
 
             val columns = db.tableColumns("songs")
             assertTrue("date_added" in columns)
@@ -120,7 +120,7 @@ class PlayPixDatabaseMigrationTest {
             DB_NAME_35_TO_36,
             36,
             true,
-            PlayPixDatabase.MIGRATION_35_36
+            SvaraDatabase.MIGRATION_35_36
         ).let { db ->
             val cursor = db.query("SELECT name FROM sqlite_master WHERE type = 'table' AND name = 'songs_fts'")
             try {
@@ -141,7 +141,7 @@ class PlayPixDatabaseMigrationTest {
             DB_NAME_39_TO_40,
             40,
             true,
-            PlayPixDatabase.MIGRATION_39_40
+            SvaraDatabase.MIGRATION_39_40
         ).let { db ->
             try {
                 val indexes = db.tableIndexes("songs")
@@ -303,7 +303,7 @@ class PlayPixDatabaseMigrationTest {
         return indexes
     }
 
-    private object PlayPixDatabaseVersion {
+    private object SvaraDatabaseVersion {
         const val LATEST = 40
     }
 
@@ -314,21 +314,21 @@ class PlayPixDatabaseMigrationTest {
         private const val DB_NAME_39_TO_40 = "migration-test-39-to-40"
 
         private val ALL_MIGRATIONS = arrayOf(
-            PlayPixDatabase.MIGRATION_25_26,
-            PlayPixDatabase.MIGRATION_26_27,
-            PlayPixDatabase.MIGRATION_27_28,
-            PlayPixDatabase.MIGRATION_28_29,
-            PlayPixDatabase.MIGRATION_29_30,
-            PlayPixDatabase.MIGRATION_30_31,
-            PlayPixDatabase.MIGRATION_31_32,
-            PlayPixDatabase.MIGRATION_32_33,
-            PlayPixDatabase.MIGRATION_33_34,
-            PlayPixDatabase.MIGRATION_34_35,
-            PlayPixDatabase.MIGRATION_35_36,
-            PlayPixDatabase.MIGRATION_36_37,
-            PlayPixDatabase.MIGRATION_37_38,
-            PlayPixDatabase.MIGRATION_38_39,
-            PlayPixDatabase.MIGRATION_39_40
+            SvaraDatabase.MIGRATION_25_26,
+            SvaraDatabase.MIGRATION_26_27,
+            SvaraDatabase.MIGRATION_27_28,
+            SvaraDatabase.MIGRATION_28_29,
+            SvaraDatabase.MIGRATION_29_30,
+            SvaraDatabase.MIGRATION_30_31,
+            SvaraDatabase.MIGRATION_31_32,
+            SvaraDatabase.MIGRATION_32_33,
+            SvaraDatabase.MIGRATION_33_34,
+            SvaraDatabase.MIGRATION_34_35,
+            SvaraDatabase.MIGRATION_35_36,
+            SvaraDatabase.MIGRATION_36_37,
+            SvaraDatabase.MIGRATION_37_38,
+            SvaraDatabase.MIGRATION_38_39,
+            SvaraDatabase.MIGRATION_39_40
         )
     }
 }

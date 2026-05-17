@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components.subcomps
+package com.svara.music.presentation.components.subcomps
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibility
@@ -72,9 +72,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.model.MusicFolder
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
+import com.svara.music.R
+import com.svara.music.data.model.MusicFolder
+import com.svara.music.ui.theme.GoogleSansRounded
 import java.io.File
 import androidx.compose.ui.res.stringResource
 
@@ -103,7 +103,7 @@ fun LibraryActionRow(
     isShuffleEnabled: Boolean = false,
     // Storage Filter
     showStorageFilterButton: Boolean = false,
-    currentStorageFilter: com.theveloper.playpix.data.model.StorageFilter = com.theveloper.playpix.data.model.StorageFilter.ALL,
+    currentStorageFilter: com.svara.music.data.model.StorageFilter = com.svara.music.data.model.StorageFilter.ALL,
     onStorageFilterClick: () -> Unit = {}
 ) {
     val shouldShowImport = isPlaylistTab && showImportButton
@@ -340,14 +340,14 @@ fun LibraryActionRow(
                     exit = slideOutHorizontally(targetOffsetX = { it / 2 }) + fadeOut()
                 ) {
                      val finalIcon = when(currentStorageFilter) {
-                         com.theveloper.playpix.data.model.StorageFilter.ALL -> Icons.Rounded.Dataset
-                         com.theveloper.playpix.data.model.StorageFilter.ONLINE -> Icons.Rounded.Cloud
-                         com.theveloper.playpix.data.model.StorageFilter.OFFLINE -> Icons.Rounded.PhoneAndroid
+                         com.svara.music.data.model.StorageFilter.ALL -> Icons.Rounded.Dataset
+                         com.svara.music.data.model.StorageFilter.ONLINE -> Icons.Rounded.Cloud
+                         com.svara.music.data.model.StorageFilter.OFFLINE -> Icons.Rounded.PhoneAndroid
                      }
                      val tooltipText = when(currentStorageFilter) {
-                         com.theveloper.playpix.data.model.StorageFilter.ALL -> stringResource(R.string.library_storage_filter_all_songs)
-                         com.theveloper.playpix.data.model.StorageFilter.ONLINE -> stringResource(R.string.library_storage_filter_online)
-                         com.theveloper.playpix.data.model.StorageFilter.OFFLINE -> stringResource(R.string.library_storage_filter_offline)
+                         com.svara.music.data.model.StorageFilter.ALL -> stringResource(R.string.library_storage_filter_all_songs)
+                         com.svara.music.data.model.StorageFilter.ONLINE -> stringResource(R.string.library_storage_filter_online)
+                         com.svara.music.data.model.StorageFilter.OFFLINE -> stringResource(R.string.library_storage_filter_offline)
                      }
                      val tooltipState = rememberTooltipState()
 

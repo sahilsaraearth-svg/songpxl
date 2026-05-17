@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.theveloper.playpix.shared"
+    namespace = "com.svara.music.shared"
     compileSdk = 37
 
     defaultConfig {

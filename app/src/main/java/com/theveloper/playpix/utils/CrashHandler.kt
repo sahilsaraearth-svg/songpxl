@@ -1,4 +1,4 @@
-package com.theveloper.playpix.utils
+package com.svara.music.utils
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -23,7 +23,7 @@ data class CrashLogData(
      */
     fun getFullLog(): String {
         return buildString {
-            appendLine("=== PlayPix Crash Report ===")
+            appendLine("=== Svara Crash Report ===")
             appendLine("Date: $formattedDate")
             appendLine("Exception: $exceptionMessage")
             appendLine()
@@ -110,7 +110,7 @@ object CrashHandler : Thread.UncaughtExceptionHandler {
         val timestamp = dateFormat.format(Date())
         val stackTrace = getStackTraceString(throwable)
         val content = buildString {
-            appendLine("=== PlayPix Crash Report ===")
+            appendLine("=== Svara Crash Report ===")
             appendLine("Time: $timestamp")
             appendLine("Thread: ${Thread.currentThread().name}")
             appendLine("Exception: ${throwable.javaClass.name}: ${throwable.message}")

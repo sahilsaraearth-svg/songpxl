@@ -30,7 +30,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "PlayPix"
+rootProject.name = "Svara"
 include(":app")
 include(":shared")
 include(":wear")

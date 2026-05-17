@@ -1,8 +1,8 @@
-package com.theveloper.playpix.data.repository
+package com.svara.music.data.repository
 
-import com.theveloper.playpix.data.model.TransitionResolution
-import com.theveloper.playpix.data.model.TransitionRule
-import com.theveloper.playpix.data.model.TransitionSettings
+import com.svara.music.data.model.TransitionResolution
+import com.svara.music.data.model.TransitionRule
+import com.svara.music.data.model.TransitionSettings
 import kotlinx.coroutines.flow.Flow
 
 /**

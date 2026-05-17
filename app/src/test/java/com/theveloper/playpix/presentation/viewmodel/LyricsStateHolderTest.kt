@@ -1,11 +1,11 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
 import com.google.common.truth.Truth.assertThat
-import com.theveloper.playpix.data.media.SongMetadataEditor
-import com.theveloper.playpix.data.model.Lyrics
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.preferences.UserPreferencesRepository
-import com.theveloper.playpix.data.repository.MusicRepository
+import com.svara.music.data.media.SongMetadataEditor
+import com.svara.music.data.model.Lyrics
+import com.svara.music.data.model.Song
+import com.svara.music.data.preferences.UserPreferencesRepository
+import com.svara.music.data.repository.MusicRepository
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk
@@ -69,7 +69,7 @@ class LyricsStateHolderTest {
         holder.fetchLyricsForSong(
             song = song,
             forcePickResults = false,
-            sourcePreference = com.theveloper.playpix.data.model.LyricsSourcePreference.API_FIRST
+            sourcePreference = com.svara.music.data.model.LyricsSourcePreference.API_FIRST
         ) { "Lyrics already available" }
         scope.advanceUntilIdle()
 

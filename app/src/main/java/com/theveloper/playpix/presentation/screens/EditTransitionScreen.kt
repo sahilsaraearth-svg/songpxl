@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.screens
+package com.svara.music.presentation.screens
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.animateDpAsState
@@ -77,11 +77,11 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.model.Curve
-import com.theveloper.playpix.data.model.TransitionMode
-import com.theveloper.playpix.data.model.TransitionSettings
-import com.theveloper.playpix.presentation.viewmodel.TransitionViewModel
+import com.svara.music.R
+import com.svara.music.data.model.Curve
+import com.svara.music.data.model.TransitionMode
+import com.svara.music.data.model.TransitionSettings
+import com.svara.music.presentation.viewmodel.TransitionViewModel
 import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape
 import java.util.concurrent.TimeUnit
 import androidx.compose.ui.res.stringResource

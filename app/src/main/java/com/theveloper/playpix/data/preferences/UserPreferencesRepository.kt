@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.preferences
+package com.svara.music.data.preferences
 
 import android.content.Context
 import androidx.datastore.core.DataStore
@@ -12,14 +12,14 @@ import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.core.stringSetPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.media3.common.Player
-import com.theveloper.playpix.data.model.PlaybackQueueSnapshot
-import com.theveloper.playpix.data.model.Playlist
-import com.theveloper.playpix.data.model.SortOption // Added import
-import com.theveloper.playpix.data.model.FolderSource
-import com.theveloper.playpix.data.model.LyricsSourcePreference
-import com.theveloper.playpix.data.model.TransitionSettings
-import com.theveloper.playpix.data.equalizer.EqualizerPreset // Added import
-import com.theveloper.playpix.data.model.StorageFilter
+import com.svara.music.data.model.PlaybackQueueSnapshot
+import com.svara.music.data.model.Playlist
+import com.svara.music.data.model.SortOption // Added import
+import com.svara.music.data.model.FolderSource
+import com.svara.music.data.model.LyricsSourcePreference
+import com.svara.music.data.model.TransitionSettings
+import com.svara.music.data.equalizer.EqualizerPreset // Added import
+import com.svara.music.data.model.StorageFilter
 import javax.inject.Inject
 import javax.inject.Singleton
 import kotlin.text.get

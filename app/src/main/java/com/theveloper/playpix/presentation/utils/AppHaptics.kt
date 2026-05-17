@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.utils
+package com.svara.music.presentation.utils
 
 import android.view.View
 import androidx.compose.runtime.Immutable

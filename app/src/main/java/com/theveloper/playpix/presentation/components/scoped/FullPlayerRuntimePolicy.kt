@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components.scoped
+package com.svara.music.presentation.components.scoped
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.AnimationVector1D
@@ -6,7 +6,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
-import com.theveloper.playpix.presentation.viewmodel.PlayerSheetState
+import com.svara.music.presentation.viewmodel.PlayerSheetState
 
 internal data class FullPlayerRuntimePolicy(
     val allowRealtimeUpdates: Boolean

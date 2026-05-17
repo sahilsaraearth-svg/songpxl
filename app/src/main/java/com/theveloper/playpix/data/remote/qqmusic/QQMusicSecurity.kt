@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.remote.qqmusic
+package com.svara.music.data.remote.qqmusic
 
 import android.util.Base64
 import java.nio.ByteBuffer

@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -8,7 +8,7 @@ import android.media.MediaMetadataRetriever
 import android.util.Log
 import androidx.compose.animation.core.Animatable
 import androidx.core.content.ContextCompat
-import com.theveloper.playpix.data.model.LibraryTabId
+import com.svara.music.data.model.LibraryTabId
 import androidx.core.net.toUri
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -38,50 +38,50 @@ import com.google.android.gms.cast.framework.media.RemoteMediaClient
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.common.util.concurrent.Futures
 import com.google.common.util.concurrent.ListenableFuture
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.EotStateHolder
-import com.theveloper.playpix.data.ai.SongMetadata
-import com.theveloper.playpix.data.database.AlbumArtThemeDao
-import com.theveloper.playpix.data.media.CoverArtUpdate
-import com.theveloper.playpix.data.model.Album
-import com.theveloper.playpix.data.model.Artist
-import com.theveloper.playpix.data.model.FolderSource
-import com.theveloper.playpix.data.model.Genre
-import com.theveloper.playpix.data.model.Lyrics
-import com.theveloper.playpix.data.model.LyricsSourcePreference
-import com.theveloper.playpix.data.model.SearchFilterType
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.model.SortOption
-import com.theveloper.playpix.data.model.toLibraryTabIdOrNull
-import com.theveloper.playpix.data.provider.SharedArtworkContentProvider
-import com.theveloper.playpix.data.preferences.CarouselStyle
-import com.theveloper.playpix.data.preferences.LibraryNavigationMode
-import com.theveloper.playpix.data.preferences.NavBarStyle
-import com.theveloper.playpix.data.preferences.FullPlayerLoadingTweaks
-import com.theveloper.playpix.data.preferences.AiPreferencesRepository
-import com.theveloper.playpix.data.preferences.AlbumArtPaletteStyle
-import com.theveloper.playpix.data.preferences.ThemePreferencesRepository
-import com.theveloper.playpix.data.preferences.UserPreferencesRepository
-import com.theveloper.playpix.data.preferences.AlbumArtQuality
-import com.theveloper.playpix.data.preferences.ThemePreference
-import com.theveloper.playpix.data.repository.LyricsSearchResult
-import com.theveloper.playpix.data.repository.MusicRepository
-import com.theveloper.playpix.data.streaming.StreamingRepository
-import com.theveloper.playpix.data.service.MusicNotificationProvider
-import com.theveloper.playpix.data.service.MusicService
-import com.theveloper.playpix.data.service.player.CastPlayer
-import com.theveloper.playpix.data.service.http.MediaFileHttpServerService
-import com.theveloper.playpix.data.service.player.DualPlayerEngine
-import com.theveloper.playpix.data.worker.SyncManager
-import com.theveloper.playpix.utils.AppShortcutManager
-import com.theveloper.playpix.utils.ValidatedLyricsImport
-import com.theveloper.playpix.utils.QueueUtils
-import com.theveloper.playpix.utils.MediaItemBuilder
-import com.theveloper.playpix.utils.LocalArtworkUri
-import com.theveloper.playpix.utils.LyricsUtils
-import com.theveloper.playpix.utils.StorageType
-import com.theveloper.playpix.utils.StorageUtils
-import com.theveloper.playpix.utils.ZipShareHelper
+import com.svara.music.R
+import com.svara.music.data.EotStateHolder
+import com.svara.music.data.ai.SongMetadata
+import com.svara.music.data.database.AlbumArtThemeDao
+import com.svara.music.data.media.CoverArtUpdate
+import com.svara.music.data.model.Album
+import com.svara.music.data.model.Artist
+import com.svara.music.data.model.FolderSource
+import com.svara.music.data.model.Genre
+import com.svara.music.data.model.Lyrics
+import com.svara.music.data.model.LyricsSourcePreference
+import com.svara.music.data.model.SearchFilterType
+import com.svara.music.data.model.Song
+import com.svara.music.data.model.SortOption
+import com.svara.music.data.model.toLibraryTabIdOrNull
+import com.svara.music.data.provider.SharedArtworkContentProvider
+import com.svara.music.data.preferences.CarouselStyle
+import com.svara.music.data.preferences.LibraryNavigationMode
+import com.svara.music.data.preferences.NavBarStyle
+import com.svara.music.data.preferences.FullPlayerLoadingTweaks
+import com.svara.music.data.preferences.AiPreferencesRepository
+import com.svara.music.data.preferences.AlbumArtPaletteStyle
+import com.svara.music.data.preferences.ThemePreferencesRepository
+import com.svara.music.data.preferences.UserPreferencesRepository
+import com.svara.music.data.preferences.AlbumArtQuality
+import com.svara.music.data.preferences.ThemePreference
+import com.svara.music.data.repository.LyricsSearchResult
+import com.svara.music.data.repository.MusicRepository
+import com.svara.music.data.streaming.StreamingRepository
+import com.svara.music.data.service.MusicNotificationProvider
+import com.svara.music.data.service.MusicService
+import com.svara.music.data.service.player.CastPlayer
+import com.svara.music.data.service.http.MediaFileHttpServerService
+import com.svara.music.data.service.player.DualPlayerEngine
+import com.svara.music.data.worker.SyncManager
+import com.svara.music.utils.AppShortcutManager
+import com.svara.music.utils.ValidatedLyricsImport
+import com.svara.music.utils.QueueUtils
+import com.svara.music.utils.MediaItemBuilder
+import com.svara.music.utils.LocalArtworkUri
+import com.svara.music.utils.LyricsUtils
+import com.svara.music.utils.StorageType
+import com.svara.music.utils.StorageUtils
+import com.svara.music.utils.ZipShareHelper
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.collections.immutable.ImmutableList
@@ -226,7 +226,7 @@ class PlayerViewModel @Inject constructor(
 
     private val dualPlayerEngine: DualPlayerEngine,
     private val appShortcutManager: AppShortcutManager,
-    private val telegramCacheManagerProvider: Lazy<com.theveloper.playpix.data.telegram.TelegramCacheManager>,
+    private val telegramCacheManagerProvider: Lazy<com.svara.music.data.telegram.TelegramCacheManager>,
     private val listeningStatsTracker: ListeningStatsTracker,
     private val dailyMixStateHolder: DailyMixStateHolder,
     private val streamingRepository: StreamingRepository,
@@ -252,7 +252,7 @@ class PlayerViewModel @Inject constructor(
     val multiSelectionStateHolder: MultiSelectionStateHolder,
     val playlistSelectionStateHolder: PlaylistSelectionStateHolder,
     private val sessionToken: SessionToken,
-    private val mediaControllerFactory: com.theveloper.playpix.data.media.MediaControllerFactory
+    private val mediaControllerFactory: com.svara.music.data.media.MediaControllerFactory
 ) : ViewModel() {
 
     private val _playerUiState = MutableStateFlow(PlayerUiState())
@@ -314,8 +314,8 @@ class PlayerViewModel @Inject constructor(
 
 
 
-    private val _playlistPickerStorageFilter = MutableStateFlow(com.theveloper.playpix.data.model.StorageFilter.OFFLINE)
-    val playlistPickerStorageFilter: StateFlow<com.theveloper.playpix.data.model.StorageFilter> = _playlistPickerStorageFilter.asStateFlow()
+    private val _playlistPickerStorageFilter = MutableStateFlow(com.svara.music.data.model.StorageFilter.OFFLINE)
+    val playlistPickerStorageFilter: StateFlow<com.svara.music.data.model.StorageFilter> = _playlistPickerStorageFilter.asStateFlow()
 
     /**
      * Paginated songs for efficient display in LibraryScreen.
@@ -714,7 +714,7 @@ class PlayerViewModel @Inject constructor(
                 val baseFilter = playerUiState.value.currentStorageFilter
                 val hideLocal = playerUiState.value.hideLocalMedia
                 val storageFilter = if (hideLocal) {
-                    com.theveloper.playpix.data.model.StorageFilter.ONLINE
+                    com.svara.music.data.model.StorageFilter.ONLINE
                 } else {
                     baseFilter
                 }
@@ -923,10 +923,10 @@ class PlayerViewModel @Inject constructor(
 
 
     @Inject
-    lateinit var mediaMapper: com.theveloper.playpix.data.media.MediaMapper
+    lateinit var mediaMapper: com.svara.music.data.media.MediaMapper
 
     @Inject
-    lateinit var imageCacheManager: com.theveloper.playpix.data.media.ImageCacheManager
+    lateinit var imageCacheManager: com.svara.music.data.media.ImageCacheManager
 
     init {
         // Initialize helper classes with our coroutine scope
@@ -973,7 +973,7 @@ class PlayerViewModel @Inject constructor(
             .launchIn(viewModelScope)
 
         viewModelScope.launch {
-            lyricsStateHolder.songUpdates.collect { update: Pair<com.theveloper.playpix.data.model.Song, com.theveloper.playpix.data.model.Lyrics?> ->
+            lyricsStateHolder.songUpdates.collect { update: Pair<com.svara.music.data.model.Song, com.svara.music.data.model.Lyrics?> ->
                 val song = update.first
                 val lyrics = update.second
                 // Check if this update is relevant to the currently playing song OR the selected song
@@ -2116,11 +2116,11 @@ class PlayerViewModel @Inject constructor(
     fun loadArtistsIfNeeded() = libraryStateHolder.loadArtistsIfNeeded()
     fun loadFoldersFromRepository() = libraryStateHolder.loadFoldersFromRepository()
 
-    fun setStorageFilter(filter: com.theveloper.playpix.data.model.StorageFilter) {
+    fun setStorageFilter(filter: com.svara.music.data.model.StorageFilter) {
         libraryStateHolder.setStorageFilter(filter)
     }
 
-    fun setPlaylistPickerStorageFilter(filter: com.theveloper.playpix.data.model.StorageFilter) {
+    fun setPlaylistPickerStorageFilter(filter: com.svara.music.data.model.StorageFilter) {
         _playlistPickerStorageFilter.value = filter
     }
 
@@ -2133,9 +2133,9 @@ class PlayerViewModel @Inject constructor(
     fun toggleStorageFilter() {
         val current = _playerUiState.value.currentStorageFilter
         val next = when (current) {
-            com.theveloper.playpix.data.model.StorageFilter.ALL -> com.theveloper.playpix.data.model.StorageFilter.ONLINE
-            com.theveloper.playpix.data.model.StorageFilter.ONLINE -> com.theveloper.playpix.data.model.StorageFilter.OFFLINE
-            com.theveloper.playpix.data.model.StorageFilter.OFFLINE -> com.theveloper.playpix.data.model.StorageFilter.ALL
+            com.svara.music.data.model.StorageFilter.ALL -> com.svara.music.data.model.StorageFilter.ONLINE
+            com.svara.music.data.model.StorageFilter.ONLINE -> com.svara.music.data.model.StorageFilter.OFFLINE
+            com.svara.music.data.model.StorageFilter.OFFLINE -> com.svara.music.data.model.StorageFilter.ALL
         }
         setStorageFilter(next)
     }
@@ -3456,11 +3456,16 @@ class PlayerViewModel @Inject constructor(
         musicRepository.setFavoriteStatus(songId, isFavorite)
     }
 
+    private suspend fun setFavoriteStatusEverywhereWithSong(song: Song, isFavorite: Boolean) {
+        musicRepository.setFavoriteStatusWithSong(song, isFavorite)
+    }
+
     fun toggleFavorite() {
-        playbackStateHolder.stablePlayerState.value.currentSong?.id?.let { songId ->
+        val currentSong = playbackStateHolder.stablePlayerState.value.currentSong
+        if (currentSong != null) {
             viewModelScope.launch {
-                val currentlyFavorite = favoriteSongIds.value.contains(songId)
-                setFavoriteStatusEverywhere(songId, !currentlyFavorite)
+                val currentlyFavorite = favoriteSongIds.value.contains(currentSong.id)
+                setFavoriteStatusEverywhereWithSong(currentSong, !currentlyFavorite)
             }
         }
     }
@@ -3469,7 +3474,7 @@ class PlayerViewModel @Inject constructor(
         viewModelScope.launch {
             val currentlyFavorite = favoriteSongIds.value.contains(song.id)
             val targetFavoriteState = if (removing) false else !currentlyFavorite
-            setFavoriteStatusEverywhere(song.id, targetFavoriteState)
+            setFavoriteStatusEverywhereWithSong(song, targetFavoriteState)
         }
     }
 
@@ -3665,7 +3670,7 @@ class PlayerViewModel @Inject constructor(
             var likedCount = 0
             songs.forEach { song ->
                 if (!favIds.contains(song.id)) {
-                    setFavoriteStatusEverywhere(song.id, true)
+                    setFavoriteStatusEverywhereWithSong(song, true)
                     favIds.add(song.id)
                     likedCount++
                 }
@@ -3691,7 +3696,7 @@ class PlayerViewModel @Inject constructor(
             var unlikedCount = 0
             songs.forEach { song ->
                 if (favIds.contains(song.id)) {
-                    setFavoriteStatusEverywhere(song.id, false)
+                    setFavoriteStatusEverywhereWithSong(song, false)
                     favIds.remove(song.id)
                     unlikedCount++
                 }
@@ -3789,11 +3794,11 @@ class PlayerViewModel @Inject constructor(
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R) {
                 val uris = deletableSongs.mapNotNull { song ->
                     song.id.toLongOrNull()?.let { id ->
-                        com.theveloper.playpix.utils.MediaStorePermissionHelper.getMediaStoreUri(id)
+                        com.svara.music.utils.MediaStorePermissionHelper.getMediaStoreUri(id)
                     }
                 }
                 if (uris.isNotEmpty()) {
-                    val intentSender = com.theveloper.playpix.utils.MediaStorePermissionHelper
+                    val intentSender = com.svara.music.utils.MediaStorePermissionHelper
                         .createDeleteRequestIntentSender(activity, uris)
                     if (intentSender != null) {
                         pendingBatchDeleteSongs = deletableSongs
@@ -3904,7 +3909,7 @@ class PlayerViewModel @Inject constructor(
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R) {
                 val songLongId = song.id.toLongOrNull()
                 val intentSender = if (songLongId != null && songLongId > 0) {
-                    com.theveloper.playpix.utils.MediaStorePermissionHelper
+                    com.svara.music.utils.MediaStorePermissionHelper
                         .createDeleteRequestForSong(activity, songLongId)
                 } else null
                 if (intentSender != null) {
@@ -4575,7 +4580,7 @@ class PlayerViewModel @Inject constructor(
             // On Android 11+, request MediaStore write permission for local songs
             val songId = song.id.toLongOrNull()
             if (songId != null && songId > 0 && android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R) {
-                val intentSender = com.theveloper.playpix.utils.MediaStorePermissionHelper
+                val intentSender = com.svara.music.utils.MediaStorePermissionHelper
                     .createWriteRequestForSong(context, songId)
                 if (intentSender != null) {
                     // Store pending edit and request permission from the UI
@@ -4662,9 +4667,9 @@ class PlayerViewModel @Inject constructor(
 
         // Android 11+ check: if file exists and we might not have permission
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R && lrcFile.exists() && !lrcFile.canWrite()) {
-            val uri = com.theveloper.playpix.utils.MediaStorePermissionHelper.getMediaStoreUri(context, lrcFile.absolutePath)
+            val uri = com.svara.music.utils.MediaStorePermissionHelper.getMediaStoreUri(context, lrcFile.absolutePath)
             if (uri != null) {
-                val intentSender = com.theveloper.playpix.utils.MediaStorePermissionHelper.createWriteRequestIntentSender(context, listOf(uri))
+                val intentSender = com.svara.music.utils.MediaStorePermissionHelper.createWriteRequestIntentSender(context, listOf(uri))
                 if (intentSender != null) {
                     pendingLyricsSave = PendingLyricsSave(song, lyrics, preferSynced)
                     viewModelScope.launch { _writePermissionRequest.emit(intentSender) }
@@ -4939,19 +4944,19 @@ class PlayerViewModel @Inject constructor(
                     musicRepository.getAllSongsOnce()
                 }
                 Log.i(
-                    "PlayPixBenchmark",
+                    "SvaraBenchmark",
                     "prepare player attempt=$attempt controllerReady=$controllerReady songs=${songs.size}"
                 )
                 if (controllerReady && songs.isNotEmpty()) {
                     playSongs(songs, songs.first(), "Benchmark Player")
                     delay(700L)
                     collapsePlayerSheet()
-                    Log.i("PlayPixBenchmark", "Benchmark player prepared with ${songs.first().title}")
+                    Log.i("SvaraBenchmark", "Benchmark player prepared with ${songs.first().title}")
                     return@launch
                 }
                 delay(500L)
             }
-            Log.w("PlayPixBenchmark", "Unable to prepare benchmark player from library")
+            Log.w("SvaraBenchmark", "Unable to prepare benchmark player from library")
         }
     }
 
@@ -4965,11 +4970,11 @@ class PlayerViewModel @Inject constructor(
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R) {
                 val uris = songs.mapNotNull { song ->
                     song.id.toLongOrNull()?.takeIf { it > 0 }?.let { id ->
-                        com.theveloper.playpix.utils.MediaStorePermissionHelper.getMediaStoreUri(id)
+                        com.svara.music.utils.MediaStorePermissionHelper.getMediaStoreUri(id)
                     }
                 }
                 if (uris.isNotEmpty()) {
-                    val intentSender = com.theveloper.playpix.utils.MediaStorePermissionHelper
+                    val intentSender = com.svara.music.utils.MediaStorePermissionHelper
                         .createWriteRequestIntentSender(context, uris)
                     if (intentSender != null) {
                         pendingBatchGenreEdit = songs to newGenre

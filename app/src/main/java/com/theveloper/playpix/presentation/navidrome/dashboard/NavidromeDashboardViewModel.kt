@@ -1,14 +1,14 @@
-package com.theveloper.playpix.presentation.navidrome.dashboard
+package com.svara.music.presentation.navidrome.dashboard
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.work.ExistingWorkPolicy
 import androidx.work.WorkInfo
 import androidx.work.WorkManager
-import com.theveloper.playpix.data.database.NavidromePlaylistEntity
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.navidrome.NavidromeRepository
-import com.theveloper.playpix.data.worker.NavidromeSyncWorker
+import com.svara.music.data.database.NavidromePlaylistEntity
+import com.svara.music.data.model.Song
+import com.svara.music.data.navidrome.NavidromeRepository
+import com.svara.music.data.worker.NavidromeSyncWorker
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted

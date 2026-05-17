@@ -1,9 +1,9 @@
-package com.theveloper.playpix.data
+package com.svara.music.data
 
 import android.graphics.Bitmap
-import com.theveloper.playpix.shared.WearPlaybackResult
-import com.theveloper.playpix.shared.WearPlayerState
-import com.theveloper.playpix.shared.WearVolumeState
+import com.svara.music.shared.WearPlaybackResult
+import com.svara.music.shared.WearPlayerState
+import com.svara.music.shared.WearVolumeState
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharedFlow

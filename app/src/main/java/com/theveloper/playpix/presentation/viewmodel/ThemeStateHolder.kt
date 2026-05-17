@@ -1,14 +1,14 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
 import android.net.Uri
 import android.content.ComponentCallbacks2
 import android.os.Trace
 import androidx.compose.ui.graphics.Color
-import com.theveloper.playpix.data.preferences.AlbumArtColorAccuracy
-import com.theveloper.playpix.data.preferences.AlbumArtPaletteStyle
-import com.theveloper.playpix.data.preferences.ThemePreferencesRepository
-import com.theveloper.playpix.ui.theme.DarkColorScheme
-import com.theveloper.playpix.ui.theme.clearExtractedColorCache
+import com.svara.music.data.preferences.AlbumArtColorAccuracy
+import com.svara.music.data.preferences.AlbumArtPaletteStyle
+import com.svara.music.data.preferences.ThemePreferencesRepository
+import com.svara.music.ui.theme.DarkColorScheme
+import com.svara.music.ui.theme.clearExtractedColorCache
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
 import kotlinx.collections.immutable.toImmutableList
@@ -56,7 +56,7 @@ class ThemeStateHolder @Inject constructor(
         scope.launch {
             combine(playerThemePreference, _currentAlbumArtColorSchemePair) { playerPref, albumScheme ->
                 when (playerPref) {
-                    com.theveloper.playpix.data.preferences.ThemePreference.ALBUM_ART -> albumScheme
+                    com.svara.music.data.preferences.ThemePreference.ALBUM_ART -> albumScheme
                     else -> null
                 }
             }.collect { _activePlayerColorSchemePair.value = it }

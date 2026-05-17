@@ -1,4 +1,4 @@
-package com.theveloper.playpix.baselineprofile
+package com.svara.music.baselineprofile
 
 import androidx.benchmark.macro.BaselineProfileMode
 import androidx.benchmark.macro.CompilationMode

@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.network.netease
+package com.svara.music.data.network.netease
 
 /**
  * Encryption mode for Netease Cloud Music API.

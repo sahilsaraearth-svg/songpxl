@@ -1,12 +1,12 @@
-package com.theveloper.playpix.presentation.telegram.dashboard
+package com.svara.music.presentation.telegram.dashboard
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.theveloper.playpix.data.database.TelegramChannelEntity
-import com.theveloper.playpix.data.database.TelegramTopicEntity
-import com.theveloper.playpix.data.database.toTelegramEntityWithThread
-import com.theveloper.playpix.data.repository.MusicRepository
-import com.theveloper.playpix.data.telegram.TelegramRepository
+import com.svara.music.data.database.TelegramChannelEntity
+import com.svara.music.data.database.TelegramTopicEntity
+import com.svara.music.data.database.toTelegramEntityWithThread
+import com.svara.music.data.repository.MusicRepository
+import com.svara.music.data.telegram.TelegramRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -15,7 +15,7 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-import com.theveloper.playpix.presentation.viewmodel.ConnectivityStateHolder
+import com.svara.music.presentation.viewmodel.ConnectivityStateHolder
 
 @HiltViewModel
 class TelegramDashboardViewModel @Inject constructor(

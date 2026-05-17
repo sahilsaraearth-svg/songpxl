@@ -1,10 +1,10 @@
-package com.theveloper.playpix.data.streaming
+package com.svara.music.data.streaming
 
-import com.theveloper.playpix.data.itunes.ItunesRepository
-import com.theveloper.playpix.data.jiosaavn.JioSaavnRepository
-import com.theveloper.playpix.data.model.Album
-import com.theveloper.playpix.data.model.Artist
-import com.theveloper.playpix.data.model.Song
+import com.svara.music.data.itunes.ItunesRepository
+import com.svara.music.data.jiosaavn.JioSaavnRepository
+import com.svara.music.data.model.Album
+import com.svara.music.data.model.Artist
+import com.svara.music.data.model.Song
 import kotlinx.coroutines.async
 import kotlinx.coroutines.coroutineScope
 import timber.log.Timber

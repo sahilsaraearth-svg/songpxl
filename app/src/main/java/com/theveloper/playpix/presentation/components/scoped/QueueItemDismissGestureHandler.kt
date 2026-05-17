@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components.scoped
+package com.svara.music.presentation.components.scoped
 
 import android.view.View
 import androidx.compose.animation.core.Animatable
@@ -14,8 +14,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.unit.Density
 import androidx.core.view.HapticFeedbackConstantsCompat
-import com.theveloper.playpix.presentation.utils.AppHapticsConfig
-import com.theveloper.playpix.presentation.utils.performAppCompatHapticFeedback
+import com.svara.music.presentation.utils.AppHapticsConfig
+import com.svara.music.presentation.utils.performAppCompatHapticFeedback
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import kotlin.math.abs

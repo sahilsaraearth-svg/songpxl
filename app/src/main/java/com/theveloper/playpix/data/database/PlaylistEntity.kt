@@ -1,10 +1,10 @@
-package com.theveloper.playpix.data.database
+package com.svara.music.data.database
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
-import com.theveloper.playpix.data.model.Playlist
+import com.svara.music.data.model.Playlist
 
 @Entity(
     tableName = "playlists",

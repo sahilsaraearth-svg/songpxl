@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.screens
+package com.svara.music.presentation.screens
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.core.tween
@@ -63,14 +63,14 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.worker.SyncProgress
-import com.theveloper.playpix.presentation.viewmodel.LyricsRefreshProgress
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
+import com.svara.music.R
+import com.svara.music.data.worker.SyncProgress
+import com.svara.music.presentation.viewmodel.LyricsRefreshProgress
+import com.svara.music.ui.theme.GoogleSansRounded
 import androidx.compose.ui.res.vectorResource
 import androidx.core.view.HapticFeedbackConstantsCompat
-import com.theveloper.playpix.presentation.utils.LocalAppHapticsConfig
-import com.theveloper.playpix.presentation.utils.performAppCompatHapticFeedback
+import com.svara.music.presentation.utils.LocalAppHapticsConfig
+import com.svara.music.presentation.utils.performAppCompatHapticFeedback
 
 @Composable
 fun SettingsSection(title: String, icon: @Composable () -> Unit, content: @Composable () -> Unit) {

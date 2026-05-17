@@ -1,12 +1,12 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
 import android.content.Context
 import android.os.PowerManager
-import com.theveloper.playpix.MainCoroutineExtension
-import com.theveloper.playpix.data.model.PlaybackQueueItemSnapshot
-import com.theveloper.playpix.data.model.PlaybackQueueSnapshot
-import com.theveloper.playpix.data.preferences.UserPreferencesRepository
-import com.theveloper.playpix.data.service.player.DualPlayerEngine
+import com.svara.music.MainCoroutineExtension
+import com.svara.music.data.model.PlaybackQueueItemSnapshot
+import com.svara.music.data.model.PlaybackQueueSnapshot
+import com.svara.music.data.preferences.UserPreferencesRepository
+import com.svara.music.data.service.player.DualPlayerEngine
 import io.mockk.every
 import io.mockk.coEvery
 import io.mockk.mockk

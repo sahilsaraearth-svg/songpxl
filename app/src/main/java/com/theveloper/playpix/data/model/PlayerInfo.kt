@@ -1,6 +1,6 @@
-package com.theveloper.playpix.data.model
+package com.svara.music.data.model
 
-import com.theveloper.playpix.shared.WearThemePalette
+import com.svara.music.shared.WearThemePalette
 import kotlinx.serialization.Serializable
 
 @Serializable

@@ -1,10 +1,10 @@
-package com.theveloper.playpix.presentation.netease.dashboard
+package com.svara.music.presentation.netease.dashboard
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.theveloper.playpix.data.database.NeteasePlaylistEntity
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.netease.NeteaseRepository
+import com.svara.music.data.database.NeteasePlaylistEntity
+import com.svara.music.data.model.Song
+import com.svara.music.data.netease.NeteaseRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted

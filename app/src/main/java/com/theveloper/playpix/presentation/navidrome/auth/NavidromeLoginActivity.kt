@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.navidrome.auth
+package com.svara.music.presentation.navidrome.auth
 
 import android.widget.Toast
 import androidx.activity.ComponentActivity
@@ -72,9 +72,9 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
-import com.theveloper.playpix.R
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
-import com.theveloper.playpix.ui.theme.PlayPixTheme
+import com.svara.music.R
+import com.svara.music.ui.theme.GoogleSansRounded
+import com.svara.music.ui.theme.SvaraTheme
 import dagger.hilt.android.AndroidEntryPoint
 import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape
 
@@ -85,7 +85,7 @@ class NavidromeLoginActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            PlayPixTheme {
+            SvaraTheme {
                 NavidromeLoginScreen(onClose = { finish() })
             }
         }

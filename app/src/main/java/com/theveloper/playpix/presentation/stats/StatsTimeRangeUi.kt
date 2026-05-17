@@ -1,8 +1,8 @@
-package com.theveloper.playpix.presentation.stats
+package com.svara.music.presentation.stats
 
 import androidx.annotation.StringRes
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.stats.StatsTimeRange
+import com.svara.music.R
+import com.svara.music.data.stats.StatsTimeRange
 
 @StringRes
 fun StatsTimeRange.displayNameRes(): Int = when (this) {

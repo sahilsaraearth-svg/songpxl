@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.gdrive.auth
+package com.svara.music.presentation.gdrive.auth
 
 import android.os.Bundle
 import android.widget.Toast
@@ -37,15 +37,15 @@ import androidx.credentials.exceptions.GetCredentialException
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.google.android.libraries.identity.googleid.GetGoogleIdOption
 import com.google.android.libraries.identity.googleid.GoogleIdTokenCredential
-import com.theveloper.playpix.data.gdrive.GDriveConstants
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
-import com.theveloper.playpix.ui.theme.PlayPixTheme
+import com.svara.music.data.gdrive.GDriveConstants
+import com.svara.music.ui.theme.GoogleSansRounded
+import com.svara.music.ui.theme.SvaraTheme
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.compose.ui.res.stringResource
-import com.theveloper.playpix.R
+import com.svara.music.R
 
 @AndroidEntryPoint
 class GDriveLoginActivity : ComponentActivity() {
@@ -53,7 +53,7 @@ class GDriveLoginActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            PlayPixTheme {
+            SvaraTheme {
                 GDriveLoginScreen(onClose = { finish() })
             }
         }
@@ -381,7 +381,7 @@ private fun FolderSetupContent(
                 Spacer(Modifier.width(12.dp))
                 Column {
                     Text(
-                        text = stringResource(R.string.auth_gdrive_create_playpix_music_title),
+                        text = stringResource(R.string.auth_gdrive_create_svara_music_title),
                         style = MaterialTheme.typography.titleSmall,
                         fontFamily = GoogleSansRounded,
                         fontWeight = FontWeight.SemiBold,

@@ -1,13 +1,13 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
 import android.content.Context
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.theveloper.playpix.data.model.Album
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.repository.MusicRepository // Importar MusicRepository
-import com.theveloper.playpix.R
+import com.svara.music.data.model.Album
+import com.svara.music.data.model.Song
+import com.svara.music.data.repository.MusicRepository // Importar MusicRepository
+import com.svara.music.R
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableStateFlow

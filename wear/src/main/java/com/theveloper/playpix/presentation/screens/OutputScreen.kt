@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.screens
+package com.svara.music.presentation.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -33,22 +33,22 @@ import androidx.wear.compose.material.ChipDefaults
 import androidx.wear.compose.material.Icon
 import androidx.wear.compose.material.MaterialTheme
 import androidx.wear.compose.material.Text
-import com.theveloper.playpix.data.WearAudioOutputRoute
-import com.theveloper.playpix.data.WearLifecycleState
-import com.theveloper.playpix.R
+import com.svara.music.data.WearAudioOutputRoute
+import com.svara.music.data.WearLifecycleState
+import com.svara.music.R
 import com.google.android.horologist.compose.layout.ScalingLazyColumn
 import com.google.android.horologist.compose.layout.rememberResponsiveColumnState
-import com.theveloper.playpix.data.WearOutputTarget
-import com.theveloper.playpix.presentation.components.AlwaysOnScalingPositionIndicator
-import com.theveloper.playpix.presentation.components.outputRouteIcon
-import com.theveloper.playpix.presentation.components.WearTopTimeText
-import com.theveloper.playpix.presentation.theme.LocalWearPalette
-import com.theveloper.playpix.presentation.theme.screenBackgroundColor
-import com.theveloper.playpix.presentation.theme.surfaceContainerColor
-import com.theveloper.playpix.presentation.theme.surfaceContainerHighestColor
-import com.theveloper.playpix.presentation.viewmodel.WearPlayerViewModel
-import com.theveloper.playpix.shared.WearPlayerState
-import com.theveloper.playpix.shared.WearVolumeState
+import com.svara.music.data.WearOutputTarget
+import com.svara.music.presentation.components.AlwaysOnScalingPositionIndicator
+import com.svara.music.presentation.components.outputRouteIcon
+import com.svara.music.presentation.components.WearTopTimeText
+import com.svara.music.presentation.theme.LocalWearPalette
+import com.svara.music.presentation.theme.screenBackgroundColor
+import com.svara.music.presentation.theme.surfaceContainerColor
+import com.svara.music.presentation.theme.surfaceContainerHighestColor
+import com.svara.music.presentation.viewmodel.WearPlayerViewModel
+import com.svara.music.shared.WearPlayerState
+import com.svara.music.shared.WearVolumeState
 import kotlinx.coroutines.delay
 
 @Composable

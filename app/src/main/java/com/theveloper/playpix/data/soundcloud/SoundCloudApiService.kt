@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.soundcloud
+package com.svara.music.data.soundcloud
 
 import retrofit2.http.GET
 import retrofit2.http.Query

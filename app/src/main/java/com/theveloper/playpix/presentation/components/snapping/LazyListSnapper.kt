@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components.snapping
+package com.svara.music.presentation.components.snapping
 
 import androidx.compose.animation.core.AnimationScope
 import androidx.compose.animation.core.AnimationSpec

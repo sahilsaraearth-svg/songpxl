@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation
+package com.svara.music.presentation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavType
@@ -6,16 +6,16 @@ import androidx.navigation.navArgument
 import androidx.wear.compose.navigation.SwipeDismissableNavHost
 import androidx.wear.compose.navigation.composable
 import androidx.wear.compose.navigation.rememberSwipeDismissableNavController
-import com.theveloper.playpix.presentation.screens.BrowseScreen
-import com.theveloper.playpix.presentation.screens.DownloadsScreen
-import com.theveloper.playpix.presentation.screens.LibraryListScreen
-import com.theveloper.playpix.presentation.screens.MoreScreen
-import com.theveloper.playpix.presentation.screens.OutputScreen
-import com.theveloper.playpix.presentation.screens.PlayerScreen
-import com.theveloper.playpix.presentation.screens.QueueScreen
-import com.theveloper.playpix.presentation.screens.SongListScreen
-import com.theveloper.playpix.presentation.screens.TimerScreen
-import com.theveloper.playpix.presentation.screens.VolumeScreen
+import com.svara.music.presentation.screens.BrowseScreen
+import com.svara.music.presentation.screens.DownloadsScreen
+import com.svara.music.presentation.screens.LibraryListScreen
+import com.svara.music.presentation.screens.MoreScreen
+import com.svara.music.presentation.screens.OutputScreen
+import com.svara.music.presentation.screens.PlayerScreen
+import com.svara.music.presentation.screens.QueueScreen
+import com.svara.music.presentation.screens.SongListScreen
+import com.svara.music.presentation.screens.TimerScreen
+import com.svara.music.presentation.screens.VolumeScreen
 import java.net.URLDecoder
 import java.net.URLEncoder
 

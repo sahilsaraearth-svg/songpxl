@@ -1,8 +1,8 @@
-package com.theveloper.playpix.data.repository
+package com.svara.music.data.repository
 
-import com.theveloper.playpix.data.model.Lyrics
-import com.theveloper.playpix.data.model.LyricsSourcePreference
-import com.theveloper.playpix.data.model.Song
+import com.svara.music.data.model.Lyrics
+import com.svara.music.data.model.LyricsSourcePreference
+import com.svara.music.data.model.Song
 
 interface LyricsRepository {
     /**

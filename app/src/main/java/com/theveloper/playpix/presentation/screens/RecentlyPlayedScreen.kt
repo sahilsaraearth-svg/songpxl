@@ -1,6 +1,6 @@
-package com.theveloper.playpix.presentation.screens
+package com.svara.music.presentation.screens
 
-import com.theveloper.playpix.presentation.navigation.navigateSafely
+import com.svara.music.presentation.navigation.navigateSafely
 
 import android.os.Trace
 import androidx.compose.foundation.background
@@ -69,21 +69,21 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.media3.common.util.UnstableApi
 import androidx.navigation.NavController
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.stats.StatsTimeRange
-import com.theveloper.playpix.presentation.components.MiniPlayerHeight
-import com.theveloper.playpix.presentation.components.PlaylistBottomSheet
-import com.theveloper.playpix.presentation.components.RecentlyPlayedRangeSelector
-import com.theveloper.playpix.presentation.components.SongInfoBottomSheet
-import com.theveloper.playpix.presentation.components.SmartImage
-import com.theveloper.playpix.presentation.components.subcomps.EnhancedSongListItem
-import com.theveloper.playpix.presentation.navigation.Screen
-import com.theveloper.playpix.presentation.model.RecentlyPlayedSongUiModel
-import com.theveloper.playpix.presentation.model.collectRecentlyPlayedSongIds
-import com.theveloper.playpix.presentation.model.mapRecentlyPlayedSongs
-import com.theveloper.playpix.presentation.viewmodel.PlaylistViewModel
-import com.theveloper.playpix.presentation.viewmodel.PlayerViewModel
+import com.svara.music.R
+import com.svara.music.data.model.Song
+import com.svara.music.data.stats.StatsTimeRange
+import com.svara.music.presentation.components.MiniPlayerHeight
+import com.svara.music.presentation.components.PlaylistBottomSheet
+import com.svara.music.presentation.components.RecentlyPlayedRangeSelector
+import com.svara.music.presentation.components.SongInfoBottomSheet
+import com.svara.music.presentation.components.SmartImage
+import com.svara.music.presentation.components.subcomps.EnhancedSongListItem
+import com.svara.music.presentation.navigation.Screen
+import com.svara.music.presentation.model.RecentlyPlayedSongUiModel
+import com.svara.music.presentation.model.collectRecentlyPlayedSongIds
+import com.svara.music.presentation.model.mapRecentlyPlayedSongs
+import com.svara.music.presentation.viewmodel.PlaylistViewModel
+import com.svara.music.presentation.viewmodel.PlayerViewModel
 import kotlinx.collections.immutable.toImmutableList
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map

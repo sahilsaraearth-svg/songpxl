@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.network.deezer
+package com.svara.music.data.network.deezer
 
 import retrofit2.http.GET
 import retrofit2.http.Query

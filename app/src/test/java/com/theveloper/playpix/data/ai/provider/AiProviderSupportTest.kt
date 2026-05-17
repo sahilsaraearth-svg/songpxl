@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.ai.provider
+package com.svara.music.data.ai.provider
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test

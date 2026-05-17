@@ -222,8 +222,8 @@
     <string name="setcat_trigger_crash_title">Test-Absturz auslösen</string>
     <string name="setcat_trigger_crash_subtitle">Crash simulieren, um das Absturz-Reporting zu testen.</string>
     <string name="setcat_application">App</string>
-    <string name="setcat_about_playpix_title">Über PlayPix</string>
-    <string name="setcat_about_playpix_subtitle">Version, Credits und mehr.</string>
+    <string name="setcat_about_svara_title">Über Svara</string>
+    <string name="setcat_about_svara_subtitle">Version, Credits und mehr.</string>
 
     <string name="backup_summary_none">Keine Bereiche ausgewählt.</string>
     <string name="backup_summary_all">Alle Bereiche ausgewählt.</string>

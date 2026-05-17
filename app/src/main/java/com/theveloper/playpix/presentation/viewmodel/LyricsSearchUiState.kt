@@ -1,7 +1,7 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
-import com.theveloper.playpix.data.model.Lyrics
-import com.theveloper.playpix.data.repository.LyricsSearchResult
+import com.svara.music.data.model.Lyrics
+import com.svara.music.data.repository.LyricsSearchResult
 
 sealed interface LyricsSearchUiState {
     object Idle : LyricsSearchUiState

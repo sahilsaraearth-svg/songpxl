@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components
+package com.svara.music.presentation.components
 
 import android.content.ActivityNotFoundException
 import android.content.Context
@@ -44,10 +44,10 @@ import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.withLink
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
-import com.theveloper.playpix.R
-import com.theveloper.playpix.presentation.components.subcomps.SineWaveLine
-import com.theveloper.playpix.ui.theme.ExpTitleTypography
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
+import com.svara.music.R
+import com.svara.music.presentation.components.subcomps.SineWaveLine
+import com.svara.music.ui.theme.ExpTitleTypography
+import com.svara.music.ui.theme.GoogleSansRounded
 import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape
 
 data class ChangelogSection(
@@ -80,7 +80,7 @@ fun ChangelogBottomSheet(
     modifier: Modifier = Modifier
 ) {
     val context = LocalContext.current
-    val changelogUrl = "https://github.com/theovilardo/PlayPix/blob/master/CHANGELOG.md"
+    val changelogUrl = "https://github.com/theovilardo/Svara/blob/master/CHANGELOG.md"
     val changelog = changelogVersions()
 
     val fabCornerRadius = 16.dp

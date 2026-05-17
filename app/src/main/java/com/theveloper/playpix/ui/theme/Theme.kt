@@ -1,4 +1,4 @@
-package com.theveloper.playpix.ui.theme
+package com.svara.music.ui.theme
 
 import android.app.Activity
 import android.content.Context
@@ -20,10 +20,10 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
-import com.theveloper.playpix.presentation.viewmodel.ColorSchemePair
+import com.svara.music.presentation.viewmodel.ColorSchemePair
 import androidx.core.graphics.ColorUtils
 
-val LocalPlayPixDarkTheme = staticCompositionLocalOf { false }
+val LocalSvaraDarkTheme = staticCompositionLocalOf { false }
 
 private tailrec fun Context.findActivity(): Activity? = when (this) {
     is Activity -> this
@@ -33,7 +33,7 @@ private tailrec fun Context.findActivity(): Activity? = when (this) {
 
 @Suppress("DEPRECATION")
 @Composable
-fun PlayPixStatusBarStyle(
+fun SvaraStatusBarStyle(
     color: Color,
     useDarkIcons: Boolean = ColorUtils.calculateLuminance(color.toArgb()) > 0.55,
     navigationColor: Color? = null,
@@ -67,31 +67,31 @@ fun PlayPixStatusBarStyle(
 }
 
 val DarkColorScheme = darkColorScheme(
-    primary = PlayPixPurplePrimary,
-    secondary = PlayPixPink,
-    tertiary = PlayPixOrange,
-    background = PlayPixPurpleDark,
-    surface = PlayPixSurface,
-    onPrimary = PlayPixWhite,
-    onSecondary = PlayPixWhite,
-    onTertiary = PlayPixWhite,
-    onBackground = PlayPixWhite,
-    onSurface = PlayPixLightPurple, // Texto sobre superficies
+    primary = SvaraPurplePrimary,
+    secondary = SvaraPink,
+    tertiary = SvaraOrange,
+    background = SvaraPurpleDark,
+    surface = SvaraSurface,
+    onPrimary = SvaraWhite,
+    onSecondary = SvaraWhite,
+    onTertiary = SvaraWhite,
+    onBackground = SvaraWhite,
+    onSurface = SvaraLightPurple, // Texto sobre superficies
     error = Color(0xFFFF5252),
-    onError = PlayPixWhite
+    onError = SvaraWhite
 )
 
 val LightColorScheme = lightColorScheme(
     primary = LightPrimary,
-    onPrimary = PlayPixWhite,
+    onPrimary = SvaraWhite,
     primaryContainer = LightPrimaryContainer,
     onPrimaryContainer = LightOnPrimaryContainer,
-    secondary = PlayPixPink,
-    onSecondary = PlayPixWhite,
-    secondaryContainer = PlayPixPink.copy(alpha = 0.15f),
-    onSecondaryContainer = PlayPixPink.copy(alpha = 0.85f),
-    tertiary = PlayPixOrange,
-    onTertiary = PlayPixBlack,
+    secondary = SvaraPink,
+    onSecondary = SvaraWhite,
+    secondaryContainer = SvaraPink.copy(alpha = 0.15f),
+    onSecondaryContainer = SvaraPink.copy(alpha = 0.85f),
+    tertiary = SvaraOrange,
+    onTertiary = SvaraBlack,
     background = LightBackground,
     onBackground = LightOnSurface,
     surface = LightSurface,
@@ -102,11 +102,11 @@ val LightColorScheme = lightColorScheme(
     outlineVariant = LightOutline.copy(alpha = 0.6f),
     surfaceTint = LightPrimary,
     error = Color(0xFFD32F2F),
-    onError = PlayPixWhite
+    onError = SvaraWhite
 )
 
 @Composable
-fun PlayPixTheme(
+fun SvaraTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     colorSchemePairOverride: ColorSchemePair? = null,
     content: @Composable () -> Unit
@@ -131,12 +131,12 @@ fun PlayPixTheme(
         else -> LightColorScheme
     }
 
-    PlayPixStatusBarStyle(
+    SvaraStatusBarStyle(
         color = finalColorScheme.background,
         navigationColor = finalColorScheme.background
     )
 
-    CompositionLocalProvider(LocalPlayPixDarkTheme provides darkTheme) {
+    CompositionLocalProvider(LocalSvaraDarkTheme provides darkTheme) {
         MaterialTheme(
             colorScheme = finalColorScheme,
             typography = Typography,

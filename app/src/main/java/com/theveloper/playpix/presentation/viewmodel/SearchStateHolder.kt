@@ -1,10 +1,10 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
-import com.theveloper.playpix.data.model.SearchFilterType
-import com.theveloper.playpix.data.model.SearchHistoryItem
-import com.theveloper.playpix.data.model.SearchResultItem
-import com.theveloper.playpix.data.repository.MusicRepository
-import com.theveloper.playpix.data.streaming.StreamingRepository
+import com.svara.music.data.model.SearchFilterType
+import com.svara.music.data.model.SearchHistoryItem
+import com.svara.music.data.model.SearchResultItem
+import com.svara.music.data.repository.MusicRepository
+import com.svara.music.data.streaming.StreamingRepository
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
 import kotlinx.collections.immutable.toImmutableList

@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
 import android.app.AlarmManager
 import android.app.PendingIntent
@@ -8,10 +8,10 @@ import android.os.Build
 import android.os.Bundle
 import androidx.media3.session.MediaController
 import androidx.media3.session.SessionCommand
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.service.MusicNotificationProvider
-import com.theveloper.playpix.data.service.SleepTimerReceiver
-import com.theveloper.playpix.data.EotStateHolder
+import com.svara.music.R
+import com.svara.music.data.service.MusicNotificationProvider
+import com.svara.music.data.service.SleepTimerReceiver
+import com.svara.music.data.EotStateHolder
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
@@ -303,6 +303,6 @@ class SleepTimerStateHolder @Inject constructor(
     }
 
     private companion object {
-        const val SLEEP_TIMER_ACTION = "com.theveloper.playpix.action.SLEEP_TIMER_EXPIRED"
+        const val SLEEP_TIMER_ACTION = "com.svara.music.action.SLEEP_TIMER_EXPIRED"
     }
 }

@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.preferences
+package com.svara.music.data.preferences
 
 object AlbumArtColorAccuracy {
     const val MIN = 0

@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.worker
+package com.svara.music.data.worker
 
 import android.content.Context
 import android.database.MatrixCursor
@@ -13,8 +13,8 @@ import androidx.work.WorkerFactory
 import androidx.work.WorkerParameters
 import androidx.work.testing.TestListenableWorkerBuilder
 import com.google.common.truth.Truth.assertThat
-import com.theveloper.playpix.data.database.MusicDao
-import com.theveloper.playpix.data.database.PlayPixDatabase
+import com.svara.music.data.database.MusicDao
+import com.svara.music.data.database.SvaraDatabase
 import io.mockk.every
 import io.mockk.mockk
 import kotlinx.coroutines.flow.first
@@ -29,7 +29,7 @@ import java.io.IOException
 class SyncWorkerTest {
 
     private lateinit var context: Context
-    private lateinit var database: PlayPixDatabase
+    private lateinit var database: SvaraDatabase
     private lateinit var musicDao: MusicDao
     private lateinit var mockContentResolver: android.content.ContentResolver
 
@@ -69,8 +69,8 @@ class SyncWorkerTest {
     @Before
     fun setUp() {
         context = ApplicationProvider.getApplicationContext()
-        database = Room.inMemoryDatabaseBuilder(context, PlayPixDatabase::class.java)
-            .addCallback(PlayPixDatabase.createRuntimeArtifactsCallback())
+        database = Room.inMemoryDatabaseBuilder(context, SvaraDatabase::class.java)
+            .addCallback(SvaraDatabase.createRuntimeArtifactsCallback())
             .allowMainThreadQueries() // Para tests, está bien.
             .build()
         musicDao = database.musicDao()

@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.model
+package com.svara.music.data.model
 
 enum class StorageFilter(val value: Int) {
     ALL(0),

@@ -1,4 +1,4 @@
-package com.theveloper.playpix
+package com.svara.music
 
 import android.app.Application
 import android.app.NotificationChannel
@@ -13,17 +13,17 @@ import androidx.hilt.work.HiltWorkerFactory
 import androidx.work.Configuration
 import coil.ImageLoader
 import coil.ImageLoaderFactory
-import com.theveloper.playpix.data.preferences.UserPreferencesRepository
-import com.theveloper.playpix.data.repository.ArtistImageRepository
-import com.theveloper.playpix.data.streaming.StreamingRepository
-import com.theveloper.playpix.data.telegram.TelegramRepository
-import com.theveloper.playpix.presentation.viewmodel.LibraryStateHolder
-import com.theveloper.playpix.presentation.viewmodel.ThemeStateHolder
-import com.theveloper.playpix.utils.AlbumArtCacheManager
-import com.theveloper.playpix.utils.AlbumArtUtils
-import com.theveloper.playpix.utils.CrashHandler
-import com.theveloper.playpix.utils.AppLocaleManager
-import com.theveloper.playpix.utils.MediaMetadataRetrieverPool
+import com.svara.music.data.preferences.UserPreferencesRepository
+import com.svara.music.data.repository.ArtistImageRepository
+import com.svara.music.data.streaming.StreamingRepository
+import com.svara.music.data.telegram.TelegramRepository
+import com.svara.music.presentation.viewmodel.LibraryStateHolder
+import com.svara.music.presentation.viewmodel.ThemeStateHolder
+import com.svara.music.utils.AlbumArtCacheManager
+import com.svara.music.utils.AlbumArtUtils
+import com.svara.music.utils.CrashHandler
+import com.svara.music.utils.AppLocaleManager
+import com.svara.music.utils.MediaMetadataRetrieverPool
 import dagger.hilt.android.HiltAndroidApp
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -34,7 +34,7 @@ import timber.log.Timber
 import javax.inject.Inject
 
 @HiltAndroidApp
-class PlayPixApplication : Application(), ImageLoaderFactory, Configuration.Provider {
+class SvaraApplication : Application(), ImageLoaderFactory, Configuration.Provider {
 
     @Inject
     lateinit var workerFactory: HiltWorkerFactory
@@ -43,16 +43,16 @@ class PlayPixApplication : Application(), ImageLoaderFactory, Configuration.Prov
     lateinit var imageLoader: dagger.Lazy<ImageLoader>
 
     @Inject
-    lateinit var telegramCoilFetcherFactory: dagger.Lazy<com.theveloper.playpix.data.image.TelegramCoilFetcher.Factory>
+    lateinit var telegramCoilFetcherFactory: dagger.Lazy<com.svara.music.data.image.TelegramCoilFetcher.Factory>
 
     @Inject
-    lateinit var navidromeCoilFetcherFactory: dagger.Lazy<com.theveloper.playpix.data.image.NavidromeCoilFetcher.Factory>
+    lateinit var navidromeCoilFetcherFactory: dagger.Lazy<com.svara.music.data.image.NavidromeCoilFetcher.Factory>
 
     @Inject
-    lateinit var jellyfinCoilFetcherFactory: dagger.Lazy<com.theveloper.playpix.data.image.JellyfinCoilFetcher.Factory>
+    lateinit var jellyfinCoilFetcherFactory: dagger.Lazy<com.svara.music.data.image.JellyfinCoilFetcher.Factory>
 
     @Inject
-    lateinit var localArtworkCoilFetcherFactory: dagger.Lazy<com.theveloper.playpix.data.image.LocalArtworkCoilFetcher.Factory>
+    lateinit var localArtworkCoilFetcherFactory: dagger.Lazy<com.svara.music.data.image.LocalArtworkCoilFetcher.Factory>
 
     @Inject
     lateinit var themeStateHolder: dagger.Lazy<ThemeStateHolder>
@@ -76,7 +76,7 @@ class PlayPixApplication : Application(), ImageLoaderFactory, Configuration.Prov
 
     // AÑADE EL COMPANION OBJECT
     companion object {
-        const val NOTIFICATION_CHANNEL_ID = "playpix_music_channel"
+        const val NOTIFICATION_CHANNEL_ID = "svara_music_channel"
     }
 
     private val appLifecycleObserver = object : DefaultLifecycleObserver {
@@ -110,7 +110,7 @@ class PlayPixApplication : Application(), ImageLoaderFactory, Configuration.Prov
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val channel = NotificationChannel(
                 NOTIFICATION_CHANNEL_ID,
-                "PlayPix Music Playback",
+                "Svara Music Playback",
                 NotificationManager.IMPORTANCE_LOW
             )
             val notificationManager = getSystemService(NotificationManager::class.java)
@@ -120,7 +120,7 @@ class PlayPixApplication : Application(), ImageLoaderFactory, Configuration.Prov
         ProcessLifecycleOwner.get().lifecycle.addObserver(appLifecycleObserver)
 
         startupScope.launch {
-            AlbumArtUtils.migrateLegacyCacheLocation(this@PlayPixApplication)
+            AlbumArtUtils.migrateLegacyCacheLocation(this@SvaraApplication)
             val savedLimit = runCatching {
                 userPreferencesRepository.get().albumArtCacheLimitMbFlow.first()
             }.getOrNull()

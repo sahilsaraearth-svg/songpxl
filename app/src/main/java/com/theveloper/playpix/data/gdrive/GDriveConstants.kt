@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.gdrive
+package com.svara.music.data.gdrive
 
 object GDriveConstants {
     // TODO: Replace with your Google Cloud Console OAuth2 Web Client ID

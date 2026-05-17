@@ -1,22 +1,22 @@
-package com.theveloper.playpix.data.backup
+package com.svara.music.data.backup
 
 import android.content.Context
 import android.net.Uri
-import com.theveloper.playpix.data.backup.format.BackupReader
-import com.theveloper.playpix.data.backup.format.BackupWriter
-import com.theveloper.playpix.data.backup.history.BackupHistoryRepository
-import com.theveloper.playpix.data.backup.model.BackupManifest
-import com.theveloper.playpix.data.backup.model.BackupModuleInfo
-import com.theveloper.playpix.data.backup.model.BackupSection
-import com.theveloper.playpix.data.backup.model.BackupValidationResult
-import com.theveloper.playpix.data.backup.model.DeviceInfo
-import com.theveloper.playpix.data.backup.model.ModuleRestoreDetail
-import com.theveloper.playpix.data.backup.model.RestorePlan
-import com.theveloper.playpix.data.backup.model.ValidationError
-import com.theveloper.playpix.data.backup.module.BackupModuleHandler
-import com.theveloper.playpix.data.backup.restore.RestoreExecutor
-import com.theveloper.playpix.data.backup.restore.RestorePlanner
-import com.theveloper.playpix.data.backup.validation.ValidationPipeline
+import com.svara.music.data.backup.format.BackupReader
+import com.svara.music.data.backup.format.BackupWriter
+import com.svara.music.data.backup.history.BackupHistoryRepository
+import com.svara.music.data.backup.model.BackupManifest
+import com.svara.music.data.backup.model.BackupModuleInfo
+import com.svara.music.data.backup.model.BackupSection
+import com.svara.music.data.backup.model.BackupValidationResult
+import com.svara.music.data.backup.model.DeviceInfo
+import com.svara.music.data.backup.model.ModuleRestoreDetail
+import com.svara.music.data.backup.model.RestorePlan
+import com.svara.music.data.backup.model.ValidationError
+import com.svara.music.data.backup.module.BackupModuleHandler
+import com.svara.music.data.backup.restore.RestoreExecutor
+import com.svara.music.data.backup.restore.RestorePlanner
+import com.svara.music.data.backup.validation.ValidationPipeline
 import io.mockk.coEvery
 import io.mockk.every
 import io.mockk.mockk
@@ -59,7 +59,7 @@ class BackupManagerTest {
                 ValidationError(
                     code = "FILE_EXTENSION",
                     message = "File extension is not .pxpl.",
-                    severity = com.theveloper.playpix.data.backup.model.Severity.WARNING
+                    severity = com.svara.music.data.backup.model.Severity.WARNING
                 )
             )
         )
@@ -80,7 +80,7 @@ class BackupManagerTest {
                     code = "MISSING_SONG_ID",
                     message = "EngagementStats[0]: missing songId",
                     module = BackupSection.ENGAGEMENT_STATS.key,
-                    severity = com.theveloper.playpix.data.backup.model.Severity.WARNING
+                    severity = com.svara.music.data.backup.model.Severity.WARNING
                 )
             )
         )
@@ -155,7 +155,7 @@ class BackupManagerTest {
                 deviceInfo = DeviceInfo(),
                 modules = modules
             ),
-            backupUri = "content://playpix/test-backup",
+            backupUri = "content://svara/test-backup",
             availableModules = selectedModules,
             selectedModules = selectedModules,
             moduleDetails = selectedModules.associateWith {

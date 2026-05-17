@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.database
+package com.svara.music.data.database
 
 import androidx.paging.PagingSource
 import androidx.room.Dao
@@ -8,12 +8,12 @@ import androidx.room.Query
 import androidx.room.Transaction
 import androidx.room.Update
 import androidx.sqlite.db.SimpleSQLiteQuery
-import com.theveloper.playpix.utils.AudioMeta
+import com.svara.music.utils.AudioMeta
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
 
 private val SONG_SEARCH_QUERY_TOKEN_REGEX = Regex("""[\p{L}\p{N}]+""")
-private const val EMPTY_SONG_SEARCH_MATCH_QUERY = "playpixemptyquery*"
+private const val EMPTY_SONG_SEARCH_MATCH_QUERY = "svaraemptyquery*"
 
 private fun buildSongTitleSearchMatchQuery(query: String): String {
     val tokens = SONG_SEARCH_QUERY_TOKEN_REGEX

@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components
+package com.svara.music.presentation.components
 
 internal class AxisObservationTracker {
     private var trackedTotalItemsCount = -1

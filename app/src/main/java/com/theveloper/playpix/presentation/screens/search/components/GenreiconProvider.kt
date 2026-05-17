@@ -1,6 +1,6 @@
-package com.theveloper.playpix.presentation.screens.search.components
+package com.svara.music.presentation.screens.search.components
 
-import com.theveloper.playpix.R
+import com.svara.music.R
 import androidx.annotation.DrawableRes
 import java.text.Normalizer
 import java.util.Locale

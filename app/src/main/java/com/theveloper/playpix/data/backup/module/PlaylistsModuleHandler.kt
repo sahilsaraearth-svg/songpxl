@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.backup.module
+package com.svara.music.data.backup.module
 
 import android.content.Context
 import android.util.Base64
@@ -6,15 +6,15 @@ import android.util.Log
 import com.google.gson.Gson
 import com.google.gson.JsonParser
 import com.google.gson.reflect.TypeToken
-import com.theveloper.playpix.data.model.Playlist
-import com.theveloper.playpix.data.model.SortOption
-import com.theveloper.playpix.data.backup.model.BackupSection
-import com.theveloper.playpix.data.database.MusicDao
-import com.theveloper.playpix.data.database.SongSummary
-import com.theveloper.playpix.data.preferences.PlaylistPreferencesRepository
-import com.theveloper.playpix.data.preferences.PreferenceBackupEntry
-import com.theveloper.playpix.data.preferences.UserPreferencesRepository
-import com.theveloper.playpix.di.BackupGson
+import com.svara.music.data.model.Playlist
+import com.svara.music.data.model.SortOption
+import com.svara.music.data.backup.model.BackupSection
+import com.svara.music.data.database.MusicDao
+import com.svara.music.data.database.SongSummary
+import com.svara.music.data.preferences.PlaylistPreferencesRepository
+import com.svara.music.data.preferences.PreferenceBackupEntry
+import com.svara.music.data.preferences.UserPreferencesRepository
+import com.svara.music.di.BackupGson
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first

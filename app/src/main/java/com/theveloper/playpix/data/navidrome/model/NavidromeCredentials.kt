@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.navidrome.model
+package com.svara.music.data.navidrome.model
 
 import okhttp3.HttpUrl
 import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
@@ -13,13 +13,13 @@ import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
  * @property serverUrl The base URL of the Navidrome server (e.g., "https://music.example.com")
  * @property username The username for authentication
  * @property password The password (stored securely, used to generate tokens)
- * @property clientId The client identifier sent to the server (default: "PlayPix")
+ * @property clientId The client identifier sent to the server (default: "Svara")
  */
 data class NavidromeCredentials(
     val serverUrl: String,
     val username: String,
     val password: String,
-    val clientId: String = "PlayPix"
+    val clientId: String = "Svara"
 ) {
     companion object {
         /**
@@ -34,7 +34,7 @@ data class NavidromeCredentials(
             serverUrl = "",
             username = "",
             password = "",
-            clientId = "PlayPix"
+            clientId = "Svara"
         )
     }
 

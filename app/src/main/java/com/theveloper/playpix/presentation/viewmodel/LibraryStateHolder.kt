@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
 import android.content.ComponentCallbacks2
 import android.os.Trace
@@ -8,14 +8,14 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
 import androidx.compose.ui.graphics.toArgb
 import android.util.Log
-import com.theveloper.playpix.data.model.Album
-import com.theveloper.playpix.data.model.Artist
-import com.theveloper.playpix.data.model.LibraryTabId
-import com.theveloper.playpix.data.model.MusicFolder
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.model.SortOption
-import com.theveloper.playpix.data.preferences.UserPreferencesRepository
-import com.theveloper.playpix.data.repository.MusicRepository
+import com.svara.music.data.model.Album
+import com.svara.music.data.model.Artist
+import com.svara.music.data.model.LibraryTabId
+import com.svara.music.data.model.MusicFolder
+import com.svara.music.data.model.Song
+import com.svara.music.data.model.SortOption
+import com.svara.music.data.preferences.UserPreferencesRepository
+import com.svara.music.data.repository.MusicRepository
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
 import kotlinx.collections.immutable.toImmutableList
@@ -81,7 +81,7 @@ class LibraryStateHolder @Inject constructor(
     val currentSongSortOption = _currentSongSortOption.asStateFlow()
 
     // Filter Options
-    private val _currentStorageFilter = MutableStateFlow(com.theveloper.playpix.data.model.StorageFilter.ALL)
+    private val _currentStorageFilter = MutableStateFlow(com.svara.music.data.model.StorageFilter.ALL)
     val currentStorageFilter = _currentStorageFilter.asStateFlow()
 
     /**
@@ -89,21 +89,21 @@ class LibraryStateHolder @Inject constructor(
      * When hideLocalMedia is true, forces ONLINE filter (excludes source_type = 0).
      */
     @OptIn(kotlinx.coroutines.ExperimentalCoroutinesApi::class)
-    private val effectiveStorageFilter: kotlinx.coroutines.flow.Flow<com.theveloper.playpix.data.model.StorageFilter> =
+    private val effectiveStorageFilter: kotlinx.coroutines.flow.Flow<com.svara.music.data.model.StorageFilter> =
         kotlinx.coroutines.flow.combine(
             _currentStorageFilter,
             userPreferencesRepository.hideLocalMediaFlow
         ) { filter, hideLocal ->
-            if (hideLocal) com.theveloper.playpix.data.model.StorageFilter.ONLINE else filter
+            if (hideLocal) com.svara.music.data.model.StorageFilter.ONLINE else filter
         }
 
     private fun effectiveFoldersStorageFilter(
-        selectedFilter: com.theveloper.playpix.data.model.StorageFilter
-    ): com.theveloper.playpix.data.model.StorageFilter {
+        selectedFilter: com.svara.music.data.model.StorageFilter
+    ): com.svara.music.data.model.StorageFilter {
         return if (ENABLE_FOLDERS_STORAGE_FILTER) {
             selectedFilter
         } else {
-            com.theveloper.playpix.data.model.StorageFilter.OFFLINE
+            com.svara.music.data.model.StorageFilter.OFFLINE
         }
     }
 
@@ -164,7 +164,7 @@ class LibraryStateHolder @Inject constructor(
         .flatMapLatest { filter -> musicRepository.getFavoriteSongCountFlow(filter) }
         .flowOn(Dispatchers.IO)
 
-    val genres: kotlinx.coroutines.flow.Flow<ImmutableList<com.theveloper.playpix.data.model.Genre>> =
+    val genres: kotlinx.coroutines.flow.Flow<ImmutableList<com.svara.music.data.model.Genre>> =
         musicRepository.getGenres()
         .map { genres ->
             val seeds = if (genres.isEmpty()) FALLBACK_GENRE_NAMES.map { name ->
@@ -177,10 +177,10 @@ class LibraryStateHolder @Inject constructor(
         .distinctUntilChanged()
         .map { seeds ->
             seeds.map { seed ->
-                val lightThemeColor = com.theveloper.playpix.ui.theme.GenreThemeUtils.getGenreThemeColor(seed.id, isDark = false)
-                val darkThemeColor = com.theveloper.playpix.ui.theme.GenreThemeUtils.getGenreThemeColor(seed.id, isDark = true)
+                val lightThemeColor = com.svara.music.ui.theme.GenreThemeUtils.getGenreThemeColor(seed.id, isDark = false)
+                val darkThemeColor = com.svara.music.ui.theme.GenreThemeUtils.getGenreThemeColor(seed.id, isDark = true)
 
-                com.theveloper.playpix.data.model.Genre(
+                com.svara.music.data.model.Genre(
                     id = seed.id,
                     name = seed.name,
                     lightColorHex = lightThemeColor.container.toHexString(),
@@ -560,7 +560,7 @@ class LibraryStateHolder @Inject constructor(
         }
     }
 
-    fun setStorageFilter(filter: com.theveloper.playpix.data.model.StorageFilter) {
+    fun setStorageFilter(filter: com.svara.music.data.model.StorageFilter) {
         _currentStorageFilter.value = filter
         scope?.launch {
             userPreferencesRepository.saveLastStorageFilter(filter)

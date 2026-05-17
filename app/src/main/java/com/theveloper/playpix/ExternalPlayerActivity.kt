@@ -1,4 +1,4 @@
-package com.theveloper.playpix
+package com.svara.music
 
 import android.content.Intent
 import android.net.Uri
@@ -13,13 +13,13 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.compose.runtime.getValue
 import dagger.hilt.android.AndroidEntryPoint
-import com.theveloper.playpix.presentation.viewmodel.PlayerViewModel
-import com.theveloper.playpix.presentation.components.external.ExternalPlayerOverlay
-import com.theveloper.playpix.ui.theme.PlayPixTheme
+import com.svara.music.presentation.viewmodel.PlayerViewModel
+import com.svara.music.presentation.components.external.ExternalPlayerOverlay
+import com.svara.music.ui.theme.SvaraTheme
 import android.content.Intent.EXTRA_STREAM
 import androidx.media3.common.util.UnstableApi
-import com.theveloper.playpix.data.preferences.AppThemeMode
-import com.theveloper.playpix.data.preferences.ThemePreferencesRepository
+import com.svara.music.data.preferences.AppThemeMode
+import com.svara.music.data.preferences.ThemePreferencesRepository
 import javax.inject.Inject
 
 @UnstableApi
@@ -51,7 +51,7 @@ class ExternalPlayerActivity : ComponentActivity() {
                 AppThemeMode.LIGHT -> false
                 else -> systemDarkTheme
             }
-            PlayPixTheme(darkTheme = useDarkTheme) {
+            SvaraTheme(darkTheme = useDarkTheme) {
                 ExternalPlayerOverlay(
                     playerViewModel = playerViewModel,
                     onDismiss = { finish() },

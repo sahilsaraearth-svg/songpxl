@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.navigation
+package com.svara.music.presentation.navigation
 
 internal fun isMainRootRoute(route: String?): Boolean = when (route) {
     Screen.Home.route,

@@ -1,37 +1,51 @@
-# PlayPix Logic Rewrite Task
+# Svara App - Fix Tasks
 
-## Status: IN PROGRESS
+## TODO
+- [x] Understand codebase
+- [ ] Remove background from app icon (Svara_1flSFI.png)
+- [ ] Rename PlayPix -> Svara in all string resources (values/*.xml)
+- [ ] Fix genre screen empty (investigate root cause - code looks correct, may be OK)
+- [ ] Fix favorites (Liked tab): upsert song into songs table when favoriting streaming song
+- [ ] Fix buffer/jitter: increase ExoPlayer buffer values for slow internet
+- [ ] Folders tab: in streaming-only mode, show appropriate message
 
-## Plan
-Clean rewrite: remove DB dependency from streaming path, direct API → Song mapping
+## FINDINGS
 
-### Files to rewrite:
-1. [x] JioSaavnApiService.kt — keep as-is (works)
-2. [ ] JioSaavnRepository.kt — remove DB caching, pure API → Song mapper
-3. [ ] StreamingRepository.kt — add iTunes fallback for English
-4. [ ] DailyMixStateHolder.kt — remove loadPersistedDailyMix DB dependency
-5. [ ] MusicRepositoryImpl.getAudioFiles() — ensure it works
-6. [ ] Build APK v1.0.8
+### App Rename
+- app_name in values/strings.xml = "playpix" -> "Svara"
+- Many string files have PlayPix -> Svara
+- All language variants (de, es, fr, ko, nb, ru) also need updating
 
-## Key Decisions
-- No DB writes for streaming songs — pure in-memory
-- iTunes API for English fallback: https://itunes.apple.com/search?term=X&media=music&limit=20
-- Song.path = stream URL (filePath in SongEntity)  
-- Song.albumArtUriString = cover image URL
-- contentUriString = "jiosaavn://ID" for streaming detection
-- JioSaavn: downloadUrl[].url (320kbps preferred), image[].url (500x500 preferred)
+### Genre Screen
+- Code flow: GenreDetailVM -> musicRepository.getMusicByGenre(genre.name)
+- getMusicByGenre() -> flatMapLatest mockGenresEnabledFlow -> searchSongsForGenre(genreName)
+- mockGenresEnabledFlow defaults to false - OK
+- genreName = genre.name e.g. "Bollywood" - not "unknown" - OK  
+- calls streamingRepository.searchSongsForGenre("Bollywood") -> api.searchSongs("Bollywood")
+- API base URL: https://jiosavan-api2.vercel.app/ - OK
+- Logic looks correct. Issue might be that the flow in getMusicByGenre is a cold Flow<List<Song>>
+  but GenreDetailVM calls .first() which should work
+- POSSIBLE ISSUE: the genre.name passed might not match what API expects
+  e.g. "Lofi" vs "lo fi" - need to ensure proper genre name mapping
 
-## iTunes API response shape
-{
-  resultCount: N,
-  results: [{
-    trackId, trackName, artistName, collectionName,
-    previewUrl (30s AAC), artworkUrl100,
-    trackTimeMillis, primaryGenreName
-  }]
-}
+### Favorites (Liked Tab)
+- CORE BUG: getFavoriteSongsPaginated does INNER JOIN songs ON favorites.songId = songs.id
+- Streaming songs are NOT in the songs table
+- setFavoriteStatus() only writes to favorites table, not songs table
+- FIX: In setFavoriteStatus(), also upsert the song into songs table
 
-## Build config
-- Keystore: /home/user/PixelPlayer/vz-playpix.jks, alias: songpxl, pass: songpxl123
-- Version: 1.0.8 (code 9)
-- Output: app/build/outputs/apk/release/
+### Folders Tab
+- ENABLE_FOLDERS_STORAGE_FILTER = false -> uses OFFLINE filter -> returns empty
+- In streaming mode there are no local files
+- FIX: Either hide Folders tab or show "No folders in streaming mode" message
+
+### Buffer/Jitter
+- DualPlayerEngine: setBufferDurationsMs(30_000, 60_000, 5_000, 5_000)
+- FIX: Increase to (60_000, 120_000, 2_500, 5_000) + add retry on error
+  - minBuffer=60s, maxBuffer=120s, playbackBuffer=2.5s, rebuffer=5s
+  - Also setWakeMode(C.WAKE_MODE_NETWORK) instead of WAKE_MODE_LOCAL
+
+## DECISIONS
+- Favorites: upsert streaming songs into DB when liked - matches user's intent
+- Folders: Show "Folders not available in streaming mode" empty state
+- Icon: use rembg to remove background

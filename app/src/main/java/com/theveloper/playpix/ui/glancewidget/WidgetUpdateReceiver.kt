@@ -1,4 +1,4 @@
-package com.theveloper.playpix.ui.glancewidget
+package com.svara.music.ui.glancewidget
 
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -14,7 +14,7 @@ import timber.log.Timber
 class WidgetUpdateReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
-        if (intent.action != "com.theveloper.playpix.ACTION_WIDGET_UPDATE_PLAYBACK_STATE") return
+        if (intent.action != "com.svara.music.ACTION_WIDGET_UPDATE_PLAYBACK_STATE") return
 
         val pendingResult = goAsync()
         val scope = CoroutineScope(Dispatchers.Main + SupervisorJob())
@@ -22,9 +22,9 @@ class WidgetUpdateReceiver : BroadcastReceiver() {
             try {
                 val glanceAppWidgetManager = GlanceAppWidgetManager(context)
 
-                val glanceIds = glanceAppWidgetManager.getGlanceIds(PlayPixGlanceWidget::class.java)
+                val glanceIds = glanceAppWidgetManager.getGlanceIds(SvaraGlanceWidget::class.java)
                 glanceIds.forEach { glanceId ->
-                    PlayPixGlanceWidget().update(context, glanceId)
+                    SvaraGlanceWidget().update(context, glanceId)
                 }
 
                 val barGlanceIds = glanceAppWidgetManager.getGlanceIds(BarWidget4x1::class.java)

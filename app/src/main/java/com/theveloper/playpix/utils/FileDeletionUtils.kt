@@ -1,4 +1,4 @@
-package com.theveloper.playpix.utils
+package com.svara.music.utils
 import android.content.ContentUris
 import android.content.Context
 import android.net.Uri

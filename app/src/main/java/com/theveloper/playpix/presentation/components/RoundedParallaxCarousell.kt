@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components
+package com.svara.music.presentation.components
 
 import androidx.annotation.FloatRange
 import androidx.compose.animation.core.*
@@ -48,7 +48,7 @@ import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.node.LayoutModifierNode
 import androidx.compose.ui.node.ModifierNodeElement
 import androidx.compose.ui.node.invalidateMeasurement
-import com.theveloper.playpix.data.preferences.CarouselStyle
+import com.svara.music.data.preferences.CarouselStyle
 import kotlinx.coroutines.flow.distinctUntilChanged
 
 /* ================================================================================================

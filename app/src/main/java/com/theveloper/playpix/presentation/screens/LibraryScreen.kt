@@ -1,9 +1,9 @@
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
 
-package com.theveloper.playpix.presentation.screens
+package com.svara.music.presentation.screens
 
-import com.theveloper.playpix.presentation.navigation.navigateSafely
-import com.theveloper.playpix.presentation.navigation.navigateSafelyReplacing
+import com.svara.music.presentation.navigation.navigateSafely
+import com.svara.music.presentation.navigation.navigateSafelyReplacing
 
 import android.os.Trace
 import android.text.format.Formatter
@@ -64,7 +64,7 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.LinearWavyProgressIndicator
 import androidx.compose.material.icons.rounded.ViewModule
-import com.theveloper.playpix.presentation.components.ToggleSegmentButton
+import com.svara.music.presentation.components.ToggleSegmentButton
 import androidx.compose.material3.LoadingIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -118,7 +118,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.theveloper.playpix.ui.theme.LocalPlayPixDarkTheme
+import com.svara.music.ui.theme.LocalSvaraDarkTheme
 import androidx.compose.ui.unit.sp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.media3.common.util.UnstableApi
@@ -129,49 +129,49 @@ import coil.compose.AsyncImagePainter
 import coil.imageLoader
 import coil.request.ImageRequest
 import coil.size.Size
-import com.theveloper.playpix.R
-import com.theveloper.playpix.presentation.components.ShimmerBox
-import com.theveloper.playpix.data.model.Album
-import com.theveloper.playpix.data.model.Artist
-import com.theveloper.playpix.data.model.MusicFolder
-import com.theveloper.playpix.data.model.FolderSource
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.model.SortOption
-import com.theveloper.playpix.data.model.StorageFilter
-import com.theveloper.playpix.presentation.components.MiniPlayerHeight
-import com.theveloper.playpix.presentation.components.SmartImage
-import com.theveloper.playpix.presentation.components.resolveNavBarOccupiedHeight
+import com.svara.music.R
+import com.svara.music.presentation.components.ShimmerBox
+import com.svara.music.data.model.Album
+import com.svara.music.data.model.Artist
+import com.svara.music.data.model.MusicFolder
+import com.svara.music.data.model.FolderSource
+import com.svara.music.data.model.Song
+import com.svara.music.data.model.SortOption
+import com.svara.music.data.model.StorageFilter
+import com.svara.music.presentation.components.MiniPlayerHeight
+import com.svara.music.presentation.components.SmartImage
+import com.svara.music.presentation.components.resolveNavBarOccupiedHeight
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.ui.res.stringResource
-import com.theveloper.playpix.presentation.components.PlaylistArtCollage
-import com.theveloper.playpix.presentation.components.ReorderTabsSheet
-import com.theveloper.playpix.presentation.components.SongInfoBottomSheet
-import com.theveloper.playpix.presentation.components.subcomps.LibraryActionRow
-import com.theveloper.playpix.presentation.navigation.Screen
-import com.theveloper.playpix.presentation.components.MultiSelectionBottomSheet
-import com.theveloper.playpix.presentation.components.AlbumMultiSelectionOptionSheet
-import com.theveloper.playpix.presentation.components.PlaylistMultiSelectionBottomSheet
-import com.theveloper.playpix.presentation.components.PlaylistCreationTypeDialog
-import com.theveloper.playpix.presentation.components.CreateAiPlaylistDialog
-import com.theveloper.playpix.presentation.components.subcomps.SelectionActionRow
-import com.theveloper.playpix.presentation.components.subcomps.SelectionCountPill
-import com.theveloper.playpix.presentation.viewmodel.ColorSchemePair
-import com.theveloper.playpix.presentation.viewmodel.PlayerUiState
-import com.theveloper.playpix.presentation.viewmodel.PlayerViewModel
-import com.theveloper.playpix.presentation.viewmodel.StablePlayerState
-import com.theveloper.playpix.presentation.viewmodel.PlaylistUiState
-import com.theveloper.playpix.presentation.viewmodel.PlaylistViewModel
-import com.theveloper.playpix.presentation.viewmodel.SongInfoBottomSheetViewModel
-import com.theveloper.playpix.data.model.LibraryTabId
-import com.theveloper.playpix.data.model.toLibraryTabIdOrNull
-import com.theveloper.playpix.data.preferences.LibraryNavigationMode
-import com.theveloper.playpix.data.worker.SyncProgress
-import com.theveloper.playpix.presentation.screens.search.components.GenreTypography
-import com.theveloper.playpix.presentation.components.SyncProgressBar
-import com.theveloper.playpix.presentation.viewmodel.LibraryViewModel
-import com.theveloper.playpix.utils.formatSongCount
+import com.svara.music.presentation.components.PlaylistArtCollage
+import com.svara.music.presentation.components.ReorderTabsSheet
+import com.svara.music.presentation.components.SongInfoBottomSheet
+import com.svara.music.presentation.components.subcomps.LibraryActionRow
+import com.svara.music.presentation.navigation.Screen
+import com.svara.music.presentation.components.MultiSelectionBottomSheet
+import com.svara.music.presentation.components.AlbumMultiSelectionOptionSheet
+import com.svara.music.presentation.components.PlaylistMultiSelectionBottomSheet
+import com.svara.music.presentation.components.PlaylistCreationTypeDialog
+import com.svara.music.presentation.components.CreateAiPlaylistDialog
+import com.svara.music.presentation.components.subcomps.SelectionActionRow
+import com.svara.music.presentation.components.subcomps.SelectionCountPill
+import com.svara.music.presentation.viewmodel.ColorSchemePair
+import com.svara.music.presentation.viewmodel.PlayerUiState
+import com.svara.music.presentation.viewmodel.PlayerViewModel
+import com.svara.music.presentation.viewmodel.StablePlayerState
+import com.svara.music.presentation.viewmodel.PlaylistUiState
+import com.svara.music.presentation.viewmodel.PlaylistViewModel
+import com.svara.music.presentation.viewmodel.SongInfoBottomSheetViewModel
+import com.svara.music.data.model.LibraryTabId
+import com.svara.music.data.model.toLibraryTabIdOrNull
+import com.svara.music.data.preferences.LibraryNavigationMode
+import com.svara.music.data.worker.SyncProgress
+import com.svara.music.presentation.screens.search.components.GenreTypography
+import com.svara.music.presentation.components.SyncProgressBar
+import com.svara.music.presentation.viewmodel.LibraryViewModel
+import com.svara.music.utils.formatSongCount
 import androidx.paging.compose.collectAsLazyPagingItems
 import android.content.Intent
 import android.net.Uri
@@ -223,27 +223,27 @@ import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
-import com.theveloper.playpix.presentation.components.AutoScrollingTextOnDemand
-import com.theveloper.playpix.presentation.screens.CreatePlaylistDialog
-import com.theveloper.playpix.presentation.components.PlaylistBottomSheet
-import com.theveloper.playpix.presentation.components.PlaylistContainer
-import com.theveloper.playpix.presentation.components.subcomps.PlayingEqIcon
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
+import com.svara.music.presentation.components.AutoScrollingTextOnDemand
+import com.svara.music.presentation.screens.CreatePlaylistDialog
+import com.svara.music.presentation.components.PlaylistBottomSheet
+import com.svara.music.presentation.components.PlaylistContainer
+import com.svara.music.presentation.components.subcomps.PlayingEqIcon
+import com.svara.music.ui.theme.GoogleSansRounded
 import java.util.Locale
 import androidx.compose.ui.platform.LocalContext
 import android.widget.Toast
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.ui.focus.focusModifier
-import com.theveloper.playpix.data.model.PlaylistShapeType
+import com.svara.music.data.model.PlaylistShapeType
 import kotlinx.coroutines.flow.first
 import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.itemContentType
 import androidx.paging.LoadState
-import com.theveloper.playpix.presentation.components.ExpressiveScrollBar
-import com.theveloper.playpix.presentation.components.LibrarySortBottomSheet
-import com.theveloper.playpix.presentation.components.subcomps.EnhancedSongListItem
-import com.theveloper.playpix.data.service.wear.PhoneWatchTransferState
-import com.theveloper.playpix.shared.WearTransferProgress
+import com.svara.music.presentation.components.ExpressiveScrollBar
+import com.svara.music.presentation.components.LibrarySortBottomSheet
+import com.svara.music.presentation.components.subcomps.EnhancedSongListItem
+import com.svara.music.data.service.wear.PhoneWatchTransferState
+import com.svara.music.shared.WearTransferProgress
 import java.io.File
 import kotlin.math.abs
 
@@ -584,7 +584,7 @@ fun LibraryScreen(
     var showMergePlaylistDialog by remember { mutableStateOf(false) }
     var pendingMergePlaylistIds by remember { mutableStateOf(emptyList<String>()) }
 
-    val onPlaylistLongPress: (com.theveloper.playpix.data.model.Playlist) -> Unit = remember(playlistMultiSelectionState, haptic) {
+    val onPlaylistLongPress: (com.svara.music.data.model.Playlist) -> Unit = remember(playlistMultiSelectionState, haptic) {
         { playlist ->
             haptic.performHapticFeedback(HapticFeedbackType.LongPress)
             // Only toggle selection, don't show sheet immediately (similar to songs multi-selection)
@@ -593,7 +593,7 @@ fun LibraryScreen(
         }
     }
 
-    val onPlaylistSelectionToggle: (com.theveloper.playpix.data.model.Playlist) -> Unit = remember(playlistMultiSelectionState) {
+    val onPlaylistSelectionToggle: (com.svara.music.data.model.Playlist) -> Unit = remember(playlistMultiSelectionState) {
         { playlist -> playlistMultiSelectionState.toggleSelection(playlist) }
     }
 
@@ -800,7 +800,7 @@ fun LibraryScreen(
     val navBarCompactMode by playerViewModel.navBarCompactMode.collectAsStateWithLifecycle()
     val bottomBarHeightDp = resolveNavBarOccupiedHeight(systemNavBarInset, navBarCompactMode)
 
-    val dm = LocalPlayPixDarkTheme.current
+    val dm = LocalSvaraDarkTheme.current
 
     val iconRotation by transition.animateFloat(
         label = "Action Button Icon Rotation",
@@ -1074,16 +1074,16 @@ fun LibraryScreen(
                             allPlaylists.filter { playlist ->
                                 when (playlist.source) {
                                     "TELEGRAM_TOPIC" -> when (mode) {
-                                        com.theveloper.playpix.data.preferences.TelegramTopicDisplayMode.CHANNELS_ONLY ->
+                                        com.svara.music.data.preferences.TelegramTopicDisplayMode.CHANNELS_ONLY ->
                                             false
-                                        com.theveloper.playpix.data.preferences.TelegramTopicDisplayMode.TOPICS_ONLY,
-                                        com.theveloper.playpix.data.preferences.TelegramTopicDisplayMode.CHANNELS_AND_TOPICS ->
+                                        com.svara.music.data.preferences.TelegramTopicDisplayMode.TOPICS_ONLY,
+                                        com.svara.music.data.preferences.TelegramTopicDisplayMode.CHANNELS_AND_TOPICS ->
                                             playlist.songIds.isNotEmpty()
                                     }
                                     "TELEGRAM" -> when (mode) {
-                                        com.theveloper.playpix.data.preferences.TelegramTopicDisplayMode.CHANNELS_ONLY ->
+                                        com.svara.music.data.preferences.TelegramTopicDisplayMode.CHANNELS_ONLY ->
                                             true
-                                        com.theveloper.playpix.data.preferences.TelegramTopicDisplayMode.TOPICS_ONLY -> {
+                                        com.svara.music.data.preferences.TelegramTopicDisplayMode.TOPICS_ONLY -> {
                                             // Hide combined playlist only for forum channels
                                             // (those that have at least one topic playlist)
                                             val chatId = playlist.id
@@ -1096,7 +1096,7 @@ fun LibraryScreen(
                                                 }
                                             } else true
                                         }
-                                        com.theveloper.playpix.data.preferences.TelegramTopicDisplayMode.CHANNELS_AND_TOPICS ->
+                                        com.svara.music.data.preferences.TelegramTopicDisplayMode.CHANNELS_AND_TOPICS ->
                                             true
                                     }
                                     else -> true
@@ -1438,7 +1438,7 @@ fun LibraryScreen(
                                         Text(
                                             text = stringResource(R.string.presentation_batch_d_topics_display),
                                             style = MaterialTheme.typography.headlineSmall,
-                                            fontFamily = com.theveloper.playpix.ui.theme.GoogleSansRounded,
+                                            fontFamily = com.svara.music.ui.theme.GoogleSansRounded,
                                             fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
                                             modifier = Modifier.padding(start = 2.dp, bottom = 8.dp)
                                         )
@@ -1449,9 +1449,9 @@ fun LibraryScreen(
                                             horizontalArrangement = Arrangement.spacedBy(8.dp)
                                         ) {
                                             listOf(
-                                                com.theveloper.playpix.data.preferences.TelegramTopicDisplayMode.CHANNELS_ONLY to stringResource(R.string.presentation_batch_d_topic_mode_channels),
-                                                com.theveloper.playpix.data.preferences.TelegramTopicDisplayMode.TOPICS_ONLY to stringResource(R.string.presentation_batch_d_topic_mode_topics),
-                                                com.theveloper.playpix.data.preferences.TelegramTopicDisplayMode.CHANNELS_AND_TOPICS to stringResource(R.string.presentation_batch_d_topic_mode_both)
+                                                com.svara.music.data.preferences.TelegramTopicDisplayMode.CHANNELS_ONLY to stringResource(R.string.presentation_batch_d_topic_mode_channels),
+                                                com.svara.music.data.preferences.TelegramTopicDisplayMode.TOPICS_ONLY to stringResource(R.string.presentation_batch_d_topic_mode_topics),
+                                                com.svara.music.data.preferences.TelegramTopicDisplayMode.CHANNELS_AND_TOPICS to stringResource(R.string.presentation_batch_d_topic_mode_both)
                                             ).forEach { (mode, label) ->
                                                 ToggleSegmentButton(
                                                     modifier = Modifier.weight(1f),
@@ -1472,11 +1472,11 @@ fun LibraryScreen(
                                         Text(
                                             text = stringResource(R.string.presentation_batch_d_cloud_sources_heading),
                                             style = MaterialTheme.typography.headlineSmall,
-                                            fontFamily = com.theveloper.playpix.ui.theme.GoogleSansRounded,
+                                            fontFamily = com.svara.music.ui.theme.GoogleSansRounded,
                                             fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
                                             modifier = Modifier.padding(start = 2.dp, bottom = 8.dp)
                                         )
-                                        com.theveloper.playpix.presentation.components.LibrarySheetToggleCard(
+                                        com.svara.music.presentation.components.LibrarySheetToggleCard(
                                             label = stringResource(R.string.presentation_batch_d_cloud_only),
                                             checked = playerUiState.hideLocalMedia,
                                             boxBackgroundColor = if (playerUiState.hideLocalMedia)
@@ -1626,54 +1626,21 @@ fun LibraryScreen(
                                     }
 
                                     LibraryTabId.FOLDERS -> {
-                                        val folders = playerUiState.musicFolders
-                                        val currentFolder = playerUiState.currentFolder
-                                        val isLoading = playerUiState.isLoadingLibraryCategories
-                                        val stablePlayerState by playerViewModel.stablePlayerState.collectAsStateWithLifecycle()
-                                        val defaultFolderName = stringResource(R.string.presentation_batch_d_folder_name_fallback)
-
-                                        LibraryFoldersTab(
-                                            folders = folders,
-                                            currentFolder = currentFolder,
-                                            isLoading = isLoading,
+                                        // Streaming-only: no filesystem folders exist.
+                                        // Show user-created playlists here instead.
+                                        LibraryPlaylistsTab(
+                                            playlistUiState = playlistUiState,
+                                            filteredPlaylists = visiblePlaylists,
+                                            navController = navController,
+                                            playerViewModel = playerViewModel,
                                             bottomBarHeight = bottomBarHeightDp,
-                                            stablePlayerState = stablePlayerState,
-                                            onNavigateBack = { playerViewModel.navigateBackFolder() },
-                                            onFolderClick = { folderPath -> playerViewModel.navigateToFolder(folderPath) },
-                                            onFolderAsPlaylistClick = { folder ->
-                                                val encodedPath = Uri.encode(folder.path)
-                                                navController.navigateSafelyReplacing(
-                                                    route = Screen.PlaylistDetail.createRoute(
-                                                        "${PlaylistViewModel.FOLDER_PLAYLIST_PREFIX}$encodedPath"
-                                                    ),
-                                                    patternToPop = Screen.PlaylistDetail.route
-                                                )
-                                            },
-                                            onPlaySong = { song, queue ->
-                                                playerViewModel.showAndPlaySong(
-                                                    song,
-                                                    queue,
-                                                    currentFolder?.name ?: defaultFolderName
-                                                )
-                                            },
-                                            onMoreOptionsClick = stableOnMoreOptionsClick,
-                                            isPlaylistView = playerUiState.isFoldersPlaylistView,
-                                            currentSortOption = playerUiState.currentFolderSortOption,
                                             isRefreshing = isRefreshing,
                                             onRefresh = onRefresh,
-                                            isSelectionMode = isSelectionMode,
-                                            selectedSongIds = selectedSongIds,
-                                            onSongLongPress = onSongLongPress,
-                                            onSongSelectionToggle = onSongSelectionToggle,
-                                            getSelectionIndex = playerViewModel.multiSelectionStateHolder::getSelectionIndex,
-                                            onLocateCurrentSongVisibilityChanged = { foldersShowLocateButton = it },
-                                            onRegisterLocateCurrentSongAction = { foldersLocateAction = it },
-                                            pendingLocatePath = pendingFoldersLocatePath,
-                                            onClearPendingLocate = { pendingFoldersLocatePath = null },
-                                            onRequestCrossFolderLocate = { folderPath ->
-                                                pendingFoldersLocatePath = folderPath
-                                                playerViewModel.navigateToFolder(folderPath)
-                                            }
+                                            isSelectionMode = isPlaylistSelectionMode,
+                                            selectedPlaylistIds = selectedPlaylistIds,
+                                            onPlaylistLongPress = onPlaylistLongPress,
+                                            onPlaylistSelectionToggle = onPlaylistSelectionToggle,
+                                            onPlaylistOptionsClick = { showPlaylistMultiSelectionSheet = true }
                                         )
                                     }
 
@@ -2200,7 +2167,7 @@ private fun CompactLibraryPagerIndicator(
 @Composable
 private fun LibraryInlineSyncIndicator(
     visible: Boolean,
-    syncManager: com.theveloper.playpix.data.worker.SyncManager
+    syncManager: com.svara.music.data.worker.SyncManager
 ) {
     AnimatedVisibility(
         visible = visible,
@@ -2267,7 +2234,7 @@ private fun LibraryInlineSyncIndicator(
  * and all tab content — remains unaffected during sync.
  */
 @Composable
-private fun LibrarySyncOverlay(syncManager: com.theveloper.playpix.data.worker.SyncManager) {
+private fun LibrarySyncOverlay(syncManager: com.svara.music.data.worker.SyncManager) {
     val syncProgress by syncManager.syncProgress
         .collectAsStateWithLifecycle(initialValue = SyncProgress())
 
@@ -3244,7 +3211,7 @@ fun AlbumGridItemRedesigned(
     onSelectionToggle: () -> Unit = {}
 ) {
     val albumColorSchemePair by albumColorSchemePairFlow.collectAsStateWithLifecycle()
-    val systemIsDark = LocalPlayPixDarkTheme.current
+    val systemIsDark = LocalSvaraDarkTheme.current
 
     // 1. Obtén el colorScheme del tema actual aquí, en el scope Composable.
     val currentMaterialColorScheme = MaterialTheme.colorScheme
@@ -3523,7 +3490,7 @@ fun AlbumListItem(
     onSelectionToggle: () -> Unit = {}
 ) {
     val albumColorSchemePair by albumColorSchemePairFlow.collectAsStateWithLifecycle()
-    val systemIsDark = LocalPlayPixDarkTheme.current
+    val systemIsDark = LocalSvaraDarkTheme.current
     val currentMaterialColorScheme = MaterialTheme.colorScheme
 
     val itemDesignColorScheme = remember(albumColorSchemePair, systemIsDark, currentMaterialColorScheme) {

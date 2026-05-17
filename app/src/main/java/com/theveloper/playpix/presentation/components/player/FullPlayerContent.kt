@@ -1,10 +1,10 @@
-package com.theveloper.playpix.presentation.components.player
+package com.svara.music.presentation.components.player
 
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.res.Configuration
 import android.net.Uri
-import com.theveloper.playpix.data.model.Lyrics
+import com.svara.music.data.model.Lyrics
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.AnimatedContent
@@ -109,28 +109,28 @@ import androidx.compose.runtime.derivedStateOf
 import androidx.compose.ui.res.stringResource
 import androidx.media3.common.Player
 import androidx.media3.common.util.UnstableApi
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.model.Artist
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.preferences.AlbumArtQuality
-import com.theveloper.playpix.data.preferences.CarouselStyle
-import com.theveloper.playpix.data.preferences.FullPlayerLoadingTweaks
-import com.theveloper.playpix.presentation.components.AlbumCarouselSection
-import com.theveloper.playpix.presentation.components.AutoScrollingTextOnDemand
-import com.theveloper.playpix.presentation.components.LocalMaterialTheme
-import com.theveloper.playpix.presentation.components.LyricsSheet
-import com.theveloper.playpix.presentation.components.scoped.rememberSmoothProgress
-import com.theveloper.playpix.presentation.components.subcomps.FetchLyricsDialog
-import com.theveloper.playpix.presentation.viewmodel.LyricsSearchUiState
-import com.theveloper.playpix.presentation.viewmodel.PlayerSheetState
-import com.theveloper.playpix.presentation.viewmodel.PlayerViewModel
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
-import com.theveloper.playpix.utils.AudioMetaUtils.mimeTypeToFormat
-import com.theveloper.playpix.utils.LyricsImportFailureReason
-import com.theveloper.playpix.utils.LyricsImportSecurity
-import com.theveloper.playpix.utils.LyricsImportValidationResult
-import com.theveloper.playpix.utils.ValidatedLyricsImport
-import com.theveloper.playpix.utils.formatDuration
+import com.svara.music.R
+import com.svara.music.data.model.Artist
+import com.svara.music.data.model.Song
+import com.svara.music.data.preferences.AlbumArtQuality
+import com.svara.music.data.preferences.CarouselStyle
+import com.svara.music.data.preferences.FullPlayerLoadingTweaks
+import com.svara.music.presentation.components.AlbumCarouselSection
+import com.svara.music.presentation.components.AutoScrollingTextOnDemand
+import com.svara.music.presentation.components.LocalMaterialTheme
+import com.svara.music.presentation.components.LyricsSheet
+import com.svara.music.presentation.components.scoped.rememberSmoothProgress
+import com.svara.music.presentation.components.subcomps.FetchLyricsDialog
+import com.svara.music.presentation.viewmodel.LyricsSearchUiState
+import com.svara.music.presentation.viewmodel.PlayerSheetState
+import com.svara.music.presentation.viewmodel.PlayerViewModel
+import com.svara.music.ui.theme.GoogleSansRounded
+import com.svara.music.utils.AudioMetaUtils.mimeTypeToFormat
+import com.svara.music.utils.LyricsImportFailureReason
+import com.svara.music.utils.LyricsImportSecurity
+import com.svara.music.utils.LyricsImportValidationResult
+import com.svara.music.utils.ValidatedLyricsImport
+import com.svara.music.utils.formatDuration
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
@@ -139,8 +139,8 @@ import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape
 import timber.log.Timber
 import java.util.Locale
 import kotlin.math.roundToLong
-import com.theveloper.playpix.presentation.components.WavySliderExpressive
-import com.theveloper.playpix.presentation.components.ToggleSegmentButton
+import com.svara.music.presentation.components.WavySliderExpressive
+import com.svara.music.presentation.components.ToggleSegmentButton
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.withContext
@@ -361,7 +361,7 @@ fun FullPlayerContent(
                     playerViewModel.resetLyricsSearchState()
                 },
                 onImport = {
-                    filePickerLauncher.launch(com.theveloper.playpix.utils.LyricsImportSecurity.pickerMimeTypes())
+                    filePickerLauncher.launch(com.svara.music.utils.LyricsImportSecurity.pickerMimeTypes())
                 }
             )
         }
@@ -945,7 +945,7 @@ fun FullPlayerContent(
             onSearchLyrics = { forcePick -> playerViewModel.fetchLyricsForCurrentSong(forcePick) },
             onPickResult = { playerViewModel.acceptLyricsSearchResultForCurrentSong(it) },
             onManualSearch = { title, artist -> playerViewModel.searchLyricsManually(title, artist) },
-            onImportLyrics = { filePickerLauncher.launch(com.theveloper.playpix.utils.LyricsImportSecurity.pickerMimeTypes()) },
+            onImportLyrics = { filePickerLauncher.launch(com.svara.music.utils.LyricsImportSecurity.pickerMimeTypes()) },
             onDismissLyricsSearch = { playerViewModel.resetLyricsSearchState() },
             lyricsSyncOffset = lyricsSyncOffset,
             onLyricsSyncOffsetChange = { currentSong?.id?.let { songId -> playerViewModel.setLyricsSyncOffset(songId, it) } },
@@ -2239,7 +2239,7 @@ private fun AlbumPlaceholder(
         Box(contentAlignment = Alignment.Center, modifier = Modifier.fillMaxSize()) {
             Icon(
                 modifier = Modifier.size(86.dp),
-                painter = painterResource(R.drawable.playpix_base_monochrome),
+                painter = painterResource(R.drawable.svara_base_monochrome),
                 contentDescription = null,
                 tint = onColor
             )

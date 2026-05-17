@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components
+package com.svara.music.presentation.components
 
 import android.app.Activity
 import android.content.ActivityNotFoundException
@@ -65,24 +65,24 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.core.content.FileProvider
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.presentation.components.subcomps.AutoSizingTextToFill
-import com.theveloper.playpix.utils.formatDuration
-import com.theveloper.playpix.utils.shapes.RoundedStarShape
+import com.svara.music.R
+import com.svara.music.data.model.Song
+import com.svara.music.presentation.components.subcomps.AutoSizingTextToFill
+import com.svara.music.utils.formatDuration
+import com.svara.music.utils.shapes.RoundedStarShape
 import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape
 import androidx.core.net.toUri
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import com.theveloper.playpix.data.ai.SongMetadata
-import com.theveloper.playpix.data.media.CoverArtUpdate
-import com.theveloper.playpix.ui.theme.MontserratFamily
-import com.theveloper.playpix.presentation.viewmodel.SongInfoBottomSheetViewModel
+import com.svara.music.data.ai.SongMetadata
+import com.svara.music.data.media.CoverArtUpdate
+import com.svara.music.ui.theme.MontserratFamily
+import com.svara.music.presentation.viewmodel.SongInfoBottomSheetViewModel
 import kotlinx.coroutines.launch
 
 import androidx.compose.ui.graphics.TransformOrigin
-import com.theveloper.playpix.presentation.screens.TabAnimation
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
-import com.theveloper.playpix.utils.AudioMetaUtils
+import com.svara.music.presentation.screens.TabAnimation
+import com.svara.music.ui.theme.GoogleSansRounded
+import com.svara.music.utils.AudioMetaUtils
 import androidx.compose.ui.res.stringResource
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
@@ -127,7 +127,7 @@ fun SongInfoBottomSheet(
     var showArtistPicker by remember { mutableStateOf(false) }
     val audioMeta by songInfoViewModel.audioMeta.collectAsStateWithLifecycle()
     val resolvedArtists by songInfoViewModel.resolvedArtists.collectAsStateWithLifecycle()
-    val isPlayPixWatchAvailable by songInfoViewModel.isPlayPixWatchAvailable.collectAsStateWithLifecycle()
+    val isSvaraWatchAvailable by songInfoViewModel.isSvaraWatchAvailable.collectAsStateWithLifecycle()
     val isWatchAvailabilityResolved by songInfoViewModel.isWatchAvailabilityResolved.collectAsStateWithLifecycle()
     val isSendingToWatch by songInfoViewModel.isSendingToWatch.collectAsStateWithLifecycle()
     val watchTransfers by songInfoViewModel.watchTransfers.collectAsStateWithLifecycle()
@@ -140,7 +140,7 @@ fun SongInfoBottomSheet(
             .maxByOrNull { it.updatedAtMillis }
     }
     val currentSongTransfer = latestSongWatchTransfer?.takeIf {
-        it.status == com.theveloper.playpix.shared.WearTransferProgress.STATUS_TRANSFERRING
+        it.status == com.svara.music.shared.WearTransferProgress.STATUS_TRANSFERRING
     }
     val currentSongTransferPercent = ((currentSongTransfer?.progress ?: 0f) * 100f).toInt().coerceIn(0, 100)
     val isSongSavedOnWatch = remember(
@@ -166,7 +166,7 @@ fun SongInfoBottomSheet(
         latestSongWatchTransfer?.error,
     ) {
         val failedTransfer = latestSongWatchTransfer?.takeIf {
-            it.status == com.theveloper.playpix.shared.WearTransferProgress.STATUS_FAILED &&
+            it.status == com.svara.music.shared.WearTransferProgress.STATUS_FAILED &&
                     !it.error.isNullOrBlank()
         } ?: return@LaunchedEffect
         val errorKey = "${failedTransfer.requestId}:${failedTransfer.error}"
@@ -178,14 +178,14 @@ fun SongInfoBottomSheet(
     val shouldOfferWatchTransfer = remember(
         canSendToWatch,
         currentSongTransfer,
-        isPlayPixWatchAvailable,
+        isSvaraWatchAvailable,
         isSongSavedOnWatch,
         isWatchAvailabilityResolved,
     ) {
         currentSongTransfer == null &&
                 canSendToWatch &&
                 isWatchAvailabilityResolved &&
-                isPlayPixWatchAvailable &&
+                isSvaraWatchAvailable &&
                 !isSongSavedOnWatch
     }
     val shouldShowWatchTransferLoading = remember(
@@ -590,12 +590,12 @@ fun SongInfoBottomSheet(
                                                         .fillMaxWidth()
                                                         .heightIn(min = 66.dp),
                                                     colors = ButtonDefaults.filledTonalButtonColors(
-                                                        containerColor = if (isPlayPixWatchAvailable) {
+                                                        containerColor = if (isSvaraWatchAvailable) {
                                                             sendToWatchContainerColor
                                                         } else {
                                                             MaterialTheme.colorScheme.surfaceContainerHigh
                                                         },
-                                                        contentColor = if (isPlayPixWatchAvailable) {
+                                                        contentColor = if (isSvaraWatchAvailable) {
                                                             sendToWatchContentColor
                                                         } else {
                                                             MaterialTheme.colorScheme.onSurfaceVariant
@@ -635,7 +635,7 @@ fun SongInfoBottomSheet(
                                                         Icon(
                                                             painter = painterResource(R.drawable.rounded_watch_arrow_down_24),
                                                             contentDescription = stringResource(
-                                                                if (isPlayPixWatchAvailable) {
+                                                                if (isSvaraWatchAvailable) {
                                                                     R.string.cd_send_song_to_watch
                                                                 } else {
                                                                     R.string.cd_watch_unavailable
@@ -645,7 +645,7 @@ fun SongInfoBottomSheet(
                                                         Spacer(Modifier.width(8.dp))
                                                         Text(
                                                             stringResource(
-                                                                if (isPlayPixWatchAvailable) {
+                                                                if (isSvaraWatchAvailable) {
                                                                     R.string.song_info_send_to_watch
                                                                 } else {
                                                                     R.string.song_info_watch_unavailable
@@ -848,7 +848,7 @@ fun SongInfoBottomSheet(
 
     val artistPickerSheetState = androidx.compose.material3.rememberModalBottomSheetState(skipPartiallyExpanded = true)
     if (showArtistPicker && resolvedArtists.isNotEmpty()) {
-        com.theveloper.playpix.presentation.components.player.PlayerArtistPickerBottomSheet(
+        com.svara.music.presentation.components.player.PlayerArtistPickerBottomSheet(
             song = song,
             artists = resolvedArtists,
             sheetState = artistPickerSheetState,

@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.screens
+package com.svara.music.presentation.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -37,12 +37,12 @@ import androidx.compose.material.icons.rounded.MusicNote
 import androidx.compose.material.icons.rounded.Person
 import androidx.compose.material.icons.rounded.Watch
 import androidx.compose.ui.graphics.vector.ImageVector
-import com.theveloper.playpix.R
-import com.theveloper.playpix.presentation.components.AlwaysOnScalingPositionIndicator
-import com.theveloper.playpix.presentation.components.WearTopTimeText
-import com.theveloper.playpix.presentation.theme.LocalWearPalette
-import com.theveloper.playpix.presentation.theme.screenBackgroundColor
-import com.theveloper.playpix.presentation.theme.surfaceContainerColor
+import com.svara.music.R
+import com.svara.music.presentation.components.AlwaysOnScalingPositionIndicator
+import com.svara.music.presentation.components.WearTopTimeText
+import com.svara.music.presentation.theme.LocalWearPalette
+import com.svara.music.presentation.theme.screenBackgroundColor
+import com.svara.music.presentation.theme.surfaceContainerColor
 
 /**
  * Root browse screen showing library categories.

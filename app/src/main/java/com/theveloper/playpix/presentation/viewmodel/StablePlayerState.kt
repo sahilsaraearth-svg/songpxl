@@ -1,9 +1,9 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
 import androidx.compose.runtime.Immutable
 import androidx.media3.common.Player
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.model.Lyrics
+import com.svara.music.data.model.Song
+import com.svara.music.data.model.Lyrics
 
 @Immutable
 data class StablePlayerState(

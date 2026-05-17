@@ -222,8 +222,8 @@
     <string name="setcat_trigger_crash_title">Provocar cierre forzado de prueba</string>
     <string name="setcat_trigger_crash_subtitle">Simular un fallo para probar el informe de errores.</string>
     <string name="setcat_application">Aplicación</string>
-    <string name="setcat_about_playpix_title">Acerca de PlayPix</string>
-    <string name="setcat_about_playpix_subtitle">Versión, créditos y más.</string>
+    <string name="setcat_about_svara_title">Acerca de Svara</string>
+    <string name="setcat_about_svara_subtitle">Versión, créditos y más.</string>
 
     <string name="backup_summary_none">Ninguna sección seleccionada.</string>
     <string name="backup_summary_all">Todas las secciones seleccionadas.</string>
@@ -267,7 +267,7 @@
     <string name="dialog_regenerate_stats_title">¿Regenerar estadísticas?</string>
     <string name="dialog_regenerate_stats_body">Se borrará la caché de estadísticas y se forzará un recálculo desde el historial.</string>
     <string name="toast_stats_regeneration_started">Regeneración de estadísticas iniciada</string>
-    <string name="backup_file_name_format">PlayPix_Copia_%1$d.pxpl</string>
+    <string name="backup_file_name_format">Svara_Copia_%1$d.pxpl</string>
 
     <string name="setcat_regenerate_daily_mix_action">Regenerar Daily Mix</string>
     <string name="setcat_regenerate_stats_action">Regenerar estadísticas</string>

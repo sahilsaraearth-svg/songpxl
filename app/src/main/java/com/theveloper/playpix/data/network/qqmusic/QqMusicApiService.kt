@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.network.qqmusic
+package com.svara.music.data.network.qqmusic
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -45,8 +45,8 @@ class QqMusicApiService @Inject constructor(
                 return cookieStore[url.host] ?: emptyList()
             }
         })
-        .addInterceptor(com.theveloper.playpix.data.remote.qqmusic.QQMusicEncryptInterceptor(
-            com.theveloper.playpix.data.remote.qqmusic.QQSignGenerator(context)
+        .addInterceptor(com.svara.music.data.remote.qqmusic.QQMusicEncryptInterceptor(
+            com.svara.music.data.remote.qqmusic.QQSignGenerator(context)
         ))
         .connectTimeout(15, TimeUnit.SECONDS)
         .readTimeout(15, TimeUnit.SECONDS)

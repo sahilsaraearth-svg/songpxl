@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.model
+package com.svara.music.data.model
 
 import android.os.Parcelable
 import androidx.compose.runtime.Immutable

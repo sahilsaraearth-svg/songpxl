@@ -1,10 +1,10 @@
-package com.theveloper.playpix.data
+package com.svara.music.data
 
 import android.app.Application
 import com.google.android.gms.wearable.Wearable
-import com.theveloper.playpix.shared.WearBrowseRequest
-import com.theveloper.playpix.shared.WearBrowseResponse
-import com.theveloper.playpix.shared.WearDataPaths
+import com.svara.music.shared.WearBrowseRequest
+import com.svara.music.shared.WearBrowseResponse
+import com.svara.music.shared.WearDataPaths
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.tasks.await

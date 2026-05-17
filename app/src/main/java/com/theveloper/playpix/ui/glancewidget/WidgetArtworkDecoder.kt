@@ -1,12 +1,12 @@
-package com.theveloper.playpix.ui.glancewidget
+package com.svara.music.ui.glancewidget
 
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
-import com.theveloper.playpix.utils.AlbumArtUtils
-import com.theveloper.playpix.utils.ArtworkTransportSanitizer
-import com.theveloper.playpix.utils.LocalArtworkUri
+import com.svara.music.utils.AlbumArtUtils
+import com.svara.music.utils.ArtworkTransportSanitizer
+import com.svara.music.utils.LocalArtworkUri
 
 private val SUPPORTED_WIDGET_LOCAL_ARTWORK_SCHEMES = setOf(
     "content",

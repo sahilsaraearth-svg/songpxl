@@ -1,10 +1,10 @@
-package com.theveloper.playpix.data.backup.format
+package com.svara.music.data.backup.format
 
 import android.content.Context
 import android.net.Uri
 import com.google.gson.Gson
-import com.theveloper.playpix.data.backup.model.BackupManifest
-import com.theveloper.playpix.di.BackupGson
+import com.svara.music.data.backup.model.BackupManifest
+import com.svara.music.di.BackupGson
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

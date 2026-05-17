@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.image
+package com.svara.music.data.image
 
 import android.net.Uri
 import coil.ImageLoader
@@ -8,7 +8,7 @@ import coil.fetch.FetchResult
 import coil.fetch.Fetcher
 import coil.fetch.SourceResult
 import coil.request.Options
-import com.theveloper.playpix.data.jellyfin.JellyfinRepository
+import com.svara.music.data.jellyfin.JellyfinRepository
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okio.FileSystem

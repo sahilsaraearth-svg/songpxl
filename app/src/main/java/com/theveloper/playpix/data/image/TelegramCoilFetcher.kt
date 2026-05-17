@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.image
+package com.svara.music.data.image
 
 import android.content.Context
 import android.graphics.BitmapFactory
@@ -12,7 +12,7 @@ import coil.fetch.FetchResult
 import coil.fetch.Fetcher
 import coil.fetch.SourceResult
 import coil.request.Options
-import com.theveloper.playpix.data.telegram.TelegramRepository
+import com.svara.music.data.telegram.TelegramRepository
 import okio.Path.Companion.toPath
 import org.drinkless.tdlib.TdApi
 import timber.log.Timber
@@ -43,7 +43,7 @@ class TelegramCoilFetcher(
     private val uri: Uri,
     private val telegramRepository: TelegramRepository,
     private val cacheDir: File,
-    private val telegramCacheManager: com.theveloper.playpix.data.telegram.TelegramCacheManager?
+    private val telegramCacheManager: com.svara.music.data.telegram.TelegramCacheManager?
 ) : Fetcher {
 
     companion object {
@@ -413,7 +413,7 @@ class TelegramCoilFetcher(
      */
     class Factory @Inject constructor(
         private val telegramRepository: TelegramRepository,
-        private val telegramCacheManager: com.theveloper.playpix.data.telegram.TelegramCacheManager
+        private val telegramCacheManager: com.svara.music.data.telegram.TelegramCacheManager
     ) : Fetcher.Factory<Uri> {
         
         private var cacheDir: File? = null

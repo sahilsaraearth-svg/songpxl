@@ -1,13 +1,13 @@
-package com.theveloper.playpix.data
+package com.svara.music.data
 
 import com.google.android.gms.wearable.MessageClient
 import com.google.android.gms.wearable.NodeClient
-import com.theveloper.playpix.data.local.LocalSongDao
-import com.theveloper.playpix.shared.WearDataPaths
-import com.theveloper.playpix.shared.WearFavoriteSyncRequest
-import com.theveloper.playpix.shared.WearFavoriteSyncResponse
-import com.theveloper.playpix.shared.WearPlaybackCommand
-import com.theveloper.playpix.shared.WearPlaybackResult
+import com.svara.music.data.local.LocalSongDao
+import com.svara.music.shared.WearDataPaths
+import com.svara.music.shared.WearFavoriteSyncRequest
+import com.svara.music.shared.WearFavoriteSyncResponse
+import com.svara.music.shared.WearPlaybackCommand
+import com.svara.music.shared.WearPlaybackResult
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

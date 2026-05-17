@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.worker
+package com.svara.music.data.worker
 
 import android.content.Context
 import android.os.Trace
@@ -9,25 +9,25 @@ import androidx.work.CoroutineWorker
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkerParameters
 import androidx.work.workDataOf
-import com.theveloper.playpix.data.database.AlbumEntity
-import com.theveloper.playpix.data.database.ArtistEntity
-import com.theveloper.playpix.data.database.MusicDao
-import com.theveloper.playpix.data.database.NeteaseDao
-import com.theveloper.playpix.data.database.SongArtistCrossRef
-import com.theveloper.playpix.data.database.SongEntity
-import com.theveloper.playpix.data.database.SourceType
-import com.theveloper.playpix.data.database.TelegramDao
-import com.theveloper.playpix.data.database.resolveAlbumArtUri
-import com.theveloper.playpix.data.database.serializeArtistRefs
-import com.theveloper.playpix.data.media.AudioMetadataReader
-import com.theveloper.playpix.data.model.ArtistRef
-import com.theveloper.playpix.data.navidrome.NavidromeRepository
-import com.theveloper.playpix.data.preferences.UserPreferencesRepository
-import com.theveloper.playpix.data.streaming.StreamingRepository
-import com.theveloper.playpix.data.repository.LyricsRepository
-import com.theveloper.playpix.utils.LocalArtworkUri
-import com.theveloper.playpix.utils.normalizeMetadataTextOrEmpty
-import com.theveloper.playpix.utils.splitArtistsByDelimiters
+import com.svara.music.data.database.AlbumEntity
+import com.svara.music.data.database.ArtistEntity
+import com.svara.music.data.database.MusicDao
+import com.svara.music.data.database.NeteaseDao
+import com.svara.music.data.database.SongArtistCrossRef
+import com.svara.music.data.database.SongEntity
+import com.svara.music.data.database.SourceType
+import com.svara.music.data.database.TelegramDao
+import com.svara.music.data.database.resolveAlbumArtUri
+import com.svara.music.data.database.serializeArtistRefs
+import com.svara.music.data.media.AudioMetadataReader
+import com.svara.music.data.model.ArtistRef
+import com.svara.music.data.navidrome.NavidromeRepository
+import com.svara.music.data.preferences.UserPreferencesRepository
+import com.svara.music.data.streaming.StreamingRepository
+import com.svara.music.data.repository.LyricsRepository
+import com.svara.music.utils.LocalArtworkUri
+import com.svara.music.utils.normalizeMetadataTextOrEmpty
+import com.svara.music.utils.splitArtistsByDelimiters
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
 import java.io.File
@@ -127,7 +127,7 @@ constructor(
             }
 
     companion object {
-        const val WORK_NAME = "com.theveloper.playpix.data.worker.SyncWorker"
+        const val WORK_NAME = "com.svara.music.data.worker.SyncWorker"
         private const val TAG = "SyncWorker"
         const val INPUT_FORCE_METADATA = "input_force_metadata"
         const val INPUT_SYNC_MODE = "input_sync_mode"

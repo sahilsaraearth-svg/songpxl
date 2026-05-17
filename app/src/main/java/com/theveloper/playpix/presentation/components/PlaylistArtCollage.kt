@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components
+package com.svara.music.presentation.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -24,8 +24,8 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.unit.dp
 import coil.size.Size
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.model.Song
+import com.svara.music.R
+import com.svara.music.data.model.Song
 import kotlin.math.floor
 import kotlin.math.sqrt
 

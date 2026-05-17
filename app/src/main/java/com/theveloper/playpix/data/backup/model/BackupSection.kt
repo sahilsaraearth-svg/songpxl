@@ -1,6 +1,6 @@
-package com.theveloper.playpix.data.backup.model
+package com.svara.music.data.backup.model
 
-import com.theveloper.playpix.R
+import com.svara.music.R
 
 enum class BackupSection(
     val key: String,

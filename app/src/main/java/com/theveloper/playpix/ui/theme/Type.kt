@@ -1,4 +1,4 @@
-package com.theveloper.playpix.ui.theme
+package com.svara.music.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.ExperimentalTextApi
@@ -12,7 +12,7 @@ import androidx.compose.ui.text.googlefonts.GoogleFont
 import androidx.compose.ui.text.style.TextGeometricTransform
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
-import com.theveloper.playpix.R
+import com.svara.music.R
 
 
 private val montserrat = GoogleFont("Montserrat")

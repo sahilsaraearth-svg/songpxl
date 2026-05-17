@@ -1,10 +1,10 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
 import android.os.SystemClock
 import com.google.common.truth.Truth.assertThat
-import com.theveloper.playpix.data.DailyMixManager
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.stats.PlaybackStatsRepository
+import com.svara.music.data.DailyMixManager
+import com.svara.music.data.model.Song
+import com.svara.music.data.stats.PlaybackStatsRepository
 import io.mockk.coVerify
 import io.mockk.every
 import io.mockk.mockk

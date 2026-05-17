@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.service
+package com.svara.music.data.service
 
 import android.content.Context
 import android.graphics.Bitmap

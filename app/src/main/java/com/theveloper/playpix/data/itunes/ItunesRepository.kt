@@ -1,7 +1,7 @@
-package com.theveloper.playpix.data.itunes
+package com.svara.music.data.itunes
 
-import com.theveloper.playpix.data.model.ArtistRef
-import com.theveloper.playpix.data.model.Song
+import com.svara.music.data.model.ArtistRef
+import com.svara.music.data.model.Song
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import timber.log.Timber

@@ -1,4 +1,4 @@
-package com.theveloper.playpix.utils
+package com.svara.music.utils
 
 import android.media.MediaMetadataRetriever
 import java.util.concurrent.ConcurrentLinkedQueue

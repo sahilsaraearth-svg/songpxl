@@ -1,4 +1,4 @@
-package com.theveloper.playpix.ui.glancewidget
+package com.svara.music.ui.glancewidget
 
 import android.content.Context
 import androidx.compose.runtime.Composable
@@ -28,8 +28,8 @@ import androidx.glance.layout.height
 import androidx.glance.layout.padding
 import androidx.glance.layout.size
 import androidx.glance.layout.width
-import com.theveloper.playpix.MainActivity
-import com.theveloper.playpix.data.model.PlayerInfo
+import com.svara.music.MainActivity
+import com.svara.music.data.model.PlayerInfo
 
 class GridWidget2x2 : GlanceAppWidget() {
 

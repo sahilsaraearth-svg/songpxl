@@ -1,5 +1,5 @@
-package com.theveloper.playpix.shared
+package com.svara.music.shared
 
 object WearIntents {
-    const val ACTION_OPEN_PLAYER = "com.theveloper.playpix.action.OPEN_PLAYER"
+    const val ACTION_OPEN_PLAYER = "com.svara.music.action.OPEN_PLAYER"
 }

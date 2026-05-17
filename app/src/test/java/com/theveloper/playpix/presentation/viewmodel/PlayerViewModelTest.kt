@@ -1,21 +1,21 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
 import android.content.Context
 import app.cash.turbine.test
-import com.theveloper.playpix.data.database.AlbumArtThemeDao
+import com.svara.music.data.database.AlbumArtThemeDao
 import com.google.common.util.concurrent.ListenableFuture
-import com.theveloper.playpix.data.model.SearchFilterType
-import com.theveloper.playpix.data.model.SearchHistoryItem
-import com.theveloper.playpix.data.model.SearchResultItem
-import com.theveloper.playpix.data.model.Album
-import com.theveloper.playpix.data.model.Artist
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.model.SortOption
-import com.theveloper.playpix.data.model.StorageFilter
-import com.theveloper.playpix.data.preferences.ThemePreferencesRepository
-import com.theveloper.playpix.data.preferences.UserPreferencesRepository
-import com.theveloper.playpix.data.preferences.AiPreferencesRepository
-import com.theveloper.playpix.data.repository.MusicRepository
+import com.svara.music.data.model.SearchFilterType
+import com.svara.music.data.model.SearchHistoryItem
+import com.svara.music.data.model.SearchResultItem
+import com.svara.music.data.model.Album
+import com.svara.music.data.model.Artist
+import com.svara.music.data.model.Song
+import com.svara.music.data.model.SortOption
+import com.svara.music.data.model.StorageFilter
+import com.svara.music.data.preferences.ThemePreferencesRepository
+import com.svara.music.data.preferences.UserPreferencesRepository
+import com.svara.music.data.preferences.AiPreferencesRepository
+import com.svara.music.data.repository.MusicRepository
 import io.mockk.*
 import androidx.media3.session.MediaController
 import androidx.media3.session.SessionToken
@@ -46,13 +46,13 @@ import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
-import com.theveloper.playpix.MainCoroutineExtension
-import com.theveloper.playpix.data.service.player.DualPlayerEngine
-import com.theveloper.playpix.data.telegram.TelegramCacheManager
-import com.theveloper.playpix.data.worker.SyncManager
-import com.theveloper.playpix.utils.AppShortcutManager
-import com.theveloper.playpix.utils.MediaItemBuilder
-import com.theveloper.playpix.presentation.viewmodel.*
+import com.svara.music.MainCoroutineExtension
+import com.svara.music.data.service.player.DualPlayerEngine
+import com.svara.music.data.telegram.TelegramCacheManager
+import com.svara.music.data.worker.SyncManager
+import com.svara.music.utils.AppShortcutManager
+import com.svara.music.utils.MediaItemBuilder
+import com.svara.music.presentation.viewmodel.*
 import app.cash.turbine.Turbine
 
 import androidx.core.content.ContextCompat
@@ -75,7 +75,7 @@ class PlayerViewModelTest {
     private val mockAppShortcutManager: AppShortcutManager = mockk(relaxed = true)
     private val mockTelegramCacheManager: TelegramCacheManager = mockk(relaxed = true)
     private val mockTelegramCacheManagerProvider: Lazy<TelegramCacheManager> = mockk()
-    private val mockTelegramRepository: com.theveloper.playpix.data.telegram.TelegramRepository = mockk(relaxed = true)
+    private val mockTelegramRepository: com.svara.music.data.telegram.TelegramRepository = mockk(relaxed = true)
     private val mockListeningStatsTracker: ListeningStatsTracker = mockk(relaxed = true)
     private val mockDailyMixStateHolder: DailyMixStateHolder = mockk(relaxed = true)
     private val mockLyricsStateHolder: LyricsStateHolder = mockk(relaxed = true)
@@ -99,7 +99,7 @@ class PlayerViewModelTest {
     private val mockThemeStateHolder: ThemeStateHolder = mockk(relaxed = true)
     private val mockMultiSelectionStateHolder: MultiSelectionStateHolder = mockk(relaxed = true)
     private val mockPlaylistSelectionStateHolder: PlaylistSelectionStateHolder = mockk(relaxed = true)
-    private lateinit var mockMediaControllerFactory: com.theveloper.playpix.data.media.MediaControllerFactory
+    private lateinit var mockMediaControllerFactory: com.svara.music.data.media.MediaControllerFactory
 
     private val testDispatcher = StandardTestDispatcher()
 
@@ -136,7 +136,7 @@ class PlayerViewModelTest {
         coEvery { mockUserPreferencesRepository.navBarStyleFlow } returns flowOf("Default")
         coEvery { mockUserPreferencesRepository.libraryNavigationModeFlow } returns flowOf("TabRow")
         coEvery { mockUserPreferencesRepository.carouselStyleFlow } returns flowOf("NoPeek")
-        coEvery { mockUserPreferencesRepository.fullPlayerLoadingTweaksFlow } returns flowOf(com.theveloper.playpix.data.preferences.FullPlayerLoadingTweaks())
+        coEvery { mockUserPreferencesRepository.fullPlayerLoadingTweaksFlow } returns flowOf(com.svara.music.data.preferences.FullPlayerLoadingTweaks())
         coEvery { mockUserPreferencesRepository.tapBackgroundClosesPlayerFlow } returns flowOf(true)
         coEvery { mockUserPreferencesRepository.hapticsEnabledFlow } returns flowOf(true)
         coEvery { mockUserPreferencesRepository.foldersSortOptionFlow } returns flowOf("FolderNameAZ") // Added missing mock

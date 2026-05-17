@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.network.lyrics
+package com.svara.music.data.network.lyrics
 
 import com.google.gson.annotations.SerializedName
 

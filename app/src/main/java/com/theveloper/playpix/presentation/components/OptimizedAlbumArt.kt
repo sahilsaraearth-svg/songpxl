@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components
+package com.svara.music.presentation.components
 
 import android.graphics.Bitmap
 import android.net.Uri
@@ -32,8 +32,8 @@ import coil.request.CachePolicy
 import coil.request.ImageRequest
 import coil.size.Dimension
 import coil.size.Size
-import com.theveloper.playpix.R
-import com.theveloper.playpix.utils.LocalArtworkUri
+import com.svara.music.R
+import com.svara.music.utils.LocalArtworkUri
 
 internal const val MaxSafeAlbumArtDimensionPx = 2048
 internal val SafeOriginalAlbumArtSize = Size(MaxSafeAlbumArtDimensionPx, MaxSafeAlbumArtDimensionPx)

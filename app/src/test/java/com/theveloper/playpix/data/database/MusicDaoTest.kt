@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.database
+package com.svara.music.data.database
 
 import android.content.Context
 import androidx.room.Room
@@ -17,12 +17,12 @@ import java.io.IOException
 //class MusicDaoTest {
 //
 //    private lateinit var musicDao: MusicDao
-//    private lateinit var db: PlayPixDatabase
+//    private lateinit var db: SvaraDatabase
 //
 //    @Before
 //    fun createDb() {
 //        val context = ApplicationProvider.getApplicationContext<Context>()
-//        db = Room.inMemoryDatabaseBuilder(context, PlayPixDatabase::class.java)
+//        db = Room.inMemoryDatabaseBuilder(context, SvaraDatabase::class.java)
 //            .allowMainThreadQueries() // Permite consultas en el hilo principal para tests
 //            .build()
 //        musicDao = db.musicDao()

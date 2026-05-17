@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.media
+package com.svara.music.data.media
 
 import android.content.Context
 import android.graphics.BitmapFactory
@@ -16,7 +16,7 @@ internal fun createTempAudioFileFromUri(context: Context, uri: Uri): File? {
     return try {
         val fileExtension = resolveAudioFileExtension(context, uri)
         val inputStream = context.contentResolver.openInputStream(uri)
-        val tempFile = File.createTempFile("playpix_audio_", fileExtension, context.cacheDir)
+        val tempFile = File.createTempFile("svara_audio_", fileExtension, context.cacheDir)
         tempFile.deleteOnExit()
         val outputStream = FileOutputStream(tempFile)
         inputStream?.use { input ->

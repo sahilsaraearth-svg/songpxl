@@ -1,18 +1,18 @@
-package com.theveloper.playpix.data.service.auto
+package com.svara.music.data.service.auto
 
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
 import androidx.media3.common.MediaItem
 import androidx.media3.common.MediaMetadata
-import com.theveloper.playpix.data.database.EngagementDao
-import com.theveloper.playpix.data.model.Album
-import com.theveloper.playpix.data.model.Artist
-import com.theveloper.playpix.data.model.Playlist
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.preferences.PlaylistPreferencesRepository
-import com.theveloper.playpix.data.repository.MusicRepository
-import com.theveloper.playpix.utils.MediaItemBuilder
+import com.svara.music.data.database.EngagementDao
+import com.svara.music.data.model.Album
+import com.svara.music.data.model.Artist
+import com.svara.music.data.model.Playlist
+import com.svara.music.data.model.Song
+import com.svara.music.data.preferences.PlaylistPreferencesRepository
+import com.svara.music.data.repository.MusicRepository
+import com.svara.music.utils.MediaItemBuilder
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.first
 import javax.inject.Inject
@@ -39,9 +39,9 @@ class AutoMediaBrowseTree @Inject constructor(
         const val ARTIST_PREFIX = "ARTIST_"
         const val PLAYLIST_PREFIX = "PLAYLIST_"
 
-        const val CONTEXT_TYPE_EXTRA = "com.theveloper.playpix.auto.extra.CONTEXT_TYPE"
-        const val CONTEXT_ID_EXTRA = "com.theveloper.playpix.auto.extra.CONTEXT_ID"
-        const val CONTEXT_PARENT_ID_EXTRA = "com.theveloper.playpix.auto.extra.CONTEXT_PARENT_ID"
+        const val CONTEXT_TYPE_EXTRA = "com.svara.music.auto.extra.CONTEXT_TYPE"
+        const val CONTEXT_ID_EXTRA = "com.svara.music.auto.extra.CONTEXT_ID"
+        const val CONTEXT_PARENT_ID_EXTRA = "com.svara.music.auto.extra.CONTEXT_PARENT_ID"
 
         private const val CONTEXT_TYPE_RECENT = "recent"
         private const val CONTEXT_TYPE_FAVORITES = "favorites"
@@ -86,7 +86,7 @@ class AutoMediaBrowseTree @Inject constructor(
 
     suspend fun getItem(mediaId: String): MediaItem? {
         return when {
-            mediaId == ROOT_ID -> buildBrowsableItem(ROOT_ID, "PlayPix", null, MediaMetadata.MEDIA_TYPE_MUSIC)
+            mediaId == ROOT_ID -> buildBrowsableItem(ROOT_ID, "Svara", null, MediaMetadata.MEDIA_TYPE_MUSIC)
             mediaId == RECENT_ID || mediaId == FAVORITES_ID || mediaId == PLAYLISTS_ID ||
                     mediaId == ALBUMS_ID || mediaId == ARTISTS_ID || mediaId == SONGS_ID -> {
                 getRootItems().find { it.mediaId == mediaId }

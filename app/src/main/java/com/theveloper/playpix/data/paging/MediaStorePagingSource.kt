@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.paging
+package com.svara.music.data.paging
 
 import android.content.ContentUris
 import android.content.Context
@@ -6,10 +6,10 @@ import android.provider.MediaStore
 import android.util.Log
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.utils.AlbumArtUtils
-import com.theveloper.playpix.utils.normalizeMetadataText
-import com.theveloper.playpix.utils.normalizeMetadataTextOrEmpty
+import com.svara.music.data.model.Song
+import com.svara.music.utils.AlbumArtUtils
+import com.svara.music.utils.normalizeMetadataText
+import com.svara.music.utils.normalizeMetadataTextOrEmpty
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlin.math.min

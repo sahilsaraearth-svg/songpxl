@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
 import android.app.ActivityManager
 import android.content.Context
@@ -15,12 +15,12 @@ import androidx.annotation.OptIn
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.media3.common.util.UnstableApi
-import com.theveloper.playpix.data.database.DeviceCapabilitySongRow
-import com.theveloper.playpix.data.database.MusicDao
-import com.theveloper.playpix.data.database.SourceType
-import com.theveloper.playpix.data.service.player.ActiveDecoderInfo
-import com.theveloper.playpix.data.service.player.DualPlayerEngine
-import com.theveloper.playpix.data.service.player.HiFiCapabilityChecker
+import com.svara.music.data.database.DeviceCapabilitySongRow
+import com.svara.music.data.database.MusicDao
+import com.svara.music.data.database.SourceType
+import com.svara.music.data.service.player.ActiveDecoderInfo
+import com.svara.music.data.service.player.DualPlayerEngine
+import com.svara.music.data.service.player.HiFiCapabilityChecker
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.io.File

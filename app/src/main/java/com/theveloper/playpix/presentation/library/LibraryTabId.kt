@@ -1,6 +1,6 @@
-package com.theveloper.playpix.presentation.library
+package com.svara.music.presentation.library
 
-import com.theveloper.playpix.data.model.SortOption
+import com.svara.music.data.model.SortOption
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 

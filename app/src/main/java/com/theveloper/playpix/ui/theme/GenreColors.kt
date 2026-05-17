@@ -1,11 +1,11 @@
-package com.theveloper.playpix.ui.theme
+package com.svara.music.ui.theme
 
 import android.util.LruCache
 import androidx.compose.material3.ColorScheme
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
-import com.theveloper.playpix.data.model.Genre
-import com.theveloper.playpix.data.preferences.AlbumArtPaletteStyle
+import com.svara.music.data.model.Genre
+import com.svara.music.data.preferences.AlbumArtPaletteStyle
 import kotlin.math.abs
 
 data class GenreThemeColor(

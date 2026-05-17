@@ -1,17 +1,17 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
 import android.content.Context
 import android.net.Uri
 import android.util.Log
-import com.theveloper.playpix.data.media.CoverArtUpdate
-import com.theveloper.playpix.data.media.ImageCacheManager
-import com.theveloper.playpix.data.media.MetadataEditError
-import com.theveloper.playpix.data.media.SongMetadataEditor
-import com.theveloper.playpix.data.model.Lyrics
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.repository.MusicRepository
-import com.theveloper.playpix.utils.FileDeletionUtils
-import com.theveloper.playpix.utils.LyricsUtils
+import com.svara.music.data.media.CoverArtUpdate
+import com.svara.music.data.media.ImageCacheManager
+import com.svara.music.data.media.MetadataEditError
+import com.svara.music.data.media.SongMetadataEditor
+import com.svara.music.data.model.Lyrics
+import com.svara.music.data.model.Song
+import com.svara.music.data.repository.MusicRepository
+import com.svara.music.utils.FileDeletionUtils
+import com.svara.music.utils.LyricsUtils
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
@@ -73,7 +73,7 @@ class MetadataEditStateHolder @Inject constructor(
         // overwrites the file structure. Explicitly re-saving the existing artwork prevents this.
         val finalCoverArtUpdate = if (coverArtUpdate == null) {
             val existingMetadata = try {
-                 com.theveloper.playpix.data.media.AudioMetadataReader.read(java.io.File(song.path))
+                 com.svara.music.data.media.AudioMetadataReader.read(java.io.File(song.path))
             } catch (e: Exception) {
                 null
             }

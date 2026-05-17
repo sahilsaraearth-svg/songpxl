@@ -1,6 +1,6 @@
-package com.theveloper.playpix.presentation.screens
+package com.svara.music.presentation.screens
 
-import com.theveloper.playpix.presentation.navigation.navigateSafely
+import com.svara.music.presentation.navigation.navigateSafely
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -70,26 +70,26 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.media3.common.util.UnstableApi
 import androidx.navigation.NavController
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.presentation.components.AiPlaylistSheet
-import com.theveloper.playpix.presentation.components.DailyMixMenu
-import com.theveloper.playpix.presentation.components.MiniPlayerHeight
-import com.theveloper.playpix.presentation.components.PlaylistBottomSheet
-import com.theveloper.playpix.presentation.components.SmartImage
-import com.theveloper.playpix.presentation.components.SongInfoBottomSheet
-import com.theveloper.playpix.presentation.components.threeShapeSwitch
-import com.theveloper.playpix.presentation.components.resolveNavBarOccupiedHeight
-import com.theveloper.playpix.presentation.navigation.Screen
-import com.theveloper.playpix.presentation.viewmodel.MainViewModel
-import com.theveloper.playpix.presentation.viewmodel.PlayerViewModel
-import com.theveloper.playpix.presentation.viewmodel.PlaylistViewModel
-import com.theveloper.playpix.utils.formatDuration
-import com.theveloper.playpix.utils.shapes.RoundedStarShape
+import com.svara.music.R
+import com.svara.music.data.model.Song
+import com.svara.music.presentation.components.AiPlaylistSheet
+import com.svara.music.presentation.components.DailyMixMenu
+import com.svara.music.presentation.components.MiniPlayerHeight
+import com.svara.music.presentation.components.PlaylistBottomSheet
+import com.svara.music.presentation.components.SmartImage
+import com.svara.music.presentation.components.SongInfoBottomSheet
+import com.svara.music.presentation.components.threeShapeSwitch
+import com.svara.music.presentation.components.resolveNavBarOccupiedHeight
+import com.svara.music.presentation.navigation.Screen
+import com.svara.music.presentation.viewmodel.MainViewModel
+import com.svara.music.presentation.viewmodel.PlayerViewModel
+import com.svara.music.presentation.viewmodel.PlaylistViewModel
+import com.svara.music.utils.formatDuration
+import com.svara.music.utils.shapes.RoundedStarShape
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
-import com.theveloper.playpix.presentation.components.subcomps.EnhancedSongListItem
+import com.svara.music.presentation.components.subcomps.EnhancedSongListItem
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 

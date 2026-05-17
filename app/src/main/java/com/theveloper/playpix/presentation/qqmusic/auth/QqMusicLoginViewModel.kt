@@ -1,8 +1,8 @@
-package com.theveloper.playpix.presentation.qqmusic.auth
+package com.svara.music.presentation.qqmusic.auth
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.theveloper.playpix.data.qqmusic.QqMusicRepository
+import com.svara.music.data.qqmusic.QqMusicRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

@@ -1,4 +1,4 @@
-package com.theveloper.playpix
+package com.svara.music
 
 import org.junit.Test
 

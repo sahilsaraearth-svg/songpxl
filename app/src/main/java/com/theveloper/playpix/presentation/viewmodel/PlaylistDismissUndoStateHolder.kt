@@ -1,8 +1,8 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
 import android.content.Context
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.model.Song
+import com.svara.music.R
+import com.svara.music.data.model.Song
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.android.scopes.ViewModelScoped
 import javax.inject.Inject

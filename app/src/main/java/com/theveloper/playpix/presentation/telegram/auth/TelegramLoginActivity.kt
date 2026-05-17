@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.telegram.auth
+package com.svara.music.presentation.telegram.auth
 
 import android.content.Context
 import android.content.Intent
@@ -102,12 +102,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.theveloper.playpix.MainActivity
-import com.theveloper.playpix.R
-import com.theveloper.playpix.presentation.telegram.channel.TelegramChannelSearchSheet
-import com.theveloper.playpix.presentation.telegram.dashboard.TelegramDashboardScreen
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
-import com.theveloper.playpix.ui.theme.PlayPixTheme
+import com.svara.music.MainActivity
+import com.svara.music.R
+import com.svara.music.presentation.telegram.channel.TelegramChannelSearchSheet
+import com.svara.music.presentation.telegram.dashboard.TelegramDashboardScreen
+import com.svara.music.ui.theme.GoogleSansRounded
+import com.svara.music.ui.theme.SvaraTheme
 import dagger.hilt.android.AndroidEntryPoint
 import org.drinkless.tdlib.TdApi
 import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape
@@ -121,7 +121,7 @@ class TelegramLoginActivity : ComponentActivity() {
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
         setContent {
-            PlayPixTheme {
+            SvaraTheme {
                 TelegramLoginScreen(onFinish = { finish() })
             }
         }
@@ -168,7 +168,7 @@ fun TelegramLoginScreen(
     LaunchedEffect(Unit) {
         viewModel.playbackRequest.collect { song ->
             val intent = Intent(context, MainActivity::class.java).apply {
-                action = "com.theveloper.playpix.ACTION_PLAY_SONG"
+                action = "com.svara.music.ACTION_PLAY_SONG"
                 putExtra("song", song as android.os.Parcelable)
                 addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
             }

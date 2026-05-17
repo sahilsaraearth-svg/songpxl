@@ -1,7 +1,7 @@
-package com.theveloper.playpix.data.worker
+package com.svara.music.data.worker
 
-import com.theveloper.playpix.utils.extractArtistsFromTitle
-import com.theveloper.playpix.utils.splitArtistsByDelimiters
+import com.svara.music.utils.extractArtistsFromTitle
+import com.svara.music.utils.splitArtistsByDelimiters
 
 internal fun collectArtistNames(
     rawArtistName: String,

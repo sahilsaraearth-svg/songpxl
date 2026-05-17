@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components.subcomps
+package com.svara.music.presentation.components.subcomps
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -47,10 +47,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.model.Lyrics
-import com.theveloper.playpix.presentation.components.ToggleSegmentButton
-import com.theveloper.playpix.presentation.components.player.BottomToggleRow
+import com.svara.music.R
+import com.svara.music.data.model.Lyrics
+import com.svara.music.presentation.components.ToggleSegmentButton
+import com.svara.music.presentation.components.player.BottomToggleRow
 import androidx.compose.ui.text.style.TextOverflow
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)

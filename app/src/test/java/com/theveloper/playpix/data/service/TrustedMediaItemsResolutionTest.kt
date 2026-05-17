@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.service
+package com.svara.music.data.service
 
 import android.net.Uri
 import androidx.media3.common.MediaItem
@@ -13,11 +13,11 @@ class TrustedMediaItemsResolutionTest {
     fun `unresolved caller item stays in queue but is excluded from artwork grants`() {
         val attackerSuppliedItem = mediaItem(
             mediaId = "missing-id",
-            artworkUri = "content://com.theveloper.playpix.provider/files/private/token.txt"
+            artworkUri = "content://com.svara.music.provider/files/private/token.txt"
         )
         val trustedItem = mediaItem(
             mediaId = "known-id",
-            artworkUri = "content://com.theveloper.playpix.provider/cache/album.png"
+            artworkUri = "content://com.svara.music.provider/cache/album.png"
         )
 
         val resolution = resolveMediaItemsWithTrustedArtworkGrants(

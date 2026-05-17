@@ -1,4 +1,4 @@
-package com.theveloper.playpix.ui.glancewidget.subcomponents
+package com.svara.music.ui.glancewidget.subcomponents
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -19,7 +19,7 @@ import androidx.glance.ImageProvider
 import androidx.glance.LocalContext
 import androidx.glance.layout.fillMaxWidth
 import androidx.glance.layout.height
-import com.theveloper.playpix.R
+import com.svara.music.R
 import kotlin.math.PI
 import kotlin.math.cos
 import kotlin.math.sin

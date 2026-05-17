@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.jellyfin.auth
+package com.svara.music.presentation.jellyfin.auth
 
 import android.widget.Toast
 import androidx.activity.ComponentActivity
@@ -72,9 +72,9 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.theveloper.playpix.R
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
-import com.theveloper.playpix.ui.theme.PlayPixTheme
+import com.svara.music.R
+import com.svara.music.ui.theme.GoogleSansRounded
+import com.svara.music.ui.theme.SvaraTheme
 import dagger.hilt.android.AndroidEntryPoint
 import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape
 
@@ -85,7 +85,7 @@ class JellyfinLoginActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            PlayPixTheme {
+            SvaraTheme {
                 JellyfinLoginScreen(onClose = { finish() })
             }
         }

@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components.scoped
+package com.svara.music.presentation.components.scoped
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.FastOutSlowInEasing
@@ -16,9 +16,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.lerp
 import androidx.compose.ui.util.lerp
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.preferences.ThemePreference
-import com.theveloper.playpix.presentation.viewmodel.ColorSchemePair
+import com.svara.music.data.model.Song
+import com.svara.music.data.preferences.ThemePreference
+import com.svara.music.presentation.viewmodel.ColorSchemePair
 
 /**
  * Theme state for the player sheet.

@@ -1,21 +1,21 @@
 @file:Suppress("DEPRECATION")
-package com.theveloper.playpix.data.gdrive
+package com.svara.music.data.gdrive
 
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKey
-import com.theveloper.playpix.data.database.AlbumEntity
-import com.theveloper.playpix.data.database.ArtistEntity
-import com.theveloper.playpix.data.database.GDriveDao
-import com.theveloper.playpix.data.database.GDriveFolderEntity
-import com.theveloper.playpix.data.database.GDriveSongEntity
-import com.theveloper.playpix.data.database.MusicDao
-import com.theveloper.playpix.data.database.SongArtistCrossRef
-import com.theveloper.playpix.data.database.SongEntity
-import com.theveloper.playpix.data.database.SourceType
-import com.theveloper.playpix.data.database.toSong
-import com.theveloper.playpix.data.model.Song
+import com.svara.music.data.database.AlbumEntity
+import com.svara.music.data.database.ArtistEntity
+import com.svara.music.data.database.GDriveDao
+import com.svara.music.data.database.GDriveFolderEntity
+import com.svara.music.data.database.GDriveSongEntity
+import com.svara.music.data.database.MusicDao
+import com.svara.music.data.database.SongArtistCrossRef
+import com.svara.music.data.database.SongEntity
+import com.svara.music.data.database.SourceType
+import com.svara.music.data.database.toSong
+import com.svara.music.data.model.Song
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -262,7 +262,7 @@ class GDriveRepository @Inject constructor(
         return withContext(Dispatchers.IO) {
             try {
                 ensureValidToken()
-                val raw = api.createFolder("PlayPix Music", parentId)
+                val raw = api.createFolder("Svara Music", parentId)
                 val json = JSONObject(raw)
                 val folder = DriveFolder(
                     id = json.optString("id"),

@@ -1,6 +1,6 @@
-package com.theveloper.playpix.presentation.utils
+package com.svara.music.presentation.utils
 
-import com.theveloper.playpix.R
+import com.svara.music.R
 
 object GenreIconProvider {
     

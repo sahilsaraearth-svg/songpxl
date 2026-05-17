@@ -1,15 +1,15 @@
-package com.theveloper.playpix.data.database
+package com.svara.music.data.database
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.Index
 import androidx.room.PrimaryKey
-import com.theveloper.playpix.data.model.ArtistRef
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.utils.LocalArtworkUri
-import com.theveloper.playpix.utils.normalizeMetadataText
-import com.theveloper.playpix.utils.normalizeMetadataTextOrEmpty
+import com.svara.music.data.model.ArtistRef
+import com.svara.music.data.model.Song
+import com.svara.music.utils.LocalArtworkUri
+import com.svara.music.utils.normalizeMetadataText
+import com.svara.music.utils.normalizeMetadataTextOrEmpty
 import org.json.JSONArray
 import org.json.JSONObject
 

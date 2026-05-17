@@ -1,4 +1,4 @@
-package com.theveloper.playpix.shared
+package com.svara.music.shared
 
 import kotlinx.serialization.Serializable
 

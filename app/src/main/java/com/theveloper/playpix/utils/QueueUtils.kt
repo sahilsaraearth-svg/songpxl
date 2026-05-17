@@ -1,6 +1,6 @@
-package com.theveloper.playpix.utils
+package com.svara.music.utils
 
-import com.theveloper.playpix.data.model.Song
+import com.svara.music.data.model.Song
 import kotlinx.coroutines.yield
 import kotlin.random.Random
 

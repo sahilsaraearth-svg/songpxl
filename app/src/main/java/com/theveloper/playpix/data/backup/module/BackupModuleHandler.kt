@@ -1,6 +1,6 @@
-package com.theveloper.playpix.data.backup.module
+package com.svara.music.data.backup.module
 
-import com.theveloper.playpix.data.backup.model.BackupSection
+import com.svara.music.data.backup.model.BackupSection
 
 interface BackupModuleHandler {
     val section: BackupSection

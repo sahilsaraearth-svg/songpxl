@@ -1,4 +1,4 @@
-package com.theveloper.playpix.utils
+package com.svara.music.utils
 
 import android.content.Context
 import android.content.Intent
@@ -6,10 +6,10 @@ import android.os.Build
 import androidx.core.content.pm.ShortcutInfoCompat
 import androidx.core.content.pm.ShortcutManagerCompat
 import androidx.core.graphics.drawable.IconCompat
-import com.theveloper.playpix.MainActivity
-import com.theveloper.playpix.MainActivityIntentContract
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.preferences.UserPreferencesRepository
+import com.svara.music.MainActivity
+import com.svara.music.MainActivityIntentContract
+import com.svara.music.R
+import com.svara.music.data.preferences.UserPreferencesRepository
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

@@ -1,4 +1,4 @@
-package com.theveloper.playpix.ui.theme
+package com.svara.music.ui.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Shapes

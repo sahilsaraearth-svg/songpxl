@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.model
+package com.svara.music.presentation.model
 
 import androidx.annotation.StringRes
 import androidx.compose.material.icons.Icons
@@ -10,7 +10,7 @@ import androidx.compose.material.icons.rounded.LibraryMusic
 import androidx.compose.material.icons.rounded.MusicNote
 import androidx.compose.material.icons.rounded.Palette
 import androidx.compose.ui.graphics.vector.ImageVector
-import com.theveloper.playpix.R
+import com.svara.music.R
 
 enum class SettingsCategory(
     val id: String,

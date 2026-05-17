@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.media
+package com.svara.music.data.media
 
 import android.content.Context
 import coil.annotation.ExperimentalCoilApi
@@ -24,9 +24,9 @@ class ImageCacheManager @Inject constructor(
         val knownSizeSuffixes = listOf(null, "128x128", "150x150", "168x168", "256x256", "300x300", "512x512", "600x600", "800x800")
 
         uriStrings.mapNotNull { it?.takeIf(String::isNotBlank) }.forEach { baseUri ->
-            if (com.theveloper.playpix.utils.LocalArtworkUri.isLocalArtworkUri(baseUri)) {
-                com.theveloper.playpix.utils.LocalArtworkUri.parseSongId(baseUri)?.let { songId ->
-                    com.theveloper.playpix.utils.AlbumArtUtils.clearCacheForSong(context, songId)
+            if (com.svara.music.utils.LocalArtworkUri.isLocalArtworkUri(baseUri)) {
+                com.svara.music.utils.LocalArtworkUri.parseSongId(baseUri)?.let { songId ->
+                    com.svara.music.utils.AlbumArtUtils.clearCacheForSong(context, songId)
                 }
             }
 

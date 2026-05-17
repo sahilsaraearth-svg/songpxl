@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.screens
+package com.svara.music.presentation.screens
 
 import android.annotation.SuppressLint
 import androidx.compose.animation.core.Animatable
@@ -98,12 +98,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.equalizer.EqualizerPreset
-import com.theveloper.playpix.presentation.components.CollapsibleCommonTopBar
-import com.theveloper.playpix.presentation.components.ExpressiveTopBarContent
-import com.theveloper.playpix.presentation.viewmodel.EqualizerViewModel
-import com.theveloper.playpix.presentation.viewmodel.PlayerViewModel
+import com.svara.music.R
+import com.svara.music.data.equalizer.EqualizerPreset
+import com.svara.music.presentation.components.CollapsibleCommonTopBar
+import com.svara.music.presentation.components.ExpressiveTopBarContent
+import com.svara.music.presentation.viewmodel.EqualizerViewModel
+import com.svara.music.presentation.viewmodel.PlayerViewModel
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
 import androidx.compose.animation.animateColorAsState
@@ -120,7 +120,7 @@ import androidx.media3.common.util.UnstableApi
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
-import com.theveloper.playpix.presentation.components.MiniPlayerHeight
+import com.svara.music.presentation.components.MiniPlayerHeight
 import androidx.compose.material.icons.rounded.BarChart
 import androidx.compose.material.icons.rounded.Block
 import androidx.compose.material.icons.rounded.Close
@@ -129,7 +129,7 @@ import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.toArgb
-import com.theveloper.playpix.presentation.components.WavyArcSlider
+import com.svara.music.presentation.components.WavyArcSlider
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.material3.TextButton
 import androidx.compose.material.icons.rounded.Edit // Added
@@ -137,11 +137,11 @@ import androidx.compose.material.icons.rounded.ExpandMore // Added
 import androidx.compose.material.icons.rounded.Save // Added
 import androidx.compose.material.icons.filled.Star // Added
 import androidx.compose.material3.Surface
-import com.theveloper.playpix.presentation.components.CustomPresetsSheet
-import com.theveloper.playpix.presentation.components.ReorderPresetsSheet
-import com.theveloper.playpix.presentation.components.SavePresetDialog
-import com.theveloper.playpix.presentation.components.RenamePresetDialog
-import com.theveloper.playpix.data.preferences.UserPreferencesRepository.EqualizerViewMode
+import com.svara.music.presentation.components.CustomPresetsSheet
+import com.svara.music.presentation.components.ReorderPresetsSheet
+import com.svara.music.presentation.components.SavePresetDialog
+import com.svara.music.presentation.components.RenamePresetDialog
+import com.svara.music.data.preferences.UserPreferencesRepository.EqualizerViewMode
 import androidx.compose.material.icons.rounded.ViewQuilt
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.navigationBars
@@ -970,7 +970,7 @@ private fun CustomVerticalSlider(
     }
     
     // Create the Path
-    val starShape = remember { com.theveloper.playpix.utils.shapes.RoundedStarShape(sides = 8, curve = 0.1) }
+    val starShape = remember { com.svara.music.utils.shapes.RoundedStarShape(sides = 8, curve = 0.1) }
     val finalShape = thumbShape ?: starShape
     
     val thumbPath = remember(thumbSizePx, finalShape) {

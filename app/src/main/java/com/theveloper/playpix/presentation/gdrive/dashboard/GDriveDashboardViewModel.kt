@@ -1,9 +1,9 @@
-package com.theveloper.playpix.presentation.gdrive.dashboard
+package com.svara.music.presentation.gdrive.dashboard
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.theveloper.playpix.data.database.GDriveFolderEntity
-import com.theveloper.playpix.data.gdrive.GDriveRepository
+import com.svara.music.data.database.GDriveFolderEntity
+import com.svara.music.data.gdrive.GDriveRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted

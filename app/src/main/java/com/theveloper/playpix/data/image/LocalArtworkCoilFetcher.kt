@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.image
+package com.svara.music.data.image
 
 import android.net.Uri
 import coil.ImageLoader
@@ -6,8 +6,8 @@ import coil.fetch.FetchResult
 import coil.fetch.Fetcher
 import coil.fetch.SourceResult
 import coil.request.Options
-import com.theveloper.playpix.utils.AlbumArtUtils
-import com.theveloper.playpix.utils.LocalArtworkUri
+import com.svara.music.utils.AlbumArtUtils
+import com.svara.music.utils.LocalArtworkUri
 import okio.Path.Companion.toPath
 import javax.inject.Inject
 

@@ -1,11 +1,11 @@
-package com.theveloper.playpix.data.worker
+package com.svara.music.data.worker
 
-import com.theveloper.playpix.data.database.AlbumEntity
-import com.theveloper.playpix.data.database.SongEntity
-import com.theveloper.playpix.utils.LocalArtworkUri
-import com.theveloper.playpix.utils.normalizeMetadataText
-import com.theveloper.playpix.utils.normalizeMetadataTextOrEmpty
-import com.theveloper.playpix.utils.splitArtistsByDelimiters
+import com.svara.music.data.database.AlbumEntity
+import com.svara.music.data.database.SongEntity
+import com.svara.music.utils.LocalArtworkUri
+import com.svara.music.utils.normalizeMetadataText
+import com.svara.music.utils.normalizeMetadataTextOrEmpty
+import com.svara.music.utils.splitArtistsByDelimiters
 
 internal data class AlbumGroupingKey(
     val normalizedTitle: String,

@@ -1,11 +1,11 @@
-package com.theveloper.playpix.data.database
+package com.svara.music.data.database
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
-import com.theveloper.playpix.data.model.Artist
-import com.theveloper.playpix.utils.normalizeMetadataTextOrEmpty
+import com.svara.music.data.model.Artist
+import com.svara.music.utils.normalizeMetadataTextOrEmpty
 
 @Entity(
     tableName = "artists",

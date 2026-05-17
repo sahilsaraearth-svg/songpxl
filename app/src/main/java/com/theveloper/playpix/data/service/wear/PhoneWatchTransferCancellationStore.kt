@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.service.wear
+package com.svara.music.data.service.wear
 
 import java.util.concurrent.ConcurrentHashMap
 import javax.inject.Inject

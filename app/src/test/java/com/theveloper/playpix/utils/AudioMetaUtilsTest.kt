@@ -1,4 +1,4 @@
-package com.theveloper.playpix.utils
+package com.svara.music.utils
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

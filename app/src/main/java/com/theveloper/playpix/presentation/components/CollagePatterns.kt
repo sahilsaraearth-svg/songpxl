@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components
+package com.svara.music.presentation.components
 
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -6,8 +6,8 @@ import androidx.compose.runtime.Stable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.theveloper.playpix.data.preferences.CollagePattern
-import com.theveloper.playpix.utils.shapes.RoundedStarShape
+import com.svara.music.data.preferences.CollagePattern
+import com.svara.music.utils.shapes.RoundedStarShape
 
 @Stable
 fun buildCollageConfigs(

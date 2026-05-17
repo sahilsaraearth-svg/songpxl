@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components
+package com.svara.music.presentation.components
 
 import android.content.ActivityNotFoundException
 import android.content.Context
@@ -60,18 +60,18 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
-import com.theveloper.playpix.R
-import com.theveloper.playpix.presentation.components.subcomps.SineWaveLine
-import com.theveloper.playpix.ui.theme.ExpTitleTypography
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
+import com.svara.music.R
+import com.svara.music.presentation.components.subcomps.SineWaveLine
+import com.svara.music.ui.theme.ExpTitleTypography
+import com.svara.music.ui.theme.GoogleSansRounded
 import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
 fun BetaInfoBottomSheet(modifier: Modifier = Modifier) {
     val context = LocalContext.current
-    val issuesUrl = "https://github.com/theovilardo/PlayPix/issues"
-    val reportUrl = "https://github.com/theovilardo/PlayPix/issues/new/choose"
+    val issuesUrl = "https://github.com/theovilardo/Svara/issues"
+    val reportUrl = "https://github.com/theovilardo/Svara/issues/new/choose"
 
     val fabCornerRadius = 18.dp
 

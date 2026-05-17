@@ -1,20 +1,20 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.media.AudioMetadataReader
-import com.theveloper.playpix.data.media.CoverArtUpdate
-import com.theveloper.playpix.data.media.SongMetadataEditor
-import com.theveloper.playpix.data.model.Lyrics
-import com.theveloper.playpix.data.model.LyricsSourcePreference
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.preferences.UserPreferencesRepository
-import com.theveloper.playpix.data.repository.LyricsSearchResult
-import com.theveloper.playpix.data.repository.MusicRepository
-import com.theveloper.playpix.data.repository.NoLyricsFoundException
-import com.theveloper.playpix.utils.LyricsImportSecurity
-import com.theveloper.playpix.utils.LyricsImportValidationResult
-import com.theveloper.playpix.utils.LyricsUtils
-import com.theveloper.playpix.utils.ValidatedLyricsImport
+import com.svara.music.R
+import com.svara.music.data.media.AudioMetadataReader
+import com.svara.music.data.media.CoverArtUpdate
+import com.svara.music.data.media.SongMetadataEditor
+import com.svara.music.data.model.Lyrics
+import com.svara.music.data.model.LyricsSourcePreference
+import com.svara.music.data.model.Song
+import com.svara.music.data.preferences.UserPreferencesRepository
+import com.svara.music.data.repository.LyricsSearchResult
+import com.svara.music.data.repository.MusicRepository
+import com.svara.music.data.repository.NoLyricsFoundException
+import com.svara.music.utils.LyricsImportSecurity
+import com.svara.music.utils.LyricsImportValidationResult
+import com.svara.music.utils.LyricsUtils
+import com.svara.music.utils.ValidatedLyricsImport
 import java.io.File
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -82,7 +82,7 @@ class LyricsStateHolder @Inject constructor(
     fun initialize(
         coroutineScope: CoroutineScope,
         callback: LyricsLoadCallback,
-        stablePlayerState: StateFlow<com.theveloper.playpix.presentation.viewmodel.StablePlayerState>
+        stablePlayerState: StateFlow<com.svara.music.presentation.viewmodel.StablePlayerState>
     ) {
         scope = coroutineScope
         loadCallback = callback

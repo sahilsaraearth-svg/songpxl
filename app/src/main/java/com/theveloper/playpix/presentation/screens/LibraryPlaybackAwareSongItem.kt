@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.screens
+package com.svara.music.presentation.screens
 
 import androidx.annotation.OptIn
 import androidx.compose.runtime.Composable
@@ -9,9 +9,9 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.media3.common.util.UnstableApi
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.presentation.components.subcomps.EnhancedSongListItem
-import com.theveloper.playpix.presentation.viewmodel.PlayerViewModel
+import com.svara.music.data.model.Song
+import com.svara.music.presentation.components.subcomps.EnhancedSongListItem
+import com.svara.music.presentation.viewmodel.PlayerViewModel
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
 

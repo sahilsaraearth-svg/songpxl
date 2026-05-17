@@ -1,4 +1,4 @@
-package com.theveloper.playpix.ui.glancewidget
+package com.svara.music.ui.glancewidget
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -44,16 +44,16 @@ import androidx.glance.layout.width
 import androidx.glance.text.FontWeight
 import androidx.glance.text.Text
 import androidx.glance.text.TextStyle
-import com.theveloper.playpix.MainActivity
-import com.theveloper.playpix.data.model.PlayerInfo
-import com.theveloper.playpix.R
+import com.svara.music.MainActivity
+import com.svara.music.data.model.PlayerInfo
+import com.svara.music.R
 import androidx.core.graphics.scale
 import androidx.glance.unit.ColorProvider
-import com.theveloper.playpix.data.model.QueueItem
-import com.theveloper.playpix.utils.createScalableBackgroundBitmap
+import com.svara.music.data.model.QueueItem
+import com.svara.music.utils.createScalableBackgroundBitmap
 import timber.log.Timber
 
-class PlayPixGlanceWidget : GlanceAppWidget() {
+class SvaraGlanceWidget : GlanceAppWidget() {
 
     companion object {
         // Tamaños definidos para diferentes configuraciones del widget
@@ -79,7 +79,7 @@ class PlayPixGlanceWidget : GlanceAppWidget() {
             val playerInfo = currentState<PlayerInfo>()
             val currentSize = LocalSize.current
 
-            Timber.tag("PlayPixGlanceWidget")
+            Timber.tag("SvaraGlanceWidget")
                 .d("Providing Glance. PlayerInfo: title='${playerInfo.songTitle}', artist='${playerInfo.artistName}', isPlaying=${playerInfo.isPlaying}, hasBitmap=${playerInfo.albumArtBitmapData != null}, progress=${playerInfo.currentPositionMs}/${playerInfo.totalDurationMs}")
 
             GlanceTheme {
@@ -101,7 +101,7 @@ class PlayPixGlanceWidget : GlanceAppWidget() {
         val albumArtBitmapData = playerInfo.albumArtBitmapData
         val albumArtUri = playerInfo.albumArtUri
 
-        Timber.tag("PlayPixGlanceWidget")
+        Timber.tag("SvaraGlanceWidget")
             .d("WidgetUi: PlayerInfo received. Title: $title, Artist: $artist, HasBitmapData: ${albumArtBitmapData != null}, BitmapDataSize: ${albumArtBitmapData?.size ?: "N/A"}")
 
         val actualBackgroundColor = GlanceTheme.colors.surface

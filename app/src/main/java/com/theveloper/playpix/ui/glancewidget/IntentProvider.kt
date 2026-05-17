@@ -1,8 +1,8 @@
-package com.theveloper.playpix.ui.glancewidget
+package com.svara.music.ui.glancewidget
 
 import android.content.Context
 import android.content.Intent
-import com.theveloper.playpix.MainActivity
+import com.svara.music.MainActivity
 
 object IntentProvider {
     fun mainActivityIntent(context: Context): Intent {

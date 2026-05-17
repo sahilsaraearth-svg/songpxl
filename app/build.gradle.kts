@@ -18,17 +18,17 @@ val keystoreProperties = Properties().apply {
     }
 }
 
-val enableAbiSplits = providers.gradleProperty("playpix.enableAbiSplits")
+val enableAbiSplits = providers.gradleProperty("svara.enableAbiSplits")
     .getOrElse("true")
     .toBoolean()
 
-val enableComposeCompilerReports = providers.gradleProperty("playpix.enableComposeCompilerReports")
+val enableComposeCompilerReports = providers.gradleProperty("svara.enableComposeCompilerReports")
     .getOrElse("false")
     .toBoolean()
 
 @Suppress("DEPRECATION")
 android {
-    namespace = "com.theveloper.playpix"
+    namespace = "com.svara.music"
     compileSdk = 37
 
     sourceSets {
@@ -59,7 +59,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.theveloper.playpix"
+        applicationId = "com.svara.music"
         minSdk = 30
         targetSdk = 37
         versionCode = (project.findProperty("APP_VERSION_CODE") as? String)?.toInt() ?: 1

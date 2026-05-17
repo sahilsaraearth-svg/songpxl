@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.shapes
+package com.svara.music.presentation.shapes
 
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Outline

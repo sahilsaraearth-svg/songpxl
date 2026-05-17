@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components
+package com.svara.music.presentation.components
 
 import android.app.Activity
 import androidx.compose.animation.animateContentSize
@@ -56,12 +56,12 @@ import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import coil.compose.AsyncImage
-import com.theveloper.playpix.data.model.Playlist
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
-import com.theveloper.playpix.utils.resolvePlaylistCoverContentColor
+import com.svara.music.data.model.Playlist
+import com.svara.music.ui.theme.GoogleSansRounded
+import com.svara.music.utils.resolvePlaylistCoverContentColor
 import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape
 import androidx.compose.ui.res.stringResource
-import com.theveloper.playpix.R
+import com.svara.music.R
 
 /**
  * Bottom sheet for batch operations on multiple selected playlists.

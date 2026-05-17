@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.database
+package com.svara.music.data.database
 
 import androidx.compose.ui.graphics.Color
 import androidx.core.graphics.toColorInt

@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.navigation
+package com.svara.music.presentation.navigation
 
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.NavController

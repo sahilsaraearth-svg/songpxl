@@ -1,9 +1,9 @@
-package com.theveloper.playpix.data.network.jellyfin
+package com.svara.music.data.network.jellyfin
 
-import com.theveloper.playpix.data.jellyfin.model.JellyfinAlbum
-import com.theveloper.playpix.data.jellyfin.model.JellyfinArtist
-import com.theveloper.playpix.data.jellyfin.model.JellyfinPlaylist
-import com.theveloper.playpix.data.jellyfin.model.JellyfinSong
+import com.svara.music.data.jellyfin.model.JellyfinAlbum
+import com.svara.music.data.jellyfin.model.JellyfinArtist
+import com.svara.music.data.jellyfin.model.JellyfinPlaylist
+import com.svara.music.data.jellyfin.model.JellyfinSong
 import org.json.JSONObject
 import timber.log.Timber
 

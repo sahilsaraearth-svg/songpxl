@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class, ExperimentalLayoutApi::class)
 
-package com.theveloper.playpix.presentation.screens
+package com.svara.music.presentation.screens
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.*
@@ -35,14 +35,14 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.presentation.components.SongPickerList
-import com.theveloper.playpix.presentation.components.SmartImage
-import com.theveloper.playpix.presentation.utils.GenreIconProvider
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
+import com.svara.music.data.model.Song
+import com.svara.music.presentation.components.SongPickerList
+import com.svara.music.presentation.components.SmartImage
+import com.svara.music.presentation.utils.GenreIconProvider
+import com.svara.music.ui.theme.GoogleSansRounded
 import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape
 import androidx.compose.ui.res.stringResource
-import com.theveloper.playpix.R
+import com.svara.music.R
 
 @Composable
 fun QuickFillDialog(

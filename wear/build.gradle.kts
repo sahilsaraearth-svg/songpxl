@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.theveloper.playpix"
+    namespace = "com.svara.music"
     compileSdk = 37
 
     defaultConfig {
-        applicationId = "com.theveloper.playpix"
+        applicationId = "com.svara.music"
         minSdk = 30
         targetSdk = 37
         versionCode = (project.findProperty("APP_VERSION_CODE") as? String)?.toInt() ?: 1

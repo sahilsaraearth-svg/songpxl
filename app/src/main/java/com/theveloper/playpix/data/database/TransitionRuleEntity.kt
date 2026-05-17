@@ -1,11 +1,11 @@
-package com.theveloper.playpix.data.database
+package com.svara.music.data.database
 
 import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
-import com.theveloper.playpix.data.model.TransitionSettings
+import com.svara.music.data.model.TransitionSettings
 
 @Entity(
     tableName = "transition_rules",

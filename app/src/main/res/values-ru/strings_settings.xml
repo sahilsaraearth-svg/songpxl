@@ -223,8 +223,8 @@
     <string name="setcat_trigger_crash_title">Вызвать тестовый сбой</string>
     <string name="setcat_trigger_crash_subtitle">Симуляция сбоя для проверки системы отчетов.</string>
     <string name="setcat_application">Приложение</string>
-    <string name="setcat_about_playpix_title">О PlayPix</string>
-    <string name="setcat_about_playpix_subtitle">Версия приложения, авторы и др.</string>
+    <string name="setcat_about_svara_title">О Svara</string>
+    <string name="setcat_about_svara_subtitle">Версия приложения, авторы и др.</string>
 
     <string name="backup_summary_none">Разделы не выбраны.</string>
     <string name="backup_summary_all">Все разделы выбраны.</string>
@@ -268,7 +268,7 @@
     <string name="dialog_regenerate_stats_title">Обновить статистику?</string>
     <string name="dialog_regenerate_stats_body">Это очистит кэш статистики и принудительно пересчитает её из истории в базе.</string>
     <string name="toast_stats_regeneration_started">Обновление статистики запущено</string>
-    <string name="backup_file_name_format">PlayPix_Backup_%1$d.pxpl</string>
+    <string name="backup_file_name_format">Svara_Backup_%1$d.pxpl</string>
 
     <string name="setcat_regenerate_daily_mix_action">Обновить Daily Mix</string>
     <string name="setcat_regenerate_stats_action">Обновить статистику</string>

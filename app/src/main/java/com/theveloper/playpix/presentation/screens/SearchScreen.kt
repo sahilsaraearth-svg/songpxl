@@ -1,7 +1,7 @@
-package com.theveloper.playpix.presentation.screens
+package com.svara.music.presentation.screens
 
-import com.theveloper.playpix.presentation.navigation.navigateSafely
-import com.theveloper.playpix.presentation.navigation.navigateSafelyReplacing
+import com.svara.music.presentation.navigation.navigateSafely
+import com.svara.music.presentation.navigation.navigateSafelyReplacing
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.Crossfade
@@ -69,19 +69,19 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import com.theveloper.playpix.data.model.Album
-import com.theveloper.playpix.data.model.Artist
-import com.theveloper.playpix.data.model.Playlist
-import com.theveloper.playpix.data.model.SearchFilterType
-import com.theveloper.playpix.data.model.SearchHistoryItem
-import com.theveloper.playpix.data.model.SearchResultItem
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.presentation.components.SmartImage
-import com.theveloper.playpix.presentation.components.SmartImageListTargetSize
-import com.theveloper.playpix.presentation.components.SongInfoBottomSheet
-import com.theveloper.playpix.presentation.viewmodel.PlayerViewModel
+import com.svara.music.data.model.Album
+import com.svara.music.data.model.Artist
+import com.svara.music.data.model.Playlist
+import com.svara.music.data.model.SearchFilterType
+import com.svara.music.data.model.SearchHistoryItem
+import com.svara.music.data.model.SearchResultItem
+import com.svara.music.data.model.Song
+import com.svara.music.presentation.components.SmartImage
+import com.svara.music.presentation.components.SmartImageListTargetSize
+import com.svara.music.presentation.components.SongInfoBottomSheet
+import com.svara.music.presentation.viewmodel.PlayerViewModel
 import android.util.Log
-import com.theveloper.playpix.ui.theme.LocalPlayPixDarkTheme
+import com.svara.music.ui.theme.LocalSvaraDarkTheme
 import androidx.compose.material.icons.rounded.DeleteForever
 import androidx.compose.material.icons.rounded.PlaylistPlay
 import androidx.compose.material.icons.rounded.History
@@ -104,16 +104,16 @@ import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.painterResource
 import androidx.media3.common.util.UnstableApi
 import androidx.navigation.NavHostController
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.repository.MusicRepository
-import com.theveloper.playpix.presentation.components.MiniPlayerHeight
-import com.theveloper.playpix.presentation.components.PlaylistBottomSheet
-import com.theveloper.playpix.presentation.components.PlaylistCover
-import com.theveloper.playpix.presentation.components.resolveNavBarOccupiedHeight
-import com.theveloper.playpix.presentation.navigation.Screen
-import com.theveloper.playpix.presentation.screens.search.components.GenreCategoriesGrid
-import com.theveloper.playpix.presentation.viewmodel.PlaylistViewModel
-import com.theveloper.playpix.utils.formatSongCount
+import com.svara.music.R
+import com.svara.music.data.repository.MusicRepository
+import com.svara.music.presentation.components.MiniPlayerHeight
+import com.svara.music.presentation.components.PlaylistBottomSheet
+import com.svara.music.presentation.components.PlaylistCover
+import com.svara.music.presentation.components.resolveNavBarOccupiedHeight
+import com.svara.music.presentation.navigation.Screen
+import com.svara.music.presentation.screens.search.components.GenreCategoriesGrid
+import com.svara.music.presentation.viewmodel.PlaylistViewModel
+import com.svara.music.utils.formatSongCount
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
 import kotlinx.collections.immutable.toImmutableList
@@ -124,7 +124,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape
 import timber.log.Timber
-import com.theveloper.playpix.presentation.components.subcomps.EnhancedSongListItem
+import com.svara.music.presentation.components.subcomps.EnhancedSongListItem
 import androidx.compose.ui.res.stringResource
 
 private data class SearchUiSlice(
@@ -191,7 +191,7 @@ fun SearchScreen(
 
     val searchbarCornerRadius = 28.dp
 
-    val dm = LocalPlayPixDarkTheme.current
+    val dm = LocalSvaraDarkTheme.current
 
     val gradientColorsDark = listOf(
         MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.5f),

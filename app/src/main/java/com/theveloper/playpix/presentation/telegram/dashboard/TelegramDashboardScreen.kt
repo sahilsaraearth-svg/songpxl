@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3ExpressiveApi::class)
 
-package com.theveloper.playpix.presentation.telegram.dashboard
+package com.svara.music.presentation.telegram.dashboard
 
 import android.content.Context
 import android.text.format.DateUtils
@@ -89,14 +89,14 @@ import androidx.compose.ui.zIndex
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.platform.LocalContext
-import com.theveloper.playpix.R
+import com.svara.music.R
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import coil.compose.AsyncImage
-import com.theveloper.playpix.data.database.TelegramChannelEntity
-import com.theveloper.playpix.data.database.TelegramTopicEntity
-import com.theveloper.playpix.presentation.components.CollapsibleCommonTopBar
-import com.theveloper.playpix.presentation.components.NoInternetScreen
-import com.theveloper.playpix.ui.theme.GoogleSansRounded
+import com.svara.music.data.database.TelegramChannelEntity
+import com.svara.music.data.database.TelegramTopicEntity
+import com.svara.music.presentation.components.CollapsibleCommonTopBar
+import com.svara.music.presentation.components.NoInternetScreen
+import com.svara.music.ui.theme.GoogleSansRounded
 import java.io.File
 import kotlin.math.roundToInt
 import kotlinx.coroutines.launch

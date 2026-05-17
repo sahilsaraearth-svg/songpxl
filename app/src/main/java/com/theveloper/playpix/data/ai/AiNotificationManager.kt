@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.ai
+package com.svara.music.data.ai
 
 
 import android.app.NotificationChannel
@@ -6,7 +6,7 @@ import android.app.NotificationManager
 import android.content.Context
 import android.os.Build
 import androidx.core.app.NotificationCompat
-import com.theveloper.playpix.R
+import com.svara.music.R
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 import javax.inject.Singleton

@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.viewmodel
+package com.svara.music.presentation.viewmodel
 
 import android.Manifest
 import android.content.Context
@@ -8,18 +8,18 @@ import android.os.Build
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.backup.BackupManager
-import com.theveloper.playpix.data.backup.model.BackupTransferProgressUpdate
-import com.theveloper.playpix.data.backup.model.BackupOperationType
-import com.theveloper.playpix.data.backup.model.BackupSection
-import com.theveloper.playpix.data.backup.model.RestorePlan
-import com.theveloper.playpix.data.backup.model.RestoreResult
-import com.theveloper.playpix.data.preferences.AppThemeMode
-import com.theveloper.playpix.data.preferences.ThemePreferencesRepository
-import com.theveloper.playpix.data.preferences.UserPreferencesRepository
-import com.theveloper.playpix.data.repository.MusicRepository
-import com.theveloper.playpix.data.worker.SyncManager
+import com.svara.music.R
+import com.svara.music.data.backup.BackupManager
+import com.svara.music.data.backup.model.BackupTransferProgressUpdate
+import com.svara.music.data.backup.model.BackupOperationType
+import com.svara.music.data.backup.model.BackupSection
+import com.svara.music.data.backup.model.RestorePlan
+import com.svara.music.data.backup.model.RestoreResult
+import com.svara.music.data.preferences.AppThemeMode
+import com.svara.music.data.preferences.ThemePreferencesRepository
+import com.svara.music.data.preferences.UserPreferencesRepository
+import com.svara.music.data.repository.MusicRepository
+import com.svara.music.data.worker.SyncManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableStateFlow

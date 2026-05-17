@@ -1,7 +1,7 @@
-package com.theveloper.playpix.data.repository
+package com.svara.music.data.repository
 
 import com.google.common.truth.Truth.assertThat
-import com.theveloper.playpix.data.database.FolderSongRow
+import com.svara.music.data.database.FolderSongRow
 import org.junit.jupiter.api.Test
 
 class FolderTreeBuilderTest {

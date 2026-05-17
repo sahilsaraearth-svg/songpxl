@@ -1,4 +1,4 @@
-package com.theveloper.playpix.utils
+package com.svara.music.utils
 
 /**
  * Shared helper for computing allowed parent directories by applying blocked rules.

@@ -1,4 +1,4 @@
-package com.theveloper.playpix
+package com.svara.music
 
 import android.util.Log
 import timber.log.Timber

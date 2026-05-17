@@ -1,13 +1,13 @@
-package com.theveloper.playpix.data.backup.format
+package com.svara.music.data.backup.format
 
 import com.google.gson.Gson
 import com.google.gson.JsonArray
 import com.google.gson.JsonObject
 import com.google.gson.JsonParser
-import com.theveloper.playpix.data.backup.model.BackupManifest
-import com.theveloper.playpix.data.backup.model.BackupModuleInfo
-import com.theveloper.playpix.data.backup.model.DeviceInfo
-import com.theveloper.playpix.data.backup.module.PlaylistsModuleHandler
+import com.svara.music.data.backup.model.BackupManifest
+import com.svara.music.data.backup.model.BackupModuleInfo
+import com.svara.music.data.backup.model.DeviceInfo
+import com.svara.music.data.backup.module.PlaylistsModuleHandler
 import java.security.MessageDigest
 import javax.inject.Inject
 import javax.inject.Singleton

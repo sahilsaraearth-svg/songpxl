@@ -1,7 +1,7 @@
-package com.theveloper.playpix.presentation.components
+package com.svara.music.presentation.components
 
 import android.widget.Toast
-import com.theveloper.playpix.presentation.components.ExpressiveOfflineDialog
+import com.svara.music.presentation.components.ExpressiveOfflineDialog
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.FastOutSlowInEasing
@@ -57,32 +57,32 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.preferences.sanitizeNavBarCornerRadius
-import com.theveloper.playpix.presentation.components.scoped.PlayerAlbumNavigationEffect
-import com.theveloper.playpix.presentation.components.scoped.PlayerArtistNavigationEffect
-import com.theveloper.playpix.presentation.components.scoped.PlayerSheetPredictiveBackHandler
-import com.theveloper.playpix.presentation.components.scoped.QueueSheetRuntimeEffects
-import com.theveloper.playpix.presentation.components.scoped.SheetMotionController
-import com.theveloper.playpix.presentation.components.scoped.miniPlayerDismissHorizontalGesture
-import com.theveloper.playpix.presentation.components.scoped.playerSheetVerticalDragGesture
-import com.theveloper.playpix.presentation.components.scoped.rememberFullPlayerCompositionPolicy
-import com.theveloper.playpix.presentation.components.scoped.rememberCastSheetState
-import com.theveloper.playpix.presentation.components.scoped.rememberFullPlayerVisualState
-import com.theveloper.playpix.presentation.components.scoped.rememberMiniPlayerDismissGestureHandler
-import com.theveloper.playpix.presentation.components.scoped.rememberPrewarmFullPlayer
-import com.theveloper.playpix.presentation.components.scoped.rememberQueueSheetState
-import com.theveloper.playpix.presentation.components.scoped.rememberSheetActionHandlers
-import com.theveloper.playpix.presentation.components.scoped.rememberSheetBackAndDragState
-import com.theveloper.playpix.presentation.components.scoped.rememberSheetInteractionState
-import com.theveloper.playpix.presentation.components.scoped.rememberSheetModalOverlayController
-import com.theveloper.playpix.presentation.components.scoped.rememberSheetOverlayState
-import com.theveloper.playpix.presentation.components.scoped.rememberSheetThemeState
-import com.theveloper.playpix.presentation.components.scoped.rememberSheetVisualState
-import com.theveloper.playpix.presentation.viewmodel.PlayerSheetState
-import com.theveloper.playpix.presentation.viewmodel.PlayerViewModel
-import com.theveloper.playpix.presentation.viewmodel.StablePlayerState
-import com.theveloper.playpix.ui.theme.LocalPlayPixDarkTheme
+import com.svara.music.data.model.Song
+import com.svara.music.data.preferences.sanitizeNavBarCornerRadius
+import com.svara.music.presentation.components.scoped.PlayerAlbumNavigationEffect
+import com.svara.music.presentation.components.scoped.PlayerArtistNavigationEffect
+import com.svara.music.presentation.components.scoped.PlayerSheetPredictiveBackHandler
+import com.svara.music.presentation.components.scoped.QueueSheetRuntimeEffects
+import com.svara.music.presentation.components.scoped.SheetMotionController
+import com.svara.music.presentation.components.scoped.miniPlayerDismissHorizontalGesture
+import com.svara.music.presentation.components.scoped.playerSheetVerticalDragGesture
+import com.svara.music.presentation.components.scoped.rememberFullPlayerCompositionPolicy
+import com.svara.music.presentation.components.scoped.rememberCastSheetState
+import com.svara.music.presentation.components.scoped.rememberFullPlayerVisualState
+import com.svara.music.presentation.components.scoped.rememberMiniPlayerDismissGestureHandler
+import com.svara.music.presentation.components.scoped.rememberPrewarmFullPlayer
+import com.svara.music.presentation.components.scoped.rememberQueueSheetState
+import com.svara.music.presentation.components.scoped.rememberSheetActionHandlers
+import com.svara.music.presentation.components.scoped.rememberSheetBackAndDragState
+import com.svara.music.presentation.components.scoped.rememberSheetInteractionState
+import com.svara.music.presentation.components.scoped.rememberSheetModalOverlayController
+import com.svara.music.presentation.components.scoped.rememberSheetOverlayState
+import com.svara.music.presentation.components.scoped.rememberSheetThemeState
+import com.svara.music.presentation.components.scoped.rememberSheetVisualState
+import com.svara.music.presentation.viewmodel.PlayerSheetState
+import com.svara.music.presentation.viewmodel.PlayerViewModel
+import com.svara.music.presentation.viewmodel.StablePlayerState
+import com.svara.music.ui.theme.LocalSvaraDarkTheme
 import kotlinx.collections.immutable.persistentListOf
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
@@ -498,7 +498,7 @@ fun UnifiedPlayerSheetV2(
 
     val activePlayerSchemePair by playerViewModel.activePlayerColorSchemePair.collectAsStateWithLifecycle()
     val themedAlbumArtUri by playerViewModel.currentThemedAlbumArtUri.collectAsStateWithLifecycle()
-    val isDarkTheme = LocalPlayPixDarkTheme.current
+    val isDarkTheme = LocalSvaraDarkTheme.current
     val currentSong = infrequentPlayerState.currentSong
     val sheetThemeState = rememberSheetThemeState(
         activePlayerSchemePair = activePlayerSchemePair,
@@ -570,7 +570,7 @@ fun UnifiedPlayerSheetV2(
         currentSheetContentState,
         infrequentPlayerState.currentSong?.title
     ) {
-        "PlayPix player sheet ${currentSheetContentState.name.lowercase()} " +
+        "Svara player sheet ${currentSheetContentState.name.lowercase()} " +
             (infrequentPlayerState.currentSong?.title ?: "")
     }
 

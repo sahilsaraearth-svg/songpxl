@@ -1,4 +1,4 @@
-package com.theveloper.playpix.data.telegram
+package com.svara.music.data.telegram
 
 import android.content.Context
 import dagger.hilt.android.qualifiers.ApplicationContext

@@ -1,15 +1,15 @@
-package com.theveloper.playpix.ui.theme
+package com.svara.music.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val PlayPixPurpleDark = Color(0xFF1E1234)
-val PlayPixPurplePrimary = Color(0xFFAB47BC)
-val PlayPixPink = Color(0xFFF06292)
-val PlayPixOrange = Color(0xFFFF8A65)
-val PlayPixLightPurple = Color(0xFFE1BEE7)
-val PlayPixWhite = Color(0xFFFFFFFF)
-val PlayPixBlack = Color(0xFF000000)
-val PlayPixSurface = Color(0xFF2A1F40)
+val SvaraPurpleDark = Color(0xFF1E1234)
+val SvaraPurplePrimary = Color(0xFFAB47BC)
+val SvaraPink = Color(0xFFF06292)
+val SvaraOrange = Color(0xFFFF8A65)
+val SvaraLightPurple = Color(0xFFE1BEE7)
+val SvaraWhite = Color(0xFFFFFFFF)
+val SvaraBlack = Color(0xFF000000)
+val SvaraSurface = Color(0xFF2A1F40)
 
 // Colores para tema claro (si se implementa)
 val LightBackground = Color(0xFFF7F2FF)

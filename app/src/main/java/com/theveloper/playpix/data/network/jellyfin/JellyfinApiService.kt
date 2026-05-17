@@ -1,6 +1,6 @@
-package com.theveloper.playpix.data.network.jellyfin
+package com.svara.music.data.network.jellyfin
 
-import com.theveloper.playpix.data.jellyfin.model.JellyfinCredentials
+import com.svara.music.data.jellyfin.model.JellyfinCredentials
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.HttpUrl.Companion.toHttpUrl
@@ -27,10 +27,10 @@ class JellyfinApiService @Inject constructor(
 
     companion object {
         private const val TAG = "JellyfinApi"
-        private const val CLIENT_NAME = "PlayPix"
+        private const val CLIENT_NAME = "Svara"
         private const val CLIENT_VERSION = "1.0"
         private const val DEVICE_NAME = "Android"
-        private const val DEVICE_ID = "PlayPix-Android"
+        private const val DEVICE_ID = "Svara-Android"
     }
 
     @Volatile

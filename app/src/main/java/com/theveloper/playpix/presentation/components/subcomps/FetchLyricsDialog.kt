@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.components.subcomps
+package com.svara.music.presentation.components.subcomps
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -52,12 +52,12 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.model.Song
-import com.theveloper.playpix.data.repository.LyricsSearchResult
-import com.theveloper.playpix.presentation.viewmodel.LyricsSearchUiState
-import com.theveloper.playpix.utils.ProviderText
-import com.theveloper.playpix.utils.shapes.RoundedStarShape
+import com.svara.music.R
+import com.svara.music.data.model.Song
+import com.svara.music.data.repository.LyricsSearchResult
+import com.svara.music.presentation.viewmodel.LyricsSearchUiState
+import com.svara.music.utils.ProviderText
+import com.svara.music.utils.shapes.RoundedStarShape
 
 @Composable
 fun FetchLyricsDialog(

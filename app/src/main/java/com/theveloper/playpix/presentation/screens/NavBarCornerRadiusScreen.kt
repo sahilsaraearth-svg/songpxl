@@ -1,4 +1,4 @@
-package com.theveloper.playpix.presentation.screens
+package com.svara.music.presentation.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -63,13 +63,13 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.theveloper.playpix.R
-import com.theveloper.playpix.data.preferences.MAX_NAV_BAR_CORNER_RADIUS
-import com.theveloper.playpix.data.preferences.MIN_NAV_BAR_CORNER_RADIUS
-import com.theveloper.playpix.presentation.viewmodel.SettingsViewModel
+import com.svara.music.R
+import com.svara.music.data.preferences.MAX_NAV_BAR_CORNER_RADIUS
+import com.svara.music.data.preferences.MIN_NAV_BAR_CORNER_RADIUS
+import com.svara.music.presentation.viewmodel.SettingsViewModel
 import racra.compose.smooth_corner_rect_library.AbsoluteSmoothCornerShape
-import com.theveloper.playpix.data.preferences.NavBarStyle
-import com.theveloper.playpix.presentation.components.resolveNavBarSurfaceHeight
+import com.svara.music.data.preferences.NavBarStyle
+import com.svara.music.presentation.components.resolveNavBarSurfaceHeight
 import androidx.compose.ui.res.stringResource
 
 const val DEFAULT_NAV_BAR_CORNER_RADIUS = 28f

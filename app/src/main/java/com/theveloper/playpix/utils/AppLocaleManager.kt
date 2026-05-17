@@ -1,4 +1,4 @@
-package com.theveloper.playpix.utils
+package com.svara.music.utils
 
 import android.content.Context
 import android.content.res.Configuration
@@ -6,7 +6,7 @@ import android.os.Build
 import android.os.LocaleList
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.os.LocaleListCompat
-import com.theveloper.playpix.data.preferences.AppLanguage
+import com.svara.music.data.preferences.AppLanguage
 import java.util.Locale
 
 object AppLocaleManager {
