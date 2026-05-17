@@ -86,17 +86,19 @@ class PlayPixApplication : Application(), ImageLoaderFactory, Configuration.Prov
     }
 
     override fun attachBaseContext(base: Context) {
+        // Install crash handler as early as possible — BEFORE Hilt injection (super.onCreate).
+        // This ensures we capture crashes that happen during DI graph construction.
+        if (BuildConfig.BUILD_TYPE != "benchmark") {
+            CrashHandler.install(base)
+        }
         super.attachBaseContext(AppLocaleManager.wrapContext(base))
     }
 
     override fun onCreate() {
         super.onCreate()
 
-        // Benchmark variant intentionally restarts/kills app process during tests.
-        // Avoid persisting those events as user-facing crash reports.
-        if (BuildConfig.BUILD_TYPE != "benchmark") {
-            CrashHandler.install(this)
-        }
+        // CrashHandler already installed in attachBaseContext — no need to re-install.
+        // (Legacy guard kept for benchmark variant awareness only.)
 
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())

@@ -2,6 +2,7 @@ package com.theveloper.playpix.utils
 
 import android.content.Context
 import android.content.SharedPreferences
+import java.io.File
 import java.io.PrintWriter
 import java.io.StringWriter
 import java.text.SimpleDateFormat
@@ -55,7 +56,13 @@ object CrashHandler : Thread.UncaughtExceptionHandler {
      * Should be called in Application.onCreate().
      */
     fun install(context: Context) {
-        appContext = context.applicationContext
+        // Use applicationContext if available (safe), fall back to raw context.
+        // When called from attachBaseContext(), applicationContext may not be set yet.
+        appContext = try {
+            context.applicationContext ?: context
+        } catch (e: Exception) {
+            context
+        }
         defaultHandler = Thread.getDefaultUncaughtExceptionHandler()
         Thread.setDefaultUncaughtExceptionHandler(this)
     }
@@ -65,6 +72,11 @@ object CrashHandler : Thread.UncaughtExceptionHandler {
             saveCrashLog(throwable)
         } catch (e: Exception) {
             // Ignore any errors during crash saving
+        }
+        try {
+            saveCrashLogToFile(throwable)
+        } catch (e: Exception) {
+            // Ignore
         }
 
         // Call the default handler to allow normal crash behavior
@@ -85,6 +97,37 @@ object CrashHandler : Thread.UncaughtExceptionHandler {
             putString(KEY_STACK_TRACE, stackTrace)
             commit() // Synchronous write - ensures data is saved before process dies
         }
+    }
+
+    /**
+     * Also write crash log to a file in the app's files directory.
+     * File: <filesDir>/crash_log.txt
+     * User / developer can pull this with `adb pull` or a file manager
+     * even when the app never successfully launches.
+     */
+    private fun saveCrashLogToFile(throwable: Throwable) {
+        val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
+        val timestamp = dateFormat.format(Date())
+        val stackTrace = getStackTraceString(throwable)
+        val content = buildString {
+            appendLine("=== PlayPix Crash Report ===")
+            appendLine("Time: $timestamp")
+            appendLine("Thread: ${Thread.currentThread().name}")
+            appendLine("Exception: ${throwable.javaClass.name}: ${throwable.message}")
+            appendLine()
+            appendLine(stackTrace)
+        }
+        // Write to app internal files dir (no WRITE_EXTERNAL_STORAGE needed)
+        val file = File(appContext.filesDir, "crash_log.txt")
+        file.writeText(content)
+        // Also keep last 5 crash logs for history
+        val histFile = File(appContext.filesDir, "crash_log_${System.currentTimeMillis()}.txt")
+        histFile.writeText(content)
+        // Clean up old history files — keep only latest 5
+        appContext.filesDir.listFiles { f -> f.name.startsWith("crash_log_") }
+            ?.sortedByDescending { it.lastModified() }
+            ?.drop(5)
+            ?.forEach { it.delete() }
     }
 
     private fun getStackTraceString(throwable: Throwable): String {

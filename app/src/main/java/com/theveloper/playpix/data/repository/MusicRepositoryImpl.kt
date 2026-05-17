@@ -649,41 +649,20 @@ class MusicRepositoryImpl @Inject constructor(
     }
 
     override fun getMusicByGenre(genreId: String): Flow<List<Song>> {
-        return combine(
-            userPreferencesRepository.mockGenresEnabledFlow,
-            userPreferencesRepository.allowedDirectoriesFlow,
-            userPreferencesRepository.blockedDirectoriesFlow
-        ) { mockEnabled, allowedDirs, blockedDirs ->
-            Triple(mockEnabled, allowedDirs, blockedDirs)
-        }.flatMapLatest { (mockEnabled, allowedDirs, blockedDirs) ->
+        return userPreferencesRepository.mockGenresEnabledFlow.flatMapLatest { mockEnabled ->
             flow {
-                val (allowedParentDirs, applyDirectoryFilter) =
-                    computeAllowedDirs(allowedDirs, blockedDirs)
                 val genreName = if (mockEnabled) "Mock" else genreId
-                // Prefetch songs for this genre from JioSaavn, tagged with genreName,
-                // so the DB genre filter can find them.
-                if (!genreName.equals("unknown", ignoreCase = true) && !mockEnabled) {
+                // Fetch songs for this genre directly from the streaming API.
+                // We do NOT write to the DB; we just return the live results.
+                val songs = if (!genreName.equals("unknown", ignoreCase = true) && !mockEnabled) {
                     try {
                         streamingRepository.searchSongsForGenre(genreTag = genreName, limit = 50)
-                    } catch (_: Exception) { /* non-fatal */ }
+                    } catch (_: Exception) { emptyList() }
+                } else {
+                    emptyList()
                 }
-                emit(
-                    if (genreName.equals("unknown", ignoreCase = true)) {
-                        musicDao.getSongsWithNullGenre(
-                            allowedParentDirs = allowedParentDirs,
-                            applyDirectoryFilter = applyDirectoryFilter
-                        )
-                    } else {
-                        musicDao.getSongsByGenre(
-                            genreName = genreName,
-                            allowedParentDirs = allowedParentDirs,
-                            applyDirectoryFilter = applyDirectoryFilter
-                        )
-                    }
-                )
-            }.flatMapLatest { it }
-        }.map { entities ->
-            entities.map { it.toSong() }
+                emit(songs)
+            }
         }.flowOn(Dispatchers.IO)
     }
 

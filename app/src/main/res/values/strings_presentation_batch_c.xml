@@ -76,8 +76,8 @@
     <string name="lib_empty_liked_offline_subtitle">Switch source filter or like songs from your device.</string>
     <string name="lib_empty_liked_online_title">No liked cloud songs</string>
     <string name="lib_empty_liked_online_subtitle">Like Telegram or NetEase tracks to see them in this view.</string>
-    <string name="lib_empty_folders_title">No folders found</string>
-    <string name="lib_empty_folders_subtitle">Internal storage folders with music will appear here.</string>
+    <string name="lib_empty_folders_title">No local folders</string>
+    <string name="lib_empty_folders_subtitle">Folders from your device storage will appear here. In streaming mode, music is available via Songs, Albums, and Artists tabs.</string>
     <string name="lib_empty_playlists_title">No playlists yet</string>
     <string name="lib_empty_playlists_subtitle">Create your first playlist to organize your library.</string>
 </resources>
