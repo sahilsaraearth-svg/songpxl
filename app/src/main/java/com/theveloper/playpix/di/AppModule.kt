@@ -169,12 +169,11 @@ object AppModule {
             .addCallback(PlayPixDatabase.createRuntimeArtifactsCallback())
             .setJournalMode(RoomDatabase.JournalMode.WRITE_AHEAD_LOGGING)
 
-        // P2-4: Only allow destructive migration in debug builds.
-        // In release, a migration bug will crash the app (revealing the problem)
-        // rather than silently wiping user data (playlists, favorites, statistics).
-        if (BuildConfig.DEBUG) {
-            builder.fallbackToDestructiveMigration(dropAllTables = true)
-        }
+        // Allow destructive migration in all builds.
+        // Streaming-only mode — no local songs in DB. Only playlists/favorites/stats
+        // are stored locally, but a crash on launch is worse than losing those.
+        // If migration fails, wipe and rebuild rather than crash.
+        builder.fallbackToDestructiveMigration(dropAllTables = true)
 
         return builder.build()
     }
