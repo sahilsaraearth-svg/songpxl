@@ -11,15 +11,6 @@ import javax.inject.Inject
 import javax.inject.Singleton
 import kotlin.math.absoluteValue
 
-/**
- * Maps JioSaavn API responses directly to domain Song/Album/Artist models.
- * No DB caching — pure in-memory mapping for zero race-condition risk.
- *
- * ID strategy (stable, no collision with MediaStore):
- *   Songs   → hash of "jiosaavn_<songId>"  + 12T
- *   Albums  → hash of "jiosaavn_<albumId>" + 13T
- *   Artists → hash of "jiosaavn_<artistId>"+ 14T
- */
 @Singleton
 class JioSaavnRepository @Inject constructor(
     private val api: JioSaavnApiService,
@@ -59,13 +50,10 @@ class JioSaavnRepository @Inject constructor(
             "jiosaavn_artist_$saavnId".hashCode().toLong().absoluteValue % 1_000_000_000L + ARTIST_ID_OFFSET
     }
 
-    // ── Public API ──────────────────────────────────────────────────────────
-
     suspend fun searchSongs(query: String, limit: Int = 20): List<Song> = withContext(Dispatchers.IO) {
         try {
             val response = api.searchSongs(query = query, limit = limit)
-            if (!response.success) return@withContext emptyList()
-            response.data?.results?.map { it.toSong() } ?: emptyList()
+            response.data?.results.orEmpty().map { it.toSong() }
         } catch (e: Exception) {
             Timber.w(e, "$TAG: searchSongs failed for '$query'")
             emptyList()
@@ -75,8 +63,7 @@ class JioSaavnRepository @Inject constructor(
     suspend fun searchSongsForGenre(genreTag: String, limit: Int = 50): List<Song> = withContext(Dispatchers.IO) {
         try {
             val response = api.searchSongs(query = genreTag, limit = limit)
-            if (!response.success) return@withContext emptyList()
-            response.data?.results?.map { it.toSong(overrideGenre = genreTag) } ?: emptyList()
+            response.data?.results.orEmpty().map { it.toSong(overrideGenre = genreTag) }
         } catch (e: Exception) {
             Timber.w(e, "$TAG: searchSongsForGenre failed for '$genreTag'")
             emptyList()
@@ -86,8 +73,7 @@ class JioSaavnRepository @Inject constructor(
     suspend fun searchAlbums(query: String): List<Album> = withContext(Dispatchers.IO) {
         try {
             val response = api.searchAlbums(query = query)
-            if (!response.success) return@withContext emptyList()
-            response.data?.results?.map { it.toAlbum() } ?: emptyList()
+            response.data?.results.orEmpty().map { it.toAlbum() }
         } catch (e: Exception) {
             Timber.w(e, "$TAG: searchAlbums failed for '$query'")
             emptyList()
@@ -97,8 +83,7 @@ class JioSaavnRepository @Inject constructor(
     suspend fun searchArtists(query: String): List<Artist> = withContext(Dispatchers.IO) {
         try {
             val response = api.searchArtists(query = query)
-            if (!response.success) return@withContext emptyList()
-            response.data?.results?.map { it.toArtist() } ?: emptyList()
+            response.data?.results.orEmpty().map { it.toArtist() }
         } catch (e: Exception) {
             Timber.w(e, "$TAG: searchArtists failed for '$query'")
             emptyList()
@@ -127,8 +112,7 @@ class JioSaavnRepository @Inject constructor(
         val query = queries[dayOfYear % queries.size]
         try {
             val response = api.searchSongs(query = query, limit = limit)
-            if (!response.success) return@withContext emptyList()
-            val songs = response.data?.results ?: return@withContext emptyList()
+            val songs = response.data?.results.orEmpty()
             val shuffled = songs.shuffled(java.util.Random(dayOfYear.toLong()))
             Timber.d("$TAG: getTrendingSongs returned ${shuffled.size} songs for '$query'")
             shuffled.map { it.toSong() }
@@ -164,7 +148,7 @@ class JioSaavnRepository @Inject constructor(
             album             = album?.name ?: "",
             albumId           = dbAlbumId,
             albumArtist       = null,
-            path              = streamUrl,            // ExoPlayer stream URL
+            path              = streamUrl,
             contentUriString  = "jiosaavn://${this.id}",
             albumArtUriString = artUrl.ifBlank { null },
             duration          = durationMs,
