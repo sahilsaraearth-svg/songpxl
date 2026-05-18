@@ -243,6 +243,7 @@ fun Song.toEntity(filePathFromMediaStore: String, parentDirFromMediaStore: Strin
         mimeType = this.mimeType,
         bitrate = this.bitrate,
         sampleRate = this.sampleRate,
+        artistsJson = serializeArtistRefs(this.artists),
         sourceType = SourceType.fromContentUri(this.contentUriString)
     )
 }
@@ -282,6 +283,7 @@ fun Song.toEntityWithoutPaths(): SongEntity {
         mimeType = this.mimeType,
         bitrate = this.bitrate,
         sampleRate = this.sampleRate,
+        artistsJson = serializeArtistRefs(this.artists),
         sourceType = SourceType.fromContentUri(this.contentUriString)
     )
 }
