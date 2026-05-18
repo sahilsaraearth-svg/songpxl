@@ -1140,10 +1140,11 @@ class PlayerViewModel @Inject constructor(
     val allSongsFlow: StateFlow<ImmutableList<Song>> = libraryStateHolder.allSongs
 
     // Genres StateFlow - delegated to LibraryStateHolder
+    // Use Eagerly so genres are available immediately even before the first subscriber
     val genres: StateFlow<ImmutableList<Genre>> = libraryStateHolder.genres
         .stateIn(
             scope = viewModelScope,
-            started = SharingStarted.WhileSubscribed(5000),
+            started = SharingStarted.Eagerly,
             initialValue = persistentListOf()
         )
 
@@ -1159,9 +1160,10 @@ class PlayerViewModel @Inject constructor(
     private var homeMixJob: kotlinx.coroutines.Job? = null
 
     fun reloadHomeMixFromApi() {
+        // If a job is already running and songs not yet loaded, don't cancel it — let it finish.
+        // This prevents the UI's 1200ms retry from killing an in-flight API call.
+        if (homeMixJob?.isActive == true && _homeMixPreviewSongs.value.isEmpty()) return
         homeMixJob?.cancel()
-        // Don't clear existing songs — keep showing old songs while re-fetching
-        // so the home screen never goes blank mid-session
         loadHomeMixFromApi()
     }
 

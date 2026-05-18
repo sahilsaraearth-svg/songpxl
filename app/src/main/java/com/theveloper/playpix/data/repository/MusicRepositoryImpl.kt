@@ -69,6 +69,7 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
@@ -856,6 +857,9 @@ class MusicRepositoryImpl @Inject constructor(
     )
 
     override fun getGenres(): Flow<List<Genre>> {
+        // Emit fallback genres immediately so the UI never shows "No genres available"
+        // while waiting for DB/prefs to initialize (streaming-only mode has empty DB).
+        val fallbackImmediately: List<Genre> = FALLBACK_GENRES.map { buildGenre(it) }
         return combine(
             userPreferencesRepository.allowedDirectoriesFlow,
             userPreferencesRepository.blockedDirectoriesFlow
@@ -901,7 +905,8 @@ class MusicRepositoryImpl @Inject constructor(
                     }
                 )
             }.flatMapLatest { it }
-        }.conflate().flowOn(Dispatchers.IO)
+        }.onStart { emit(fallbackImmediately) }
+        .conflate().flowOn(Dispatchers.IO)
     }
 
     private fun buildGenre(genreName: String): Genre {
