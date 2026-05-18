@@ -155,9 +155,10 @@ fun HomeScreen(
     }
     val yourMixSongs = remember(curatedYourMixSongs, dailyMixSongs, homeMixPreviewSongs) {
         when {
+            homeMixPreviewSongs.isNotEmpty() -> homeMixPreviewSongs
             curatedYourMixSongs.isNotEmpty() -> curatedYourMixSongs
             dailyMixSongs.isNotEmpty() -> dailyMixSongs
-            else -> homeMixPreviewSongs
+            else -> persistentListOf()
         }
     }
     var homePlaceholderRefreshGeneration by rememberSaveable { mutableIntStateOf(0) }

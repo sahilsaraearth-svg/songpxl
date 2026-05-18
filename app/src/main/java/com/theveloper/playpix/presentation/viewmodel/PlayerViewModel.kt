@@ -1139,13 +1139,23 @@ class PlayerViewModel @Inject constructor(
     // Library State - delegated to LibraryStateHolder
     val allSongsFlow: StateFlow<ImmutableList<Song>> = libraryStateHolder.allSongs
 
-    // Genres StateFlow - delegated to LibraryStateHolder
-    // Use Eagerly so genres are available immediately even before the first subscriber
+    // Genres StateFlow — fallback genres as initial value so UI is never empty on cold start
+    private val fallbackGenres: ImmutableList<Genre> = listOf(
+        "Hindi", "English", "Punjabi", "Tamil", "Telugu",
+        "Bengali", "Pop", "Rock", "Hip-Hop", "Classical",
+        "Devotional", "Jazz", "Electronic", "Indie", "Lofi", "Party"
+    ).map { name ->
+        val id = name.lowercase()
+        Genre(id = id, name = name,
+            lightColorHex = "#7C4DFF", onLightColorHex = "#FFFFFF",
+            darkColorHex = "#7C4DFF", onDarkColorHex = "#FFFFFF")
+    }.toImmutableList()
+
     val genres: StateFlow<ImmutableList<Genre>> = libraryStateHolder.genres
         .stateIn(
             scope = viewModelScope,
             started = SharingStarted.Eagerly,
-            initialValue = persistentListOf()
+            initialValue = fallbackGenres
         )
 
     val paletteRegenerationTargets: StateFlow<List<Song>> = musicRepository.getDistinctAlbumArtSongs()
