@@ -865,10 +865,7 @@ class MusicRepositoryImpl @Inject constructor(
             flow {
                 val (allowedParentDirs, applyDirectoryFilter) =
                     computeAllowedDirs(allowedDirs, blockedDirs)
-                // Pre-fetch trending to populate DB genres on first launch
-                try {
-                    streamingRepository.getTrendingSongs(limit = 30)
-                } catch (_: Exception) { /* non-fatal */ }
+
                 emit(
                     combine(
                         musicDao.getUniqueGenres(

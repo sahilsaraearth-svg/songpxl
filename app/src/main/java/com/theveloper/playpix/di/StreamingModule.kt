@@ -34,7 +34,7 @@ object StreamingModule {
     @JioSaavnRetrofit
     fun provideJioSaavnRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("https://jiosavan-api2.vercel.app/")
+            .baseUrl("https://saavn.dev/")
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
