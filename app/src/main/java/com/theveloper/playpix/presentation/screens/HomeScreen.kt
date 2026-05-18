@@ -176,10 +176,7 @@ fun HomeScreen(
             hasHomeLoadingMinimumElapsed = false
             delay(HomeLoadingPlaceholderMinDurationMillis)
             hasHomeLoadingMinimumElapsed = true
-            // Auto-retry: if still empty after loading delay, re-fetch from API
-            if (yourMixSongs.isEmpty()) {
-                playerViewModel.reloadHomeMixFromApi()
-            }
+            // No auto-retry — ViewModel handles retries internally with 5s delay
         } else {
             hasHomeLoadingMinimumElapsed = true
         }

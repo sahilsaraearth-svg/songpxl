@@ -1170,10 +1170,7 @@ class PlayerViewModel @Inject constructor(
     private var homeMixJob: kotlinx.coroutines.Job? = null
 
     fun reloadHomeMixFromApi() {
-        // If a job is already running and songs not yet loaded, don't cancel it — let it finish.
-        // This prevents the UI's 1200ms retry from killing an in-flight API call.
-        if (homeMixJob?.isActive == true && _homeMixPreviewSongs.value.isEmpty()) return
-        homeMixJob?.cancel()
+        if (homeMixJob?.isActive == true) return  // already running, don't cancel
         loadHomeMixFromApi()
     }
 
@@ -1182,7 +1179,7 @@ class PlayerViewModel @Inject constructor(
         homeMixJob = viewModelScope.launch(Dispatchers.IO) {
             var attempt = 0
             val maxAttempts = 5
-            val retryDelayMs = 2_000L
+            val retryDelayMs = 5_000L
             while (attempt < maxAttempts && _homeMixPreviewSongs.value.isEmpty()) {
                 attempt++
                 try {
