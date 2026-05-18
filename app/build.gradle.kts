@@ -61,7 +61,7 @@ android {
     defaultConfig {
         applicationId = "com.svara.music"
         minSdk = 30
-        targetSdk = 37
+        targetSdk = 36
         versionCode = (project.findProperty("APP_VERSION_CODE") as? String)?.toInt() ?: 1
         versionName = (project.findProperty("APP_VERSION_NAME") as? String) ?: "1.0.0"
 

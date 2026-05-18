@@ -2,6 +2,7 @@ package com.svara.music.utils
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.os.Environment
 import java.io.File
 import java.io.PrintWriter
 import java.io.StringWriter
@@ -128,6 +129,16 @@ object CrashHandler : Thread.UncaughtExceptionHandler {
             ?.sortedByDescending { it.lastModified() }
             ?.drop(5)
             ?.forEach { it.delete() }
+
+        // Also write to public Downloads so it's accessible via file manager
+        try {
+            val downloadsDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
+            downloadsDir.mkdirs()
+            val publicFile = File(downloadsDir, "svara_crash_log.txt")
+            publicFile.writeText(content)
+        } catch (e: Exception) {
+            // Ignore — public storage might not be available
+        }
     }
 
     private fun getStackTraceString(throwable: Throwable): String {

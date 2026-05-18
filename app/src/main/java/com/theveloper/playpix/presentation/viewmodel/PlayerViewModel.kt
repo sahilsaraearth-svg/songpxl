@@ -932,7 +932,13 @@ class PlayerViewModel @Inject constructor(
         // Initialize helper classes with our coroutine scope
         listeningStatsTracker.initialize(viewModelScope)
         dailyMixStateHolder.initialize(viewModelScope)
-        loadHomeMixFromApi()
+        viewModelScope.launch {
+            // Delay to ensure all @Inject lateinit fields and stateIn flows
+            // are fully initialized before accessing them from background threads
+            kotlinx.coroutines.delay(100)
+            loadHomeMixFromApi()
+            updateDailyMix()
+        }
         lyricsStateHolder.initialize(viewModelScope, lyricsLoadCallback, playbackStateHolder.stablePlayerState)
         playbackStateHolder.initialize(viewModelScope)
         themeStateHolder.initialize(viewModelScope)
@@ -1154,7 +1160,8 @@ class PlayerViewModel @Inject constructor(
 
     fun reloadHomeMixFromApi() {
         homeMixJob?.cancel()
-        _homeMixPreviewSongs.value = persistentListOf()
+        // Don't clear existing songs — keep showing old songs while re-fetching
+        // so the home screen never goes blank mid-session
         loadHomeMixFromApi()
     }
 
@@ -1163,7 +1170,7 @@ class PlayerViewModel @Inject constructor(
         homeMixJob = viewModelScope.launch(Dispatchers.IO) {
             var attempt = 0
             val maxAttempts = 5
-            val retryDelayMs = 5_000L
+            val retryDelayMs = 2_000L
             while (attempt < maxAttempts && _homeMixPreviewSongs.value.isEmpty()) {
                 attempt++
                 try {

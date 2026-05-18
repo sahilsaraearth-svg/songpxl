@@ -214,3 +214,9 @@
     public static int d(...);
     public static int i(...);
 }
+
+
+# Fix Gson 2.10.x SqlTypesSupport NPE on Android (java.sql classes stripped by R8)
+-keep class java.sql.** { *; }
+-dontwarn java.sql.**
+-keep class com.google.gson.internal.sql.** { *; }
